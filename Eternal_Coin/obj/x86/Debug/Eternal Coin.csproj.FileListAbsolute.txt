@@ -277,4 +277,3 @@ C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
-C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
