@@ -16,7 +16,7 @@ namespace Eternal_Coin
     /// </summary>
     public class Game1 : Game
     {
-        
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
