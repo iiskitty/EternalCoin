@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</SourceFile>
+  <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</SourceFile>
   <SourceTime>2015-09-25T13:30:00+08:00</SourceTime>
-  <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/bin/Windows/LocationTemplates/MainStory/Eaton/EatonMap.xnb</DestFile>
-  <DestTime>2015-11-05T18:45:06.9415811+08:00</DestTime>
+  <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/LocationTemplates/MainStory/Eaton/EatonMap.xnb</DestFile>
+  <DestTime>2015-12-30T06:28:34.3530999+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -4,67 +4,67 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/pixel.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Coins/CoinBack.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/PlayButtonSpinAnim.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/ExitButtonSpinAnim.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sounds/CoinClick.wav</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/LocationNodeTex.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole14Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole14Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole16Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole16Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole18Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole18Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole20Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole20Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/LocationInfoUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/LookEyeTex.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/NPCInfoUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/NPCButtonTex.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/EnterLocationButtonTex.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/ExitLocationButtonTex.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Maps/WorldMap.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/QuestListUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole10Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole10Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/Cross.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/Tick.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole12Bold.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole12Regular.spritefont</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/QuestInfoUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/clearpixel.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/sword.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/axe.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/boot.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/chestplate.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/gauntlet.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/helmet.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/leggings.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/mace.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/robe.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/spear.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/staff.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/wand.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/bronzesword.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Buttons/OptionsButtonSpinAnim.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/InventoryUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/PauseUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/sword.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/ShopInventoryUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/UI/BattleUI.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/Cursor.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/LocationTemplates/MainStory/Bunbury/BunburyMap.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/DP/Default.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/DP/Altered.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/DP/enemy/EDefault.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sounds/LocationNodeClick.wav</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sounds/ButtonClick.wav</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/AttackAnim/Default/IronSwordStab.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/AttackAnim/Default/IronSwordStrike.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/AttackAnim/EDefault/IronSwordStab.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/AttackAnim/EDefault/IronSwordStrike.png</File>
-    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sprites/tempIcon/Ring.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/pixel.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Coins/CoinBack.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/PlayButtonSpinAnim.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/ExitButtonSpinAnim.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/CoinClick.wav</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LocationNodeTex.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole14Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole14Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole16Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole16Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole18Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole18Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole20Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole20Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/LocationInfoUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LookEyeTex.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NPCInfoUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/NPCButtonTex.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/EnterLocationButtonTex.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/ExitLocationButtonTex.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Maps/WorldMap.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/QuestListUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole10Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole10Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/Cross.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/Tick.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole12Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole12Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/QuestInfoUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/clearpixel.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/sword.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/axe.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/boot.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/chestplate.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/gauntlet.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/helmet.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/leggings.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/mace.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/robe.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/spear.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/staff.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/wand.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/bronzesword.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/OptionsButtonSpinAnim.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/InventoryUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/PauseUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/sword.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/ShopInventoryUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/BattleUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Cursor.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Bunbury/BunburyMap.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/Default.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/Altered.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/enemy/EDefault.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/LocationNodeClick.wav</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/ButtonClick.wav</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/AttackAnim/Default/IronSwordStab.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/AttackAnim/Default/IronSwordStrike.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/AttackAnim/EDefault/IronSwordStab.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/AttackAnim/EDefault/IronSwordStrike.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/Ring.png</File>
   </SourceFiles>
 </SourceFileCollection>
