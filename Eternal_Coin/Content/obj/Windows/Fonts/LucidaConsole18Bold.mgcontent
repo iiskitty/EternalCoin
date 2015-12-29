@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Fonts/LucidaConsole18Bold.spritefont</SourceFile>
+  <SourceTime>2015-08-20T02:33:22.3542555+08:00</SourceTime>
+  <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/bin/Windows/Fonts/LucidaConsole18Bold.xnb</DestFile>
+  <DestTime>2015-10-20T07:14:29.2725761+08:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2015-04-30T01:14:44+08:00</ProcessorTime>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

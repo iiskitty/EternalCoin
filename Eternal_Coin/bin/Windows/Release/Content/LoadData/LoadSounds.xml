@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<load>
+  <sound>
+    <id>CoinClick</id>
+    <filepath>Sounds/CoinClick</filepath>
+  </sound>
+</load>

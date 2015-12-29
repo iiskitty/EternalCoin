@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/Sounds/CoinClick.wav</SourceFile>
+  <SourceTime>2015-08-17T00:59:52.3466947+08:00</SourceTime>
+  <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/Eternal Coin/Eternal Coin/Content/bin/Windows/Sounds/CoinClick.xnb</DestFile>
+  <DestTime>2015-10-20T07:14:28.3979584+08:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2015-04-30T01:14:44+08:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

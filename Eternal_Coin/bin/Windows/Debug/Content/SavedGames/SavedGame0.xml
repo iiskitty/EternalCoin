@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<savedgame>
+  <filename>Content/SavedGames/SavedGame0.xml</filename>
+  <dpid>Default</dpid>
+  <name>kitty</name>
+  <storyname>MainStory</storyname>
+  <currentlocation>SubEaton</currentlocation>
+  <playerinventory>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+  </playerinventory>
+  <characterinventory>
+    <item>
+      <itemname>Bronze Helmet</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Chestplate</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
+    </item>
+  </characterinventory>
+</savedgame>

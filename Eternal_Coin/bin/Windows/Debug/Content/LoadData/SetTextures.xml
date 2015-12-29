@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<set>
+  <cursor>Cursor</cursor>
+  <pixel>Pixel</pixel>
+  <cpixel>ClearPixel</cpixel>
+  <worldmap>WorldMap</worldmap>
+  <locnode>LocationNode</locnode>
+  <tick>Tick</tick>
+  <cross>Cross</cross>
+  <playbut>PlayButton</playbut>
+  <exitbut>ExitButton</exitbut>
+  <optionsbut>OptionsButton</optionsbut>
+  <coinback>CoinBack</coinback>
+  <lookeye>LookEye</lookeye>
+  <npcbut>NPCButton</npcbut>
+  <enterloc>EnterLocation</enterloc>
+  <exitloc>ExitLocation</exitloc>
+  <UIlocinfo>LocationInfo</UIlocinfo>
+  <UInpcinfo>NPCInfo</UInpcinfo>
+  <UIquestlist>QuestList</UIquestlist>
+  <UIquestinfo>QuestInfo</UIquestinfo>
+  <UIinv>Inventory</UIinv>
+  <UIshopinv>ShopInventory</UIshopinv>
+  <UIpause>Pause</UIpause>
+  <UIBattle>Battle</UIBattle>
+</set>
