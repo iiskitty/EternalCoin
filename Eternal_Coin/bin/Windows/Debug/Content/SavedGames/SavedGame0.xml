@@ -8,8 +8,20 @@
   <playerinventory />
   <characterinventory>
     <item>
+      <itemname>Bronze Helmet</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Chestplate</itemname>
+      <playerinventoryslot>2</playerinventoryslot>
+    </item>
+    <item>
       <itemname>Iron Sword</itemname>
-      <playerinventoryslot>4</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
@@ -17,31 +29,31 @@
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>2</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>4</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>8</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>6</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>10</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>12</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
-      <playerinventoryslot>14</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
   </characterinventory>
 </savedgame>

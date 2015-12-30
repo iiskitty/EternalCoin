@@ -147,7 +147,7 @@ namespace Eternal_Coin
                         {
                             try
                             {
-                                if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot))
+                                if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot) && InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item == null)
                                 {
                                     InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = item;
                                     P.AddItemStats(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item);

@@ -7,10 +7,10 @@
   <hasshop>true</hasshop>
   <hasenemy>false</hasenemy>
   <npc>
-    <hasquest>true</hasquest>
-    <questaccepted>false</questaccepted>
-    <questfinished>false</questfinished>
-    <questcompleted>false</questcompleted>
+    <hasquest>False</hasquest>
+    <questaccepted>False</questaccepted>
+    <questfinished>False</questfinished>
+    <questcompleted>True</questcompleted>
     <name>Dick</name>
     <greeting>
       <questunaccepted>How do you do, I have a quest for you. Go to SubEaton1.</questunaccepted>
