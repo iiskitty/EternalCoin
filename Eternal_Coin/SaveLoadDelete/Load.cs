@@ -117,9 +117,9 @@ namespace Eternal_Coin
                                 GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item), 2);
                             }
                         }
-                        catch
+                        catch (Exception e)
                         {
-                            GVar.LogDebugInfo("!!!Failed To Load Weapon To Character Inventory!!!", 1);
+                            GVar.LogDebugInfo("!!!Failed To Load Weapon To Character Inventory: " + e, 1);
                         }
                     }
                     else if (item.ItemClass == GVar.ItemClassName.armor)
@@ -135,9 +135,29 @@ namespace Eternal_Coin
                                     GVar.LogDebugInfo("Armor Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
                                 }
                             }
-                            catch
+                            catch (Exception e)
                             {
-                                GVar.LogDebugInfo("!!!Failed To Load Armor To Character Inventory!!!", 1);
+                                GVar.LogDebugInfo("!!!Failed To Load Armor To Character Inventory: " + e, 1);
+                            }
+                        }
+                    }
+                    else if (item.ItemClass == GVar.ItemClassName.jewellry)
+                    {
+                        for (int i = 0; i < Lists.inventorySlots.Count; i ++)
+                        {
+                            try
+                            {
+                                if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot))
+                                {
+                                    InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = item;
+                                    P.AddItemStats(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item);
+                                    GVar.LogDebugInfo("Jewelry Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
+                                    break;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                GVar.LogDebugInfo("!!!Failed to load jewelry to character inventory: " + e, 1);
                             }
                         }
                     }

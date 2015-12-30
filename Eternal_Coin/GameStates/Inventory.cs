@@ -201,6 +201,41 @@ namespace Eternal_Coin
                 mouseInventory.heldItem[i].Draw(spriteBatch, mouseInventory.heldItem[i].SpriteID, mouseInventory.heldItem[i].Bounds, 0.192f, 0f, Vector2.Zero);
 
                 spriteBatch.Draw(mouseInventory.heldItem[i].SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+
+                if (GVar.currentGameState == GVar.GameState.game)
+                {
+                    if (mouseInventory.heldItem[i] != null && mouseInventory.heldItem[i].ItemClass != GVar.ItemClassName.jewellry && mouseInventory.heldItem[i].ItemClass != GVar.ItemClassName.weapon)
+                    {
+                        Vector2 pos = characterInventory.itemSlots[mouseInventory.heldItem[i].InventorySlot].position;
+                        Vector2 size = characterInventory.itemSlots[mouseInventory.heldItem[i].InventorySlot].size;
+                        spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                    }
+                    else if (mouseInventory.heldItem[i] != null && mouseInventory.heldItem[i].ItemClass == GVar.ItemClassName.jewellry)
+                    {
+                        for (int k = 0; k < Lists.inventorySlots.Count; k++)
+                        {
+                            if (characterInventory.itemSlots[Lists.inventorySlots[k]].inventorySlot.Contains(mouseInventory.heldItem[i].InventorySlot))
+                            {
+                                Vector2 pos = characterInventory.itemSlots[Lists.inventorySlots[k]].position;
+                                Vector2 size = characterInventory.itemSlots[Lists.inventorySlots[k]].size;
+                                spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                            }
+                        }
+                    }
+                    else if (mouseInventory.heldItem[i] != null && mouseInventory.heldItem[i].ItemClass == GVar.ItemClassName.weapon)
+                    {
+                        for (int k = 0; k < Lists.inventorySlots.Count; k++)
+                        {
+                            if (characterInventory.itemSlots[Lists.inventorySlots[k]].inventorySlot.Contains(mouseInventory.heldItem[i].InventorySlot))
+                            {
+                                Vector2 pos = characterInventory.itemSlots[Lists.inventorySlots[k]].position;
+                                Vector2 size = characterInventory.itemSlots[Lists.inventorySlots[k]].size;
+                                spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                            }
+                        }
+                    }
+                }
+
                 if (mouseInventory.heldItem[i].ItemClass == GVar.ItemClassName.weapon)
                 {
                     Item.DrawItemInfo(spriteBatch, (Weapon)mouseInventory.heldItem[i]);
@@ -211,6 +246,10 @@ namespace Eternal_Coin
                     Item.DrawItemInfo(spriteBatch, (Armor)mouseInventory.heldItem[i]);
 
                 }
+                else if (mouseInventory.heldItem[i].ItemClass == GVar.ItemClassName.jewellry)
+                {
+                    Item.DrawItemInfo(spriteBatch, (Jewellry)mouseInventory.heldItem[i]);
+                }
             }
         }
 
@@ -218,6 +257,10 @@ namespace Eternal_Coin
         {
             for (int i = 0; i < mouseInventory.heldItem.Count; i++)
             {
+                if (mouseInventory.heldItem[i].Size.X < Vector.itemNormalSize.X && mouseInventory.heldItem[i].Size.Y < Vector.itemNormalSize.Y)
+                {
+                    mouseInventory.heldItem[i].Size = Vector.itemNormalSize;
+                }
                 mouseInventory.heldItem[i].Position = new Vector2(MouseManager.GetMousePosition().X - mouseInventory.heldItem[i].Size.X, MouseManager.GetMousePosition().Y - mouseInventory.heldItem[i].Size.Y);
                 mouseInventory.heldItem[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
@@ -316,6 +359,10 @@ namespace Eternal_Coin
                         {
                             Item.DrawItemInfo(spriteBatch, (Armor)characterInventory.itemSlots[Lists.inventorySlots[i]].item);
                         }
+                        else if (characterInventory.itemSlots[Lists.inventorySlots[i]].item.ItemClass == GVar.ItemClassName.jewellry)
+                        {
+                            Item.DrawItemInfo(spriteBatch, (Jewellry)characterInventory.itemSlots[Lists.inventorySlots[i]].item);
+                        }
                     }
                 }
             }
@@ -348,8 +395,6 @@ namespace Eternal_Coin
 
             for (int i = 0; i < mouseInventory.heldItem.Count; i++)
             {
-                
-
                 foreach (Player P in Lists.entity)
                 {
                     for (int j = 0; j < Lists.inventorySlots.Count; j++)
@@ -382,27 +427,33 @@ namespace Eternal_Coin
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                                 Item tempItem = mouseInventory.heldItem[i];
                                 mouseInventory.heldItem[i] = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
-                                for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    try
+                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
                                     {
-                                        Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
-                                    }
-                                    catch
-                                    {
-                                        GVar.LogDebugInfo("!No attacks to remove..MouseInv->CharInv|CharInv->MouseInv..!", 2);
+                                        try
+                                        {
+                                            Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
+                                        }
+                                        catch
+                                        {
+                                            GVar.LogDebugInfo("!No attacks to remove..MouseInv->CharInv|CharInv->MouseInv..!", 2);
+                                        }
                                     }
                                 }
                                 characterInventory.itemSlots[Lists.inventorySlots[j]].item = tempItem;
-                                for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    try
+                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
                                     {
-                                        Attack.AddAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
-                                    }
-                                    catch
-                                    {
-                                        GVar.LogDebugInfo("!No attacks to add..MouseInv->CharInv|CharInv->MouseInv..!", 2);
+                                        try
+                                        {
+                                            Attack.AddAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
+                                        }
+                                        catch
+                                        {
+                                            GVar.LogDebugInfo("!No attacks to add..MouseInv->CharInv|CharInv->MouseInv..!", 2);
+                                        }
                                     }
                                 }
                             }
@@ -446,15 +497,18 @@ namespace Eternal_Coin
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                                 playerInventory.itemSlots[i].item = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
                                 P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
-                                for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    try
+                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
                                     {
-                                        Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
-                                    }
-                                    catch
-                                    {
-                                        GVar.LogDebugInfo("!No attacks to remove..CharInv->PlayerInv..", 2);
+                                        try
+                                        {
+                                            Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
+                                        }
+                                        catch
+                                        {
+                                            GVar.LogDebugInfo("!No attacks to remove..CharInv->PlayerInv..", 2);
+                                        }
                                     }
                                 }
                                 characterInventory.itemSlots[Lists.inventorySlots[j]].item = null;
@@ -529,6 +583,30 @@ namespace Eternal_Coin
                                 playerInventory.itemSlots[i].item = null;
                                 preventclick = 1;
                                 break;
+                            }
+                        }
+                        else if (playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
+                        {
+                            if (playerInventory.itemSlots[i].item.InventorySlot.Contains("Ring"))
+                            {
+                                for (int k = 0; k < 8; k++)
+                                {
+                                    int num = k + 1;
+                                    string invslot = "Ring" + num.ToString();
+                                    if (characterInventory.itemSlots[invslot].item == null)
+                                    {
+                                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                        characterInventory.itemSlots[invslot].item = playerInventory.itemSlots[i].item;
+                                        P.AddItemStats((Jewellry)playerInventory.itemSlots[i].item);
+                                        if (playerInventory.itemSlots[i].item.Attacks != null)
+                                        {
+                                            Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
+                                        }
+                                        playerInventory.itemSlots[i].item = null;
+                                        preventclick = 1;
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
@@ -689,6 +767,14 @@ namespace Eternal_Coin
                     itemSlots.Add(GVar.InventorySlot.rightGauntlet, new ItemSlot(new Vector2(1155, 340), new Vector2(ui.Position.X + 246, ui.Position.Y + 296), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.rightGauntlet));
                     itemSlots.Add(GVar.InventorySlot.leftHandWeapon, new ItemSlot(new Vector2(927, 140), new Vector2(ui.Position.X + 163, ui.Position.Y + 222), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.leftHandWeapon));
                     itemSlots.Add(GVar.InventorySlot.rightHandWeapon, new ItemSlot(new Vector2(1137, 140), new Vector2(ui.Position.X + 240, ui.Position.Y + 222), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.rightHandWeapon));
+                    itemSlots.Add(GVar.InventorySlot.RingOne, new ItemSlot(new Vector2(865, 343), new Vector2(ui.Position.X + 140, ui.Position.Y + 179), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingOne));
+                    itemSlots.Add(GVar.InventorySlot.RingTwo, new ItemSlot(new Vector2(871, 384), new Vector2(ui.Position.X + 142, ui.Position.Y + 312), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingTwo));
+                    itemSlots.Add(GVar.InventorySlot.RingThree, new ItemSlot(new Vector2(887, 421), new Vector2(ui.Position.X + 148, ui.Position.Y + 326), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingThree));
+                    itemSlots.Add(GVar.InventorySlot.RingFour, new ItemSlot(new Vector2(928, 427), new Vector2(ui.Position.X + 163, ui.Position.Y + 328), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingFour));
+                    itemSlots.Add(GVar.InventorySlot.RingFive, new ItemSlot(new Vector2(1244, 343), new Vector2(ui.Position.X + 279, ui.Position.Y + 297), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingFive));
+                    itemSlots.Add(GVar.InventorySlot.RingSix, new ItemSlot(new Vector2(1238, 384), new Vector2(ui.Position.X + 277, ui.Position.Y + 312), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingSix));
+                    itemSlots.Add(GVar.InventorySlot.RingSeven, new ItemSlot(new Vector2(1222, 421), new Vector2(ui.Position.X + 271, ui.Position.Y + 326), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingSeven));
+                    itemSlots.Add(GVar.InventorySlot.RingEight, new ItemSlot(new Vector2(1181, 427), new Vector2(ui.Position.X + 256, ui.Position.Y + 328), new Vector2(26, 26), new Vector2(9, 9), GVar.InventorySlot.RingEight));
                 }
             }
         }

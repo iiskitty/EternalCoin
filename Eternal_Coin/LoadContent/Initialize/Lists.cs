@@ -73,6 +73,14 @@ namespace Eternal_Coin
             inventorySlots.Add(GVar.InventorySlot.rightGauntlet);
             inventorySlots.Add(GVar.InventorySlot.leftHandWeapon);
             inventorySlots.Add(GVar.InventorySlot.rightHandWeapon);
+            inventorySlots.Add(GVar.InventorySlot.RingOne);
+            inventorySlots.Add(GVar.InventorySlot.RingTwo);
+            inventorySlots.Add(GVar.InventorySlot.RingThree);
+            inventorySlots.Add(GVar.InventorySlot.RingFour);
+            inventorySlots.Add(GVar.InventorySlot.RingFive);
+            inventorySlots.Add(GVar.InventorySlot.RingSix);
+            inventorySlots.Add(GVar.InventorySlot.RingSeven);
+            inventorySlots.Add(GVar.InventorySlot.RingEight);
         }
 
         public static void ClearGameLists()

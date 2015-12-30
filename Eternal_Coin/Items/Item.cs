@@ -158,7 +158,7 @@ namespace Eternal_Coin
             {
                 try
                 {
-                    Item item = ItemBuilder.BuildItem(jewellry[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, string.Empty, jewellry[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[jewellry[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[jewellry[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
+                    Item item = ItemBuilder.BuildItem(jewellry[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, jewellry[GVar.XmlTags.ItemTags.inventoryslot].InnerText, jewellry[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[jewellry[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[jewellry[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
 
                     Dictionaries.items.Add(item.itemName, item);
                 }

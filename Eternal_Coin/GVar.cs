@@ -171,6 +171,14 @@ namespace Eternal_Coin
             public static string helmet = "Helmet";
             public static string chestplate = "Chestplate";
             public static string leggings = "Leggings";
+            public static string RingOne = "Ring1";
+            public static string RingTwo = "Ring2";
+            public static string RingThree = "Ring3";
+            public static string RingFour = "Ring4";
+            public static string RingFive = "Ring5";
+            public static string RingSix = "Ring6";
+            public static string RingSeven = "Ring7";
+            public static string RingEight = "Ring8";
 
         };
 

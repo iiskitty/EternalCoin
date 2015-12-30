@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<savedgame>
+  <filename>Content/SavedGames/SavedGame0.xml</filename>
+  <dpid>Default</dpid>
+  <name>kitty</name>
+  <storyname>MainStory</storyname>
+  <currentlocation>SubEaton</currentlocation>
+  <playerinventory />
+  <characterinventory>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>4</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>2</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>4</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>8</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>6</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>10</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>12</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>14</playerinventoryslot>
+    </item>
+  </characterinventory>
+</savedgame>

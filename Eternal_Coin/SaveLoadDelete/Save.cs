@@ -153,7 +153,7 @@ namespace Eternal_Coin
                         }
                         catch
                         {
-                            GVar.LogDebugInfo("!!!Failed To Save Weapon To Character Inventory!!!", 1);
+                            GVar.LogDebugInfo("!!!Failed To Save Item To Character Inventory!!!", 1);
                         }
                     }
                 }

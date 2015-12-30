@@ -17,6 +17,7 @@ namespace Eternal_Coin
         public static Vector2 buttonSize;
         public static Vector2 lookEyeSize;
         public static Vector2 locationButtonSize;
+        public static Vector2 itemNormalSize;
 
         public static void InitilizeVectors()
         {
@@ -25,6 +26,7 @@ namespace Eternal_Coin
             lookEyeSize = new Vector2(30, 15);
             locationButtonSize = new Vector2(20, 20);
             buttonSize = new Vector2(75, 75);
+            itemNormalSize = new Vector2(71, 71);
         }
     }
 }
