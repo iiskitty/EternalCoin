@@ -6,54 +6,5 @@
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
   <playerinventory />
-  <characterinventory>
-    <item>
-      <itemname>Bronze Helmet</itemname>
-      <playerinventoryslot>1</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Bronze Chestplate</itemname>
-      <playerinventoryslot>2</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Sword</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Sword</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Ring</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-  </characterinventory>
+  <characterinventory />
 </savedgame>

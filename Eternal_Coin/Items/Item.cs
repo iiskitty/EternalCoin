@@ -159,7 +159,7 @@ namespace Eternal_Coin
                 try
                 {
                     Item item = ItemBuilder.BuildItem(jewellry[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, jewellry[GVar.XmlTags.ItemTags.inventoryslot].InnerText, jewellry[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[jewellry[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[jewellry[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
-
+                    
                     Dictionaries.items.Add(item.itemName, item);
                 }
                 catch (Exception e)
@@ -235,10 +235,20 @@ namespace Eternal_Coin
 
     public class Jewellry : Item
     {
+        public ItemSlot eternalCoinSlot;
+        Vector2 eternalCoinSlotPosition;
+        Vector2 eternalCoinSlotSize;
+
         public Jewellry(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, string itemName, int cost, string inventorySlot, Material material, ItemType type) 
             : base(spriteID, position, size, colour, itemClass, itemName, cost, inventorySlot, material, type)
         {
             this.spriteID = SpriteID;
+            if (inventorySlot.Contains("Ring"))
+            {
+                eternalCoinSlotPosition = new Vector2(position.X + 5, position.Y + 5);
+                eternalCoinSlotSize = new Vector2(15, 15);
+                eternalCoinSlot = new ItemSlot(eternalCoinSlotPosition, Vector2.Zero, eternalCoinSlotSize, Vector2.Zero, "EternalCoin");
+            }
         }
 
         public Jewellry(Item item) 
@@ -250,6 +260,14 @@ namespace Eternal_Coin
         public override void Update(float gameTime)
         {
             bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
+            
+            //if (inventorySlot.Contains("Ring"))
+            //{
+            //    eternalCoinSlot.position = new Vector2(position.X, position.Y);
+            //    eternalCoinSlot.size = new Vector2(15, 15);
+            //    eternalCoinSlot.position = eternalCoinSlotPosition;
+            //    eternalCoinSlot.size = eternalCoinSlotSize;
+            //}
         }
 
         public override void AnimationDone(string animation)
