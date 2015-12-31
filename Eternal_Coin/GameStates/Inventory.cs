@@ -72,12 +72,13 @@ namespace Eternal_Coin
             for (int i = 0; i < 40; i++)
             {
                 if (playerInventory.itemSlots[i].item != null)
-                    playerInventory.itemSlots[i].item.Draw(spriteBatch, playerInventory.itemSlots[i].item.SpriteID, playerInventory.itemSlots[i].item.Bounds, 0.19f, 0f, Vector2.Zero);
-
-                if (playerInventory.itemSlots[i].item != null && playerInventory.itemSlots[i].item.InventorySlot.Contains("Ring"))
                 {
-                    Jewellry ring = (Jewellry)playerInventory.itemSlots[i].item;
-                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    playerInventory.itemSlots[i].item.Draw(spriteBatch, playerInventory.itemSlots[i].item.SpriteID, playerInventory.itemSlots[i].item.Bounds, 0.19f, 0f, Vector2.Zero);
+                    if (playerInventory.itemSlots[i].item.InventorySlot.Contains("Ring"))
+                    {
+                        Jewellry ring = (Jewellry)playerInventory.itemSlots[i].item;
+                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    }
                 }
 
                 if (MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && playerInventory.itemSlots[i].item != null)
@@ -145,6 +146,10 @@ namespace Eternal_Coin
             playerInventory.UpdateInventoryBounds(gameTime);
             for (int i = 0; i < 40; i++)
             {
+                if (playerInventory.itemSlots[i].item != null)
+                {
+                    playerInventory.itemSlots[i].item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                }
                 if (playerInventory.itemSlots[i].item != null && MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && InputManager.IsLMPressed())
                 {
                     if (mouseInventory.heldItem.Count == 0)
@@ -206,9 +211,15 @@ namespace Eternal_Coin
                 mouseInventory.heldItem[i].Update(gameTime);
                 mouseInventory.heldItem[i].Draw(spriteBatch, mouseInventory.heldItem[i].SpriteID, mouseInventory.heldItem[i].Bounds, 0.192f, 0f, Vector2.Zero);
 
+                if (mouseInventory.heldItem[i].InventorySlot.Contains("Ring"))
+                {
+                    Jewellry ring = (Jewellry)mouseInventory.heldItem[i];
+                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                }
+
                 spriteBatch.Draw(mouseInventory.heldItem[i].SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
 
-                if (GVar.currentGameState == GVar.GameState.game)
+                if (GVar.currentGameState == GVar.GameState.inventory)
                 {
                     if (mouseInventory.heldItem[i] != null && mouseInventory.heldItem[i].ItemClass != GVar.ItemClassName.jewellry && mouseInventory.heldItem[i].ItemClass != GVar.ItemClassName.weapon)
                     {
@@ -268,7 +279,7 @@ namespace Eternal_Coin
                     mouseInventory.heldItem[i].Size = Vector.itemNormalSize;
                 }
                 mouseInventory.heldItem[i].Position = new Vector2(MouseManager.GetMousePosition().X - mouseInventory.heldItem[i].Size.X, MouseManager.GetMousePosition().Y - mouseInventory.heldItem[i].Size.Y);
-                mouseInventory.heldItem[i].Update(gameTime);
+                mouseInventory.heldItem[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
         }
 
@@ -392,7 +403,8 @@ namespace Eternal_Coin
                     }
                 }
             }
-
+            UpdatePlayerInventory(gameTime);
+            UpdateMouseInventory(gameTime);
             characterInventory.UpdateInventoryBounds(gameTime);
             if (InputManager.IsKeyPressed(Keys.I))
             {
@@ -620,8 +632,7 @@ namespace Eternal_Coin
                     }
                 }
             }
-            UpdatePlayerInventory(gameTime);
-            UpdateMouseInventory(gameTime);
+            
         }
     }
 
@@ -825,7 +836,7 @@ namespace Eternal_Coin
         public Vector2 miniSize;
         public Item item;
         public string inventorySlot;
-
+        
         public ItemSlot(Vector2 position, Vector2 miniPosition, Vector2 size, Vector2 miniSize, string inventorySlot)
         {
             this.position = position;
@@ -839,17 +850,9 @@ namespace Eternal_Coin
         {
             if (item != null)
             {
-                if (inventorySlot.Contains("Ring"))
-                {
-                    Jewellry ring = (Jewellry)item;
-                    position = new Vector2(ring.Position.X + 5, ring.Position.Y + 5);
-                }
-                else
-                {
-                    item.Position = position;
-                    item.Size = size;
-                    item.Bounds = bounds;
-                }
+                item.Position = position;
+                item.Size = size;
+                item.Bounds = bounds;
             }
             bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
         }

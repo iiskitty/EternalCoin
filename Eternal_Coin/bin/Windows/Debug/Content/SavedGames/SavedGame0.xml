@@ -5,6 +5,15 @@
   <name>kitty</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
-  <playerinventory />
+  <playerinventory>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Leggings</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
+    </item>
+  </playerinventory>
   <characterinventory />
 </savedgame>
