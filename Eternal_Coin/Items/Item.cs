@@ -109,10 +109,22 @@ namespace Eternal_Coin
             InventoryManager.playerInventory.itemSlots[i].item = item;
         }
 
+        public static void FromPlayer(Item item, int i)
+        {
+            Lists.playerItems.Remove(item);
+            InventoryManager.playerInventory.itemSlots[i].item = null;
+        }
+
         public static void ToCharacter(Item item, string invSlot)
         {
             Lists.characterItems.Add(item);
             InventoryManager.characterInventory.itemSlots[invSlot].item = item;
+        }
+
+        public static void FromCharacter(Item item, string invSlot)
+        {
+            Lists.characterItems.Remove(item);
+            InventoryManager.characterInventory.itemSlots[invSlot].item = null;
         }
 
         public static void ToShop(Item item, int i)
@@ -121,9 +133,10 @@ namespace Eternal_Coin
             InventoryManager.shopInventory.itemSlots[i].item = item;
         }
 
-        public static void ToMouse(Item item)
+        public static void FromShop(Item item, int i)
         {
-
+            Lists.shopItems.Remove(item);
+            InventoryManager.shopInventory.itemSlots[i].item = null;
         }
 
         public abstract void Update(float gameTime);

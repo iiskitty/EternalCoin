@@ -99,7 +99,7 @@ namespace Eternal_Coin
                 foreach (Player P in Lists.entity)
                 {
                     Item item = ItemBuilder.BuildItem(Dictionaries.items[I[GVar.XmlTags.ItemTags.itemname].InnerText]);
-                    Lists.playerItems.Add(item);
+                    Lists.characterItems.Add(item);
                     if (item.ItemClass == GVar.ItemClassName.weapon)
                     {
                         try
