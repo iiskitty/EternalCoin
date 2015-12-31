@@ -79,7 +79,7 @@ namespace Eternal_Coin
                     try
                     {
                         InventoryManager.playerInventory.itemSlots[itemCount].item = ItemBuilder.BuildItem(Dictionaries.items[piItemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
-                        Lists.items.Add(InventoryManager.playerInventory.itemSlots[itemCount].item);
+                        Lists.playerItems.Add(InventoryManager.playerInventory.itemSlots[itemCount].item);
 
                         GVar.LogDebugInfo("Item Loaded To Player Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.playerInventory.itemSlots[itemCount].item), 2);
                     }
@@ -99,7 +99,7 @@ namespace Eternal_Coin
                 foreach (Player P in Lists.entity)
                 {
                     Item item = ItemBuilder.BuildItem(Dictionaries.items[I[GVar.XmlTags.ItemTags.itemname].InnerText]);
-                    Lists.items.Add(item);
+                    Lists.playerItems.Add(item);
                     if (item.ItemClass == GVar.ItemClassName.weapon)
                     {
                         try

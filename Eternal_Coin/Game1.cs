@@ -139,10 +139,10 @@ namespace Eternal_Coin
                     {
                         Item item;
                         item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
-                        Lists.items.Add(item);
+                        Lists.playerItems.Add(item);
                         InventoryManager.playerInventory.itemSlots[i].item = item;
                         item = ItemBuilder.BuildItem(Dictionaries.items["Bronze Leggings"]);
-                        Lists.items.Add(item);
+                        Lists.playerItems.Add(item);
                         InventoryManager.playerInventory.itemSlots[i + 1].item = item;
                         break;
                     }

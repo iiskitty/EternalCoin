@@ -155,9 +155,9 @@ namespace Eternal_Coin
 
         public struct ItemClassName
         {
-            public static string weapon = "Weapon";
-            public static string armor = "Armor";
-            public static string jewellry = "Jewellry";
+            public const string weapon = "Weapon";
+            public const string armor = "Armor";
+            public const string jewellry = "Jewellry";
         };
 
         public struct InventorySlot

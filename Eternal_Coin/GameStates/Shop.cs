@@ -21,11 +21,13 @@ namespace Eternal_Coin
             foreach (XmlNode item in itemList)
             {
                 Item shopItem = ItemBuilder.BuildItem(Dictionaries.items[item[GVar.XmlTags.ItemTags.itemname].InnerText]);
+                
                 for (int i = 0; i < 40; i++)
                 {
                     if (InventoryManager.shopInventory.itemSlots[i].item == null)
                     {
                         InventoryManager.shopInventory.itemSlots[i].item = shopItem;
+                        Lists.shopItems.Add(InventoryManager.shopInventory.itemSlots[i].item);
                         break;
                     }
                 }

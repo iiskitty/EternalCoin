@@ -103,6 +103,29 @@ namespace Eternal_Coin
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), new Vector2(45, 460), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
         }
 
+        public static void ToPlayer(Item item, int i)
+        {
+            Lists.playerItems.Add(item);
+            InventoryManager.playerInventory.itemSlots[i].item = item;
+        }
+
+        public static void ToCharacter(Item item, string invSlot)
+        {
+            Lists.characterItems.Add(item);
+            InventoryManager.characterInventory.itemSlots[invSlot].item = item;
+        }
+
+        public static void ToShop(Item item, int i)
+        {
+            Lists.shopItems.Add(item);
+            InventoryManager.shopInventory.itemSlots[i].item = item;
+        }
+
+        public static void ToMouse(Item item)
+        {
+
+        }
+
         public abstract void Update(float gameTime);
 
         public override void AnimationDone(string animation)
