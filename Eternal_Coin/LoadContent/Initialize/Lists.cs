@@ -12,6 +12,7 @@ namespace Eternal_Coin
 {
     public class Lists
     {
+        public static List<Item> items;
         public static List<Object> mainMenuButtons;
         public static List<Object> inventoryButtons;
         public static List<Object> chooseCharacterButtons;
@@ -39,6 +40,7 @@ namespace Eternal_Coin
 
         public static void InitializeLists()
         {
+            items = new List<Item>();
             mainMenuButtons = new List<Object>();
             inventoryButtons = new List<Object>();
             availableStoriesButtons = new List<Object>();

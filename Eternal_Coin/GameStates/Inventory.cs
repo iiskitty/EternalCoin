@@ -71,15 +71,7 @@ namespace Eternal_Coin
         {
             for (int i = 0; i < 40; i++)
             {
-                if (playerInventory.itemSlots[i].item != null)
-                {
-                    playerInventory.itemSlots[i].item.Draw(spriteBatch, playerInventory.itemSlots[i].item.SpriteID, playerInventory.itemSlots[i].item.Bounds, 0.19f, 0f, Vector2.Zero);
-                    if (playerInventory.itemSlots[i].item.InventorySlot.Contains("Ring"))
-                    {
-                        Jewellry ring = (Jewellry)playerInventory.itemSlots[i].item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
-                    }
-                }
+                
 
                 if (MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && playerInventory.itemSlots[i].item != null)
                 {
@@ -146,10 +138,6 @@ namespace Eternal_Coin
             playerInventory.UpdateInventoryBounds(gameTime);
             for (int i = 0; i < 40; i++)
             {
-                if (playerInventory.itemSlots[i].item != null)
-                {
-                    playerInventory.itemSlots[i].item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                }
                 if (playerInventory.itemSlots[i].item != null && MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && InputManager.IsLMPressed())
                 {
                     if (mouseInventory.heldItem.Count == 0)
@@ -182,9 +170,6 @@ namespace Eternal_Coin
         {
             for (int i = 0; i < 40; i++)
             {
-                if (shopInventory.itemSlots[i].item != null)
-                    shopInventory.itemSlots[i].item.Draw(spriteBatch, shopInventory.itemSlots[i].item.SpriteID, shopInventory.itemSlots[i].item.Bounds, 0.19f, 0f, Vector2.Zero);
-
                 if (MouseManager.mouseBounds.Intersects(shopInventory.itemSlots[i].bounds) && shopInventory.itemSlots[i].item != null)
                 {
                     spriteBatch.Draw(Textures.clearPixel, shopInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
@@ -208,7 +193,6 @@ namespace Eternal_Coin
         {
             for (int i = 0; i < mouseInventory.heldItem.Count; i++)
             {
-                mouseInventory.heldItem[i].Update(gameTime);
                 mouseInventory.heldItem[i].Draw(spriteBatch, mouseInventory.heldItem[i].SpriteID, mouseInventory.heldItem[i].Bounds, 0.192f, 0f, Vector2.Zero);
 
                 if (mouseInventory.heldItem[i].InventorySlot.Contains("Ring"))
@@ -279,7 +263,6 @@ namespace Eternal_Coin
                     mouseInventory.heldItem[i].Size = Vector.itemNormalSize;
                 }
                 mouseInventory.heldItem[i].Position = new Vector2(MouseManager.GetMousePosition().X - mouseInventory.heldItem[i].Size.X, MouseManager.GetMousePosition().Y - mouseInventory.heldItem[i].Size.Y);
-                mouseInventory.heldItem[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
         }
 
@@ -340,6 +323,17 @@ namespace Eternal_Coin
         {
             characterInventory.Draw(spriteBatch);
 
+            foreach (Item item in Lists.items)
+            {
+                item.Draw(spriteBatch, item.SpriteID, item.Bounds, 0.19f, 0f, Vector2.Zero);
+
+                if (item.InventorySlot.Contains("Ring"))
+                {
+                    Jewellry ring = (Jewellry)item;
+                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                }
+            }
+
             foreach (Player P in Lists.entity)
             {
                 spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + P.Damage.ToString(), new Vector2(879, 572), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
@@ -389,6 +383,12 @@ namespace Eternal_Coin
 
         public static void ManagePlayerInventories(GameTime gameTime, PlayerInventory playerInventory, MouseInventory mouseInventory, CharacterInventory characterInventory)
         {
+            foreach (Item item in Lists.items)
+            {
+                item.Update(gameTime);
+                item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+
             for (int i = 0; i < Lists.inventoryButtons.Count; i++)
             {
                 Updates.UpdateInventoryButtons(Lists.inventoryButtons[i], gameTime);
@@ -766,10 +766,6 @@ namespace Eternal_Coin
             for (int i = 0; i < Lists.inventorySlots.Count; i++)
             {
                 string name = Lists.inventorySlots[i];
-                if (itemSlots[name].item != null)
-                {
-                    itemSlots[name].item.Draw(spriteBatch, itemSlots[name].item.SpriteID, itemSlots[name].item.Bounds, 0.19f, 0f, Vector2.Zero);
-                }
             }
         }
     }
@@ -819,10 +815,6 @@ namespace Eternal_Coin
             for (int i = 0; i < Lists.inventorySlots.Count; i++)
             {
                 string name = Lists.inventorySlots[i];
-                if (itemSlots[name].item != null)
-                {
-                    itemSlots[name].item.Draw(spriteBatch, itemSlots[name].item.SpriteID, itemSlots[name].item.Bounds, 0.19f, 0f, Vector2.Zero);
-                }
             }
         }
     }

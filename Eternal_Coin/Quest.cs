@@ -80,6 +80,7 @@ namespace Eternal_Coin
                     if (InventoryManager.playerInventory.itemSlots[i].item == null)
                     {
                         InventoryManager.playerInventory.itemSlots[i].item = ItemBuilder.BuildItem(Dictionaries.items[QRI[GVar.XmlTags.ItemTags.itemname].InnerText]);
+                        Lists.items.Add(InventoryManager.playerInventory.itemSlots[i].item);
                         break;
                     }
                 }
