@@ -21,6 +21,7 @@ namespace Eternal_Coin
         public static Texture2D exitLocationButtonTex;
         public static Texture2D tickTex;
         public static Texture2D crossTex;
+        public static Texture2D inventoryButton;
         public static Texture2D playButton;
         public static Texture2D exitButton;
         public static Texture2D optionsButton;
@@ -54,6 +55,7 @@ namespace Eternal_Coin
             setTexDoc.Load("./Content/LoadData/SetTextures.xml");
             XmlNode texID = setTexDoc.SelectSingleNode("/set");
 
+
             background = Dictionaries.textures[texID["background"].InnerText];
             title = Dictionaries.textures[texID["title"].InnerText];
             cursor = Dictionaries.textures[texID["cursor"].InnerText];
@@ -63,6 +65,7 @@ namespace Eternal_Coin
             locationNodeTex = Dictionaries.textures[texID["locnode"].InnerText];
             tickTex = Dictionaries.textures[texID["tick"].InnerText];
             crossTex = Dictionaries.textures[texID["cross"].InnerText];
+            inventoryButton = Dictionaries.textures[texID["invbut"].InnerText];
             playButton = Dictionaries.textures[texID["playbut"].InnerText];
             exitButton = Dictionaries.textures[texID["exitbut"].InnerText];
             optionsButton = Dictionaries.textures[texID["optionsbut"].InnerText];

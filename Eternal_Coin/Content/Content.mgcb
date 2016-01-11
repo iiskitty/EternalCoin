@@ -661,12 +661,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Background.png
 
-#begin LoadData/SetTextures.xml
-/copy:LoadData/SetTextures.xml
-
-#begin LoadData/LoadTextures.xml
-/copy:LoadData/LoadTextures.xml
-
 #begin Sprites/Title.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -710,4 +704,21 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/NPCButtonTex.png
+
+#begin Sprites/Buttons/InventoryButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/InventoryButton.png
+
+#begin LoadData/SetTextures.xml
+/copy:LoadData/SetTextures.xml
+
+#begin LoadData/LoadTextures.xml
+/copy:LoadData/LoadTextures.xml
 

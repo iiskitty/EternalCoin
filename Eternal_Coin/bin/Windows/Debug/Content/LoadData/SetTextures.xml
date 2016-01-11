@@ -10,6 +10,7 @@
   <locnode>LocationNode</locnode>
   <tick>Tick</tick>
   <cross>Cross</cross>
+  <invbut>InventoryButton</invbut>
   <playbut>PlayButton</playbut>
   <exitbut>ExitButton</exitbut>
   <optionsbut>OptionsButton</optionsbut>

@@ -30,6 +30,10 @@
     <filepath>Sprites/UI/Cross</filepath>
   </texture>
   <texture>
+    <id>InventoryButton</id>
+    <filepath>Sprites/Buttons/InventoryButton</filepath>
+  </texture>
+  <texture>
     <id>PlayButton</id>
     <filepath>Sprites/Buttons/PlayButton</filepath>
   </texture>

@@ -60,7 +60,11 @@ namespace Eternal_Coin
                 b.Draw(spriteBatch, b.SpriteID, b.Bounds, 0.2f, 0f, Vector2.Zero);
                 if (MouseManager.mouseBounds.Intersects(b.Bounds))
                 {
-                    GVar.DrawBoundingBox(b.Bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    b.PlayAnimation(GVar.AnimStates.Button.mouseover);
+                }
+                if (b.CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(b.Bounds))
+                {
+                    b.PlayAnimation(GVar.AnimStates.Button.def);
                 }
                 if (b.Name == "MainMenu")
                 {
@@ -605,9 +609,7 @@ namespace Eternal_Coin
             }
 
             Button quests = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Violet, "DisplayQuests", "Alive", 0f);
-            quests.PlayAnimation(GVar.AnimStates.Button.def);
-            Button inventory = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Brown, "DisplayInventory", "Alive", 0f);
-            inventory.PlayAnimation(GVar.AnimStates.Button.def);
+            Button inventory = new Button(Textures.inventoryButton, new Vector2(), new Vector2(25, 25), Color.White, "DisplayInventory", "Alive", 0f);
             Lists.mainWorldButtons.Add(inventory);
             Lists.mainWorldButtons.Add(quests);
 
