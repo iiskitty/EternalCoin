@@ -12,6 +12,8 @@ namespace Eternal_Coin
 {
     public class GVar
     {
+        public static string verNum = "Alpha 0.01";
+
         public static XmlDocument curLocNode = new XmlDocument();
 
         public static int preventclick = 0;
@@ -46,17 +48,20 @@ namespace Eternal_Coin
             public static string clickbutton;
         };
 
+        public class States
+        {
+            public struct Button
+            {
+                public static string locationbutton = "locationbutton";
+            };
+        }
+
         public class AnimStates
         {
             public struct Button
             {
-                public static string FaceFrontAnim = "FaceFront";
-                public static string FaceBackAnim = "FaceBack";
-                public static string SpinAnim = "SpinAround";
-                public static string LookEye = "LookEye";
-                public static string EnterLocation = "EnterLocation";
-                public static string NPCButton = "NPCButton";
                 public static string def = "default";
+                public static string mouseover = "mouseover";
             };
         }
 
@@ -228,6 +233,7 @@ namespace Eternal_Coin
         /// Global variable to exit game
         /// </summary>
         public static bool exitGame;
+        public static bool exitAfterFade;
         public static bool gamePaused = false;
 
         /// <summary>

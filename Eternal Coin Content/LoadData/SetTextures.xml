@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 
 <set>
+  <title>Title</title>
+  <background>Background</background>
   <cursor>Cursor</cursor>
   <pixel>Pixel</pixel>
   <cpixel>ClearPixel</cpixel>

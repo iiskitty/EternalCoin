@@ -16,14 +16,9 @@ namespace Eternal_Coin
             FPS = 40;
             if (spriteID != null)
             {
-                AddAnimation(1, 0, 0, GVar.AnimStates.Button.EnterLocation, spriteID.Width, spriteID.Height, Vector2.Zero);
-                AddAnimation(1, 0, 0, GVar.AnimStates.Button.LookEye, spriteID.Width, spriteID.Height, Vector2.Zero);
-                AddAnimation(1, 0, 0, GVar.AnimStates.Button.NPCButton, spriteID.Width, spriteID.Height, Vector2.Zero);
-                AddAnimation(1, 0, 0, GVar.AnimStates.Button.FaceFrontAnim, 75, 75, Vector2.Zero);
-                AddAnimation(1, 0, 1350, GVar.AnimStates.Button.FaceBackAnim, 75, 75, Vector2.Zero);
-                AddAnimation(19, 0, 0, GVar.AnimStates.Button.SpinAnim, 75, 75, Vector2.Zero);
-                AddAnimation(1, 0, 0, GVar.AnimStates.Button.def, spriteID.Width, spriteID.Height, Vector2.Zero);
-                PlayAnimation(GVar.AnimStates.Button.FaceFrontAnim);
+                AddAnimation(1, 0, 0, GVar.AnimStates.Button.def, spriteID.Width / 2, spriteID.Height, Vector2.Zero);
+                AddAnimation(1, 0, spriteID.Width / 2, GVar.AnimStates.Button.mouseover, spriteID.Width / 2, spriteID.Height, Vector2.Zero);
+                PlayAnimation(GVar.AnimStates.Button.def);
             }
         }
 
@@ -39,69 +34,52 @@ namespace Eternal_Coin
 
         public override void AnimationDone(string animation)
         {
-            if (currentAnimation != null && currentAnimation.Contains(GVar.AnimStates.Button.SpinAnim) && name.Contains("ExitButton"))
-            {
-                PlayAnimation(GVar.AnimStates.Button.FaceBackAnim);
-                GVar.exitGame = true;
-            }
-            if (currentAnimation != null && currentAnimation.Contains(GVar.AnimStates.Button.SpinAnim) && state.Contains("Coin"))
-            {
-                PlayAnimation(GVar.AnimStates.Button.FaceBackAnim);
-            }
-            
+
         }
 
         public static void CreateLocationButtons(LocationNode node)
         {
             if (node.State.Contains("Sub"))
             {
-                Button exitLocationButton = new Button(Textures.exitLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", "Alive", 0f);
-                exitLocationButton.PlayAnimation(GVar.AnimStates.Button.EnterLocation);
+                Button exitLocationButton = new Button(Textures.exitLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", GVar.States.Button.locationbutton, 0f);
                 Lists.locationButtons.Add(exitLocationButton);
 
                 if (GVar.location != null && !GVar.location.Searched)
                 {
-                    Button lookEyeButton = new Button(Textures.lookEyeTex, node.Position, new Vector2(Vector.lookEyeSize.X, Vector.lookEyeSize.Y), Color.White, "LookEyeButton", "Alive", 0f);
-                    lookEyeButton.PlayAnimation(GVar.AnimStates.Button.LookEye);
+                    Button lookEyeButton = new Button(Textures.lookEyeTex, node.Position, Vector.lookEyeSize, Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(lookEyeButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasNPC)
                 {
-                    Button npcButton = new Button(Textures.npcButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "NPCButton", "Alive", 0f);
-                    npcButton.PlayAnimation(GVar.AnimStates.Button.NPCButton);
+                    Button npcButton = new Button(Textures.npcButtonTex, node.Position, Vector.locationButtonSize, Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(npcButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasShop)
                 {
-                    Button shopButton = new Button(Textures.pixel, node.Position, Vector.locationButtonSize, Color.Blue, "ShopButton", "Alive", 0f);
-                    shopButton.PlayAnimation(GVar.AnimStates.Button.def);
+                    Button shopButton = new Button(Textures.pixel, node.Position, Vector.locationButtonSize, Color.Blue, "ShopButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(shopButton);
                 }
             }
             else if (node.State.Contains("Main"))
             {
-                Button enterLocationButton = new Button(Textures.enterLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", "Alive", 0f);
-                enterLocationButton.PlayAnimation(GVar.AnimStates.Button.EnterLocation);
+                Button enterLocationButton = new Button(Textures.enterLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", GVar.States.Button.locationbutton, 0f);
                 Lists.locationButtons.Add(enterLocationButton);
             }
             else
             {
                 if (GVar.location != null && !GVar.location.Searched)
                 {
-                    Button lookEyeButton = new Button(Textures.lookEyeTex, node.Position, new Vector2(Vector.lookEyeSize.X, Vector.lookEyeSize.Y), Color.White, "LookEyeButton", "Alive", 0f);
-                    lookEyeButton.PlayAnimation(GVar.AnimStates.Button.LookEye);
+                    Button lookEyeButton = new Button(Textures.lookEyeTex, node.Position, new Vector2(Vector.lookEyeSize.X, Vector.lookEyeSize.Y), Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(lookEyeButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasNPC)
                 {
-                    Button npcButton = new Button(Textures.npcButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "NPCButton", "Alive", 0f);
-                    npcButton.PlayAnimation(GVar.AnimStates.Button.NPCButton);
+                    Button npcButton = new Button(Textures.npcButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(npcButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasShop)
                 {
-                    Button shopButton = new Button(Textures.pixel, node.Position, Vector.locationButtonSize, Color.Blue, "ShopButton", "Alive", 0f);
-                    shopButton.PlayAnimation(GVar.AnimStates.Button.def);
+                    Button shopButton = new Button(Textures.pixel, node.Position, Vector.locationButtonSize, Color.Blue, "ShopButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(shopButton);
                 }
             }

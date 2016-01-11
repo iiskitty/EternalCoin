@@ -31,15 +31,15 @@
   </texture>
   <texture>
     <id>PlayButton</id>
-    <filepath>Sprites/Buttons/PlayButtonSpinAnim</filepath>
+    <filepath>Sprites/Buttons/PlayButton</filepath>
   </texture>
   <texture>
     <id>ExitButton</id>
-    <filepath>Sprites/Buttons/ExitButtonSpinAnim</filepath>
+    <filepath>Sprites/Buttons/ExitButton</filepath>
   </texture>
   <texture>
     <id>OptionsButton</id>
-    <filepath>Sprites/Buttons/OptionsButtonSpinAnim</filepath>
+    <filepath>Sprites/Buttons/OptionsButton</filepath>
   </texture>
   <texture>
     <id>CoinBack</id>
@@ -92,5 +92,13 @@
   <texture>
     <id>Battle</id>
     <filepath>Sprites/UI/BattleUI</filepath>
+  </texture>
+  <texture>
+    <id>Title</id>
+    <filepath>Sprites/Title</filepath>
+  </texture>
+  <texture>
+    <id>Background</id>
+    <filepath>Sprites/Background</filepath>
   </texture>
 </load>

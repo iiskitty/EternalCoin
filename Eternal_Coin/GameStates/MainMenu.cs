@@ -18,36 +18,52 @@ namespace Eternal_Coin
             {
                 Lists.mainMenuButtons[i].Update(gameTime);
 
-                if (MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && InputManager.IsLMPressed() && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.SpinAnim)
+                if (MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
                 {
-                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickcoin], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "CoinClick", false);
-                    Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.SpinAnim);
-                    GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
-                    if (Lists.mainMenuButtons[i].Name == "PlayButton")
+                    Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
+
+                    if (InputManager.IsLMPressed())
                     {
-                        GVar.changeToCreateCharacter = true;
-                        Colours.drawBlackFade = true;
-                        Colours.fadeIn = true;
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickcoin], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "CoinClick", false);
+                        GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
+                        if (Lists.mainMenuButtons[i].Name == "PlayButton")
+                        {
+                            GVar.changeToCreateCharacter = true;
+                            Colours.drawBlackFade = true;
+                            Colours.fadeIn = true;
+                        }
+                        if (Lists.mainMenuButtons[i].Name == "ExitButton")
+                        {
+                            GVar.exitAfterFade = true;
+                            Colours.drawBlackFade = true;
+                            Colours.fadeIn = true;
+
+                        }
+                        if (Lists.mainMenuButtons[i].Name == "OptionsButton")
+                        {
+                            Button mainMenu = new Button(Textures.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "MainMenu", "Alive", 0f);
+                            Lists.optionsButtons.Add(mainMenu);
+                            GVar.changeToOptions = true;
+                            Colours.drawBlackFade = true;
+                            Colours.fadeIn = true;
+                        }
                     }
-                    if (Lists.mainMenuButtons[i].Name == "ExitButton")
-                    {
-                        Colours.drawBlackFade = true;
-                        Colours.fadeIn = true;
-                    }
-                    if (Lists.mainMenuButtons[i].Name == "OptionsButton")
-                    {
-                        Button mainMenu = new Button(Textures.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "MainMenu", "Alive", 0f);
-                        Lists.optionsButtons.Add(mainMenu);
-                        GVar.changeToOptions = true;
-                        Colours.drawBlackFade = true;
-                        Colours.fadeIn = true;
-                    }
+                }
+                if (!MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
+                {
+                    Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
                 }
             }
         }
 
         public static void DrawMainMenu(SpriteBatch spriteBatch, GameTime gameTime)
         {
+
+            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.verNum, new Vector2(560, 200), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+
+            spriteBatch.Draw(Textures.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+            spriteBatch.Draw(Textures.title, new Rectangle(50, 10, 1180, Textures.title.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+
             foreach (Object b in Lists.mainMenuButtons)
             {
                 b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -57,10 +73,10 @@ namespace Eternal_Coin
 
         public static void LoadMainMenu()
         {
-            Button optionsCoin = new Button(Textures.optionsButtonSpinAnim, new Vector2((GVar.gameScreenX / 2 - Vector.buttonSize.X / 2), (GVar.gameScreenY / 1.5f - Vector.buttonSize.Y / 2)), Vector.buttonSize, Color.White, "OptionsButton", "Coin", 0f);
-            Button playCoin = new Button(Textures.playButtonSpinAnim, new Vector2((GVar.gameScreenX / 2 - Vector.buttonSize.X / 2), (GVar.gameScreenY / 2.5f - Vector.buttonSize.Y / 2)), Vector.buttonSize, Color.White, "PlayButton", "Coin", 0f);
-            Button exitCoin = new Button(Textures.exitButtonSpinAnim, new Vector2((GVar.gameScreenX / 2 - Vector.buttonSize.X / 2), (GVar.gameScreenY / 1.9f - Vector.buttonSize.Y / 2)), Vector.buttonSize, Color.White, "ExitButton", "Coin", 0f);
-            Lists.mainMenuButtons.Add(optionsCoin);
+            Button optionsCoin = new Button(Textures.optionsButton, new Vector2((GVar.gameScreenX / 2.5f - (Textures.optionsButton.Width / 2) / 2), 460), new Vector2(Textures.optionsButton.Width / 2, Textures.optionsButton.Height), Color.White, "OptionsButton", "Coin", 0f);
+            Button playCoin = new Button(Textures.playButton, new Vector2((GVar.gameScreenX / 2.5f - (Textures.playButton.Width / 2) / 2), 400), new Vector2(Textures.playButton.Width / 2, Textures.playButton.Height), Color.White, "PlayButton", "Coin", 0f);
+            Button exitCoin = new Button(Textures.exitButton, new Vector2((GVar.gameScreenX / 2.5f - (Textures.exitButton.Width / 2) / 2), 520), new Vector2(Textures.exitButton.Width / 2, Textures.exitButton.Height), Color.White, "ExitButton", "Coin", 0f);
+            Lists.mainMenuButtons.Add(optionsCoin); 
             Lists.mainMenuButtons.Add(playCoin);
             Lists.mainMenuButtons.Add(exitCoin);
         }

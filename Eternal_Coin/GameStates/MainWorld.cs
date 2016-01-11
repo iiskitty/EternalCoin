@@ -88,7 +88,11 @@ namespace Eternal_Coin
                             LB.Draw(spriteBatch, LB.SpriteID, LB.Bounds, 0.17f, 0f, Vector2.Zero);
                             if (MouseManager.mouseBounds.Intersects(LB.Bounds) && !GVar.gamePaused)
                             {
-                                GVar.DrawBoundingBox(LB.Bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                                LB.PlayAnimation(GVar.AnimStates.Button.mouseover);
+                            }
+                            if (LB.CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(LB.Bounds))
+                            {
+                                LB.PlayAnimation(GVar.AnimStates.Button.def);
                             }
                         }
                     }
@@ -427,7 +431,7 @@ namespace Eternal_Coin
                                             for (int k = 0; k < P.CurrentLocation[i].MainLocNode.Count; k++)
                                             {
                                                 Button exitLocationButton = new Button(Textures.exitLocationButtonTex, P.CurrentLocation[i].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", "Alive", 0f);
-                                                exitLocationButton.PlayAnimation(GVar.AnimStates.Button.EnterLocation);
+                                                exitLocationButton.PlayAnimation(GVar.AnimStates.Button.def);
                                                 Lists.locationButtons.Add(exitLocationButton);
                                                 ReadXml.ReadLocationXmlFile(P, P.CurrentLocation[i].MainLocNode[k]);
                                                 GVar.location.Searched = true;
@@ -452,7 +456,7 @@ namespace Eternal_Coin
                                         if (GVar.location.HasNPC)
                                         {
                                             Button npcButton = new Button(Textures.npcButtonTex, P.CurrentLocation[i].Position, Vector.locationButtonSize, Color.White, "NPCButton", "Alive", 0f);
-                                            npcButton.PlayAnimation(GVar.AnimStates.Button.NPCButton);
+                                            npcButton.PlayAnimation(GVar.AnimStates.Button.def);
                                             Lists.locationButtons.Add(npcButton);
                                         }
 
@@ -544,7 +548,7 @@ namespace Eternal_Coin
                                         if (P.CurrentLocation[i].MainLocNode[l].State.Contains("Main"))
                                         {
                                             Button enterLocationButton = new Button(Textures.enterLocationButtonTex, Lists.entity[i].CurrentLocation[j].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", "Alive", 0f);
-                                            enterLocationButton.PlayAnimation(GVar.AnimStates.Button.EnterLocation);
+                                            enterLocationButton.PlayAnimation(GVar.AnimStates.Button.def);
                                             Lists.locationButtons.Add(enterLocationButton);
                                         }
 

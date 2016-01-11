@@ -21,9 +21,9 @@ namespace Eternal_Coin
         public static Texture2D exitLocationButtonTex;
         public static Texture2D tickTex;
         public static Texture2D crossTex;
-        public static Texture2D playButtonSpinAnim;
-        public static Texture2D exitButtonSpinAnim;
-        public static Texture2D optionsButtonSpinAnim;
+        public static Texture2D playButton;
+        public static Texture2D exitButton;
+        public static Texture2D optionsButton;
         public static Texture2D lookEyeTex;
         public static Texture2D npcButtonTex;
         public static Texture2D coinBackTex;
@@ -36,6 +36,8 @@ namespace Eternal_Coin
         public static Texture2D battleUI;
         public static Texture2D pauseUI;
         public static Texture2D cursor;
+        public static Texture2D title;
+        public static Texture2D background;
 
         public static void LoadTextures(ContentManager Content)
         {
@@ -52,6 +54,8 @@ namespace Eternal_Coin
             setTexDoc.Load("./Content/LoadData/SetTextures.xml");
             XmlNode texID = setTexDoc.SelectSingleNode("/set");
 
+            background = Dictionaries.textures[texID["background"].InnerText];
+            title = Dictionaries.textures[texID["title"].InnerText];
             cursor = Dictionaries.textures[texID["cursor"].InnerText];
             pixel = Dictionaries.textures[texID["pixel"].InnerText];
             clearPixel = Dictionaries.textures[texID["cpixel"].InnerText];
@@ -59,9 +63,9 @@ namespace Eternal_Coin
             locationNodeTex = Dictionaries.textures[texID["locnode"].InnerText];
             tickTex = Dictionaries.textures[texID["tick"].InnerText];
             crossTex = Dictionaries.textures[texID["cross"].InnerText];
-            playButtonSpinAnim = Dictionaries.textures[texID["playbut"].InnerText];
-            exitButtonSpinAnim = Dictionaries.textures[texID["exitbut"].InnerText];
-            optionsButtonSpinAnim = Dictionaries.textures[texID["optionsbut"].InnerText];
+            playButton = Dictionaries.textures[texID["playbut"].InnerText];
+            exitButton = Dictionaries.textures[texID["exitbut"].InnerText];
+            optionsButton = Dictionaries.textures[texID["optionsbut"].InnerText];
             lookEyeTex = Dictionaries.textures[texID["lookeye"].InnerText];
             npcButtonTex = Dictionaries.textures[texID["npcbut"].InnerText];
             enterLocationButtonTex = Dictionaries.textures[texID["enterloc"].InnerText];

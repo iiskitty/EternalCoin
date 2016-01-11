@@ -234,11 +234,6 @@ namespace Eternal_Coin
 
             spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
-            if (GVar.currentGameState == GVar.GameState.mainMenu)
-            {
-                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Eternal Coin Alpha 0.3", new Vector2(10, 10), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-            }
-
             spriteBatch.Draw(Textures.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
             foreach (UIElement ui in Lists.uiElements)
             {

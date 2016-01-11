@@ -201,6 +201,8 @@ namespace Eternal_Coin
 
         public static void DrawCreateCharacter(SpriteBatch spriteBatch, GameTime gameTime)
         {
+            spriteBatch.Draw(Textures.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+
             foreach (Object b in Lists.chooseCharacterButtons)
             {
                 b.Update(gameTime);
@@ -264,8 +266,8 @@ namespace Eternal_Coin
 
             if (GVar.creatingCharacter)
             {
-                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Enter Your Name", new Vector2(5, 5), Color.Black);
-                spriteBatch.DrawString(Fonts.lucidaConsole16Bold, GVar.playerName, new Vector2(110, 50), Color.Black);
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Enter Your Name", new Vector2(5, 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                spriteBatch.DrawString(Fonts.lucidaConsole16Bold, GVar.playerName, new Vector2(110, 50), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
 
                 spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle(20, 30, 100, 100), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
 

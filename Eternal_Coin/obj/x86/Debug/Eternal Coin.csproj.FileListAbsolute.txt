@@ -214,13 +214,10 @@ C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStab.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStrike.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\EnterLocationButtonTex.xnb
-C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitButtonSpinAnim.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitLocationButtonTex.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LocationNodeTex.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LookEyeTex.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\NPCButtonTex.xnb
-C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\OptionsButtonSpinAnim.xnb
-C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\PlayButtonSpinAnim.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\clearpixel.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Coins\CoinBack.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Cursor.xnb
@@ -278,3 +275,8 @@ C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\OptionsButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\PlayButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Title.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Background.xnb

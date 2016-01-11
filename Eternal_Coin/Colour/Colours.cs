@@ -33,6 +33,7 @@ namespace Eternal_Coin
             mapFadeColour = Color.FromNonPremultiplied(255, 255, 255, mapFadeAlpha);
             if (fadeIn && blackFadeAlpha < 251)
             {
+                
                 blackFadeAlpha += 10;
                 if (blackFadeAlpha >= 250)
                 {
@@ -42,6 +43,8 @@ namespace Eternal_Coin
             }
             if (fadeOut && blackFadeAlpha > 4)
             {
+                if (GVar.exitAfterFade)
+                    GVar.exitGame = true;
                 blackFadeAlpha -= 10;
                 if (blackFadeAlpha <= 5)
                 {

@@ -35,28 +35,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Coins/CoinBack.png
 
-#begin Sprites/Buttons/PlayButtonSpinAnim.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/PlayButtonSpinAnim.png
-
-#begin Sprites/Buttons/ExitButtonSpinAnim.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/ExitButtonSpinAnim.png
-
 #begin Sounds/CoinClick.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -133,17 +111,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/UI/LocationInfoUI.png
 
-#begin Sprites/Buttons/LookEyeTex.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/LookEyeTex.png
-
 #begin Sprites/UI/NPCInfoUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -155,17 +122,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/UI/NPCInfoUI.png
 
-#begin Sprites/Buttons/NPCButtonTex.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/NPCButtonTex.png
-
 #begin Sprites/Buttons/EnterLocationButtonTex.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -176,17 +132,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/EnterLocationButtonTex.png
-
-#begin Sprites/Buttons/ExitLocationButtonTex.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/ExitLocationButtonTex.png
 
 #begin Sprites/Maps/WorldMap.png
 /importer:TextureImporter
@@ -427,17 +372,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/tempIcon/bronzesword.png
 
-#begin Sprites/Buttons/OptionsButtonSpinAnim.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Buttons/OptionsButtonSpinAnim.png
-
 #begin Sprites/UI/InventoryUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -487,12 +421,6 @@
 
 #begin Options.xml
 /copy:Options.xml
-
-#begin LoadData/LoadTextures.xml
-/copy:LoadData/LoadTextures.xml
-
-#begin LoadData/SetTextures.xml
-/copy:LoadData/SetTextures.xml
 
 #begin Sprites/UI/BattleUI.png
 /importer:TextureImporter
@@ -688,4 +616,98 @@
 
 #begin LoadData/CreateItems.xml
 /copy:LoadData/CreateItems.xml
+
+#begin Sprites/Buttons/OptionsButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/OptionsButton.png
+
+#begin Sprites/Buttons/PlayButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/PlayButton.png
+
+#begin Sprites/Buttons/ExitButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/ExitButton.png
+
+#begin Sprites/Background.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Background.png
+
+#begin LoadData/SetTextures.xml
+/copy:LoadData/SetTextures.xml
+
+#begin LoadData/LoadTextures.xml
+/copy:LoadData/LoadTextures.xml
+
+#begin Sprites/Title.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Title.png
+
+#begin Sprites/Buttons/LookEyeTex.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/LookEyeTex.png
+
+#begin Sprites/Buttons/ExitLocationButtonTex.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/ExitLocationButtonTex.png
+
+#begin Sprites/Buttons/NPCButtonTex.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/NPCButtonTex.png
 
