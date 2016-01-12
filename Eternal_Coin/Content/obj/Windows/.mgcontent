@@ -69,5 +69,23 @@
     <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/ExitLocationButtonTex.png</File>
     <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/NPCButtonTex.png</File>
     <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/InventoryButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Bold.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Regular.spritefont</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/DeleteButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LoadButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SavedGameUIBorder.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SavedGameUIInner.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SaveGameUI.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/BackButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/NewButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/StartButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NewGameUIBorder.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NewGameUIInner.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LeftDarkGenButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LeftLightGenButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/MiddleDarkGenButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/MiddleLightGenButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/RightDarkGenButton.png</File>
+    <File>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/RightLightGenButton.png</File>
   </SourceFiles>
 </SourceFileCollection>

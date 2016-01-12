@@ -68,8 +68,8 @@ namespace Eternal_Coin
             GVar.Volume.Audio.pitch = 0f;
             
             GVar.currentGameState = GVar.GameState.mainMenu;
-            GVar.LogDebugInfo("TrueScreen X,Y: " + GVar.trueScreenX.ToString() + " " + GVar.trueScreenY.ToString(), 3);
-            GVar.LogDebugInfo("GameScreen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 3);
+            GVar.LogDebugInfo("TrueScreen X,Y: " + GVar.trueScreenX.ToString() + " " + GVar.trueScreenY.ToString(), 1);
+            GVar.LogDebugInfo("GameScreen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 1);
             if (GVar.trueScreenX < GVar.gameScreenX)
             {
                 GVar.gameScreenX = GVar.trueScreenX;
@@ -83,7 +83,7 @@ namespace Eternal_Coin
             graphics.PreferredBackBufferWidth = (int)GVar.gameScreenX;
             graphics.PreferredBackBufferHeight = (int)GVar.gameScreenY;
 
-            GVar.LogDebugInfo("Set Game Screen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 3);
+            GVar.LogDebugInfo("Set Game Screen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 1);
 
             graphics.ApplyChanges();
 
@@ -97,7 +97,7 @@ namespace Eternal_Coin
             Lists.uiElements = UIElement.AddUIElements(Lists.uiElements);
             InventoryManager.CreateInventories();
             MainMenu.LoadMainMenu();
-            Load.LoadLocationNodes(Content);
+            //Load.LoadLocationNodes();
         }
 
         /// <summary>
@@ -152,7 +152,10 @@ namespace Eternal_Coin
             if (GVar.loadData)
             {
                 Load.LoadWorldMaps(Content);
-                
+                foreach (Entity e in Lists.entity)
+                {
+                    WorldMap.SelectNewMap(e.CurrentLocation[0]);
+                }
                 
                 GVar.loadData = false;
             }

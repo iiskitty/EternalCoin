@@ -42,5 +42,14 @@ namespace Eternal_Coin
             eDisplayPictures = new Dictionary<string, DisplayPicture>();
             items = new Dictionary<string, Item>();
         }
+
+        public static void ClearDictionaries()
+        {
+            locNodes.Clear();
+            attacks.Clear();
+            enemyAttacks.Clear();
+            availableAttacks.Clear();
+            maps.Clear();
+        }
     }
 }

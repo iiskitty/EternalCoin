@@ -12,7 +12,7 @@ namespace Eternal_Coin
 {
     public class GVar
     {
-        public static string verNum = "Alpha 0.01";
+        public static string verNum = "Alpha 0.34";
 
         public static XmlDocument curLocNode = new XmlDocument();
 

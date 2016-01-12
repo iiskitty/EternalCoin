@@ -8,6 +8,56 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Eternal_Coin
 {
+    public class GeneratedButton
+    {
+        Rectangle bounds;
+
+        Color colour;
+
+        string name;
+        string state;
+
+        Vector2 position;
+        Vector2 size;
+
+        public GeneratedButton(Vector2 position, Color colour, string name, string state)
+        {
+            this.position = position;
+            this.colour = colour;
+            this.name = name;
+            this.state = state;
+
+            size = new Vector2(state.Length * 19, Textures.middleLight.Height);
+        }
+
+        public void Update(float gameTime)
+        {
+            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
+        }
+
+        public void DrawLightButton(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Textures.leftLightSide, new Rectangle((int)position.X, (int)position.Y, Textures.leftLightSide.Width, Textures.leftLightSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.Draw(Textures.middleLight, new Rectangle((int)position.X + Textures.leftLightSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.Draw(Textures.rightLightSide, new Rectangle((int)position.X + Textures.leftLightSide.Width + (int)size.X, (int)position.Y, Textures.rightLightSide.Width, Textures.rightLightSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.DrawString(Fonts.lucidaConsole24Regular, state, new Vector2(position.X + Textures.leftLightSide.Width, position.Y + 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+        }
+
+        public void DrawDarkButton(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Textures.leftDarkSide, new Rectangle((int)position.X, (int)position.Y, Textures.leftDarkSide.Width, Textures.leftDarkSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.Draw(Textures.middleDark, new Rectangle((int)position.X + Textures.leftDarkSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.Draw(Textures.rightDarkSide, new Rectangle((int)position.X + Textures.leftDarkSide.Width + (int)size.X, (int)position.Y, Textures.rightDarkSide.Width, Textures.rightDarkSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+            spriteBatch.DrawString(Fonts.lucidaConsole24Regular, state, new Vector2(position.X + Textures.leftDarkSide.Width, position.Y + 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+        }
+
+        public Rectangle Bounds { get { return bounds; } set { bounds = value; } }
+        public Vector2 Position { get { return position; } set { position = value; } }
+        public Vector2 Size { get { return size; } set { size = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public string State { get { return state; } set { state = value; } }
+    }
+
     public class Button : Object
     {
         public Button(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string name, string state, float worth)

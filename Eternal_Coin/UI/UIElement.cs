@@ -40,6 +40,7 @@ namespace Eternal_Coin
             uiElements.Add(new UIElement(Textures.pauseUI, new Vector2(GVar.gameScreenX / 2 - Textures.pauseUI.Width / 2, GVar.gameScreenY / 2 - Textures.pauseUI.Height / 2), new Vector2(Textures.pauseUI.Width, Textures.pauseUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.shopInventoryUI, new Vector2(0, 0), new Vector2(Textures.shopInventoryUI.Width, Textures.shopInventoryUI.Height), 0.18f, true, GVar.GameState.shop));
             uiElements.Add(new UIElement(Textures.battleUI, new Vector2(0, GVar.gameScreenY - Textures.battleUI.Height), new Vector2(Textures.battleUI.Width, Textures.battleUI.Height), 0.18f, true, GVar.GameState.battle));
+            uiElements.Add(new UIElement(Textures.newGameUIBorder, new Vector2(GVar.gameScreenX / 2 - Textures.newGameUIBorder.Width / 2, GVar.gameScreenY / 2 - Textures.newGameUIBorder.Height / 2), new Vector2(Textures.newGameUIBorder.Width, Textures.newGameUIBorder.Height), 0.19f, false, GVar.GameState.chooseCharacter));
             return uiElements;
         }
 

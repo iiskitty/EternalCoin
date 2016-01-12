@@ -22,12 +22,48 @@
     <filepath>Sprites/Buttons/LocationNodeTex</filepath>
   </texture>
   <texture>
+    <id>SavedGameUIBorder</id>
+    <filepath>Sprites/UI/SavedGameUIBorder</filepath>
+  </texture>
+  <texture>
+    <id>SavedGameUIInner</id>
+    <filepath>Sprites/UI/SavedGameUIInner</filepath>
+  </texture>
+  <texture>
+    <id>NewGameUIBorder</id>
+    <filepath>Sprites/UI/NewGameUIBorder</filepath>
+  </texture>
+  <texture>
+    <id>NewGameUIInner</id>
+    <filepath>Sprites/UI/NewGameUIInner</filepath>
+  </texture>
+  <texture>
     <id>Tick</id>
     <filepath>Sprites/UI/Tick</filepath>
   </texture>
   <texture>
     <id>Cross</id>
     <filepath>Sprites/UI/Cross</filepath>
+  </texture>
+  <texture>
+    <id>StartButton</id>
+    <filepath>Sprites/Buttons/StartButton</filepath>
+  </texture>
+  <texture>
+    <id>BackButton</id>
+    <filepath>Sprites/Buttons/BackButton</filepath>
+  </texture>
+  <texture>
+    <id>NewButton</id>
+    <filepath>Sprites/Buttons/NewButton</filepath>
+  </texture>
+  <texture>
+    <id>LoadButton</id>
+    <filepath>Sprites/Buttons/LoadButton</filepath>
+  </texture>
+  <texture>
+    <id>DeleteButton</id>
+    <filepath>Sprites/Buttons/DeleteButton</filepath>
   </texture>
   <texture>
     <id>InventoryButton</id>
@@ -64,6 +100,30 @@
   <texture>
     <id>ExitLocation</id>
     <filepath>Sprites/Buttons/ExitLocationButtonTex</filepath>
+  </texture>
+  <texture>
+    <id>LeftLightGenButton</id>
+    <filepath>Sprites/Buttons/LeftLightGenButton</filepath>
+  </texture>
+  <texture>
+    <id>MiddleLightGenButton</id>
+    <filepath>Sprites/Buttons/MiddleLightGenButton</filepath>
+  </texture>
+  <texture>
+    <id>RightLightGenButton</id>
+    <filepath>Sprites/Buttons/RightLightGenButton</filepath>
+  </texture>
+  <texture>
+    <id>LeftDarkGenButton</id>
+    <filepath>Sprites/Buttons/LeftDarkGenButton</filepath>
+  </texture>
+  <texture>
+    <id>MiddleDarkGenButton</id>
+    <filepath>Sprites/Buttons/MiddleDarkGenButton</filepath>
+  </texture>
+  <texture>
+    <id>RightDarkGenButton</id>
+    <filepath>Sprites/Buttons/RightDarkGenButton</filepath>
   </texture>
   <texture>
     <id>LocationInfo</id>

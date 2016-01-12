@@ -21,6 +21,11 @@ namespace Eternal_Coin
         public static Texture2D exitLocationButtonTex;
         public static Texture2D tickTex;
         public static Texture2D crossTex;
+        public static Texture2D startButton;
+        public static Texture2D backButton;
+        public static Texture2D newButton;
+        public static Texture2D loadButton;
+        public static Texture2D deleteButton;
         public static Texture2D inventoryButton;
         public static Texture2D playButton;
         public static Texture2D exitButton;
@@ -36,9 +41,19 @@ namespace Eternal_Coin
         public static Texture2D shopInventoryUI;
         public static Texture2D battleUI;
         public static Texture2D pauseUI;
+        public static Texture2D newGameUIBorder;
+        public static Texture2D newGameUIInner;
+        public static Texture2D savedGameUIBorder;
+        public static Texture2D savedGameUIInner;
         public static Texture2D cursor;
         public static Texture2D title;
         public static Texture2D background;
+        public static Texture2D leftLightSide;
+        public static Texture2D leftDarkSide;
+        public static Texture2D rightLightSide;
+        public static Texture2D rightDarkSide;
+        public static Texture2D middleLight;
+        public static Texture2D middleDark;
 
         public static void LoadTextures(ContentManager Content)
         {
@@ -55,7 +70,10 @@ namespace Eternal_Coin
             setTexDoc.Load("./Content/LoadData/SetTextures.xml");
             XmlNode texID = setTexDoc.SelectSingleNode("/set");
 
-
+            newGameUIBorder = Dictionaries.textures[texID["UInewgameborder"].InnerText];
+            newGameUIInner = Dictionaries.textures[texID["UInewgameinner"].InnerText];
+            savedGameUIBorder = Dictionaries.textures[texID["UIsavedgameborder"].InnerText];
+            savedGameUIInner = Dictionaries.textures[texID["UIsavedgameinner"].InnerText];
             background = Dictionaries.textures[texID["background"].InnerText];
             title = Dictionaries.textures[texID["title"].InnerText];
             cursor = Dictionaries.textures[texID["cursor"].InnerText];
@@ -65,6 +83,11 @@ namespace Eternal_Coin
             locationNodeTex = Dictionaries.textures[texID["locnode"].InnerText];
             tickTex = Dictionaries.textures[texID["tick"].InnerText];
             crossTex = Dictionaries.textures[texID["cross"].InnerText];
+            startButton = Dictionaries.textures[texID["startbut"].InnerText];
+            backButton = Dictionaries.textures[texID["backbut"].InnerText];
+            newButton = Dictionaries.textures[texID["newbut"].InnerText];
+            loadButton = Dictionaries.textures[texID["loadbut"].InnerText];
+            deleteButton = Dictionaries.textures[texID["delbut"].InnerText];
             inventoryButton = Dictionaries.textures[texID["invbut"].InnerText];
             playButton = Dictionaries.textures[texID["playbut"].InnerText];
             exitButton = Dictionaries.textures[texID["exitbut"].InnerText];
@@ -73,6 +96,12 @@ namespace Eternal_Coin
             npcButtonTex = Dictionaries.textures[texID["npcbut"].InnerText];
             enterLocationButtonTex = Dictionaries.textures[texID["enterloc"].InnerText];
             exitLocationButtonTex = Dictionaries.textures[texID["exitloc"].InnerText];
+            leftLightSide = Dictionaries.textures[texID["lightleftgenbut"].InnerText];
+            middleLight = Dictionaries.textures[texID["midlightgenbut"].InnerText];
+            rightLightSide = Dictionaries.textures[texID["rightlightgenbut"].InnerText];
+            leftDarkSide = Dictionaries.textures[texID["leftdarkgenbut"].InnerText];
+            middleDark = Dictionaries.textures[texID["middarkgenbut"].InnerText];
+            rightDarkSide = Dictionaries.textures[texID["rightdarkgenbut"].InnerText];
             coinBackTex = Dictionaries.textures[texID["coinback"].InnerText];
             locationInfoUITex = Dictionaries.textures[texID["UIlocinfo"].InnerText];
             NPCInfoUITex = Dictionaries.textures[texID["UInpcinfo"].InnerText];

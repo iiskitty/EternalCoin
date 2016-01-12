@@ -48,7 +48,7 @@ namespace Eternal_Coin
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load("Content/LoadData/CreateLocationNodes.xml");
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/locationnode/startinglocation");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/locationnode/" + GVar.storyName + "/startinglocation");
 
                 player.CurrentLocation.Add(Load.SetStartingLocation(node.InnerText));
                 Lists.entity.Add(player);
@@ -75,18 +75,21 @@ namespace Eternal_Coin
 
             if (GVar.changeToMainMenu && !Colours.fadeIn)
             {
+                Lists.savedGamesXmlDoc.Clear();
+                Lists.mainMenuButtons.Clear();
                 MainMenu.LoadMainMenu();
                 GVar.currentGameState = GVar.GameState.mainMenu;
                 GVar.previousGameState = GVar.GameState.chooseCharacter;
                 GVar.changeToMainMenu = false;
                 GVar.storyName = string.Empty;
-                Dictionaries.maps.Clear();
                 Lists.optionsButtons.Clear();
                 Lists.chooseCharacterButtons.Clear();
                 Lists.ClearGameLists();
+                Dictionaries.ClearDictionaries();
                 Lists.savedGamesXmlDoc.Clear();
                 Lists.savedGames.Clear();
                 Lists.availableStoriesButtons.Clear();
+                
                 UI.CloseNPCUI();
                 UI.CloseQuestInfoUI();
                 UI.CloseQuestListUI();

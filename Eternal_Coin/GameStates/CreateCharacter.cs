@@ -32,6 +32,8 @@ namespace Eternal_Coin
         public string displayPicID;
 
         public string name;
+        public string story;
+        public string location;
 
         public Vector2 startPosition;
 
@@ -40,16 +42,18 @@ namespace Eternal_Coin
 
         public List<Button> buttons;
 
-        public SavedGame(string displayPicID, string name, Vector2 startPosition)
+        public SavedGame(string displayPicID, string name, string story, string location, Vector2 startPosition)
         {
             this.displayPicID = displayPicID;
             this.name = name;
+            this.story = story;
+            this.location = location;
             this.startPosition = startPosition;
 
             buttons = new List<Button>();
 
-            loadGame = new Button(Textures.pixel, new Vector2(startPosition.X + 1020, startPosition.Y), new Vector2(100, 100), Color.Blue, "LoadGame", name, 0f);
-            deleteGame = new Button(Textures.pixel, new Vector2(startPosition.X + 1140, startPosition.Y), new Vector2(100, 100), Color.Red, "DeleteGame", name, 0f);
+            loadGame = new Button(Textures.loadButton, new Vector2(startPosition.X + 953, startPosition.Y + 12), new Vector2(Textures.loadButton.Width / 2, Textures.loadButton.Height), Color.White, "LoadGame", name, 0f);
+            deleteGame = new Button(Textures.deleteButton, new Vector2(startPosition.X + 1087, startPosition.Y + 12), new Vector2(Textures.deleteButton.Width / 2, Textures.loadButton.Height), Color.White, "DeleteGame", name, 0f);
             buttons.Add(loadGame);
             buttons.Add(deleteGame);
         }
@@ -77,15 +81,28 @@ namespace Eternal_Coin
                     {
                         GVar.creatingCharacter = true;
                         Lists.chooseCharacterButtons.Clear();
-                        Button startGame = new Button(Textures.pixel, new Vector2(GVar.gameScreenX / 2, 20), new Vector2(100, 50), Color.Yellow, "StartGame", "Alive", 0f);
-                        Button chooseDP = new Button(Textures.pixel, new Vector2(20, 30), new Vector2(100, 100), Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDP", "Alive", 0f);
-                        Lists.chooseCharacterButtons.Add(chooseDP);
-                        Lists.chooseCharacterButtons.Add(startGame);
+                        foreach (UIElement ui in Lists.uiElements)
+                        {
+                            if (ui.SpriteID == Textures.newGameUIBorder)
+                            {
+                                Button chooseDP = new Button(Textures.pixel, new Vector2(ui.Position.X + 3, ui.Position.Y + 3), Vector.newGameDPSize, Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDP", "Alive", 0f);
+                                Button startGame = new Button(Textures.startButton, new Vector2(GVar.gameScreenX / 2 - (Textures.startButton.Width / 2) / 2, ui.Position.Y + ui.Size.Y + 10), new Vector2(Textures.startButton.Width / 2, Textures.startButton.Height), Color.Yellow, "StartGame", "Alive", 0f);
+                                Lists.chooseCharacterButtons.Add(chooseDP);
+                                Lists.chooseCharacterButtons.Add(startGame);
+                            }
+                        }
                     }
                     else if (Lists.chooseCharacterButtons[i].Name == "StartGame" && GVar.playerName != string.Empty && !GVar.choosingDP)
                     {
                         Lists.chooseCharacterButtons.RemoveAt(i);
                         
+                        foreach (UIElement ui in Lists.uiElements)
+                        {
+                            if (ui.SpriteID == Textures.newGameUIBorder && ui.Draw)
+                            {
+                                ui.Draw = false;
+                            }
+                        }
 
                         GVar.creatingCharacter = false;
 
@@ -93,16 +110,13 @@ namespace Eternal_Coin
                     }
                     else if (Lists.chooseCharacterButtons[i].Name == "MainMenu")
                     {
-                        Lists.savedGamesXmlDoc.Clear();
-                        Lists.mainMenuButtons.Clear();
                         GVar.changeToMainMenu = true;
                         Colours.drawBlackFade = true;
                         Colours.fadeIn = true;
                     }
-                    else if (Lists.chooseCharacterButtons[i].Name == "ChooseDP")
+                    else if (Lists.chooseCharacterButtons[i].Name == "ChooseDP" && !GVar.choosingDP)
                     {
                         GVar.choosingDP = true;
-
                         Vector2 pos = new Vector2(150, 100);
                         for (int j = 0; j < Lists.displayPictureIDs.Count; j++)
                         {
@@ -126,6 +140,8 @@ namespace Eternal_Coin
                         if (Lists.savedGames[i].buttons[j].Name == "LoadGame")
                         {
                             GVar.playerName = Lists.savedGames[i].buttons[j].State;
+                            GVar.storyName = Lists.savedGames[i].story;
+                            Load.LoadLocationNodes(GVar.storyName);
                             GVar.LogDebugInfo("GameLoaded: " + GVar.playerName, 2);
                             GVar.loadGame = true;
                             Colours.fadeIn = true;
@@ -167,6 +183,7 @@ namespace Eternal_Coin
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                         GVar.LogDebugInfo("GameCreated: " + GVar.playerName, 2);
                         GVar.storyName = Lists.availableStoriesButtons[i].State;
+                        Load.LoadLocationNodes(GVar.storyName);
                         //GVar.loadData = true;
                         GVar.chooseStory = false;
                         GVar.startGame = true;
@@ -190,10 +207,11 @@ namespace Eternal_Coin
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                             GVar.displayPicID = Lists.displayPictureButtons[i].State;
                             GVar.choosingDP = false;
+                            break;
                         }
                     }
                 }
-
+                
                 if (!GVar.choosingDP)
                     Text.RecordText();
             }
@@ -208,39 +226,50 @@ namespace Eternal_Coin
                 b.Update(gameTime);
                 b.Draw(spriteBatch, b.SpriteID, b.Bounds, 0.18f, 0f, Vector2.Zero);
                 
-                if (b.Name == "NewCharacter")
+                if (MouseManager.mouseBounds.Intersects(b.Bounds))
                 {
-                    spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "New", new Vector2(b.Position.X + b.Size.X / 4, b.Position.Y + b.Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    b.PlayAnimation(GVar.AnimStates.Button.mouseover);
                 }
-                if (b.Name == "StartGame")
+                if (b.CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(b.Bounds))
                 {
-                    spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Start", new Vector2(b.Position.X + b.Size.X / 4, b.Position.Y + b.Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-                }
-                if (b.Name == "MainMenu")
-                {
-                    spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Back", new Vector2(b.Position.X + b.Size.X / 4, b.Position.Y + b.Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    b.PlayAnimation(GVar.AnimStates.Button.def);
                 }
             }
 
             if (GVar.chooseStory)
             {
-                foreach (Object B in Lists.availableStoriesButtons)
+                foreach (GeneratedButton B in Lists.availableStoriesButtons)
                 {
-                    B.Update(gameTime);
-                    B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.18f, 0f, Vector2.Zero);
-                    spriteBatch.DrawString(Fonts.lucidaConsole14Regular, B.State, new Vector2(B.Position.X + B.Size.X / 4, B.Position.Y + B.Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    if (MouseManager.mouseBounds.Intersects(B.Bounds))
+                    {
+                        B.DrawDarkButton(spriteBatch);
+                    }
+                    else if (!MouseManager.mouseBounds.Intersects(B.Bounds))
+                    {
+                        B.DrawLightButton(spriteBatch);
+                    }
                 }
             }
 
-            Vector2 pos = new Vector2(20, 80);
-
-            if (!GVar.creatingCharacter && !GVar.chooseStory && !Colours.fadeIn)
+            if (!GVar.creatingCharacter && !GVar.chooseStory)
             {
+                foreach (UIElement ui in Lists.uiElements)
+                {
+                    if (ui.SpriteID == Textures.newGameUIBorder && ui.Draw)
+                    {
+                        ui.Draw = false;
+                    }
+                }
+
                 for (int i = 0; i < Lists.savedGames.Count; i++)
                 {
-                    spriteBatch.Draw(Dictionaries.displayPictures[Lists.savedGames[i].displayPicID].displayPic, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 100, 100), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
-                    spriteBatch.Draw(Textures.pixel, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 100), null, Color.Gray, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole14Regular, Lists.savedGames[i].name, new Vector2(Lists.savedGames[i].startPosition.X + 150, Lists.savedGames[i].startPosition.Y + 45), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    spriteBatch.Draw(Dictionaries.displayPictures[Lists.savedGames[i].displayPicID].displayPic, new Rectangle((int)Lists.savedGames[i].startPosition.X + 4, (int)Lists.savedGames[i].startPosition.Y + 4, 54, 56), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                    spriteBatch.Draw(Textures.savedGameUIBorder, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                    spriteBatch.Draw(Textures.savedGameUIInner, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].name, new Vector2(Lists.savedGames[i].startPosition.X + 80, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].story, new Vector2(Lists.savedGames[i].startPosition.X + 350, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].location, new Vector2(Lists.savedGames[i].startPosition.X + 660, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
 
                     for (int j = 0; j < Lists.savedGames[i].buttons.Count; j++)
                     {
@@ -249,16 +278,11 @@ namespace Eternal_Coin
 
                         if (MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
                         {
-                            GVar.DrawBoundingBox(Lists.savedGames[i].buttons[j].Bounds, spriteBatch, Textures.pixel, 1, 0.19f, Color.Green);
+                            Lists.savedGames[i].buttons[j].PlayAnimation(GVar.AnimStates.Button.mouseover);
                         }
-
-                        if (Lists.savedGames[i].buttons[j].Name.Contains("DeleteGame"))
+                        if (Lists.savedGames[i].buttons[j].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
                         {
-                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Delete", new Vector2(Lists.savedGames[i].buttons[j].Position.X + Lists.savedGames[i].buttons[j].Size.X / 4, Lists.savedGames[i].buttons[j].Position.Y + Lists.savedGames[i].buttons[j].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-                        }
-                        if (Lists.savedGames[i].buttons[j].Name.Contains("LoadGame"))
-                        {
-                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Load", new Vector2(Lists.savedGames[i].buttons[j].Position.X + Lists.savedGames[i].buttons[j].Size.X / 4, Lists.savedGames[i].buttons[j].Position.Y + Lists.savedGames[i].buttons[j].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                            Lists.savedGames[i].buttons[j].PlayAnimation(GVar.AnimStates.Button.def);
                         }
                     }
                 }
@@ -266,10 +290,23 @@ namespace Eternal_Coin
 
             if (GVar.creatingCharacter)
             {
-                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Enter Your Name", new Vector2(5, 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-                spriteBatch.DrawString(Fonts.lucidaConsole16Bold, GVar.playerName, new Vector2(110, 50), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                foreach (UIElement ui in Lists.uiElements)
+                {
+                    if (ui.SpriteID == Textures.newGameUIBorder && !ui.Draw)
+                    {
+                        ui.Draw = true;
+                    }
+                    if (ui.SpriteID == Textures.newGameUIBorder)
+                    {
+                        spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)ui.Position.X + 3, (int)ui.Position.Y + 3, (int)Vector.newGameDPSize.X, (int)Vector.newGameDPSize.Y), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole24Regular, GVar.playerName, new Vector2((int)ui.Position.X + 71, (int)ui.Position.Y + 276), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    }
+                }
 
-                spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle(20, 30, 100, 100), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                //spriteBatch.Draw(Textures.newGameUIBorder, new Rectangle((int)GVar.gameScreenX / 2 - Textures.newGameUIBorder.Width / 2, (int)GVar.gameScreenY / 2 - Textures.newGameUIBorder.Height / 2, Textures.newGameUIBorder.Width, Textures.newGameUIBorder.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                spriteBatch.Draw(Textures.newGameUIInner, new Rectangle((int)GVar.gameScreenX / 2 - Textures.newGameUIInner.Width / 2, (int)GVar.gameScreenY / 2 - Textures.newGameUIInner.Height / 2, Textures.newGameUIInner.Width, Textures.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+
+                
 
                 if (GVar.choosingDP)
                 {
@@ -298,11 +335,11 @@ namespace Eternal_Coin
 
             for (int i = 0; i < Lists.savedGamesXmlDoc.Count; i++)
             {
-                pos.Y += 110;
+                pos.Y += 75;
             }
 
-            Button newCharacter = new Button(Textures.pixel, pos, new Vector2(100, 50), Color.Yellow, "NewCharacter", "Alive", 0f);
-            Button back = new Button(Textures.pixel, new Vector2(20, 20), new Vector2(100, 50), Color.Yellow, "MainMenu", "Alive", 0f);
+            Button newCharacter = new Button(Textures.newButton, pos, new Vector2(Textures.newButton.Width / 2, Textures.newButton.Height), Color.White, "NewCharacter", "Alive", 0f);
+            Button back = new Button(Textures.backButton, new Vector2(20, 20), new Vector2(Textures.backButton.Width / 2, Textures.backButton.Height), Color.White, "MainMenu", "Alive", 0f);
             Lists.chooseCharacterButtons.Add(back);
             Lists.chooseCharacterButtons.Add(newCharacter);
         }
@@ -314,13 +351,13 @@ namespace Eternal_Coin
             XmlNodeList stories = storiesDoc.SelectNodes("stories/story");
             foreach (XmlNode story in stories)
             {
-                Button storyButton = new Button(Textures.pixel, Vector2.Zero, new Vector2(150, 50), Color.Yellow, "LoadStory", story["name"].InnerText, 0f);
+                GeneratedButton storyButton = new GeneratedButton(Vector2.Zero, Color.White, "LoadStory", story["name"].InnerText);
                 Lists.availableStoriesButtons.Add(storyButton);
             }
 
             Vector2 pos = new Vector2(20, 80);
 
-            foreach (Object B in Lists.availableStoriesButtons)
+            foreach (GeneratedButton B in Lists.availableStoriesButtons)
             {
                 B.Position = pos;
                 pos.X += 170;
@@ -340,9 +377,9 @@ namespace Eternal_Coin
                         tempDoc.Load(GVar.savedGameLocation + i.ToString() + ".xml");
                         XmlNode saveNode = tempDoc.SelectSingleNode("/savedgame");
 
-                        SavedGame save = new SavedGame(saveNode["dpid"].InnerText, saveNode["name"].InnerText, startPos);
+                        SavedGame save = new SavedGame(saveNode["dpid"].InnerText, saveNode["name"].InnerText, saveNode["storyname"].InnerText, saveNode["currentlocation"].InnerText, startPos);
 
-                        startPos.Y += 110;
+                        startPos.Y += 75;
 
                         Lists.savedGames.Add(save);
                         Lists.savedGamesXmlDoc.Add(tempDoc);

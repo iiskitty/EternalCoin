@@ -24,7 +24,7 @@ namespace Eternal_Coin
         public static List<Object> displayPictureButtons;
         public static List<Quest> quests;
         public static List<Object> viewQuestInfoButtons;
-        public static List<Object> availableStoriesButtons;
+        public static List<GeneratedButton> availableStoriesButtons;
         public static List<Object> mainWorldButtons;
         public static List<Entity> entity;
         public static List<Enemy> enemy;
@@ -47,7 +47,7 @@ namespace Eternal_Coin
             playerItems = new List<Item>();
             mainMenuButtons = new List<Object>();
             inventoryButtons = new List<Object>();
-            availableStoriesButtons = new List<Object>();
+            availableStoriesButtons = new List<GeneratedButton>();
             mainWorldButtons = new List<Object>();
             locationButtons = new List<Object>();
             entity = new List<Entity>();
@@ -89,8 +89,17 @@ namespace Eternal_Coin
             inventorySlots.Add(GVar.InventorySlot.RingEight);
         }
 
+        public static void ClearPlayerLists()
+        {
+            foreach (Entity e in Lists.entity)
+            {
+                e.CurrentLocation.Clear();
+            }
+        }
+
         public static void ClearGameLists()
         {
+            locNodes.Clear();
             locationButtons.Clear();
             quests.Clear();
             viewQuestInfoButtons.Clear();

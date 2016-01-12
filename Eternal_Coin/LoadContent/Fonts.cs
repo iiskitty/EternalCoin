@@ -13,6 +13,8 @@ namespace Eternal_Coin
 {
     public class Fonts
     {
+        public static SpriteFont lucidaConsole24Bold;
+        public static SpriteFont lucidaConsole24Regular;
         public static SpriteFont lucidaConsole20Bold;
         public static SpriteFont lucidaConsole20Regular;
         public static SpriteFont lucidaConsole18Bold;
@@ -28,6 +30,8 @@ namespace Eternal_Coin
 
         public static void LoadFonts(ContentManager Content)
         {
+            lucidaConsole24Bold = Content.Load<SpriteFont>("Fonts/LucidaConsole24Bold");
+            lucidaConsole24Regular = Content.Load<SpriteFont>("Fonts/LucidaConsole24Regular");
             lucidaConsole20Bold = Content.Load<SpriteFont>("Fonts/LucidaConsole20Bold");
             lucidaConsole20Regular = Content.Load<SpriteFont>("Fonts/LucidaConsole20Regular");
             lucidaConsole18Bold = Content.Load<SpriteFont>("Fonts/LucidaConsole18Bold");
