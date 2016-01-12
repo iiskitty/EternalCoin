@@ -348,6 +348,24 @@ namespace Eternal_Coin
     {
         public static List<SoundEffectInstance> sounds = new List<SoundEffectInstance>();
 
+        public static void PlaySound(SoundEffect sound)
+        {
+            if (sound != null)
+            {
+                SoundEffectInstance soundInstance = sound.CreateInstance();
+
+                soundInstance.Volume = GVar.Volume.Audio.volume;
+                soundInstance.Pitch = GVar.Volume.Audio.pitch;
+                soundInstance.Pan = GVar.Volume.Audio.pan;
+                soundInstance.IsLooped = false;
+                sounds.Add(soundInstance);
+                if (sounds.Count < 12)
+                {
+                    soundInstance.Play();
+                }
+            }
+        }
+
         /// <summary>
         /// Creates a SoundEffectInstance adds it to a list and then plays the sound
         /// </summary>

@@ -24,6 +24,7 @@
   <npcbut>NPCButton</npcbut>
   <enterloc>EnterLocation</enterloc>
   <exitloc>ExitLocation</exitloc>
+  <closebut>CloseButton</closebut>
   <lightleftgenbut>LeftLightGenButton</lightleftgenbut>
   <midlightgenbut>MiddleLightGenButton</midlightgenbut>
   <rightlightgenbut>RightLightGenButton</rightlightgenbut>

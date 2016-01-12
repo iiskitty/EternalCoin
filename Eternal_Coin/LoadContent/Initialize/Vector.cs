@@ -24,8 +24,8 @@ namespace Eternal_Coin
         {
             worldMapPosition = new Vector2((0 - Textures.worldMapTex.Width / 2 + GVar.gameScreenX / 2), (0 - Textures.worldMapTex.Height / 2 + GVar.gameScreenY / 2));
             worldMapSize = new Vector2(Textures.worldMapTex.Width, Textures.worldMapTex.Height);
-            lookEyeSize = new Vector2(30, 15);
-            locationButtonSize = new Vector2(20, 20);
+            lookEyeSize = new Vector2(50, 25);
+            locationButtonSize = new Vector2(30, 30);
             buttonSize = new Vector2(75, 75);
             itemNormalSize = new Vector2(71, 71);
             newGameDPSize = new Vector2(329, 232);

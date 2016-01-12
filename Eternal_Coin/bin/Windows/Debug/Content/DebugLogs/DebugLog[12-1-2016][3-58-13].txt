@@ -1,0 +1,183 @@
+[3-58-13]TrueScreen X,Y: 1920 1080
+[3-58-13]GameScreen X,Y: 1280 720
+[3-58-13]Set Game Screen X,Y: 1280 720
+[3-58-13]!!!ERROR!!! first pass of creating item type failed, trying second. [System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Load.LoadItemData(ContentManager Content) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\SaveLoadDelete\Load.cs:line 199]
+[3-58-13]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-58-13]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-58-13]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-58-14]ButtonClicked: OptionsButton
+[3-58-14]GameState Change: options
+[3-58-15]ButtonClicked: MainMenu
+[3-58-15]GameState Change: mainMenu
+[3-58-18]ButtonClicked: PlayButton
+[3-58-19]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-19]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-19]GameState Change: chooseCharacter
+[3-58-21]ButtonClicked: MainMenu
+[3-58-21]GameState Change: mainMenu
+[3-58-31]ButtonClicked: PlayButton
+[3-58-31]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-31]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-31]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-31]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-32]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-32]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-32]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-32]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-32]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-32]GameState Change: chooseCharacter
+[3-58-33]ButtonClicked: MainMenu
+[3-58-33]GameState Change: mainMenu
+[3-58-34]ButtonClicked: PlayButton
+[3-58-35]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-35]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-35]GameState Change: chooseCharacter
+[3-58-36]ButtonClicked: MainMenu
+[3-58-36]GameState Change: mainMenu
+[3-58-37]ButtonClicked: PlayButton
+[3-58-38]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-38]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-38]GameState Change: chooseCharacter
+[3-58-39]ButtonClicked: MainMenu
+[3-58-39]GameState Change: mainMenu
+[3-58-41]ButtonClicked: PlayButton
+[3-58-42]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-42]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-42]GameState Change: chooseCharacter
+[3-58-43]ButtonClicked: MainMenu
+[3-58-43]GameState Change: mainMenu
+[3-58-45]ButtonClicked: OptionsButton
+[3-58-45]GameState Change: options
+[3-58-46]ButtonClicked: MainMenu
+[3-58-46]GameState Change: mainMenu
+[3-58-47]ButtonClicked: PlayButton
+[3-58-47]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-47]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-47]GameState Change: chooseCharacter
+[3-58-49]ButtonClicked: MainMenu
+[3-58-49]GameState Change: mainMenu
+[3-58-50]ButtonClicked: OptionsButton
+[3-58-51]GameState Change: options
+[3-58-51]ButtonClicked: MainMenu
+[3-58-52]GameState Change: mainMenu
+[3-58-53]ButtonClicked: PlayButton
+[3-58-54]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-54]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-54]GameState Change: chooseCharacter
+[3-58-55]ButtonClicked: MainMenu
+[3-58-56]GameState Change: mainMenu
+[3-58-57]ButtonClicked: PlayButton
+[3-58-58]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-58-58]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-58-58]GameState Change: chooseCharacter
+[3-58-59]ButtonClicked: MainMenu
+[3-58-59]GameState Change: mainMenu
+[3-59-1]ButtonClicked: PlayButton
+[3-59-1]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-59-1]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-59-1]GameState Change: chooseCharacter
+[3-59-2]ButtonClicked: MainMenu
+[3-59-2]GameState Change: mainMenu
+[3-59-56]ButtonClicked: PlayButton
+[3-59-56]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-59-56]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-59-56]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-59-57]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-59-57]GameState Change: chooseCharacter
+[3-59-58]ButtonClicked: MainMenu
+[3-59-59]GameState Change: mainMenu
+[4-0-0]ButtonClicked: PlayButton
+[4-0-1]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[4-0-1]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[4-0-1]GameState Change: chooseCharacter
+[4-0-1]ButtonClicked: MainMenu
+[4-0-2]GameState Change: mainMenu
+[4-0-3]ButtonClicked: PlayButton
+[4-0-3]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[4-0-3]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[4-0-3]GameState Change: chooseCharacter
+[4-0-4]ButtonClicked: MainMenu
+[4-0-4]GameState Change: mainMenu

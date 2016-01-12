@@ -10,6 +10,8 @@ namespace Eternal_Coin
 {
     public class GeneratedButton
     {
+        public bool mouseOver = false;
+
         Rectangle bounds;
 
         Color colour;

@@ -13,4 +13,8 @@
     <id>ButtonClick</id>
     <filepath>Sounds/ButtonClick</filepath>
   </sound>
+  <sound>
+    <id>ButtonMouseOver</id>
+    <filepath>Sounds/MouseOverButton</filepath>
+  </sound>
 </load>

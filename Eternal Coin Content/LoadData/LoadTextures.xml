@@ -94,6 +94,10 @@
     <filepath>Sprites/Buttons/NPCButtonTex</filepath>
   </texture>
   <texture>
+    <id>CloseButton</id>
+    <filepath>Sprites/Buttons/CloseButton</filepath>
+  </texture>
+  <texture>
     <id>EnterLocation</id>
     <filepath>Sprites/Buttons/EnterLocationButtonTex</filepath>
   </texture>

@@ -228,6 +228,10 @@ namespace Eternal_Coin
                 
                 if (MouseManager.mouseBounds.Intersects(b.Bounds))
                 {
+                    if (b.CurrentAnimation != GVar.AnimStates.Button.mouseover && !GVar.chooseStory)
+                    {
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
+                    }
                     b.PlayAnimation(GVar.AnimStates.Button.mouseover);
                 }
                 if (b.CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(b.Bounds))
@@ -243,13 +247,21 @@ namespace Eternal_Coin
                     B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     if (MouseManager.mouseBounds.Intersects(B.Bounds))
                     {
+                        if (!B.mouseOver)
+                        {
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
+                        }
+                        B.mouseOver = true;
                         B.DrawDarkButton(spriteBatch);
                     }
                     else if (!MouseManager.mouseBounds.Intersects(B.Bounds))
                     {
+                        B.mouseOver = false;
                         B.DrawLightButton(spriteBatch);
                     }
                 }
+
+                spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Want to see your own story on this list? Head to http://jskgames.wix.com/jskgames \nto see the tutorials on how to get started.", new Vector2(10, GVar.gameScreenY - 60), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
             }
 
             if (!GVar.creatingCharacter && !GVar.chooseStory)
@@ -278,6 +290,10 @@ namespace Eternal_Coin
 
                         if (MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
                         {
+                            if (Lists.savedGames[i].buttons[j].CurrentAnimation != GVar.AnimStates.Button.mouseover)
+                            {
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
+                            }
                             Lists.savedGames[i].buttons[j].PlayAnimation(GVar.AnimStates.Button.mouseover);
                         }
                         if (Lists.savedGames[i].buttons[j].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
@@ -302,8 +318,6 @@ namespace Eternal_Coin
                         spriteBatch.DrawString(Fonts.lucidaConsole24Regular, GVar.playerName, new Vector2((int)ui.Position.X + 71, (int)ui.Position.Y + 276), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
                     }
                 }
-
-                //spriteBatch.Draw(Textures.newGameUIBorder, new Rectangle((int)GVar.gameScreenX / 2 - Textures.newGameUIBorder.Width / 2, (int)GVar.gameScreenY / 2 - Textures.newGameUIBorder.Height / 2, Textures.newGameUIBorder.Width, Textures.newGameUIBorder.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
                 spriteBatch.Draw(Textures.newGameUIInner, new Rectangle((int)GVar.gameScreenX / 2 - Textures.newGameUIInner.Width / 2, (int)GVar.gameScreenY / 2 - Textures.newGameUIInner.Height / 2, Textures.newGameUIInner.Width, Textures.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
 
                 

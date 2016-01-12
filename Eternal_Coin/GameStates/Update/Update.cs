@@ -155,7 +155,7 @@ namespace Eternal_Coin
                 {
                     if (ui.SpriteID == Textures.locationInfoUITex)
                     {
-                        button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y + button.Size.Y);
+                        button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     }
                 }
@@ -166,7 +166,7 @@ namespace Eternal_Coin
                 {
                     if (ui.SpriteID == Textures.locationInfoUITex)
                     {
-                        button.Position = new Vector2(ui.Position.X + ui.Size.X - (button.Size.X * 2.5f), ui.Position.Y + button.Size.Y);
+                        button.Position = new Vector2(ui.Position.X + ui.Size.X - (button.Size.X * 2.2f), ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     }
                 }
@@ -184,17 +184,17 @@ namespace Eternal_Coin
             }
             if (button.Name == "LookEyeButton")
             {
-                button.Position = new Vector2(P.Position.X - button.Size.X / 7, P.Position.Y - button.Size.Y * 1.2f);
+                button.Position = new Vector2(P.Position.X + P.Size.X / 2 - button.Size.X / 2, P.Position.Y - button.Size.Y - 5);
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (button.Name == "NPCButton")
             {
-                button.Position = new Vector2(P.Position.X - button.Size.X * 1.2f, P.Position.Y);
+                button.Position = new Vector2(P.Position.X - button.Size.X * 1.5f, P.Position.Y + P.Size.Y / 2 - button.Size.Y / 2);
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (button.Name == "ShopButton")
             {
-                button.Position = new Vector2(P.Position.X + button.Size.X * 1.2f, P.Position.Y);
+                button.Position = new Vector2(P.Position.X + P.Size.X + button.Size.X / 2, P.Position.Y + P.Size.Y / 2 - button.Size.Y / 2);
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (button.Name == "OpenShop")
@@ -210,7 +210,7 @@ namespace Eternal_Coin
             }
             if (button.Name == "EnterLocation" || button.Name == "ExitLocation")
             {
-                button.Position = new Vector2(P.Position.X, P.Position.Y - button.Size.Y * 2f);
+                button.Position = new Vector2(P.Position.X + P.Size.X / 2 - button.Size.X / 2, P.Position.Y + P.Size.Y / 2 - button.Size.Y - 40);
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (button.Name == "CloseQuestInfoUI")

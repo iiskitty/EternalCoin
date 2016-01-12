@@ -4,4 +4,5 @@
   <clickcoin>CoinClick</clickcoin>
   <clicklocnode>LocNodeClick</clicklocnode>
   <clickbutton>ButtonClick</clickbutton>
+  <buttonmouseover>ButtonMouseOver</buttonmouseover>
 </set>

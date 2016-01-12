@@ -39,9 +39,9 @@ namespace Eternal_Coin
                     if (GVar.location != null && GVar.location.Searched)
                     {
                         if (name != null)
-                            spriteBatch.DrawString(Fonts.lucidaConsole18Bold, name, new Vector2(ui.Position.X + 5 - name.Length / 2, ui.Position.Y + 2), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                            spriteBatch.DrawString(Fonts.lucidaConsole18Bold, name, new Vector2(ui.Position.X + 10, ui.Position.Y + 8), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                         if (greeting != null)
-                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, greeting, new Vector2(ui.Position.X + 4, ui.Position.Y + 30), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, greeting, new Vector2(ui.Position.X + 10, ui.Position.Y + 45), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                     }
                 }
             }

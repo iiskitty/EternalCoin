@@ -36,6 +36,7 @@ namespace Eternal_Coin
             GVar.SoundIDs.clickcoin = setSound["clickcoin"].InnerText;
             GVar.SoundIDs.clicklocnode = setSound["clicklocnode"].InnerText;
             GVar.SoundIDs.clickbutton = setSound["clickbutton"].InnerText;
+            GVar.SoundIDs.buttonmouseover = setSound["buttonmouseover"].InnerText;
         }
     }
 }

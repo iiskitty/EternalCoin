@@ -111,17 +111,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/UI/LocationInfoUI.png
 
-#begin Sprites/UI/NPCInfoUI.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/NPCInfoUI.png
-
 #begin Sprites/Buttons/EnterLocationButtonTex.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -372,17 +361,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/tempIcon/bronzesword.png
 
-#begin Sprites/UI/InventoryUI.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/InventoryUI.png
-
 #begin Sprites/UI/PauseUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -404,17 +382,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/tempIcon/sword.png
-
-#begin Sprites/UI/ShopInventoryUI.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/ShopInventoryUI.png
 
 #begin Options.xml
 /copy:Options.xml
@@ -537,18 +504,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/LocationNodeClick.wav
-
-#begin LoadData/LoadSounds.xml
-/copy:LoadData/LoadSounds.xml
-
-#begin LoadData/SetSounds.xml
-/copy:LoadData/SetSounds.xml
-
-#begin Sounds/ButtonClick.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Sounds/ButtonClick.wav
 
 #begin Sprites/AttackAnim/Default/IronSwordStab.png
 /importer:TextureImporter
@@ -901,12 +856,74 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/RightLightGenButton.png
 
+#begin LoadData/CreateLocationNodes.xml
+/copy:LoadData/CreateLocationNodes.xml
+
+#begin Sprites/UI/InventoryUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/InventoryUI.png
+
+#begin Sprites/UI/ShopInventoryUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/ShopInventoryUI.png
+
+#begin Sounds/MouseOverButton.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/MouseOverButton.wav
+
+#begin LoadData/LoadSounds.xml
+/copy:LoadData/LoadSounds.xml
+
+#begin LoadData/SetSounds.xml
+/copy:LoadData/SetSounds.xml
+
+#begin Sounds/ButtonClick.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/ButtonClick.wav
+
+#begin Sprites/UI/NPCInfoUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/NPCInfoUI.png
+
+#begin Sprites/Buttons/CloseButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/CloseButton.png
+
 #begin LoadData/LoadTextures.xml
 /copy:LoadData/LoadTextures.xml
 
 #begin LoadData/SetTextures.xml
 /copy:LoadData/SetTextures.xml
-
-#begin LoadData/CreateLocationNodes.xml
-/copy:LoadData/CreateLocationNodes.xml
 

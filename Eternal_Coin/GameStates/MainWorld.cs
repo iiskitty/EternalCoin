@@ -382,7 +382,7 @@ namespace Eternal_Coin
                                             {
                                                 GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questcompleted].InnerText;
                                             }
-                                            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 150);
+                                            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, GVar.npcTextWrapLength);
 
                                             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");
                                             Quest.CheckAction(locNPC[GVar.XmlTags.Actions.talknpc].InnerText, P.CurrentLocation[i]);
@@ -391,7 +391,7 @@ namespace Eternal_Coin
                                             {
                                                 if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
                                                 {
-                                                    Button closeNPCUI = new Button(Textures.pixel, new Vector2(ui.Position.X + ui.Size.X - Textures.pixel.Width, ui.Position.Y), new Vector2(15, 15), Color.Red, "CloseNPCUIButton", "Alive", 0f);
+                                                    Button closeNPCUI = new Button(Textures.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
                                                     closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
                                                     Lists.mainWorldButtons.Add(closeNPCUI);
                                                     ui.Draw = true;
@@ -407,7 +407,7 @@ namespace Eternal_Coin
                                     {
                                         XmlNode shopKeep = GVar.curLocNode.SelectSingleNode("/location/shop");
 
-                                        string greeting = Text.WrapText(Fonts.lucidaConsole14Regular, shopKeep["greeting"].InnerText, 150);
+                                        string greeting = Text.WrapText(Fonts.lucidaConsole14Regular, shopKeep["greeting"].InnerText, GVar.npcTextWrapLength);
 
                                         GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, false, false, false);
 
@@ -418,7 +418,7 @@ namespace Eternal_Coin
                                         {
                                             if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
                                             {
-                                                Button closeNPCUI = new Button(Textures.pixel, new Vector2(ui.Position.X + ui.Size.X - Textures.pixel.Width, ui.Position.Y), new Vector2(15, 15), Color.Red, "CloseNPCUIButton", "Alive", 0f);
+                                                Button closeNPCUI = new Button(Textures.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
                                                 closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
                                                 Lists.mainWorldButtons.Add(closeNPCUI);
                                                 ui.Draw = true;
@@ -608,8 +608,8 @@ namespace Eternal_Coin
                 GVar.loadData = true;
             }
 
-            Button quests = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Violet, "DisplayQuests", "Alive", 0f);
-            Button inventory = new Button(Textures.inventoryButton, new Vector2(), new Vector2(25, 25), Color.White, "DisplayInventory", "Alive", 0f);
+            Button quests = new Button(Textures.pixel, new Vector2(), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);
+            Button inventory = new Button(Textures.inventoryButton, new Vector2(), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);
             Lists.mainWorldButtons.Add(inventory);
             Lists.mainWorldButtons.Add(quests);
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LeftDarkGenButton.png</SourceFile>
-  <SourceTime>2016-01-12T10:41:23.7597455+08:00</SourceTime>
+  <SourceTime>2016-01-12T10:41:23+08:00</SourceTime>
   <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sprites/Buttons/LeftDarkGenButton.xnb</DestFile>
-  <DestTime>2016-01-12T10:42:50.4056506+08:00</DestTime>
+  <DestTime>2016-01-12T13:11:40.6301765+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -18,6 +18,8 @@ namespace Eternal_Coin
 
         public static int preventclick = 0;
 
+        public static int npcTextWrapLength = 500;
+
         public static int silverMoney = 0;
         public static int numSavedGames = 0;
         public static string questInfo = "";
@@ -46,6 +48,7 @@ namespace Eternal_Coin
             public static string clickcoin;
             public static string clicklocnode;
             public static string clickbutton;
+            public static string buttonmouseover;
         };
 
         public class States

@@ -20,11 +20,15 @@ namespace Eternal_Coin
 
                 if (MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
                 {
+                    if (Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover)
+                    {
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "MouseOverButton", false);
+                    }
                     Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
 
                     if (InputManager.IsLMPressed())
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickcoin], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "CoinClick", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "CoinClick", false);
                         GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
                         if (Lists.mainMenuButtons[i].Name == "PlayButton")
                         {

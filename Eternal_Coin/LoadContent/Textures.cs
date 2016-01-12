@@ -23,6 +23,7 @@ namespace Eternal_Coin
         public static Texture2D crossTex;
         public static Texture2D startButton;
         public static Texture2D backButton;
+        public static Texture2D closeButton;
         public static Texture2D newButton;
         public static Texture2D loadButton;
         public static Texture2D deleteButton;
@@ -89,6 +90,7 @@ namespace Eternal_Coin
             loadButton = Dictionaries.textures[texID["loadbut"].InnerText];
             deleteButton = Dictionaries.textures[texID["delbut"].InnerText];
             inventoryButton = Dictionaries.textures[texID["invbut"].InnerText];
+            closeButton = Dictionaries.textures[texID["closebut"].InnerText];
             playButton = Dictionaries.textures[texID["playbut"].InnerText];
             exitButton = Dictionaries.textures[texID["exitbut"].InnerText];
             optionsButton = Dictionaries.textures[texID["optionsbut"].InnerText];
