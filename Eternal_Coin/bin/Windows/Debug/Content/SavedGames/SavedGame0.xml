@@ -7,16 +7,12 @@
   <currentlocation>SubEaton</currentlocation>
   <playerinventory>
     <item>
-      <itemname>Iron Sword</itemname>
+      <itemname>Iron Ring</itemname>
       <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
-      <itemname>Bronze Helmet</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Bronze Chestplate</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
+      <itemname>Bronze Leggings</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
     </item>
   </playerinventory>
   <characterinventory />

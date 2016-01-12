@@ -1,67 +1,72 @@
 <?xml version="1.0"?>
+
 <location>
-  <name>SubEaton1</name>
-  <description>you are in SubEaton1</description>
-  <searched>True</searched>
-  <hasnpc>true</hasnpc>
+	<name>SubEaton1</name>
+	<description>you are in SubEaton1</description>
+	<searched>false</searched>
+	<hasnpc>true</hasnpc>
   <hasshop>false</hasshop>
   <hasenemy>false</hasenemy>
-  <npc>
-    <hasquest>true</hasquest>
-    <questaccepted>false</questaccepted>
-    <questfinished>false</questfinished>
-    <questcompleted>false</questcompleted>
-    <name>John</name>
-    <greeting>
-      <questunaccepted>Hello stranger, could you please go explore Sub Bunbury 1 for me.</questunaccepted>
-      <questaccepted>How is your quest for Sub Bunbury 1 going?</questaccepted>
-      <acceptquest>I hope you have no troubles in your quest.</acceptquest>
-      <questfinished>Thank you very much! I have some stuff for you.</questfinished>
-      <handinquest>That sword is very dull, be careful now.</handinquest>
-      <questcompleted>I have nothing for you to do, go away.</questcompleted>
-    </greeting>
-    <quest>
-      <description>Explore Sub Bunbury 1 and come back to John.</description>
-      <shortdescription>Explore Sub Bunbury 1</shortdescription>
-      <completingaction>Exploring SubBunbury1</completingaction>
-      <completinglocation>SubBunbury1</completinglocation>
-      <reward>
-        <item>
-          <class>Weapon</class>
-          <itemname>Bronze Sword</itemname>
+	
+	<npc>
+		<hasquest>true</hasquest>
+		<questaccepted>false</questaccepted>
+		<questfinished>false</questfinished>
+		<questcompleted>false</questcompleted>
+		<name>John</name>
+		
+		<greeting>
+			<questunaccepted>Hello stranger, could you please go explore Sub Bunbury 1 for me.</questunaccepted>
+			<questaccepted>How is your quest for Sub Bunbury 1 going?</questaccepted>
+			<acceptquest>I hope you have no troubles in your quest.</acceptquest>
+			<questfinished>Thank you very much! I have some stuff for you.</questfinished>
+			<handinquest>That sword is very dull, be careful now.</handinquest>
+			<questcompleted>I have nothing for you to do, go away.</questcompleted>
+		</greeting>
+		
+		<quest>
+			<description>Explore Sub Bunbury 1 and come back to John.</description>
+			<shortdescription>Explore Sub Bunbury 1</shortdescription>
+			<completingaction>Exploring SubBunbury1</completingaction>
+			<completinglocation>SubBunbury1</completinglocation>
+			<reward>
+				<item>
+					<class>Weapon</class>
+					<itemname>Bronze Sword</itemname>
           <itemtype>BronzeSword</itemtype>
-          <itemmaterial>Bronze</itemmaterial>
-          <inventoryslot>Weapon</inventoryslot>
-        </item>
-        <item>
-          <class>Armor</class>
+					<itemmaterial>Bronze</itemmaterial>
+					<inventoryslot>Weapon</inventoryslot>
+				</item>
+				<item>
+					<class>Armor</class>
           <itemname>Bronze Leggings</itemname>
-          <itemtype>Leggings</itemtype>
+					<itemtype>Leggings</itemtype>
           <itemmaterial>Bronze</itemmaterial>
-          <inventoryslot>Leggings</inventoryslot>
-        </item>
-        <item>
-          <class>Armor</class>
+					<inventoryslot>Leggings</inventoryslot>
+				</item>
+				<item>
+					<class>Armor</class>
           <itemname>Bronze Boot</itemname>
           <itemtype>Boot</itemtype>
           <itemmaterial>Bronze</itemmaterial>
-          <inventoryslot>LeftBoot</inventoryslot>
-        </item>
-        <item>
-          <class>Armor</class>
+					<inventoryslot>LeftBoot</inventoryslot>
+				</item>
+				<item>
+					<class>Armor</class>
           <itemname>Bronze Boot</itemname>
           <itemtype>Boot</itemtype>
           <itemmaterial>Bronze</itemmaterial>
-          <inventoryslot>RightBoot</inventoryslot>
-        </item>
-      </reward>
-    </quest>
-  </npc>
-  <actions>
-    <enter>Entering SubEaton1</enter>
-    <explore>Exploring SubEaton1</explore>
-    <talknpc>Talking To John</talknpc>
-    <acceptquest>Accepted Quest</acceptquest>
-    <handinquest>Handed In Quest</handinquest>
-  </actions>
+					<inventoryslot>RightBoot</inventoryslot>
+				</item>
+			</reward>
+		</quest>
+	</npc>
+	
+	<actions>
+		<enter>Entering SubEaton1</enter>
+		<explore>Exploring SubEaton1</explore>
+		<talknpc>Talking To John</talknpc>
+		<acceptquest>Accepted Quest</acceptquest>
+		<handinquest>Handed In Quest</handinquest>
+	</actions>
 </location>
