@@ -97,7 +97,6 @@ namespace Eternal_Coin
             Lists.uiElements = UIElement.AddUIElements(Lists.uiElements);
             InventoryManager.CreateInventories();
             MainMenu.LoadMainMenu();
-            //Load.LoadLocationNodes();
         }
 
         /// <summary>

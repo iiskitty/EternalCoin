@@ -97,6 +97,7 @@
       </animation>
     </attack>
   </enemyattacks>
+  
   <attack>
     <id>Punch</id>
     <type>Physical</type>

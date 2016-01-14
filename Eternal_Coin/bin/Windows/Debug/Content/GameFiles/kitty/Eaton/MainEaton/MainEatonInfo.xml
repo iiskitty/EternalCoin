@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<location>
+  <name>Eaton</name>
+  <description>Main Eaton Location Node</description>
+  <searched>True</searched>
+  <hasnpc>false</hasnpc>
+  <hasshop>false</hasshop>
+  <hasenemy>false</hasenemy>
+  <actions>
+    <enter>Entering MainEaton</enter>
+    <explore>Exploring MainEaton</explore>
+  </actions>
+</location>

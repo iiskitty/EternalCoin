@@ -27,7 +27,7 @@ namespace Eternal_Coin
         {
             try
             {
-                battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 20), new Vector2(128, 128), Lists.entity[0].Name, "Alive", new Vector2(), Color.White, Lists.entity[0].Health, Lists.entity[0].Armour, Lists.entity[0].Damage);
+                battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), Lists.entity[0].Name, "Alive", new Vector2(), Color.White, Lists.entity[0].Health, Lists.entity[0].Armour, Lists.entity[0].Damage);
                 
 
                 XmlNodeList enemyItems = battleDoc.SelectNodes("/location/enemy/inventory/item");
@@ -46,7 +46,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 20), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -58,7 +58,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 20), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -71,7 +71,7 @@ namespace Eternal_Coin
                         {
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 20), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
