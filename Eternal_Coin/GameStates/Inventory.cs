@@ -486,8 +486,8 @@ namespace Eternal_Coin
                                 Item.ToCharacter(mouseInventory.heldItem, Lists.inventorySlots[j]);
                                 if (mouseInventory.heldItem.Attacks != null)
                                 {
-                                    for (int k = 0; k < mouseInventory.heldItem.Attacks.Count; k++)
-                                    {
+                                    //for (int k = 0; k < mouseInventory.heldItem.Attacks.Count; k++)
+                                    //{
                                         try
                                         {
                                             Attack.AddAvailableAttacks(mouseInventory.heldItem.Attacks);
@@ -496,7 +496,7 @@ namespace Eternal_Coin
                                         {
                                             GVar.LogDebugInfo("!No attacks to add..MouseInv->CharInv..!", 2);
                                         }
-                                    }
+                                    //}
                                 }
                                 P.AddItemStats(mouseInventory.heldItem);
                                 mouseInventory.heldItem = null;
@@ -508,8 +508,8 @@ namespace Eternal_Coin
                                 mouseInventory.heldItem = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
-                                    {
+                                    //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                    //{
                                         try
                                         {
                                             Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
@@ -518,13 +518,13 @@ namespace Eternal_Coin
                                         {
                                             GVar.LogDebugInfo("!No attacks to remove..MouseInv->CharInv|CharInv->MouseInv..!", 2);
                                         }
-                                    }
+                                    //}
                                 }
                                 Item.ToCharacter(tempItem, Lists.inventorySlots[j]);
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
-                                    {
+                                    //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                    //{
                                         try
                                         {
                                             Attack.AddAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
@@ -533,7 +533,7 @@ namespace Eternal_Coin
                                         {
                                             GVar.LogDebugInfo("!No attacks to add..MouseInv->CharInv|CharInv->MouseInv..!", 2);
                                         }
-                                    }
+                                    //}
                                 }
                             }
                         }
@@ -554,8 +554,8 @@ namespace Eternal_Coin
                             P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                             if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                             {
-                                for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
-                                {
+                                //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                //{
                                     try
                                     {
                                         Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
@@ -564,7 +564,7 @@ namespace Eternal_Coin
                                     {
                                         GVar.LogDebugInfo("!No attacks to remove..CharInv->MouseInv..!", 2);
                                     }
-                                }
+                                //}
                             }
                             characterInventory.itemSlots[Lists.inventorySlots[j]].item = null;
                         }
@@ -578,8 +578,8 @@ namespace Eternal_Coin
                                 P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
-                                    for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
-                                    {
+                                    //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
+                                    //{
                                         try
                                         {
                                             Attack.TakeAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
@@ -588,7 +588,7 @@ namespace Eternal_Coin
                                         {
                                             GVar.LogDebugInfo("!No attacks to remove..CharInv->PlayerInv..", 2);
                                         }
-                                    }
+                                    //}
                                 }
                                 Item.FromCharacter(characterInventory.itemSlots[Lists.inventorySlots[j]].item, Lists.inventorySlots[j]);
                                 preventclick = 1;
@@ -605,8 +605,8 @@ namespace Eternal_Coin
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, playerInventory.itemSlots[i].item.InventorySlot);
                                 P.AddItemStats((Armor)playerInventory.itemSlots[i].item);
-                                for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
-                                {
+                                //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
+                                //{
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
@@ -615,7 +615,7 @@ namespace Eternal_Coin
                                     {
                                         GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
                                     }
-                                }
+                                //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                                 preventclick = 1;
                                 break;
@@ -628,8 +628,8 @@ namespace Eternal_Coin
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.leftHandWeapon);
                                 P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
-                                for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
-                                {
+                                //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
+                                //{
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
@@ -638,7 +638,7 @@ namespace Eternal_Coin
                                     {
                                         GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
                                     }
-                                }
+                                //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                                 preventclick = 1;
                                 break;
@@ -648,8 +648,8 @@ namespace Eternal_Coin
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.rightHandWeapon);
                                 P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
-                                for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
-                                {
+                                //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
+                                //{
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
@@ -658,7 +658,7 @@ namespace Eternal_Coin
                                     {
                                         GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
                                     }
-                                }
+                                //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                                 preventclick = 1;
                                 break;

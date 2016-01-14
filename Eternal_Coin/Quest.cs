@@ -47,7 +47,7 @@ namespace Eternal_Coin
             }
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
             GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.acceptquest].InnerText;
-            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 150);
+            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
             SaveXml.SaveLocationXmlFile(P, temp);
             Save.SaveGame(GVar.savedGameLocation, P, Lists.quests);
         }
@@ -60,7 +60,7 @@ namespace Eternal_Coin
             locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
             GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.handinquest].InnerText;
-            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 150);
+            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/quest");
             for (int k = 0; k < Lists.quests.Count; k++)
             {

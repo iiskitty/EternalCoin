@@ -44,7 +44,7 @@ namespace Eternal_Coin
             if (GVar.startGame && !Colours.fadeIn)
             {
                 Lists.chooseCharacterButtons.Clear();
-                Player player = new Player(Textures.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 0, 0);
+                Player player = new Player(Textures.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load("Content/LoadData/CreateLocationNodes.xml");
@@ -77,6 +77,7 @@ namespace Eternal_Coin
             {
                 Lists.savedGamesXmlDoc.Clear();
                 Lists.mainMenuButtons.Clear();
+                WorldMap.ResetMap();
                 MainMenu.LoadMainMenu();
                 GVar.currentGameState = GVar.GameState.mainMenu;
                 GVar.previousGameState = GVar.GameState.chooseCharacter;
@@ -210,7 +211,7 @@ namespace Eternal_Coin
             }
             if (button.Name == "EnterLocation" || button.Name == "ExitLocation")
             {
-                button.Position = new Vector2(P.Position.X + P.Size.X / 2 - button.Size.X / 2, P.Position.Y + P.Size.Y / 2 - button.Size.Y - 40);
+                button.Position = new Vector2(P.Position.X + P.Size.X / 2 - button.Size.X / 2, P.Position.Y + P.Size.Y / 2 - button.Size.Y - 45);
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (button.Name == "CloseQuestInfoUI")

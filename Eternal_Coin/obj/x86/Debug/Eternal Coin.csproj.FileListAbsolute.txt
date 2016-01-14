@@ -301,3 +301,4 @@ C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\RightLightGenButton.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\MouseOverButton.xnb
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\CloseButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\Punch.xnb

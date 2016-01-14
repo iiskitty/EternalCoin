@@ -18,7 +18,14 @@ namespace Eternal_Coin
 
             foreach (FileInfo fi in dirInfo.GetFiles())
             {
-                fi.Delete();
+                try
+                {
+                    fi.Delete();
+                }
+                catch
+                {
+                    ClearFolder(folderName);
+                }
             }
 
             foreach (DirectoryInfo di in dirInfo.GetDirectories())
@@ -30,14 +37,7 @@ namespace Eternal_Coin
                 }
                 catch
                 {
-                    try
-                    {
-                        di.Delete();
-                    }
-                    catch
-                    {
-
-                    }
+                    ClearFolder(di.FullName);
                 }
             }
         }

@@ -97,7 +97,51 @@
       </animation>
     </attack>
   </enemyattacks>
-  
+  <attack>
+    <id>Punch</id>
+    <type>Physical</type>
+    <animfileloc>Sprites/AttackAnim/DPID/Punch</animfileloc>
+    <animation>
+      <name>Idle</name>
+      <frames>4</frames>
+      <width>128</width>
+      <height>128</height>
+      <x>0</x>
+      <y>0</y>
+    </animation>
+    <animation>
+      <name>BuildUp</name>
+      <frames>7</frames>
+      <width>128</width>
+      <height>128</height>
+      <x>0</x>
+      <y>128</y>
+    </animation>
+    <animation>
+      <name>Attack</name>
+      <frames>6</frames>
+      <width>128</width>
+      <height>128</height>
+      <x>0</x>
+      <y>256</y>
+    </animation>
+    <animation>
+      <name>Attacked</name>
+      <frames>8</frames>
+      <width>128</width>
+      <height>128</height>
+      <x>0</x>
+      <y>512</y>
+    </animation>
+    <animation>
+      <name>Retreat</name>
+      <frames>7</frames>
+      <width>128</width>
+      <height>128</height>
+      <x>0</x>
+      <y>384</y>
+    </animation>
+  </attack>
   <attack>
     <id>IronSwordStab</id>
     <type>Physical</type>

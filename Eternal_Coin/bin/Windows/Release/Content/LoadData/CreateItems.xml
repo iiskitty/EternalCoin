@@ -21,6 +21,16 @@
       <MaceAttack>MaceSwing</MaceAttack>
     </item>
   </weapons>
+
+  <jewellry>
+    <item>
+      <class>Jewellry</class>
+      <itemname>Iron Ring</itemname>
+      <itemtype>Ring</itemtype>
+      <itemmaterial>Iron</itemmaterial>
+      <inventoryslot>Ring</inventoryslot>
+    </item>
+  </jewellry>
   
   <armor>
     <item>

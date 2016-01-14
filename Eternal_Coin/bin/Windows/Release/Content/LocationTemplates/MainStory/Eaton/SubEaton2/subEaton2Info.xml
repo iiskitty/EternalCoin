@@ -11,15 +11,13 @@
 
   <enemy>
     <name>hickie</name>
+    <dpid>EDefault</dpid>
     <inventory>
       <item>
-        <class>Weapon</class>
         <itemname>Iron Sword</itemname>
-        <itemtype>IronSword</itemtype>
-        <itemmaterial>Iron</itemmaterial>
-        <inventoryslot>Weapon</inventoryslot>
-        <IronSwordattack>IronSwordStab</IronSwordattack>
-        <IronSwordattack>IronSwordStrike</IronSwordattack>
+      </item>
+      <item>
+        <itemname>Bronze Chestplate</itemname>
       </item>
     </inventory>
   </enemy>

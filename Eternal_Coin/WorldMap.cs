@@ -76,6 +76,18 @@ namespace Eternal_Coin
             GVar.worldMap.SpriteID = Dictionaries.maps[location.MainName + "Map"];
         }
 
+        public static void ResetMap()
+        {
+            try
+            {
+                GVar.worldMap.SpriteID = null;
+            }
+            catch
+            {
+
+            }
+        }
+
         public void MapMovement(float gameTime)
         {
             position.X += mapSpeed.X * gameTime;

@@ -23,7 +23,7 @@ namespace Eternal_Coin
                     XmlNode saveNode = Lists.savedGamesXmlDoc[i].DocumentElement.SelectSingleNode("/savedgame");
                     if (P.Name == saveNode[GVar.XmlTags.Player.name].InnerText)
                     {
-                        saveLocation = GVar.savedGameLocation + i.ToString() + ".xml";
+                        saveLocation = GVar.savedGameLocation + saveNode["filenumber"].InnerText + ".xml";
                         File.Delete(saveLocation);
                         GVar.LogDebugInfo("Save File Found.", 2);
                         break;
@@ -34,11 +34,20 @@ namespace Eternal_Coin
             {
                 GVar.LogDebugInfo("!!!Failed To Find SaveFile!!!", 1);
             }
-
+            int num = 0;
             if (saveLocation == "")
             {
-                saveLocation = GVar.savedGameLocation + Lists.savedGamesXmlDoc.Count.ToString() + ".xml";
-                GVar.LogDebugInfo("Could Not Find A Save File.", 2);
+                for (int i = 0; i < 10; i++)
+                {
+                    saveLocation = GVar.savedGameLocation + i.ToString() + ".xml";
+                    num = i;
+                    if (!File.Exists(saveLocation))
+                    {
+                        break;
+                    }
+                }
+                //saveLocation = GVar.savedGameLocation + Lists.savedGamesXmlDoc.Count.ToString() + ".xml";
+                //GVar.LogDebugInfo("Could Not Find A Save File.", 2);
             }
             if (!File.Exists(saveLocation))
             {
@@ -55,6 +64,11 @@ namespace Eternal_Coin
                 XmlText fileNameInner = tempDoc.CreateTextNode(saveLocation);
                 fileName.AppendChild(fileNameInner);
                 body.AppendChild(fileName);
+
+                XmlElement fileNumber = tempDoc.CreateElement(string.Empty, "filenumber", string.Empty);
+                XmlText fileNumberInner = tempDoc.CreateTextNode(num.ToString());
+                fileNumber.AppendChild(fileNumberInner);
+                body.AppendChild(fileNumber);
 
                 XmlElement dpid = tempDoc.CreateElement(string.Empty, "dpid", string.Empty);
                 XmlText dpidInner = tempDoc.CreateTextNode(GVar.displayPicID);

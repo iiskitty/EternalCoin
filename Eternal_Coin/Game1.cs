@@ -138,12 +138,9 @@ namespace Eternal_Coin
                     if (InventoryManager.playerInventory.itemSlots[i].item == null)
                     {
                         Item item;
-                        item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
+                        item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
                         Lists.playerItems.Add(item);
                         InventoryManager.playerInventory.itemSlots[i].item = item;
-                        item = ItemBuilder.BuildItem(Dictionaries.items["Bronze Leggings"]);
-                        Lists.playerItems.Add(item);
-                        InventoryManager.playerInventory.itemSlots[i + 1].item = item;
                         break;
                     }
                 }

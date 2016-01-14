@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <itemdata>
-	<numberoftypes>12</numberoftypes>
 	<itemtype>
 		<name>BronzeSword</name>
 		<cost>10</cost>
@@ -86,8 +85,12 @@
 		<armor>5</armor>
 		<imagefilepath>Sprites/tempIcon/gauntlet</imagefilepath>
 	</itemtype>
-
-	<numberofmaterials>7</numberofmaterials>
+  <itemtype>
+    <name>Ring</name>
+    <cost>10</cost>
+    <imagefilepath>Sprites/tempIcon/Ring</imagefilepath>
+  </itemtype>
+  
 	<material>
 		<name>Wood</name>
 		<cost>2</cost>

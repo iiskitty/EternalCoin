@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<picutes>
+<pictures>
   <picture>
     <filepath>Sprites/DP/Default</filepath>
     <id>Default</id>
@@ -13,4 +13,4 @@
     <filepath>Sprites/DP/enemy/EDefault</filepath>
     <id>EDefault</id>
   </epicture>
-</picutes>
+</pictures>

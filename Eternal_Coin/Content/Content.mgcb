@@ -549,9 +549,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/AttackAnim/EDefault/IronSwordStrike.png
 
-#begin LoadData/LoadAttacks.xml
-/copy:LoadData/LoadAttacks.xml
-
 #begin LoadData/ItemData.xml
 /copy:LoadData/ItemData.xml
 
@@ -926,4 +923,18 @@
 
 #begin LoadData/SetTextures.xml
 /copy:LoadData/SetTextures.xml
+
+#begin LoadData/LoadAttacks.xml
+/copy:LoadData/LoadAttacks.xml
+
+#begin Sprites/AttackAnim/Default/Punch.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/AttackAnim/Default/Punch.png
 

@@ -63,10 +63,10 @@ namespace Eternal_Coin
             for (int i = 0; i < ids.Count; i++)
             {
                 string id = GVar.displayPicID + ids[i];
-                if (Lists.availableAttacksIDs.Count != ids.Count)
-                    Lists.availableAttacksIDs.Add(id);
-                if (Dictionaries.availableAttacks.Count != ids.Count)
+                if (Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
                     Dictionaries.availableAttacks.Add(id, Dictionaries.attacks[id + ids[i]]);
+                if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
+                    Lists.availableAttacksIDs.Add(id);
             }
         }
 
@@ -84,10 +84,10 @@ namespace Eternal_Coin
             for (int i = 0; i < ids.Count; i++)
             {
                 string id = GVar.eDisplayPicID + ids[i];
-                if (Lists.enemyAttackIDs.Count != ids.Count)
-                    Lists.enemyAttackIDs.Add(id);
-                if (Dictionaries.enemyAttacks.Count != ids.Count)
+                if (Dictionaries.enemyAttacks.Count != Dictionaries.enemyAttacks.Count + ids.Count)
                     Dictionaries.enemyAttacks.Add(id, Dictionaries.attacks[id + ids[i]]);
+                if (Lists.enemyAttackIDs.Count != Lists.enemyAttackIDs.Count + ids.Count)
+                    Lists.enemyAttackIDs.Add(id);
             }
         }
 
@@ -149,7 +149,7 @@ namespace Eternal_Coin
                     try
                     {
                         Attack atk = new Attack(id, type, anim);
-
+                        
                         XmlNodeList animList = attack.SelectNodes("animation");
 
                         foreach (XmlNode anima in animList)
@@ -216,7 +216,11 @@ namespace Eternal_Coin
                 try
                 {
                     Attack atk = new Attack(id, type, anim);
-
+                    if (id == "DefaultPunch")
+                    {
+                        Lists.availableAttacksIDs.Add(atk.ID);
+                        Dictionaries.availableAttacks.Add(atk.id, atk);
+                    }
                     XmlNodeList animList = attack.SelectNodes("animation");
 
                     foreach (XmlNode anima in animList)

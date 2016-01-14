@@ -5,4 +5,16 @@
     <id>CoinClick</id>
     <filepath>Sounds/CoinClick</filepath>
   </sound>
+  <sound>
+    <id>LocNodeClick</id>
+    <filepath>Sounds/LocationNodeClick</filepath>
+  </sound>
+  <sound>
+    <id>ButtonClick</id>
+    <filepath>Sounds/ButtonClick</filepath>
+  </sound>
+  <sound>
+    <id>ButtonMouseOver</id>
+    <filepath>Sounds/MouseOverButton</filepath>
+  </sound>
 </load>

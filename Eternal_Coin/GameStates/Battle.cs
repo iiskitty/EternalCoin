@@ -125,6 +125,10 @@ namespace Eternal_Coin
 
             for (int i = 0; i < Lists.availableAttacksIDs.Count; i++)
             {
+                if (Lists.availableAttacksIDs[i] == "DefaultPunch" && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item != null)
+                {
+                    continue;
+                }
                 Button atkButton = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Blue, "Attack", Lists.availableAttacksIDs[i], 0f);
                 Lists.attackButtons.Add(atkButton);
             }
