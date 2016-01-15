@@ -496,9 +496,6 @@
 #begin LoadData/LoadDisplayPictures.xml
 /copy:LoadData/LoadDisplayPictures.xml
 
-#begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-
 #begin Sounds/LocationNodeClick.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -918,12 +915,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/CloseButton.png
 
-#begin LoadData/LoadTextures.xml
-/copy:LoadData/LoadTextures.xml
-
-#begin LoadData/SetTextures.xml
-/copy:LoadData/SetTextures.xml
-
 #begin LoadData/LoadAttacks.xml
 /copy:LoadData/LoadAttacks.xml
 
@@ -937,4 +928,46 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/AttackAnim/Default/Punch.png
+
+#begin Sprites/UI/EndBattleUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/EndBattleUI.png
+
+#begin Sprites/Buttons/ContinueButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/ContinueButton.png
+
+#begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
+/copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
+
+#begin LoadData/LoadTextures.xml
+/copy:LoadData/LoadTextures.xml
+
+#begin LoadData/SetTextures.xml
+/copy:LoadData/SetTextures.xml
+
+#begin Sprites/UI/ItemInfoUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/ItemInfoUI.png
 

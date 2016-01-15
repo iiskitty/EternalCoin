@@ -24,6 +24,7 @@ namespace Eternal_Coin
         public static Texture2D startButton;
         public static Texture2D backButton;
         public static Texture2D closeButton;
+        public static Texture2D continueButton;
         public static Texture2D newButton;
         public static Texture2D loadButton;
         public static Texture2D deleteButton;
@@ -41,7 +42,9 @@ namespace Eternal_Coin
         public static Texture2D inventoryUI;
         public static Texture2D shopInventoryUI;
         public static Texture2D battleUI;
+        public static Texture2D endBattleUI;
         public static Texture2D pauseUI;
+        public static Texture2D itemInfoUI;
         public static Texture2D newGameUIBorder;
         public static Texture2D newGameUIInner;
         public static Texture2D savedGameUIBorder;
@@ -71,6 +74,8 @@ namespace Eternal_Coin
             setTexDoc.Load("./Content/LoadData/SetTextures.xml");
             XmlNode texID = setTexDoc.SelectSingleNode("/set");
 
+            itemInfoUI = Dictionaries.textures[texID["UIiteminfo"].InnerText];
+            continueButton = Dictionaries.textures[texID["continuebut"].InnerText];
             newGameUIBorder = Dictionaries.textures[texID["UInewgameborder"].InnerText];
             newGameUIInner = Dictionaries.textures[texID["UInewgameinner"].InnerText];
             savedGameUIBorder = Dictionaries.textures[texID["UIsavedgameborder"].InnerText];
@@ -113,6 +118,7 @@ namespace Eternal_Coin
             shopInventoryUI = Dictionaries.textures[texID["UIshopinv"].InnerText];
             pauseUI = Dictionaries.textures[texID["UIpause"].InnerText];
             battleUI = Dictionaries.textures[texID["UIBattle"].InnerText];
+            endBattleUI = Dictionaries.textures[texID["UIendbattle"].InnerText];
         }
     }
 }

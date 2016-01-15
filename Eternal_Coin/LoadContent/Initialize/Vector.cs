@@ -19,6 +19,7 @@ namespace Eternal_Coin
         public static Vector2 locationButtonSize;
         public static Vector2 itemNormalSize;
         public static Vector2 newGameDPSize;
+        public static Vector2 middleScreenPosition;
 
         public static void InitilizeVectors()
         {

@@ -65,8 +65,23 @@ namespace Eternal_Coin
                 string id = GVar.displayPicID + ids[i];
                 if (Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
                     Dictionaries.availableAttacks.Add(id, Dictionaries.attacks[id + ids[i]]);
-                if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
+                //if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
+                //    Lists.availableAttacksIDs.Add(id);
+            }
+            for (int i = 0; i < ids.Count; i++)
+            {
+                string id = GVar.displayPicID + ids[i];
+                if (Lists.availableAttacksIDs.Count == i + 1 || Lists.availableAttacksIDs.Count == 0)
+                {
                     Lists.availableAttacksIDs.Add(id);
+                    continue;
+                }
+                if (Lists.availableAttacksIDs.Count > 0 && id == Lists.availableAttacksIDs[i])
+                {
+                    ids.RemoveAt(i);
+                    i--;
+                }
+
             }
         }
 

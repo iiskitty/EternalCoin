@@ -46,7 +46,6 @@ namespace Eternal_Coin
         public static void ClearDictionaries()
         {
             locNodes.Clear();
-            attacks.Clear();
             enemyAttacks.Clear();
             availableAttacks.Clear();
             maps.Clear();

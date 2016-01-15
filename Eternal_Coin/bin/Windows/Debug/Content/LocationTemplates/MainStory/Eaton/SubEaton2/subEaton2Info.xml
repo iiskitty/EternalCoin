@@ -20,6 +20,17 @@
         <itemname>Bronze Chestplate</itemname>
       </item>
     </inventory>
+    <loot>
+      <silver>
+        <amount>50</amount>
+      </silver>
+      <item>
+        <itemname>Iron Sword</itemname>
+      </item>
+      <item>
+        <itemname>Bronze Chestplate</itemname>
+      </item>
+    </loot>
   </enemy>
 	
 	<actions>

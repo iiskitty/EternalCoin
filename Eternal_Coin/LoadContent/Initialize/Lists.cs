@@ -22,6 +22,7 @@ namespace Eternal_Coin
         public static List<Object> locationButtons;
         public static List<Object> attackButtons;
         public static List<Object> displayPictureButtons;
+        public static List<Object> battleSceneButtons;
         public static List<Quest> quests;
         public static List<Object> viewQuestInfoButtons;
         public static List<GeneratedButton> availableStoriesButtons;
@@ -42,6 +43,7 @@ namespace Eternal_Coin
 
         public static void InitializeLists()
         {
+            battleSceneButtons = new List<Object>();
             characterItems = new List<Item>();
             shopItems = new List<Item>();
             playerItems = new List<Item>();
@@ -105,6 +107,9 @@ namespace Eternal_Coin
             viewQuestInfoButtons.Clear();
             mainWorldButtons.Clear();
             entity.Clear();
+            availableAttacksIDs.Clear();
+            
+            enemyAttackIDs.Clear();
         }
     }
 }

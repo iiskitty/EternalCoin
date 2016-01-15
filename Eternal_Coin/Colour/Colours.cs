@@ -31,9 +31,14 @@ namespace Eternal_Coin
         {
             blackFadeColour = Color.FromNonPremultiplied(0, 0, 0, blackFadeAlpha);
             mapFadeColour = Color.FromNonPremultiplied(255, 255, 255, mapFadeAlpha);
+
+            if (fadeIn && fadeOut)
+            {
+                fadeIn = false;
+            }
+
             if (fadeIn && blackFadeAlpha < 251)
             {
-                
                 blackFadeAlpha += 10;
                 if (blackFadeAlpha >= 250)
                 {

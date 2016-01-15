@@ -491,6 +491,10 @@ namespace Eternal_Coin
                                         try
                                         {
                                             Attack.AddAvailableAttacks(mouseInventory.heldItem.Attacks);
+                                            foreach(string atkID in mouseInventory.heldItem.Attacks)
+                                            {
+                                                GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                            }
                                         }
                                         catch
                                         {
@@ -528,6 +532,10 @@ namespace Eternal_Coin
                                         try
                                         {
                                             Attack.AddAvailableAttacks(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks);
+                                            foreach (string atkID in mouseInventory.heldItem.Attacks)
+                                            {
+                                                GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                            }
                                         }
                                         catch
                                         {
@@ -610,10 +618,14 @@ namespace Eternal_Coin
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
+                                        foreach (string atkID in playerInventory.itemSlots[i].item.Attacks)
+                                        {
+                                            GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                        }
                                     }
-                                    catch
+                                    catch (Exception e)
                                     {
-                                        GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
+                                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                                     }
                                 //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
@@ -633,10 +645,14 @@ namespace Eternal_Coin
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
+                                        foreach (string atkID in playerInventory.itemSlots[i].item.Attacks)
+                                        {
+                                            GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                        }
                                     }
-                                    catch
+                                    catch (Exception e)
                                     {
-                                        GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
+                                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                                     }
                                 //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
@@ -653,10 +669,14 @@ namespace Eternal_Coin
                                     try
                                     {
                                         Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
+                                        foreach (string atkID in playerInventory.itemSlots[i].item.Attacks)
+                                        {
+                                            GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                        }
                                     }
-                                    catch
+                                    catch (Exception e)
                                     {
-                                        GVar.LogDebugInfo("!No attacks to add..PlayerInv->CharInv..", 2);
+                                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                                     }
                                 //}
                                 Item.FromPlayer(playerInventory.itemSlots[i].item, i);
@@ -680,6 +700,10 @@ namespace Eternal_Coin
                                         if (playerInventory.itemSlots[i].item.Attacks != null)
                                         {
                                             Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
+                                            foreach (string atkID in mouseInventory.heldItem.Attacks)
+                                            {
+                                                GVar.LogDebugInfo("Attack added: " + atkID, 1);
+                                            }
                                         }
                                         Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                                         preventclick = 1;

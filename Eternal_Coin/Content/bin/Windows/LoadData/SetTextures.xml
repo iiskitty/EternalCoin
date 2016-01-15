@@ -19,6 +19,7 @@
   <playbut>PlayButton</playbut>
   <exitbut>ExitButton</exitbut>
   <optionsbut>OptionsButton</optionsbut>
+  <continuebut>ContinueButton</continuebut>
   <coinback>CoinBack</coinback>
   <lookeye>LookEye</lookeye>
   <npcbut>NPCButton</npcbut>
@@ -31,6 +32,7 @@
   <leftdarkgenbut>LeftDarkGenButton</leftdarkgenbut>
   <middarkgenbut>MiddleDarkGenButton</middarkgenbut>
   <rightdarkgenbut>RightDarkGenButton</rightdarkgenbut>
+  <UIiteminfo>ItemInfoUI</UIiteminfo>
   <UInewgameborder>NewGameUIBorder</UInewgameborder>
   <UInewgameinner>NewGameUIInner</UInewgameinner>
   <UIsavedgameborder>SavedGameUIBorder</UIsavedgameborder>
@@ -43,4 +45,5 @@
   <UIshopinv>ShopInventory</UIshopinv>
   <UIpause>Pause</UIpause>
   <UIBattle>Battle</UIBattle>
+  <UIendbattle>EndBattleUI</UIendbattle>
 </set>

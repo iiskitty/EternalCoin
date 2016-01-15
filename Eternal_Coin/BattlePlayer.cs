@@ -62,7 +62,7 @@ namespace Eternal_Coin
                 if (damage < 0)
                     damage = 1;
 
-                Battle.battleEnemy.Health -= damage;
+                Battle.battleEnemy.Health -= (int)damage;
 
                 PlayAnimation(GVar.AttackAnimStates.retreat);
             }

@@ -5,9 +5,10 @@
   <description></description> <!-- The description of the Location that is displayed to the screen -->
   <searched>false</searched> <!-- If the location has been searched or not -->
   <hasnpc>true</hasnpc> <!-- If the location has an npc or not. If a location doesnt have a npc, delete the entire <npc> tag -->
-  <hasshop>true</hasshop> <!-- If the location has a shop or now. If a location doesnt have a shop, delete the entire <shop> tag -->
+  <hasshop>true</hasshop> <!-- If the location has a shop or not. If a location doesnt have a shop, delete the entire <shop> tag -->
+  <hasenemy>false</hasenemy> <!-- If the location has an enemy or not. If a location doesn't have an enemy, delete the entire <enemy> tag -->
 
-  <npc>
+  <npc> <!-- Delete this entire tag if a location doesn't have a npc -->
     <hasquest>true</hasquest> <!-- If the npc has a quest or not -->
     <questaccepted>false</questaccepted> <!-- If the quest has been accepted or not -->
     <questfinished>false</questfinished> <!-- If the quest is finished ot not -->
@@ -29,66 +30,69 @@
       <completingaction></completingaction> <!-- Completing Action is an action that is done at a specific location to complete the quest (reference <actions> to see the actions available) -->
       <completinglocation></completinglocation> <!-- The location the quest is to be completed in -->
       <reward> <!-- Rewards for completing the quest -->
-        <item> <!-- Can have as many reward item as you want -->
-          <class></class> <!-- Class of the Item (Weapon or Armor) -->
+        <item> <!-- Can have as many reward item as you want, though I would keep it to 1-5 -->
           <itemname></itemname> <!-- Name of the Item -->
-          <itemtype></itemtype> <!-- Reference ItemData.xml to see or create an item type -->
-          <itemmaterial></itemmaterial> <!-- Reference ItemData.xml to see or create a material -->
-          <inventoryslot></inventoryslot> <!-- Scroll down this document to see inventory slot names -->
-          <ITNattack></ITNattack> <!-- Replace ITN with item type name. -->
         </item>
       </reward>
     </quest>
-  </npc>
+  </npc> <!-- Delete this entire tag if a location doesn't have a npc -->
 
-  <shop>
+  <!-- Items templates
+  ITEM CLASSES:
+    Weapon
+    Armor
+    Jewelry
+ 
+  ITEM TYPES:
+    Reference ItemData.xml for types
+ 
+  ITEM MATERIALS:
+    Reference ItemData.xml for materials
+ 
+  INVENTORY SLOT NAMES:
+    Helmet
+    Chestplate
+    Leggings
+    RightBoot
+    LeftBoot
+    RightGauntlet
+    LeftGauntlet
+    Weapon
+    Ring
+-->
+
+  <shop> <!-- Delete this entire tag if a location doesn't have a shop -->
     <name></name> <!-- Name of the shop keep -->
     <greeting></greeting> <!-- Greeting of the shop keep -->
     <inventory> <!-- Items that will be put into the shops intentory for the player to buy -->
       <item>
-        <class></class>
         <itemname></itemname>
-        <itemtype></itemtype>
-        <itemmaterial></itemmaterial>
-        <inventoryslot></inventoryslot>
       </item>
     </inventory>
-  </shop>
+  </shop> <!-- Delete this entire tag if a location doesn't have an shop -->
+
+  <enemy> <!-- Delete this entire tag if a location doesn't have an enemy -->
+    <name></name> <!-- Name of the enemy -->
+    <dpid></dpid> <!-- Display Picture of the enemy. This will also define which set of animtions the enemy will use -->
+    <inventory> <!-- Items that the enemy has equipped, enemies do not have an entire inventory -->
+      <item>
+        <itemname></itemname>
+      </item>
+    </inventory>
+    <loot> <!-- This is the reward for killing the enemy -->
+      <silver> <!-- Silver is the in game currency used to buy things from shops -->
+        <amount></amount>
+      </silver>
+      <item>
+        <itemname></itemname>
+      </item>
+    </loot>
+  </enemy> <!-- Delete this entire tag if a location doesn't have an enemy -->
 
   <actions>
-    <enter>Entering </enter> <!-- Entering a location (only happens if location has been previously explored -->
-    <explore>Exploring </explore> <!-- Exploing a location -->
-    <talknpc>Talking To </talknpc> <!-- Talking to an npc -->
-    <acceptquest>Accepted Quest</acceptquest> <!-- I dont think this happens anymore -->
-    <handinquest>Handed In Quest</handinquest> <!-- I don't think this happens anymore either -->
+    <enter>Entering *locationname*</enter> <!-- Entering a location (only happens if location has been previously explored -->
+    <explore>Exploring *locationname</explore> <!-- Exploing a location -->
+    <talknpc>Talking To *npcname*</talknpc> <!-- Talking to an npc -->
   </actions>
 </location>
 
-<!--items templates-->
-<!--
-ITEM CLASSES:
- weapon
- armor
- 
-ITEM TYPES:
- Reference ItemData.xml for types
- 
-ITEM MATERIALS:
- Reference ItemData.xml for materials
- 
-INVENTORY SLOT NAMES:
- Helmet
- Chestplate
- Leggings
- Boot
- Gauntlet
- Weapon
- 
-<item>
-	<class>Armor or Weapon</class>
-  <itemname></itemname>
-	<itemtype></itemtype>
-	<itemmaterial></itemmaterial>
-	<inventoryslot></inventoryslot>
-</item>
--->

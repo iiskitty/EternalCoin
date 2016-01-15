@@ -19,16 +19,32 @@ namespace Eternal_Coin
         public static BattleEnemy battleEnemy;
         public static BattlePlayer battlePlayer;
 
+        public static bool battleWon = false;
+
+        public static List<Item> loot = new List<Item>();
+        public static int silverReward;
+
         public static string currentAttackType = "";
         static string enemyNextAttack = string.Empty;
         static float enemyAttackTimer = 100;
 
         public static void LoadBattle(XmlDocument battleDoc)
         {
+            enemyAttackTimer = 100;
             try
             {
                 battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), Lists.entity[0].Name, "Alive", new Vector2(), Color.White, Lists.entity[0].Health, Lists.entity[0].Armour, Lists.entity[0].Damage);
-                
+                try
+                {
+                    foreach (string atkID in Lists.availableAttacksIDs)
+                    {
+                        GVar.LogDebugInfo("Attack ID: " + atkID, 1);
+                    }
+                }
+                catch (Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                }
 
                 XmlNodeList enemyItems = battleDoc.SelectNodes("/location/enemy/inventory/item");
 
@@ -46,7 +62,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -58,7 +74,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -71,7 +87,7 @@ namespace Eternal_Coin
                         {
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 100f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -79,7 +95,41 @@ namespace Eternal_Coin
                         }
                     }
                 }
-
+                try
+                {
+                    XmlNode silver = battleDoc.SelectSingleNode("/location/enemy/loot/silver");
+                    silverReward = Convert.ToInt32(silver["amount"].InnerText);
+                }
+                catch(Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                }
+                try
+                {
+                    XmlNodeList lootItems = battleDoc.SelectNodes("/location/enemy/loot/item");
+                    
+                    foreach (XmlNode lootItem in lootItems)
+                    {
+                        loot.Add(Dictionaries.items[lootItem[GVar.XmlTags.ItemTags.itemname].InnerText]);
+                    }
+                    Vector2 itemPos = new Vector2();
+                    foreach (UIElement ui in Lists.uiElements)
+                    {
+                        if (ui.SpriteID == Textures.endBattleUI)
+                        {
+                            itemPos = new Vector2(ui.Position.X + 14, ui.Position.Y + 56);
+                        }
+                    }
+                    foreach (Item item in loot)
+                    {
+                        item.Position = itemPos;
+                        itemPos.X += 82;
+                    }
+                }
+                catch(Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e +"]", 1);
+                }
             }
             catch (Exception e)
             {
@@ -184,7 +234,7 @@ namespace Eternal_Coin
             playerPort = new Rectangle(95, 0, 10, 300);
             enemyPort = new Rectangle(1123, 0, 10, 300);
             
-            if (enemyAttackTimer > 0 && battleEnemy.Bounds.Intersects(enemyPort) && battleEnemy.CurrentAnimation == GVar.AttackAnimStates.idle)
+            if (enemyAttackTimer > 0 && battleEnemy.Bounds.Intersects(enemyPort) && battleEnemy.CurrentAnimation == GVar.AttackAnimStates.idle && battleEnemy.Health > 0)
             {
                 enemyAttackTimer -= 20f * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
@@ -200,9 +250,9 @@ namespace Eternal_Coin
             {
                 B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                 
-                if (MouseManager.mouseBounds.Intersects(B.Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle)
+                if (MouseManager.mouseBounds.Intersects(B.Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle && !battleWon)
                 {
-                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     try
                     {
                         currentAttackType = Dictionaries.availableAttacks[B.State].Type;
@@ -213,6 +263,58 @@ namespace Eternal_Coin
                     {
                         GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                     }
+                }
+            }
+
+            if (battleWon)
+            {
+                foreach (Object B in Lists.battleSceneButtons)
+                {
+                    B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+                    if (MouseManager.mouseBounds.Intersects(B.Bounds))
+                    {
+                        B.PlayAnimation(GVar.AnimStates.Button.mouseover);
+
+                        if (InputManager.IsLMPressed() && battleWon)
+                        {
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+                            if (B.Name == "Continue")
+                            {
+                                XmlDocument battleDoc = new XmlDocument();
+                                foreach (Entity E in Lists.entity)
+                                {
+                                    battleDoc.Load("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation[0].LocatoinFilePath);
+                                    XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
+                                    hasEnemy["hasenemy"].InnerText = "False";
+                                    battleDoc.Save("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation[0].LocatoinFilePath);
+                                    GVar.location.HasEnemy = false;
+                                    //SaveXml.SaveLocationXmlFile(E, E.CurrentLocation[0]);
+                                }
+                                battleWon = false;
+                                foreach(UIElement ui in Lists.uiElements)
+                                {
+                                    if (ui.SpriteID == Textures.endBattleUI)
+                                    {
+                                        ui.Draw = false;
+                                    }
+                                }
+                                GVar.changeBackToGame = true;
+                                Colours.drawBlackFade = true;
+                                Colours.fadeIn = true;
+                            }
+                        }
+                    }
+                    if (!MouseManager.mouseBounds.Intersects(B.Bounds) && B.CurrentAnimation != GVar.AnimStates.Button.def)
+                    {
+                        B.PlayAnimation(GVar.AnimStates.Button.def);
+                    }
+                }
+                foreach (Item item in loot)
+                {
+                    item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+                    
                 }
             }
         }
@@ -252,8 +354,41 @@ namespace Eternal_Coin
             battlePlayer.Update(gameTime);
             battlePlayer.Draw(spriteBatch, battlePlayer.SpriteID, battlePlayer.Bounds, 0.2f, 0f, Vector2.Zero);
 
-            battleEnemy.Update(gameTime);
-            battleEnemy.Draw(spriteBatch, battleEnemy.SpriteID, battleEnemy.Bounds, 0.2f, 0f, Vector2.Zero);
+            if (battleWon)
+            {
+                foreach (UIElement ui in Lists.uiElements)
+                {
+                    if (ui.SpriteID == Textures.endBattleUI)
+                    {
+                        spriteBatch.DrawString(Fonts.lucidaConsole16Regular, "You defeated " + battleEnemy.Name + "!", new Vector2(ui.Position.X + 123, ui.Position.Y + 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Silver: " + silverReward, new Vector2(ui.Position.X + 160, ui.Position.Y + 135), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
+                    }
+                }
+                foreach (Object B in Lists.battleSceneButtons)
+                {
+                    B.Update(gameTime);
+                    B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.182f, 0f, Vector2.Zero);
+                }
+                foreach (Item item in loot)
+                {
+                    item.Update(gameTime);
+                    item.Draw(spriteBatch, item.SpriteID, item.Bounds, 0.183f, 0f, Vector2.Zero);
+
+                    if (MouseManager.mouseBounds.Intersects(item.Bounds))
+                    {
+                        Vector2 position = new Vector2(MouseManager.GetMousePosition().X, MouseManager.GetMousePosition().Y - Textures.itemInfoUI.Height);
+                        spriteBatch.Draw(Textures.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.itemInfoUI.Width, Textures.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
+                        spriteBatch.Draw(item.SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                    }
+                }
+            }
+
+            if (battleEnemy.Health > 0)
+            {
+                battleEnemy.Update(gameTime);
+                battleEnemy.Draw(spriteBatch, battleEnemy.SpriteID, battleEnemy.Bounds, 0.2f, 0f, Vector2.Zero);
+            }
 
             GVar.DrawBoundingBox(playerAttackRec, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
             GVar.DrawBoundingBox(playerPort, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
@@ -263,13 +398,16 @@ namespace Eternal_Coin
             DrawPlayerInfo(spriteBatch);
             DrawEnemyInfo(spriteBatch);
 
-            int timer = (int)enemyAttackTimer;
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, timer.ToString(), new Vector2(1200, 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+            if (battleEnemy.Health > 0)
+            {
+                int timer = (int)enemyAttackTimer;
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, timer.ToString(), new Vector2(1200, 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+            }
 
             foreach (Object B in Lists.attackButtons)
             {
                 B.Update(gameTime);
-                B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.19f, 0f, Vector2.Zero);
+                B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.1801f, 0f, Vector2.Zero);
             }
 
             InventoryManager.DrawMiniInventory(spriteBatch, InventoryManager.characterInventory);

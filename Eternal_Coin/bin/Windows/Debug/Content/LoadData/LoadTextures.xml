@@ -22,6 +22,10 @@
     <filepath>Sprites/Buttons/LocationNodeTex</filepath>
   </texture>
   <texture>
+    <id>EndBattleUI</id>
+    <filepath>Sprites/UI/EndBattleUI</filepath>
+  </texture>
+  <texture>
     <id>SavedGameUIBorder</id>
     <filepath>Sprites/UI/SavedGameUIBorder</filepath>
   </texture>
@@ -44,6 +48,14 @@
   <texture>
     <id>Cross</id>
     <filepath>Sprites/UI/Cross</filepath>
+  </texture>
+  <texture>
+    <id>ItemInfoUI</id>
+    <filepath>Sprites/UI/ItemInfoUI</filepath>
+  </texture>
+  <texture>
+    <id>ContinueButton</id>
+    <filepath>Sprites/Buttons/ContinueButton</filepath>
   </texture>
   <texture>
     <id>StartButton</id>

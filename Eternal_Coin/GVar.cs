@@ -152,6 +152,7 @@ namespace Eternal_Coin
             public static string buildUp = "BuildUp";
             public static string attack = "Attack";
             public static string attacked = "Attacked";
+            public static string defend = "Defend";
             public static string retreat = "Retreat";
         };
 
@@ -310,7 +311,7 @@ namespace Eternal_Coin
                 Directory.CreateDirectory("Content/DebugLogs");
             }
 
-            debugFilePath = "Content/DebugLogs/DebugLog" + GetDate() + GetTime() + ".txt";
+            debugFilePath = "Content/DebugLogs/DebugLog" + GetDate() + GetTime() + ".jsk";
             debugFile = new FileStream(debugFilePath, FileMode.Create);
             debugFile.Close();
         }

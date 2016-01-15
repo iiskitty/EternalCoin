@@ -109,6 +109,10 @@ namespace Eternal_Coin
 
             if (GVar.changeBackToGame && !Colours.fadeIn)
             {
+                Battle.battleEnemy = null;
+                Battle.battlePlayer = null;
+                Battle.loot.Clear();
+                Battle.silverReward = 0;
                 Lists.optionsButtons.Clear();
                 GVar.currentGameState = GVar.GameState.game;
                 GVar.previousGameState = GVar.GameState.options;
