@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<location>
+  <name></name> <!-- The name of the Location this is displayed to the screen -->
+  <description></description> <!-- The description of the Location that is displayed to the screen -->
+  <searched>false</searched> <!-- If the location has been searched or not -->
+  <hasnpc>true</hasnpc> <!-- If the location has an npc or not. If a location doesnt have a npc, delete the entire <npc> tag -->
+  <hasshop>true</hasshop> <!-- If the location has a shop or now. If a location doesnt have a shop, delete the entire <shop> tag -->
+
+  <npc>
+    <hasquest>true</hasquest> <!-- If the npc has a quest or not -->
+    <questaccepted>false</questaccepted> <!-- If the quest has been accepted or not -->
+    <questfinished>false</questfinished> <!-- If the quest is finished ot not -->
+    <questcompleted>false</questcompleted> <!-- If the quest has been handed in or not -->
+    <name></name> <!-- the Name of the npc -->
+
+    <greeting>
+      <questunaccepted></questunaccepted> <!-- What the npc will say if you have not taken the quest -->
+      <questaccepted></questaccepted> <!-- What the npc will say if you have taken the quest -->
+      <acceptquest></acceptquest> <!-- What the npc will say the moment you accept the quest -->
+      <questfinished></questfinished> <!-- What the npc will say when you have finished but not handed in the quest -->
+      <handinquest></handinquest> <!-- What the npc will say -->
+      <questcompleted></questcompleted> <!-- What the npc will say if the quest is completed -->
+    </greeting>
+
+    <quest>
+      <description></description> <!-- The desciption of the quest that will be displayed from the quest list -->
+      <shortdescription></shortdescription> <!-- The short description of the quest that will be displayed in the quest list -->
+      <completingaction></completingaction> <!-- Completing Action is an action that is done at a specific location to complete the quest (reference <actions> to see the actions available) -->
+      <completinglocation></completinglocation> <!-- The location the quest is to be completed in -->
+      <reward> <!-- Rewards for completing the quest -->
+        <item> <!-- Can have as many reward item as you want -->
+          <class></class> <!-- Class of the Item (Weapon or Armor) -->
+          <itemname></itemname> <!-- Name of the Item -->
+          <itemtype></itemtype> <!-- Reference ItemData.xml to see or create an item type -->
+          <itemmaterial></itemmaterial> <!-- Reference ItemData.xml to see or create a material -->
+          <inventoryslot></inventoryslot> <!-- Scroll down this document to see inventory slot names -->
+          <ITNattack></ITNattack> <!-- Replace ITN with item type name. -->
+        </item>
+      </reward>
+    </quest>
+  </npc>
+
+  <shop>
+    <name></name> <!-- Name of the shop keep -->
+    <greeting></greeting> <!-- Greeting of the shop keep -->
+    <inventory> <!-- Items that will be put into the shops intentory for the player to buy -->
+      <item>
+        <class></class>
+        <itemname></itemname>
+        <itemtype></itemtype>
+        <itemmaterial></itemmaterial>
+        <inventoryslot></inventoryslot>
+      </item>
+    </inventory>
+  </shop>
+
+  <actions>
+    <enter>Entering </enter> <!-- Entering a location (only happens if location has been previously explored -->
+    <explore>Exploring </explore> <!-- Exploing a location -->
+    <talknpc>Talking To </talknpc> <!-- Talking to an npc -->
+    <acceptquest>Accepted Quest</acceptquest> <!-- I dont think this happens anymore -->
+    <handinquest>Handed In Quest</handinquest> <!-- I don't think this happens anymore either -->
+  </actions>
+</location>
+
+<!--items templates-->
+<!--
+ITEM CLASSES:
+ weapon
+ armor
+ 
+ITEM TYPES:
+ Reference ItemData.xml for types
+ 
+ITEM MATERIALS:
+ Reference ItemData.xml for materials
+ 
+INVENTORY SLOT NAMES:
+ Helmet
+ Chestplate
+ Leggings
+ Boot
+ Gauntlet
+ Weapon
+ 
+<item>
+	<class>Armor or Weapon</class>
+  <itemname></itemname>
+	<itemtype></itemtype>
+	<itemmaterial></itemmaterial>
+	<inventoryslot></inventoryslot>
+</item>
+-->

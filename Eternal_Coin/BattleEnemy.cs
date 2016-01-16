@@ -49,10 +49,10 @@ namespace Eternal_Coin
                 Battle.battleWon = true;
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.endBattleUI && !ui.Draw)
+                    if (ui.SpriteID == Textures.UI.endBattleUI && !ui.Draw)
                     {
                         ui.Draw = true;
-                        Button conbut = new Button(Textures.continueButton, new Vector2(ui.Position.X + 108, ui.Position.Y + 154), new Vector2(Textures.continueButton.Width / 2, Textures.continueButton.Height), Color.White, "Continue", "Alive", 0f);
+                        Button conbut = new Button(Textures.Button.continueButton, new Vector2(ui.Position.X + 108, ui.Position.Y + 154), new Vector2(Textures.Button.continueButton.Width / 2, Textures.Button.continueButton.Height), Color.White, "Continue", "Alive", 0f);
                         Lists.battleSceneButtons.Add(conbut);
                     }
                 }

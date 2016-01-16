@@ -76,15 +76,15 @@ namespace Eternal_Coin
 
                 if (MouseManager.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds))
                 {
-                    GVar.DrawBoundingBox(Lists.optionsButtons[i].Bounds, spriteBatch, Textures.pixel, 2, 0.2f, Color.Green);
+                    GVar.DrawBoundingBox(Lists.optionsButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 2, 0.2f, Color.Green);
                 }
             }
         }
 
         public static void LoadOptions()
         {
-            Button fullScreen = new Button(Textures.pixel, new Vector2(50, 50), new Vector2(200, 50), Color.Yellow, "ToggleFullScreen", "Alive", 0f);
-            Button debugLog = new Button(Textures.pixel, new Vector2(300, 50), new Vector2(200, 50), Color.Yellow, "ToggleDebugLog", "Alive", 0f);
+            Button fullScreen = new Button(Textures.Misc.pixel, new Vector2(50, 50), new Vector2(200, 50), Color.Yellow, "ToggleFullScreen", "Alive", 0f);
+            Button debugLog = new Button(Textures.Misc.pixel, new Vector2(300, 50), new Vector2(200, 50), Color.Yellow, "ToggleDebugLog", "Alive", 0f);
             Lists.optionsButtons.Add(fullScreen);
             Lists.optionsButtons.Add(debugLog);
         }

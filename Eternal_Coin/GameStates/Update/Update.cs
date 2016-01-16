@@ -44,7 +44,7 @@ namespace Eternal_Coin
             if (GVar.startGame && !Colours.fadeIn)
             {
                 Lists.chooseCharacterButtons.Clear();
-                Player player = new Player(Textures.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
+                Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load("Content/LoadData/CreateLocationNodes.xml");
@@ -97,7 +97,7 @@ namespace Eternal_Coin
                 InventoryManager.ClearInventories();
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.pauseUI && ui.Draw)
+                    if (ui.SpriteID == Textures.UI.pauseUI && ui.Draw)
                     {
                         ui.Draw = false;
                     }
@@ -137,7 +137,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.pauseUI)
+                    if (ui.SpriteID == Textures.UI.pauseUI)
                     {
                         button.Position = new Vector2(ui.Position.X + 53, ui.Position.Y + 34);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -148,7 +148,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.pauseUI)
+                    if (ui.SpriteID == Textures.UI.pauseUI)
                     {
                         button.Position = new Vector2(ui.Position.X + 53, ui.Position.Y + 99);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -159,7 +159,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.locationInfoUITex)
+                    if (ui.SpriteID == Textures.UI.locationInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -170,7 +170,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.locationInfoUITex)
+                    if (ui.SpriteID == Textures.UI.locationInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - (button.Size.X * 2.2f), ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -181,7 +181,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.questListUI)
+                    if (ui.SpriteID == Textures.UI.questListUI)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -207,7 +207,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }
@@ -223,7 +223,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.questInfoUI)
+                    if (ui.SpriteID == Textures.UI.questInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, 0);
                     }
@@ -234,7 +234,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y);
                     }
@@ -245,7 +245,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }
@@ -256,7 +256,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }

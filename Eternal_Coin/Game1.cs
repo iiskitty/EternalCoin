@@ -240,7 +240,7 @@ namespace Eternal_Coin
 
             spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
-            spriteBatch.Draw(Textures.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
+            spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
             foreach (UIElement ui in Lists.uiElements)
             {
                 if (ui.GameState == GVar.currentGameState && ui.Draw)

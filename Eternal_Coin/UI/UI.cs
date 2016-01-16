@@ -16,14 +16,14 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.questListUI && !ui.Draw)
+                if (ui.SpriteID == Textures.UI.questListUI && !ui.Draw)
                 {
                     foreach (Quest q in Lists.quests)
                     {
-                        Button viewQuestInfoButton = new Button(Textures.clearPixel, Vector2.Zero, new Vector2(268, 15), Color.White, "ViewQuestInfo", "Alive", 0f);
+                        Button viewQuestInfoButton = new Button(Textures.Misc.clearPixel, Vector2.Zero, new Vector2(268, 15), Color.White, "ViewQuestInfo", "Alive", 0f);
                         Lists.viewQuestInfoButtons.Add(viewQuestInfoButton);
                     }
-                    Button closeQuestListUI = new Button(Textures.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestListUI", "Alive", 0f);
+                    Button closeQuestListUI = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestListUI", "Alive", 0f);
                     closeQuestListUI.PlayAnimation(GVar.AnimStates.Button.def);
                     Lists.mainWorldButtons.Add(closeQuestListUI);
                     ui.Draw = true;
@@ -36,11 +36,11 @@ namespace Eternal_Coin
             foreach (UIElement ui in Lists.uiElements)
             {
 
-                if (ui.SpriteID == Textures.questListUI)
+                if (ui.SpriteID == Textures.UI.questListUI)
                 {
                     ui.Draw = false;
                 }
-                if (ui.SpriteID == Textures.questInfoUI && ui.Draw)
+                if (ui.SpriteID == Textures.UI.questInfoUI && ui.Draw)
                 {
                     ui.Draw = false;
                     GVar.questInfo = "";
@@ -59,7 +59,7 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.questInfoUI)
+                if (ui.SpriteID == Textures.UI.questInfoUI)
                 {
                     ui.Draw = false;
                     GVar.questInfo = "";
@@ -73,7 +73,7 @@ namespace Eternal_Coin
 
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.NPCInfoUITex && ui.Draw)
+                if (ui.SpriteID == Textures.UI.NPCInfoUITex && ui.Draw)
                 {
                     for (int b = 0; b < Lists.mainWorldButtons.Count; b++)
                     {

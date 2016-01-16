@@ -2,19 +2,10 @@
 <savedgame>
   <filename>Content/SavedGames/SavedGame0.xml</filename>
   <filenumber>0</filenumber>
-  <dpid>Altered</dpid>
-  <name>dwf</name>
+  <dpid>Default</dpid>
+  <name>fghh</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
-  <playerinventory>
-    <item>
-      <itemname>Iron Sword</itemname>
-      <playerinventoryslot>0</playerinventoryslot>
-    </item>
-    <item>
-      <itemname>Iron Sword</itemname>
-      <playerinventoryslot>1</playerinventoryslot>
-    </item>
-  </playerinventory>
+  <playerinventory />
   <characterinventory />
 </savedgame>

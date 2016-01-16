@@ -178,7 +178,7 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.locationInfoUITex)
+                if (ui.SpriteID == Textures.UI.locationInfoUITex)
                 {
                     if (GVar.location.Searched)
                     {

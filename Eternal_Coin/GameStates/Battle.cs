@@ -116,7 +116,7 @@ namespace Eternal_Coin
                     Vector2 itemPos = new Vector2();
                     foreach (UIElement ui in Lists.uiElements)
                     {
-                        if (ui.SpriteID == Textures.endBattleUI)
+                        if (ui.SpriteID == Textures.UI.endBattleUI)
                         {
                             itemPos = new Vector2(ui.Position.X + 14, ui.Position.Y + 56);
                         }
@@ -180,7 +180,7 @@ namespace Eternal_Coin
                 {
                     continue;
                 }
-                Button atkButton = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Blue, "Attack", Lists.availableAttacksIDs[i], 0f);
+                Button atkButton = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Blue, "Attack", Lists.availableAttacksIDs[i], 0f);
                 Lists.attackButtons.Add(atkButton);
             }
 
@@ -188,7 +188,7 @@ namespace Eternal_Coin
 
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.battleUI)
+                if (ui.SpriteID == Textures.UI.battleUI)
                 {
                     pos.X = ui.Position.X + 473;
                     pos.Y = ui.Position.Y + 35;
@@ -295,7 +295,7 @@ namespace Eternal_Coin
                                 battleWon = false;
                                 foreach(UIElement ui in Lists.uiElements)
                                 {
-                                    if (ui.SpriteID == Textures.endBattleUI)
+                                    if (ui.SpriteID == Textures.UI.endBattleUI)
                                     {
                                         ui.Draw = false;
                                     }
@@ -338,7 +338,7 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.battleUI)
+                if (ui.SpriteID == Textures.UI.battleUI)
                 {
                     spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)ui.Position.X + 10, (int)ui.Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
                     spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battlePlayer.Name, new Vector2(ui.Position.X + 62, ui.Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
@@ -353,7 +353,7 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.battleUI)
+                if (ui.SpriteID == Textures.UI.battleUI)
                 {
                     spriteBatch.Draw(Dictionaries.eDisplayPictures[GVar.eDisplayPicID].displayPic, new Rectangle((int)ui.Position.X + 861, (int)ui.Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
                     spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battleEnemy.Name, new Vector2(ui.Position.X + 912, ui.Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
@@ -373,7 +373,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.endBattleUI)
+                    if (ui.SpriteID == Textures.UI.endBattleUI)
                     {
                         spriteBatch.DrawString(Fonts.lucidaConsole16Regular, "You defeated " + battleEnemy.Name + "!", new Vector2(ui.Position.X + 123, ui.Position.Y + 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
                         spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Silver: " + silverReward, new Vector2(ui.Position.X + 160, ui.Position.Y + 135), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
@@ -391,8 +391,8 @@ namespace Eternal_Coin
 
                     if (MouseManager.mouseBounds.Intersects(item.Bounds))
                     {
-                        Vector2 position = new Vector2(MouseManager.GetMousePosition().X, MouseManager.GetMousePosition().Y - Textures.itemInfoUI.Height);
-                        spriteBatch.Draw(Textures.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.itemInfoUI.Width, Textures.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
+                        Vector2 position = new Vector2(MouseManager.GetMousePosition().X, MouseManager.GetMousePosition().Y - Textures.UI.itemInfoUI.Height);
+                        spriteBatch.Draw(Textures.UI.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.UI.itemInfoUI.Width, Textures.UI.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
                         spriteBatch.Draw(item.SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
                         spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
                     }
@@ -405,10 +405,10 @@ namespace Eternal_Coin
                 battleEnemy.Draw(spriteBatch, battleEnemy.SpriteID, battleEnemy.Bounds, 0.2f, 0f, Vector2.Zero);
             }
 
-            GVar.DrawBoundingBox(playerAttackRec, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
-            GVar.DrawBoundingBox(playerPort, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
-            GVar.DrawBoundingBox(enemyAttackRec, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
-            GVar.DrawBoundingBox(enemyPort, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+            GVar.DrawBoundingBox(playerAttackRec, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+            GVar.DrawBoundingBox(playerPort, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+            GVar.DrawBoundingBox(enemyAttackRec, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+            GVar.DrawBoundingBox(enemyPort, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
 
             DrawPlayerInfo(spriteBatch);
             DrawEnemyInfo(spriteBatch);

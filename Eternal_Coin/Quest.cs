@@ -40,9 +40,9 @@ namespace Eternal_Coin
             Lists.quests.Add(new Quest(locNPC[GVar.XmlTags.QuestTags.description].InnerText, locNPC[GVar.XmlTags.QuestTags.shortdescription].InnerText, locNPC[GVar.XmlTags.QuestTags.completingaction].InnerText, locNPC[GVar.XmlTags.QuestTags.completinglocation].InnerText, false, "Content/GameFiles/" + P.Name + "/" + temp.LocatoinFilePath));
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.questListUI && ui.Draw)
+                if (ui.SpriteID == Textures.UI.questListUI && ui.Draw)
                 {
-                    Lists.viewQuestInfoButtons.Add(new Button(Textures.clearPixel, new Vector2(), new Vector2(268, 15), Color.White, "ViewQuestInfo", "Alive", 0f));
+                    Lists.viewQuestInfoButtons.Add(new Button(Textures.Misc.clearPixel, new Vector2(), new Vector2(268, 15), Color.White, "ViewQuestInfo", "Alive", 0f));
                 }
             }
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");

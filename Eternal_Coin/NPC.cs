@@ -34,7 +34,7 @@ namespace Eternal_Coin
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.NPCInfoUITex && ui.Draw)
+                if (ui.SpriteID == Textures.UI.NPCInfoUITex && ui.Draw)
                 {
                     if (GVar.location != null && GVar.location.Searched)
                     {

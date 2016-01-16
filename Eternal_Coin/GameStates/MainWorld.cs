@@ -21,22 +21,22 @@ namespace Eternal_Coin
 
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.questInfoUI && ui.Draw)
+                if (ui.SpriteID == Textures.UI.questInfoUI && ui.Draw)
                 {
                     Vector2 questInfoPosition = new Vector2(ui.Position.X + ui.SpriteID.Width - 195, ui.Position.Y + ui.SpriteID.Height - 120);
                     spriteBatch.DrawString(Fonts.lucidaConsole10Regular, GVar.questInfo, questInfoPosition, Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                 }
 
-                if (ui.SpriteID == Textures.questListUI && ui.Draw)
+                if (ui.SpriteID == Textures.UI.questListUI && ui.Draw)
                 {
                     Vector2 questInfoPosition = new Vector2(ui.SpriteID.Width - 275, ui.SpriteID.Height - 364);
                     Vector2 questCompletedPosition = new Vector2(ui.SpriteID.Width - 24, ui.SpriteID.Height - 366);
                     foreach (Quest q in Lists.quests)
                     {
                         if (q.Completed)
-                            spriteBatch.Draw(Textures.tickTex, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.tickTex.Width, Textures.tickTex.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                            spriteBatch.Draw(Textures.Misc.tickTex, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.Misc.tickTex.Width, Textures.Misc.tickTex.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                         else if (!q.Completed)
-                            spriteBatch.Draw(Textures.crossTex, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.crossTex.Width, Textures.crossTex.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                            spriteBatch.Draw(Textures.Misc.crossTex, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.Misc.crossTex.Width, Textures.Misc.crossTex.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                         spriteBatch.DrawString(Fonts.lucidaConsole10Regular, q.ShortDescription, questInfoPosition, Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                         questInfoPosition.Y += 18;
                         questCompletedPosition.Y += 18;
@@ -50,7 +50,7 @@ namespace Eternal_Coin
                 b.Draw(spriteBatch, b.SpriteID, b.Bounds, 0.2f, 0f, Vector2.Zero);
                 if (MouseManager.mouseBounds.Intersects(b.Bounds))
                 {
-                    GVar.DrawBoundingBox(b.Bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    GVar.DrawBoundingBox(b.Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                 }
             }
 
@@ -120,7 +120,7 @@ namespace Eternal_Coin
                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.questListUI)
+                    if (ui.SpriteID == Textures.UI.questListUI)
                     {
                         if (!ui.Draw)
                         {
@@ -145,7 +145,7 @@ namespace Eternal_Coin
             if (InputManager.IsKeyPressed(Keys.I))
             {
                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
-                Button closeInv = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
+                Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
                 Lists.inventoryButtons.Add(closeInv);
                 GVar.currentGameState = GVar.GameState.inventory;
                 GVar.previousGameState = GVar.GameState.game;
@@ -153,16 +153,16 @@ namespace Eternal_Coin
 
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (InputManager.IsKeyPressed(Keys.Escape) && ui.SpriteID == Textures.pauseUI && !ui.Draw)
+                if (InputManager.IsKeyPressed(Keys.Escape) && ui.SpriteID == Textures.UI.pauseUI && !ui.Draw)
                 {
                     GVar.gamePaused = true;
                     ui.Draw = true;
-                    Button mainMenu = new Button(Textures.pixel, new Vector2(ui.Position.X + 93, ui.Position.Y + 93), new Vector2(322, 40), Color.Yellow, "MainMenu", "Alive", 0f);
-                    Button options = new Button(Textures.pixel, new Vector2(ui.Position.X + 93, ui.Position.Y + 158), new Vector2(322, 40), Color.Yellow, "Options", "Alive", 0f);
+                    Button mainMenu = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X + 93, ui.Position.Y + 93), new Vector2(322, 40), Color.Yellow, "MainMenu", "Alive", 0f);
+                    Button options = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X + 93, ui.Position.Y + 158), new Vector2(322, 40), Color.Yellow, "Options", "Alive", 0f);
                     Lists.mainWorldButtons.Add(options);
                     Lists.mainWorldButtons.Add(mainMenu);
                 }
-                else if (InputManager.IsKeyPressed(Keys.Escape) && ui.SpriteID == Textures.pauseUI && ui.Draw)
+                else if (InputManager.IsKeyPressed(Keys.Escape) && ui.SpriteID == Textures.UI.pauseUI && ui.Draw)
                 {
                     GVar.gamePaused = false;
                     ui.Draw = false;
@@ -186,7 +186,7 @@ namespace Eternal_Coin
                 Vector2 viewQuestInfoButtonPosition = new Vector2();
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.questListUI)
+                    if (ui.SpriteID == Textures.UI.questListUI)
                     {
                         viewQuestInfoButtonPosition = new Vector2(ui.SpriteID.Width - 277, ui.SpriteID.Height - 366);
                     }
@@ -202,14 +202,14 @@ namespace Eternal_Coin
                         GVar.LogDebugInfo("ButtonClicked: " + Lists.viewQuestInfoButtons[i].Name, 2);
                         for (int ui = 0; ui < Lists.uiElements.Count; ui++)
                         {
-                            if (Lists.uiElements[ui].SpriteID == Textures.questInfoUI && !Lists.uiElements[ui].Draw)
+                            if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && !Lists.uiElements[ui].Draw)
                             {
-                                Lists.mainWorldButtons.Add(new Button(Textures.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestInfoUI", "Alive", 0f));
+                                Lists.mainWorldButtons.Add(new Button(Textures.Misc.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestInfoUI", "Alive", 0f));
                                 Lists.uiElements[ui].Draw = true;
                                 GVar.questInfo = Lists.quests[i].Description;
                                 GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);
                             }
-                            else if (Lists.uiElements[ui].SpriteID == Textures.questInfoUI && Lists.uiElements[ui].Draw)
+                            else if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && Lists.uiElements[ui].Draw)
                             {
                                 GVar.questInfo = Lists.quests[i].Description;
                                 GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);
@@ -239,7 +239,7 @@ namespace Eternal_Coin
                         {
                             Shop.LoadShopInventory(GVar.curLocNode);
 
-                            Button closeInv = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
+                            Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
                             Lists.inventoryButtons.Add(closeInv);
 
                             Lists.mainWorldButtons.RemoveAt(i);
@@ -255,7 +255,7 @@ namespace Eternal_Coin
                         }
                         else if (Lists.mainWorldButtons[i].Name == "DisplayInventory")
                         {
-                            Button closeInv = new Button(Textures.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
+                            Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
                             Lists.inventoryButtons.Add(closeInv);
                             GVar.currentGameState = GVar.GameState.inventory;
                             GVar.previousGameState = GVar.GameState.game;
@@ -296,7 +296,7 @@ namespace Eternal_Coin
                         }
                         else if (Lists.mainWorldButtons[i].Name == "Options")
                         {
-                            Button backToGame = new Button(Textures.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "BackToGame", "Alive", 0f);
+                            Button backToGame = new Button(Textures.Misc.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "BackToGame", "Alive", 0f);
                             Lists.optionsButtons.Add(backToGame);
                             GVar.changeToOptions = true;
                             Colours.drawBlackFade = true;
@@ -353,9 +353,9 @@ namespace Eternal_Coin
                                                 GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
                                                 foreach (UIElement ui in Lists.uiElements)
                                                 {
-                                                    if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
+                                                    if (ui.SpriteID == Textures.UI.NPCInfoUITex && !ui.Draw)
                                                     {
-                                                        Button acceptQuest = new Button(Textures.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);
+                                                        Button acceptQuest = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);
                                                         acceptQuest.PlayAnimation(GVar.AnimStates.Button.def);
                                                         Lists.mainWorldButtons.Add(acceptQuest);
                                                     }
@@ -370,9 +370,9 @@ namespace Eternal_Coin
                                                 GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
                                                 foreach (UIElement ui in Lists.uiElements)
                                                 {
-                                                    if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
+                                                    if (ui.SpriteID == Textures.UI.NPCInfoUITex && !ui.Draw)
                                                     {
-                                                        Button handInQuest = new Button(Textures.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);
+                                                        Button handInQuest = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);
                                                         handInQuest.PlayAnimation(GVar.AnimStates.Button.def);
                                                         Lists.mainWorldButtons.Add(handInQuest);
                                                     }
@@ -389,9 +389,9 @@ namespace Eternal_Coin
 
                                             foreach (UIElement ui in Lists.uiElements)
                                             {
-                                                if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
+                                                if (ui.SpriteID == Textures.UI.NPCInfoUITex && !ui.Draw)
                                                 {
-                                                    Button closeNPCUI = new Button(Textures.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
+                                                    Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.Button.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
                                                     closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
                                                     Lists.mainWorldButtons.Add(closeNPCUI);
                                                     ui.Draw = true;
@@ -411,14 +411,14 @@ namespace Eternal_Coin
 
                                         GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, false, false, false);
 
-                                        Button openShop = new Button(Textures.pixel, Vector2.Zero, new Vector2(25, 15), Color.Yellow, "OpenShop", "Alive", 0f);
+                                        Button openShop = new Button(Textures.Misc.pixel, Vector2.Zero, new Vector2(25, 15), Color.Yellow, "OpenShop", "Alive", 0f);
                                         Lists.mainWorldButtons.Add(openShop);
 
                                         foreach (UIElement ui in Lists.uiElements)
                                         {
-                                            if (ui.SpriteID == Textures.NPCInfoUITex && !ui.Draw)
+                                            if (ui.SpriteID == Textures.UI.NPCInfoUITex && !ui.Draw)
                                             {
-                                                Button closeNPCUI = new Button(Textures.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
+                                                Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.Button.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
                                                 closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
                                                 Lists.mainWorldButtons.Add(closeNPCUI);
                                                 ui.Draw = true;
@@ -434,7 +434,7 @@ namespace Eternal_Coin
                                         {
                                             for (int k = 0; k < P.CurrentLocation[i].MainLocNode.Count; k++)
                                             {
-                                                Button exitLocationButton = new Button(Textures.exitLocationButtonTex, P.CurrentLocation[i].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", "Alive", 0f);
+                                                Button exitLocationButton = new Button(Textures.Button.exitLocationButtonTex, P.CurrentLocation[i].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", "Alive", 0f);
                                                 exitLocationButton.PlayAnimation(GVar.AnimStates.Button.def);
                                                 Lists.locationButtons.Add(exitLocationButton);
                                                 ReadXml.ReadLocationXmlFile(P, P.CurrentLocation[i].MainLocNode[k]);
@@ -459,14 +459,14 @@ namespace Eternal_Coin
 
                                         if (GVar.location.HasNPC)
                                         {
-                                            Button npcButton = new Button(Textures.npcButtonTex, P.CurrentLocation[i].Position, Vector.locationButtonSize, Color.White, "NPCButton", "Alive", 0f);
+                                            Button npcButton = new Button(Textures.Button.npcButtonTex, P.CurrentLocation[i].Position, Vector.locationButtonSize, Color.White, "NPCButton", "Alive", 0f);
                                             npcButton.PlayAnimation(GVar.AnimStates.Button.def);
                                             Lists.locationButtons.Add(npcButton);
                                         }
 
                                         if (GVar.location.HasShop)
                                         {
-                                            Button shopButton = new Button(Textures.pixel, P.CurrentLocation[i].Position, Vector.locationButtonSize, Color.Blue, "ShopButton", "Alive", 0f);
+                                            Button shopButton = new Button(Textures.Misc.pixel, P.CurrentLocation[i].Position, Vector.locationButtonSize, Color.Blue, "ShopButton", "Alive", 0f);
                                             shopButton.PlayAnimation(GVar.AnimStates.Button.def);
                                             Lists.locationButtons.Add(shopButton);
                                         }
@@ -543,7 +543,7 @@ namespace Eternal_Coin
                                         }
                                         ReadXml.ReadLocationXmlFile(P, P.CurrentLocation[i].MainLocNode[l]);
 
-                                        GVar.worldMap.SpriteID = Textures.worldMapTex;
+                                        GVar.worldMap.SpriteID = Textures.Misc.worldMapTex;
                                         P.CurrentLocation[i].MainLocNode[l].ColourA = 5;
                                         P.CurrentLocation.Add(P.CurrentLocation[i].MainLocNode[l]);
                                         GVar.LogDebugInfo("LocationChange: " + P.CurrentLocation[i].MainLocNode[l].Name, 2);
@@ -551,7 +551,7 @@ namespace Eternal_Coin
                                         Lists.locationButtons.Clear();
                                         if (P.CurrentLocation[i].MainLocNode[l].State.Contains("Main"))
                                         {
-                                            Button enterLocationButton = new Button(Textures.enterLocationButtonTex, Lists.entity[i].CurrentLocation[j].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", "Alive", 0f);
+                                            Button enterLocationButton = new Button(Textures.Button.enterLocationButtonTex, Lists.entity[i].CurrentLocation[j].Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", "Alive", 0f);
                                             enterLocationButton.PlayAnimation(GVar.AnimStates.Button.def);
                                             Lists.locationButtons.Add(enterLocationButton);
                                         }
@@ -608,8 +608,8 @@ namespace Eternal_Coin
                 GVar.loadData = true;
             }
 
-            Button quests = new Button(Textures.pixel, new Vector2(), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);
-            Button inventory = new Button(Textures.inventoryButton, new Vector2(), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);
+            Button quests = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);
+            Button inventory = new Button(Textures.Button.inventoryButton, new Vector2(), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);
             Lists.mainWorldButtons.Add(inventory);
             Lists.mainWorldButtons.Add(quests);
 

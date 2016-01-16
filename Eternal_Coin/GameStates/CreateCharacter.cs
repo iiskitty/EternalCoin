@@ -52,8 +52,8 @@ namespace Eternal_Coin
 
             buttons = new List<Button>();
 
-            loadGame = new Button(Textures.loadButton, new Vector2(startPosition.X + 953, startPosition.Y + 12), new Vector2(Textures.loadButton.Width / 2, Textures.loadButton.Height), Color.White, "LoadGame", name, 0f);
-            deleteGame = new Button(Textures.deleteButton, new Vector2(startPosition.X + 1087, startPosition.Y + 12), new Vector2(Textures.deleteButton.Width / 2, Textures.loadButton.Height), Color.White, "DeleteGame", name, 0f);
+            loadGame = new Button(Textures.Button.loadButton, new Vector2(startPosition.X + 953, startPosition.Y + 12), new Vector2(Textures.Button.loadButton.Width / 2, Textures.Button.loadButton.Height), Color.White, "LoadGame", name, 0f);
+            deleteGame = new Button(Textures.Button.deleteButton, new Vector2(startPosition.X + 1087, startPosition.Y + 12), new Vector2(Textures.Button.deleteButton.Width / 2, Textures.Button.deleteButton.Height), Color.White, "DeleteGame", name, 0f);
             buttons.Add(loadGame);
             buttons.Add(deleteGame);
         }
@@ -83,10 +83,10 @@ namespace Eternal_Coin
                         Lists.chooseCharacterButtons.Clear();
                         foreach (UIElement ui in Lists.uiElements)
                         {
-                            if (ui.SpriteID == Textures.newGameUIBorder)
+                            if (ui.SpriteID == Textures.UI.newGameUIBorder)
                             {
-                                Button chooseDP = new Button(Textures.pixel, new Vector2(ui.Position.X + 3, ui.Position.Y + 3), Vector.newGameDPSize, Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDP", "Alive", 0f);
-                                Button startGame = new Button(Textures.startButton, new Vector2(GVar.gameScreenX / 2 - (Textures.startButton.Width / 2) / 2, ui.Position.Y + ui.Size.Y + 10), new Vector2(Textures.startButton.Width / 2, Textures.startButton.Height), Color.Yellow, "StartGame", "Alive", 0f);
+                                Button chooseDP = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X + 3, ui.Position.Y + 3), Vector.newGameDPSize, Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDP", "Alive", 0f);
+                                Button startGame = new Button(Textures.Button.startButton, new Vector2(GVar.gameScreenX / 2 - (Textures.Button.startButton.Width / 2) / 2, ui.Position.Y + ui.Size.Y + 10), new Vector2(Textures.Button.startButton.Width / 2, Textures.Button.startButton.Height), Color.Yellow, "StartGame", "Alive", 0f);
                                 Lists.chooseCharacterButtons.Add(chooseDP);
                                 Lists.chooseCharacterButtons.Add(startGame);
                             }
@@ -98,7 +98,7 @@ namespace Eternal_Coin
                         
                         foreach (UIElement ui in Lists.uiElements)
                         {
-                            if (ui.SpriteID == Textures.newGameUIBorder && ui.Draw)
+                            if (ui.SpriteID == Textures.UI.newGameUIBorder && ui.Draw)
                             {
                                 ui.Draw = false;
                             }
@@ -121,7 +121,7 @@ namespace Eternal_Coin
                         for (int j = 0; j < Lists.displayPictureIDs.Count; j++)
                         {
                             Dictionaries.displayPictures[Lists.displayPictureIDs[j]].position = pos;
-                            Lists.displayPictureButtons.Add(new Button(Textures.pixel, Dictionaries.displayPictures[Lists.displayPictureIDs[j]].position, new Vector2(150, 150), Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDisplayPicture", Dictionaries.displayPictures[Lists.displayPictureIDs[j]].displayPicID, 0f));
+                            Lists.displayPictureButtons.Add(new Button(Textures.Misc.pixel, Dictionaries.displayPictures[Lists.displayPictureIDs[j]].position, new Vector2(150, 150), Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDisplayPicture", Dictionaries.displayPictures[Lists.displayPictureIDs[j]].displayPicID, 0f));
                             pos.X += 200;
                         }
                     }
@@ -219,7 +219,7 @@ namespace Eternal_Coin
 
         public static void DrawCreateCharacter(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Textures.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
 
             foreach (Object b in Lists.chooseCharacterButtons)
             {
@@ -268,7 +268,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.newGameUIBorder && ui.Draw)
+                    if (ui.SpriteID == Textures.UI.newGameUIBorder && ui.Draw)
                     {
                         ui.Draw = false;
                     }
@@ -277,8 +277,8 @@ namespace Eternal_Coin
                 for (int i = 0; i < Lists.savedGames.Count; i++)
                 {
                     spriteBatch.Draw(Dictionaries.displayPictures[Lists.savedGames[i].displayPicID].displayPic, new Rectangle((int)Lists.savedGames[i].startPosition.X + 4, (int)Lists.savedGames[i].startPosition.Y + 4, 54, 56), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
-                    spriteBatch.Draw(Textures.savedGameUIBorder, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
-                    spriteBatch.Draw(Textures.savedGameUIInner, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+                    spriteBatch.Draw(Textures.UI.savedGameUIBorder, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                    spriteBatch.Draw(Textures.UI.savedGameUIInner, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
                     spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].name, new Vector2(Lists.savedGames[i].startPosition.X + 80, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                     spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].story, new Vector2(Lists.savedGames[i].startPosition.X + 350, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                     spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].location, new Vector2(Lists.savedGames[i].startPosition.X + 660, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
@@ -308,23 +308,23 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.newGameUIBorder && !ui.Draw)
+                    if (ui.SpriteID == Textures.UI.newGameUIBorder && !ui.Draw)
                     {
                         ui.Draw = true;
                     }
-                    if (ui.SpriteID == Textures.newGameUIBorder)
+                    if (ui.SpriteID == Textures.UI.newGameUIBorder)
                     {
                         spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)ui.Position.X + 3, (int)ui.Position.Y + 3, (int)Vector.newGameDPSize.X, (int)Vector.newGameDPSize.Y), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
                         spriteBatch.DrawString(Fonts.lucidaConsole24Regular, GVar.playerName, new Vector2((int)ui.Position.X + 71, (int)ui.Position.Y + 276), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
                     }
                 }
-                spriteBatch.Draw(Textures.newGameUIInner, new Rectangle((int)GVar.gameScreenX / 2 - Textures.newGameUIInner.Width / 2, (int)GVar.gameScreenY / 2 - Textures.newGameUIInner.Height / 2, Textures.newGameUIInner.Width, Textures.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+                spriteBatch.Draw(Textures.UI.newGameUIInner, new Rectangle((int)GVar.gameScreenX / 2 - Textures.UI.newGameUIInner.Width / 2, (int)GVar.gameScreenY / 2 - Textures.UI.newGameUIInner.Height / 2, Textures.UI.newGameUIInner.Width, Textures.UI.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
 
                 
 
                 if (GVar.choosingDP)
                 {
-                    spriteBatch.Draw(Textures.pixel, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.FromNonPremultiplied(0, 0, 0, 125), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                    spriteBatch.Draw(Textures.Misc.pixel, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.FromNonPremultiplied(0, 0, 0, 125), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
 
                     for (int i = 0; i < Lists.displayPictureButtons.Count; i++)
                     {
@@ -352,8 +352,8 @@ namespace Eternal_Coin
                 pos.Y += 75;
             }
 
-            Button newCharacter = new Button(Textures.newButton, pos, new Vector2(Textures.newButton.Width / 2, Textures.newButton.Height), Color.White, "NewCharacter", "Alive", 0f);
-            Button back = new Button(Textures.backButton, new Vector2(20, 20), new Vector2(Textures.backButton.Width / 2, Textures.backButton.Height), Color.White, "MainMenu", "Alive", 0f);
+            Button newCharacter = new Button(Textures.Button.newButton, pos, new Vector2(Textures.Button.newButton.Width / 2, Textures.Button.newButton.Height), Color.White, "NewCharacter", "Alive", 0f);
+            Button back = new Button(Textures.Button.backButton, new Vector2(20, 20), new Vector2(Textures.Button.backButton.Width / 2, Textures.Button.backButton.Height), Color.White, "MainMenu", "Alive", 0f);
             Lists.chooseCharacterButtons.Add(back);
             Lists.chooseCharacterButtons.Add(newCharacter);
         }

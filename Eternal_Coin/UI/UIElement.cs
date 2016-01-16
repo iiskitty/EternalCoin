@@ -32,17 +32,16 @@ namespace Eternal_Coin
 
         public static List<UIElement> AddUIElements(List<UIElement> uiElements)
         {
-            uiElements.Add(new UIElement(Textures.locationInfoUITex, new Vector2(GVar.gameScreenX / 2 - Textures.locationInfoUITex.Width / 2, 0 + (GVar.gameScreenY - Textures.locationInfoUITex.Height)), new Vector2(Textures.locationInfoUITex.Width, Textures.locationInfoUITex.Height), 0.18f, true, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.NPCInfoUITex, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.NPCInfoUITex.Width / 2), GVar.gameScreenY / 2 - Textures.NPCInfoUITex.Height / 2), new Vector2(Textures.NPCInfoUITex.Width, Textures.NPCInfoUITex.Height), 0.18f, false, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.questListUI, new Vector2(0, 0), new Vector2(Textures.questListUI.Width, Textures.questListUI.Height), 0.18f, false, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.questInfoUI, new Vector2(Textures.questListUI.Width, 0), new Vector2(Textures.questInfoUI.Width, Textures.questInfoUI.Height), 0.18f, false, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.inventoryUI, new Vector2(0, 0), new Vector2(Textures.inventoryUI.Width, Textures.inventoryUI.Height), 0.18f, true, GVar.GameState.inventory));
-            uiElements.Add(new UIElement(Textures.pauseUI, new Vector2(GVar.gameScreenX / 2 - Textures.pauseUI.Width / 2, GVar.gameScreenY / 2 - Textures.pauseUI.Height / 2), new Vector2(Textures.pauseUI.Width, Textures.pauseUI.Height), 0.18f, false, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.shopInventoryUI, new Vector2(0, 0), new Vector2(Textures.shopInventoryUI.Width, Textures.shopInventoryUI.Height), 0.18f, true, GVar.GameState.shop));
-            uiElements.Add(new UIElement(Textures.battleUI, new Vector2(0, GVar.gameScreenY - Textures.battleUI.Height), new Vector2(Textures.battleUI.Width, Textures.battleUI.Height), 0.18f, true, GVar.GameState.battle));
-            uiElements.Add(new UIElement(Textures.newGameUIBorder, new Vector2(GVar.gameScreenX / 2 - Textures.newGameUIBorder.Width / 2, GVar.gameScreenY / 2 - Textures.newGameUIBorder.Height / 2), new Vector2(Textures.newGameUIBorder.Width, Textures.newGameUIBorder.Height), 0.19f, false, GVar.GameState.chooseCharacter));
-            uiElements.Add(new UIElement(Textures.endBattleUI, new Vector2(GVar.gameScreenX / 2 - Textures.endBattleUI.Width / 2, GVar.gameScreenY / 2 - Textures.endBattleUI.Height / 2), new Vector2(Textures.endBattleUI.Width, Textures.endBattleUI.Height), 0.181f, false, GVar.GameState.battle));
-            //uiElements.Add(new UIElement(Textures.itemInfoUI, Vector2.Zero, new Vector2(Textures.itemInfoUI.Width, Textures.itemInfoUI.Height), 0.18f, false, GVar.GameState.battle));
+            uiElements.Add(new UIElement(Textures.UI.locationInfoUITex, new Vector2(GVar.gameScreenX / 2 - Textures.UI.locationInfoUITex.Width / 2, 0 + (GVar.gameScreenY - Textures.UI.locationInfoUITex.Height)), new Vector2(Textures.UI.locationInfoUITex.Width, Textures.UI.locationInfoUITex.Height), 0.18f, true, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.NPCInfoUITex, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.UI.NPCInfoUITex.Width / 2), GVar.gameScreenY / 2 - Textures.UI.NPCInfoUITex.Height / 2), new Vector2(Textures.UI.NPCInfoUITex.Width, Textures.UI.NPCInfoUITex.Height), 0.18f, false, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.questListUI, new Vector2(0, 0), new Vector2(Textures.UI.questListUI.Width, Textures.UI.questListUI.Height), 0.18f, false, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.questInfoUI, new Vector2(Textures.UI.questListUI.Width, 0), new Vector2(Textures.UI.questInfoUI.Width, Textures.UI.questInfoUI.Height), 0.18f, false, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.inventoryUI, new Vector2(0, 0), new Vector2(Textures.UI.inventoryUI.Width, Textures.UI.inventoryUI.Height), 0.18f, true, GVar.GameState.inventory));
+            uiElements.Add(new UIElement(Textures.UI.pauseUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.pauseUI.Width / 2, GVar.gameScreenY / 2 - Textures.UI.pauseUI.Height / 2), new Vector2(Textures.UI.pauseUI.Width, Textures.UI.pauseUI.Height), 0.18f, false, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.shopInventoryUI, new Vector2(0, 0), new Vector2(Textures.UI.shopInventoryUI.Width, Textures.UI.shopInventoryUI.Height), 0.18f, true, GVar.GameState.shop));
+            uiElements.Add(new UIElement(Textures.UI.battleUI, new Vector2(0, GVar.gameScreenY - Textures.UI.battleUI.Height), new Vector2(Textures.UI.battleUI.Width, Textures.UI.battleUI.Height), 0.18f, true, GVar.GameState.battle));
+            uiElements.Add(new UIElement(Textures.UI.newGameUIBorder, new Vector2(GVar.gameScreenX / 2 - Textures.UI.newGameUIBorder.Width / 2, GVar.gameScreenY / 2 - Textures.UI.newGameUIBorder.Height / 2), new Vector2(Textures.UI.newGameUIBorder.Width, Textures.UI.newGameUIBorder.Height), 0.19f, false, GVar.GameState.chooseCharacter));
+            uiElements.Add(new UIElement(Textures.UI.endBattleUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.endBattleUI.Width / 2, GVar.gameScreenY / 2 - Textures.UI.endBattleUI.Height / 2), new Vector2(Textures.UI.endBattleUI.Width, Textures.UI.endBattleUI.Height), 0.181f, false, GVar.GameState.battle));
             return uiElements;
         }
 

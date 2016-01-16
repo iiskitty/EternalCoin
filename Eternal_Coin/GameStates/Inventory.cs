@@ -75,7 +75,7 @@ namespace Eternal_Coin
 
                 if (MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && playerInventory.itemSlots[i].item != null)
                 {
-                    spriteBatch.Draw(Textures.clearPixel, playerInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
+                    spriteBatch.Draw(Textures.Misc.clearPixel, playerInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
                     spriteBatch.Draw(playerInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
@@ -172,7 +172,7 @@ namespace Eternal_Coin
             {
                 if (MouseManager.mouseBounds.Intersects(shopInventory.itemSlots[i].bounds) && shopInventory.itemSlots[i].item != null)
                 {
-                    spriteBatch.Draw(Textures.clearPixel, shopInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
+                    spriteBatch.Draw(Textures.Misc.clearPixel, shopInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
                     spriteBatch.Draw(shopInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
@@ -199,7 +199,7 @@ namespace Eternal_Coin
                 if (mouseInventory.heldItem.InventorySlot.Contains("Ring"))
                 {
                     Jewellry ring = (Jewellry)mouseInventory.heldItem;
-                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                 }
 
                 spriteBatch.Draw(mouseInventory.heldItem.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
@@ -210,7 +210,7 @@ namespace Eternal_Coin
                     {
                         Vector2 pos = characterInventory.itemSlots[mouseInventory.heldItem.InventorySlot].position;
                         Vector2 size = characterInventory.itemSlots[mouseInventory.heldItem.InventorySlot].size;
-                        spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                        spriteBatch.Draw(Textures.Misc.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
                     }
                     else if (mouseInventory.heldItem != null && mouseInventory.heldItem.ItemClass == GVar.ItemClassName.jewellry)
                     {
@@ -220,7 +220,7 @@ namespace Eternal_Coin
                             {
                                 Vector2 pos = characterInventory.itemSlots[Lists.inventorySlots[k]].position;
                                 Vector2 size = characterInventory.itemSlots[Lists.inventorySlots[k]].size;
-                                spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                                spriteBatch.Draw(Textures.Misc.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
                             }
                         }
                     }
@@ -232,7 +232,7 @@ namespace Eternal_Coin
                             {
                                 Vector2 pos = characterInventory.itemSlots[Lists.inventorySlots[k]].position;
                                 Vector2 size = characterInventory.itemSlots[Lists.inventorySlots[k]].size;
-                                spriteBatch.Draw(Textures.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                                spriteBatch.Draw(Textures.Misc.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
                             }
                         }
                     }
@@ -277,7 +277,7 @@ namespace Eternal_Coin
                 if (item.InventorySlot.Contains("Ring"))
                 {
                     Jewellry ring = (Jewellry)item;
-                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                 }
             }
             foreach (Item item in Lists.shopItems)
@@ -297,7 +297,7 @@ namespace Eternal_Coin
                 Lists.inventoryButtons[i].Draw(spriteBatch, Lists.inventoryButtons[i].SpriteID, Lists.inventoryButtons[i].Bounds, 0.19f, 0f, Vector2.Zero);
                 if (MouseManager.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
                 {
-                    GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.pixel, 1, 0.19f, Color.Green);
+                    GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.19f, Color.Green);
                 }
             }
             
@@ -360,7 +360,7 @@ namespace Eternal_Coin
                     if (item.InventorySlot.Contains("Ring"))
                     {
                         Jewellry ring = (Jewellry)item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                     }
                 }
                 foreach (Item item in Lists.characterItems)
@@ -370,7 +370,7 @@ namespace Eternal_Coin
                     if (item.InventorySlot.Contains("Ring"))
                     {
                         Jewellry ring = (Jewellry)item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                     }
                 }
             }
@@ -383,7 +383,7 @@ namespace Eternal_Coin
                     if (item.InventorySlot.Contains("Ring"))
                     {
                         Jewellry ring = (Jewellry)item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.pixel, 1, 0.2f, Color.Green);
+                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                     }
                 }
             }
@@ -400,7 +400,7 @@ namespace Eternal_Coin
                 Lists.inventoryButtons[i].Draw(spriteBatch, Lists.inventoryButtons[i].SpriteID, Lists.inventoryButtons[i].Bounds, 0.19f, 0f, Vector2.Zero);
                 if (MouseManager.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
                 {
-                    GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.pixel, 1, 0.19f, Color.Green);
+                    GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.19f, Color.Green);
                 }
             }
 
@@ -411,7 +411,7 @@ namespace Eternal_Coin
             {
                 if (characterInventory.itemSlots[Lists.inventorySlots[i]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds))
                 {
-                    spriteBatch.Draw(Textures.clearPixel, characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
+                    spriteBatch.Draw(Textures.Misc.clearPixel, characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
                     spriteBatch.Draw(characterInventory.itemSlots[Lists.inventorySlots[i]].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
 
                     
@@ -813,7 +813,7 @@ namespace Eternal_Coin
             itemSlots = new Dictionary<string, ItemSlot>();
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.battleUI)
+                if (ui.SpriteID == Textures.UI.battleUI)
                 {
                     itemSlots.Add(GVar.InventorySlot.helmet, new ItemSlot(new Vector2(1032, 55), new Vector2(ui.Position.X + 202, ui.Position.Y + 191), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.helmet));
                     itemSlots.Add(GVar.InventorySlot.chestplate, new ItemSlot(new Vector2(1032, 245), new Vector2(ui.Position.X + 202, ui.Position.Y + 261), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.chestplate));
@@ -862,7 +862,7 @@ namespace Eternal_Coin
             itemSlots = new Dictionary<string, ItemSlot>();
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.battleUI)
+                if (ui.SpriteID == Textures.UI.battleUI)
                 {
                     itemSlots.Add(GVar.InventorySlot.helmet, new ItemSlot(new Vector2(1032, 55), new Vector2(ui.Position.X + 202, ui.Position.Y + 191), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.helmet));
                     itemSlots.Add(GVar.InventorySlot.chestplate, new ItemSlot(new Vector2(1032, 245), new Vector2(ui.Position.X + 202, ui.Position.Y + 261), new Vector2(71, 71), new Vector2(26, 26), GVar.InventorySlot.chestplate));

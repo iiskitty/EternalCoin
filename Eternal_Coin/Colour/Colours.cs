@@ -110,7 +110,7 @@ namespace Eternal_Coin
 
         public static void DrawBlackFadeInOut(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Textures.pixel, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, blackFadeColour, 0f, Vector2.Zero, SpriteEffects.None, 0.21f);  
+            spriteBatch.Draw(Textures.Misc.pixel, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, blackFadeColour, 0f, Vector2.Zero, SpriteEffects.None, 0.21f);  
         }
     }
 }

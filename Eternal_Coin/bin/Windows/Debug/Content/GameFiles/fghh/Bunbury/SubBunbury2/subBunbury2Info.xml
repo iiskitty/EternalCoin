@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<location>
+  <name>Sub Bunbury 2</name>
+  <description>You are in Sub Bunbury 2</description>
+  <searched>false</searched>
+  <hasnpc>true</hasnpc>
+  <hasshop>false</hasshop>
+
+  <npc>
+    <hasquest>true</hasquest>
+    <questaccepted>false</questaccepted>
+    <questfinished>false</questfinished>
+    <questcompleted>false</questcompleted>
+    <name>Will</name>
+
+    <greeting>
+      <questunaccepted>I Have something for you to do for me, come closer.</questunaccepted>
+      <questaccepted>Why are you here when you havn't done what I have asked of you?</questaccepted>
+      <acceptquest>Thank you, I will see you when it is done.</acceptquest>
+      <questfinished>Oh my, thank you, here, have this for your troubles.</questfinished>
+      <handinquest>Goodbye now.</handinquest>
+      <questcompleted>...</questcompleted>
+    </greeting>
+
+    <quest>
+      <description>Go to Sub Eaton and talk to Dick, then return to Will in Sub Bunbury 2.</description>
+      <shortdescription>Talk to Dick in Sub Eaton.</shortdescription>
+      <completingaction>Talking To Dick</completingaction>
+      <completinglocation>SubEaton</completinglocation>
+      <reward>
+        <item>
+          <class>Weapon</class>
+          <itemname>Steel Mace of Smashing</itemname>
+          <itemtype>Mace</itemtype>
+          <itemmaterial>Steel</itemmaterial>
+          <inventoryslot>Weapon</inventoryslot>
+        </item>
+      </reward>
+    </quest>
+  </npc>
+
+  <actions>
+    <enter>Entering SubBunbury2</enter>
+    <explore>Exploring SubBunbury2</explore>
+    <talknpc>Talking To Will</talknpc>
+    <acceptquest>Accepted Quest</acceptquest>
+    <handinquest>Handed In Quest</handinquest>
+  </actions>
+</location>
