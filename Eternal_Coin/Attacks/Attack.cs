@@ -60,29 +60,36 @@ namespace Eternal_Coin
 
         public static void AddAvailableAttacks(List<string> ids)
         {
-            for (int i = 0; i < ids.Count; i++)
+            try
             {
-                string id = GVar.displayPicID + ids[i];
-                if (Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
-                    Dictionaries.availableAttacks.Add(id, Dictionaries.attacks[id + ids[i]]);
-                //if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
-                //    Lists.availableAttacksIDs.Add(id);
+                for (int i = 0; i < ids.Count; i++)
+                {
+                    string id = GVar.displayPicID + ids[i];
+                    if (Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
+                        Dictionaries.availableAttacks.Add(id, Dictionaries.attacks[id]);
+                    if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
+                        Lists.availableAttacksIDs.Add(id);
+                }
             }
-            for (int i = 0; i < ids.Count; i++)
+            catch(Exception e)
             {
-                string id = GVar.displayPicID + ids[i];
-                if (Lists.availableAttacksIDs.Count == i + 1 || Lists.availableAttacksIDs.Count == 0)
-                {
-                    Lists.availableAttacksIDs.Add(id);
-                    continue;
-                }
-                if (Lists.availableAttacksIDs.Count > 0 && id == Lists.availableAttacksIDs[i])
-                {
-                    ids.RemoveAt(i);
-                    i--;
-                }
+                GVar.LogDebugInfo("!error![" + e + "]", 1);
+            }
+            //for (int i = 0; i < ids.Count; i++)
+            //{
+            //    string id = GVar.displayPicID + ids[i];
+            //    if (Lists.availableAttacksIDs.Count == i + 1 || Lists.availableAttacksIDs.Count == 0)
+            //    {
+            //        Lists.availableAttacksIDs.Add(id);
+            //        continue;
+            //    }
+            //    if (Lists.availableAttacksIDs.Count > 0 && id == Lists.availableAttacksIDs[i])
+            //    {
+            //        ids.RemoveAt(i);
+            //        i--;
+            //    }
 
-            }
+            //}
         }
 
         public static void TakeAvailableAttacks(List<string> ids)
@@ -100,7 +107,7 @@ namespace Eternal_Coin
             {
                 string id = GVar.eDisplayPicID + ids[i];
                 if (Dictionaries.enemyAttacks.Count != Dictionaries.enemyAttacks.Count + ids.Count)
-                    Dictionaries.enemyAttacks.Add(id, Dictionaries.attacks[id + ids[i]]);
+                    Dictionaries.enemyAttacks.Add(id, Dictionaries.attacks[id]);
                 if (Lists.enemyAttackIDs.Count != Lists.enemyAttackIDs.Count + ids.Count)
                     Lists.enemyAttackIDs.Add(id);
             }
@@ -115,50 +122,43 @@ namespace Eternal_Coin
             }
         }
 
-        private static void LoadEnemyAttacks(ContentManager Content, XmlDocument doc)
+        public static void LoadEnemyAttacks(ContentManager Content, string edpid)
         {
-            XmlNodeList enemyIDs = doc.SelectNodes("/attacks/enemyids/id");
-
-            foreach (XmlNode enemyID in enemyIDs)
-            {
-                Lists.eDisplayPictureIDs.Add(enemyID.InnerText);
-            }
-
-            XmlNodeList attacks = doc.SelectNodes("/attacks/enemyattacks/attack");
+            XmlDocument attacksDoc = new XmlDocument();
+            attacksDoc.Load("./Content/LoadData/LoadAttacks.xml");
+            XmlNodeList attacks = attacksDoc.SelectNodes("/attacks/enemyattacks/attack");
             foreach (XmlNode attack in attacks)
             {
                 string id = "";
                 string type = "";
                 Texture2D anim = null;
-                foreach (string enemyID in Lists.eDisplayPictureIDs)
-                {
                     try
                     {
-                        id = enemyID + attack["id"].InnerText;
+                        id = edpid + attack["id"].InnerText;
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        GVar.LogDebugInfo("!!Failed to load ID of Attack!!", 1);
+                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                     }
                     
                     try
                     {
-                        string fileLoc = attack["animfileloc"].InnerText.Replace("DPID", enemyID);
+                        string fileLoc = attack["animfileloc"].InnerText.Replace("DPID", edpid);
 
                         anim = Content.Load<Texture2D>(fileLoc);
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        GVar.LogDebugInfo("!!Failed to load Sprite Sheet of Attack:" + id + "!!", 1);
+                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                     }
 
                     try
                     {
                         type = attack["type"].InnerText;
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        GVar.LogDebugInfo("!!Failed to load Type of Attack:" + id + "!!", 1);
+                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                     }
 
                     try
@@ -173,25 +173,23 @@ namespace Eternal_Coin
                             {
                                 atk.attackAnims.Add(new AttackAnim(Convert.ToInt32(anima["frames"].InnerText), Convert.ToInt32(anima["y"].InnerText), Convert.ToInt32(anima["x"].InnerText), anima["name"].InnerText, Convert.ToInt32(anima["width"].InnerText), Convert.ToInt32(anima["height"].InnerText)));
                             }
-                            catch
+                            catch (Exception e)
                             {
-                                GVar.LogDebugInfo("!!!Failed to AddAnimation of: " + atk.ID + "," + anima["name"].InnerText + "!!!", 1);
+                                GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                             }
                         }
 
-                        Dictionaries.attacks.Add(id + attack["id"].InnerText, atk);
+                        Dictionaries.attacks.Add(id, atk);
+                        Lists.attackIDs.Add(id);
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        GVar.LogDebugInfo("!!!Failed to Create Attack:" + id + "!!!", 1);
+                        GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                     }
-                }
-                
-                
             }
         }
 
-        public static void LoadAttacks(ContentManager Content)
+        public static void LoadAttacks(ContentManager Content, string dpid)
         {
             XmlDocument attacksDoc = new XmlDocument();
             attacksDoc.Load("./Content/LoadData/LoadAttacks.xml");
@@ -201,41 +199,36 @@ namespace Eternal_Coin
                 string id = "";
                 try
                 {
-                    id = GVar.displayPicID + attack["id"].InnerText;
+                    id = dpid + attack["id"].InnerText;
                 }
-                catch
+                catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!Failed to load ID of Attack!!", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
                 string type = "";
                 try
                 {
                     type = attack["type"].InnerText;
                 }
-                catch
+                catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!Failed to load Type of Attack:" + id + "!!", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
                 Texture2D anim = null;
                 try
                 {
-                    string fileLoc = attack["animfileloc"].InnerText.Replace("DPID", GVar.displayPicID);
+                    string fileLoc = attack["animfileloc"].InnerText.Replace("DPID", dpid);
 
                     anim = Content.Load<Texture2D>(fileLoc);
                 }
-                catch
+                catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!Failed to load Sprite Sheet of Attack:" + id + "!!", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
 
                 try
                 {
                     Attack atk = new Attack(id, type, anim);
-                    if (id == "DefaultPunch")
-                    {
-                        Lists.availableAttacksIDs.Add(atk.ID);
-                        Dictionaries.availableAttacks.Add(atk.id, atk);
-                    }
                     XmlNodeList animList = attack.SelectNodes("animation");
 
                     foreach (XmlNode anima in animList)
@@ -244,21 +237,31 @@ namespace Eternal_Coin
                         {
                             atk.attackAnims.Add(new AttackAnim(Convert.ToInt32(anima["frames"].InnerText), Convert.ToInt32(anima["y"].InnerText), Convert.ToInt32(anima["x"].InnerText), anima["name"].InnerText, Convert.ToInt32(anima["width"].InnerText), Convert.ToInt32(anima["height"].InnerText)));
                         }
-                        catch
+                        catch (Exception e)
                         {
-                            GVar.LogDebugInfo("!!!Failed to AddAnimation of: " + atk.ID + "," + anima["name"].InnerText + "!!!", 1);
+                            GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                         }
                     }
-
-                    Dictionaries.attacks.Add(id + attack["id"].InnerText, atk);
+                    Dictionaries.attacks.Add(id, atk);
+                    Lists.attackIDs.Add(id);
                 }
-                catch
+                catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!!Failed to Create Attack:" + id + "!!!", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
+        }
 
-            LoadEnemyAttacks(Content, attacksDoc);
+        public static void LoadDefaultAttack()
+        {
+            foreach (string atkID in Lists.attackIDs)
+            {
+                if (atkID == "DefaultPunch")
+                {
+                    Lists.availableAttacksIDs.Add(atkID);
+                    Dictionaries.availableAttacks.Add(atkID, Dictionaries.attacks[atkID]);
+                }
+            }
         }
 
         public string ID { get { return id; } set { id = value; } }

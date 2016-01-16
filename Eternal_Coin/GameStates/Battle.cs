@@ -31,6 +31,7 @@ namespace Eternal_Coin
         public static void LoadBattle(XmlDocument battleDoc)
         {
             enemyAttackTimer = 100;
+            Attack.LoadDefaultAttack();
             try
             {
                 battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), Lists.entity[0].Name, "Alive", new Vector2(), Color.White, Lists.entity[0].Health, Lists.entity[0].Armour, Lists.entity[0].Damage);
@@ -302,6 +303,20 @@ namespace Eternal_Coin
                                 GVar.changeBackToGame = true;
                                 Colours.drawBlackFade = true;
                                 Colours.fadeIn = true;
+                                GVar.silverMoney += silverReward;
+                                for (int i = 0; i < loot.Count; i++)
+                                {
+                                    for (int j = 0; j < 40; j++)
+                                    {
+                                        if (InventoryManager.playerInventory.itemSlots[j].item == null)
+                                        {
+                                            Item item = ItemBuilder.BuildItem(loot[i]);
+                                            Lists.playerItems.Add(item);
+                                            InventoryManager.playerInventory.itemSlots[j].item = item;
+                                            break;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

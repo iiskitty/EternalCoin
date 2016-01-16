@@ -113,6 +113,7 @@ namespace Eternal_Coin
                 Battle.battlePlayer = null;
                 Battle.loot.Clear();
                 Battle.silverReward = 0;
+                InventoryManager.enemyInventory = new EnemyInventory();
                 Lists.optionsButtons.Clear();
                 GVar.currentGameState = GVar.GameState.game;
                 GVar.previousGameState = GVar.GameState.options;

@@ -35,6 +35,7 @@ namespace Eternal_Coin
         public static List<XmlDocument> savedGamesXmlDoc;
         public static List<SavedGame> savedGames;
         public static List<string> inventorySlots;
+        public static List<string> attackIDs;
         public static List<string> availableAttacksIDs;
         public static List<string> enemyAttackIDs;
         public static List<string> displayPictureIDs;
@@ -65,6 +66,7 @@ namespace Eternal_Coin
             savedGamesXmlDoc = new List<XmlDocument>();
             displayPictureButtons = new List<Object>();
             attackButtons = new List<Object>();
+            attackIDs = new List<string>();
             availableAttacksIDs = new List<string>();
             enemyAttackIDs = new List<string>();
             soundIDs = new List<string>();
@@ -108,7 +110,7 @@ namespace Eternal_Coin
             mainWorldButtons.Clear();
             entity.Clear();
             availableAttacksIDs.Clear();
-            
+            attackButtons.Clear();
             enemyAttackIDs.Clear();
         }
     }

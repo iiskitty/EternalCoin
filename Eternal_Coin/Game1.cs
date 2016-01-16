@@ -111,7 +111,14 @@ namespace Eternal_Coin
             Fonts.LoadFonts(Content);
             Sounds.LoadSounds(Content);
             Load.LoadDisplayPictures(Content);
-            Attack.LoadAttacks(Content);
+            foreach (string dpid in Lists.displayPictureIDs)
+            {
+                Attack.LoadAttacks(Content, dpid);
+            }
+            foreach (string dpid in Lists.eDisplayPictureIDs)
+            {
+                Attack.LoadEnemyAttacks(Content, dpid);
+            }
         }
 
         /// <summary>

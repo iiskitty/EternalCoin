@@ -29,6 +29,7 @@ namespace Eternal_Coin
             foreach (XmlNode eDisplayPic in eDisplayPics)
             {
                 Dictionaries.eDisplayPictures.Add(eDisplayPic["id"].InnerText, new DisplayPicture(eDisplayPic["id"].InnerText, Content.Load<Texture2D>(eDisplayPic["filepath"].InnerText)));
+                Lists.eDisplayPictureIDs.Add(eDisplayPic["id"].InnerText);
             }
         }
 
