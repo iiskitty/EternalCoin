@@ -3,9 +3,39 @@
   <filename>Content/SavedGames/SavedGame0.xml</filename>
   <filenumber>0</filenumber>
   <dpid>Default</dpid>
-  <name>fghh</name>
+  <name>kitty</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
-  <playerinventory />
-  <characterinventory />
+  <playerinventory>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+  </playerinventory>
+  <characterinventory>
+    <item>
+      <itemname>Bronze Helmet</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Chestplate</itemname>
+      <playerinventoryslot>2</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Leggings</itemname>
+      <playerinventoryslot>4</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Left Bronze Boot</itemname>
+      <playerinventoryslot>4</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Right Bronze Boot</itemname>
+      <playerinventoryslot>3</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+  </characterinventory>
 </savedgame>

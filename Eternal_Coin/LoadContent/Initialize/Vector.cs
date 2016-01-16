@@ -20,6 +20,8 @@ namespace Eternal_Coin
         public static Vector2 itemNormalSize;
         public static Vector2 newGameDPSize;
         public static Vector2 middleScreenPosition;
+        public static Vector2 mainLocationSize;
+        public static Vector2 subLocationSize;
 
         public static void InitilizeVectors()
         {
@@ -27,6 +29,8 @@ namespace Eternal_Coin
             worldMapSize = new Vector2(Textures.Misc.worldMapTex.Width, Textures.Misc.worldMapTex.Height);
             lookEyeSize = new Vector2(50, 25);
             locationButtonSize = new Vector2(30, 30);
+            mainLocationSize = new Vector2(30, 30);
+            subLocationSize = new Vector2(20, 20);
             buttonSize = new Vector2(75, 75);
             itemNormalSize = new Vector2(71, 71);
             newGameDPSize = new Vector2(329, 232);

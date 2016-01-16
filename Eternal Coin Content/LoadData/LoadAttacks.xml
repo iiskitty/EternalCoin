@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <attacks>
-
+<!--
   <enemyids>
-    <id>EDefault</id>
+    <id>EDefault</id>  don't need this anymore
   </enemyids>
-
+-->
   <enemyattacks>
     <attack>
       <id>IronSwordStab</id>

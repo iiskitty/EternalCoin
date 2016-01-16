@@ -94,4 +94,19 @@
       <SubBunbury2connection>SubBunbury</SubBunbury2connection>
     </node>
   </MainStory>
+
+  <Tutorial>
+    <startinglocation></startinglocation>
+    <node>
+      <name></name>
+      <mainname></mainname>
+      <subname></subname>
+      <state></state>
+      <positionx></positionx>
+      <positiony></positiony>
+      <sublocnode></sublocnode>
+      <mainlocnode></mainlocnode>
+      <locationnameconnection></locationnameconnection>
+    </node>
+  </Tutorial>
 </locationnode>
