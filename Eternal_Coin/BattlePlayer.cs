@@ -50,6 +50,14 @@ namespace Eternal_Coin
                 PlayAnimation(GVar.AttackAnimStates.idle);
                 Battle.currentAttackType = "";
             }
+            
+            if (CurrentAnimation == GVar.AttackAnimStates.buildUp && Battle.currentAttackType == "Magic")
+            {
+                PlayAnimation(GVar.AttackAnimStates.attack);
+                Vector2 pos = Battle.battlePlayer.Position;
+                Vector2 size = Battle.battlePlayer.Size;
+                Lists.activeProjectiles.Add(ProjectileBuilder.BuildProjectile(Dictionaries.projectiles[Battle.currentAttackProj], new Vector2(pos.X + size.X / 2, pos.Y + size.Y / 2), new Vector2(10, 0), GVar.playerName + "Proj"));
+            }
 
             if (CurrentAnimation == GVar.AttackAnimStates.attack)
             {

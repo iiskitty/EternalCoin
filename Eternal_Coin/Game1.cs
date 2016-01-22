@@ -107,6 +107,7 @@ namespace Eternal_Coin
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Load.LoadItemData(Content);
+            Load.LoadProjectiles(Content);
             Textures.LoadTextures(Content);
             Fonts.LoadFonts(Content);
             Sounds.LoadSounds(Content);
@@ -139,17 +140,16 @@ namespace Eternal_Coin
         {
             if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
             {
-                for (int i = 0; i < 40; i++)
-                {
-                    if (InventoryManager.playerInventory.itemSlots[i].item == null)
-                    {
-                        Item item;
-                        item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
-                        Lists.playerItems.Add(item);
-                        InventoryManager.playerInventory.itemSlots[i].item = item;
-                        break;
-                    }
-                }
+                Item item;
+                item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
+                Lists.playerItems.Add(item);
+                InventoryManager.playerInventory.itemSlots[39].item = item;
+                item = ItemBuilder.BuildItem(Dictionaries.items["FireBall"]);
+                Lists.playerItems.Add(item);
+                InventoryManager.playerInventory.itemSlots[38].item = item;
+                item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
+                Lists.playerItems.Add(item);
+                InventoryManager.playerInventory.itemSlots[37].item = item;
             }
 
             if (GVar.loadData)

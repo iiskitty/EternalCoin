@@ -23,6 +23,7 @@ namespace Eternal_Coin
         public static List<Object> attackButtons;
         public static List<Object> displayPictureButtons;
         public static List<Object> battleSceneButtons;
+        public static List<Object> activeProjectiles;
         public static List<Quest> quests;
         public static List<Object> viewQuestInfoButtons;
         public static List<GeneratedButton> availableStoriesButtons;
@@ -44,6 +45,7 @@ namespace Eternal_Coin
 
         public static void InitializeLists()
         {
+            activeProjectiles = new List<Object>();
             battleSceneButtons = new List<Object>();
             characterItems = new List<Item>();
             shopItems = new List<Item>();

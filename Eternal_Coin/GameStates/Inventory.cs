@@ -71,12 +71,10 @@ namespace Eternal_Coin
         {
             for (int i = 0; i < 40; i++)
             {
-                
-
                 if (MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && playerInventory.itemSlots[i].item != null)
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, playerInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    spriteBatch.Draw(playerInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                    //spriteBatch.Draw(playerInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
                         if (playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.weapon)
@@ -90,6 +88,10 @@ namespace Eternal_Coin
                         else if (playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
                         {
                             Item.DrawItemInfo(spriteBatch, (Jewellry)playerInventory.itemSlots[i].item);
+                        }
+                        else if (playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.eternalcoin)
+                        {
+                            Item.DrawItemInfo(spriteBatch, (EternalCoin)playerInventory.itemSlots[i].item);
                         }
                     }
                 }
@@ -148,10 +150,23 @@ namespace Eternal_Coin
                     }
                     else if (mouseInventory.heldItem != null)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
-                        Item item = mouseInventory.heldItem;
-                        mouseInventory.heldItem = playerInventory.itemSlots[i].item;
-                        Item.ToPlayer(item, i);
+                        if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin && playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
+                        {
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            Jewellry jewl = (Jewellry)playerInventory.itemSlots[i].item;
+                            playerInventory.itemSlots[i].item = null;
+                            jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(mouseInventory.heldItem);
+                            jewl.Attacks = jewl.eternalCoinSlot.item.Attacks;
+                            playerInventory.itemSlots[i].item = jewl;
+                            mouseInventory.heldItem = null;
+                        }
+                        else
+                        {
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            Item item = mouseInventory.heldItem;
+                            mouseInventory.heldItem = playerInventory.itemSlots[i].item;
+                            Item.ToPlayer(item, i);
+                        }
                     }
                 }
                 else if (playerInventory.itemSlots[i].item == null && MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && InputManager.IsLMPressed())
@@ -173,7 +188,7 @@ namespace Eternal_Coin
                 if (MouseManager.mouseBounds.Intersects(shopInventory.itemSlots[i].bounds) && shopInventory.itemSlots[i].item != null)
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, shopInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    spriteBatch.Draw(shopInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                    //spriteBatch.Draw(shopInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
                         if (shopInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.weapon)
@@ -183,6 +198,14 @@ namespace Eternal_Coin
                         else if (shopInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.armor)
                         {
                             Item.DrawItemInfo(spriteBatch, (Armor)shopInventory.itemSlots[i].item);
+                        }
+                        else if (shopInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
+                        {
+                            Item.DrawItemInfo(spriteBatch, (Jewellry)shopInventory.itemSlots[i].item);
+                        }
+                        else if (shopInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.eternalcoin)
+                        {
+                            Item.DrawItemInfo(spriteBatch, (EternalCoin)shopInventory.itemSlots[i].item);
                         }
                     }
                 }
@@ -196,17 +219,21 @@ namespace Eternal_Coin
                 mouseInventory.heldItem.Draw(spriteBatch, mouseInventory.heldItem.SpriteID, mouseInventory.heldItem.Bounds, 0.192f, 0f, Vector2.Zero);
                 mouseInventory.heldItem.Update(gameTime);
 
-                if (mouseInventory.heldItem.InventorySlot.Contains("Ring"))
+                if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.jewellry)
                 {
-                    Jewellry ring = (Jewellry)mouseInventory.heldItem;
-                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+                    Jewellry jewl = (Jewellry)mouseInventory.heldItem;
+                    if (jewl.eternalCoinSlot.item != null)
+                    {
+                        jewl.eternalCoinSlot.item.Draw(spriteBatch, jewl.eternalCoinSlot.item.SpriteID, jewl.eternalCoinSlot.item.Bounds, 0.2f, 0f, Vector2.Zero);
+                    }
+                    GVar.DrawBoundingBox(jewl.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                 }
 
-                spriteBatch.Draw(mouseInventory.heldItem.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                //spriteBatch.Draw(mouseInventory.heldItem.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
 
                 if (GVar.currentGameState == GVar.GameState.inventory)
                 {
-                    if (mouseInventory.heldItem != null && mouseInventory.heldItem.ItemClass != GVar.ItemClassName.jewellry && mouseInventory.heldItem.ItemClass != GVar.ItemClassName.weapon)
+                    if (mouseInventory.heldItem != null && mouseInventory.heldItem.ItemClass != GVar.ItemClassName.jewellry && mouseInventory.heldItem.ItemClass != GVar.ItemClassName.weapon && mouseInventory.heldItem.ItemClass != GVar.ItemClassName.eternalcoin)
                     {
                         Vector2 pos = characterInventory.itemSlots[mouseInventory.heldItem.InventorySlot].position;
                         Vector2 size = characterInventory.itemSlots[mouseInventory.heldItem.InventorySlot].size;
@@ -236,6 +263,19 @@ namespace Eternal_Coin
                             }
                         }
                     }
+                    else if (mouseInventory.heldItem != null && mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin)
+                    {
+                        for (int i = 0; i < 40; i++)
+                        {
+                            if (playerInventory.itemSlots[i].item != null && playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
+                            {
+                                Jewellry jewl = (Jewellry)playerInventory.itemSlots[i].item;
+                                Vector2 pos = jewl.eternalCoinSlot.position;
+                                Vector2 size = jewl.eternalCoinSlot.size;
+                                spriteBatch.Draw(Textures.Misc.clearPixel, new Rectangle((int)pos.X, (int)pos.Y, (int)size.X, (int)size.Y), null, Color.Green, 0f, Vector2.Zero, SpriteEffects.None, 0.194f);
+                            }
+                        }
+                    }
                 }
 
                 if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.weapon)
@@ -252,6 +292,10 @@ namespace Eternal_Coin
                 {
                     Item.DrawItemInfo(spriteBatch, (Jewellry)mouseInventory.heldItem);
                 }
+                else if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin)
+                {
+                    Item.DrawItemInfo(spriteBatch, (EternalCoin)mouseInventory.heldItem);
+                }
             }
         }
 
@@ -260,6 +304,14 @@ namespace Eternal_Coin
             if (mouseInventory.heldItem != null)
             {
                 mouseInventory.heldItem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.jewellry)
+                {
+                    Jewellry jewl = (Jewellry)mouseInventory.heldItem;
+                    if (jewl.eternalCoinSlot.item != null)
+                    {
+                        jewl.eternalCoinSlot.Update(gameTime);
+                    }
+                }
                 if (mouseInventory.heldItem.Size.X < Vector.itemNormalSize.X && mouseInventory.heldItem.Size.Y < Vector.itemNormalSize.Y)
                 {
                     mouseInventory.heldItem.Size = Vector.itemNormalSize;
@@ -357,20 +409,28 @@ namespace Eternal_Coin
                 {
                     item.Draw(spriteBatch, item.SpriteID, item.Bounds, 0.19f, 0f, Vector2.Zero);
 
-                    if (item.InventorySlot.Contains("Ring"))
+                    if (item.ItemClass == GVar.ItemClassName.jewellry)
                     {
-                        Jewellry ring = (Jewellry)item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+                        Jewellry jewl = (Jewellry)item;
+                        if (jewl.eternalCoinSlot.item != null)
+                        {
+                            jewl.eternalCoinSlot.item.Draw(spriteBatch, jewl.eternalCoinSlot.item.SpriteID, jewl.eternalCoinSlot.item.Bounds, 0.2f, 0f, Vector2.Zero);
+                        }
+                        GVar.DrawBoundingBox(jewl.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                     }
                 }
                 foreach (Item item in Lists.characterItems)
                 {
                     item.Draw(spriteBatch, item.SpriteID, item.Bounds, 0.19f, 0f, Vector2.Zero);
 
-                    if (item.InventorySlot.Contains("Ring"))
+                    if (item.ItemClass == GVar.ItemClassName.jewellry)
                     {
-                        Jewellry ring = (Jewellry)item;
-                        GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
+                        Jewellry jewl = (Jewellry)item;
+                        if (jewl.eternalCoinSlot.item != null)
+                        {
+                            jewl.eternalCoinSlot.item.Draw(spriteBatch, jewl.eternalCoinSlot.item.SpriteID, jewl.eternalCoinSlot.item.Bounds, 0.2f, 0f, Vector2.Zero);
+                        }
+                        GVar.DrawBoundingBox(jewl.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                     }
                 }
             }
@@ -412,7 +472,7 @@ namespace Eternal_Coin
                 if (characterInventory.itemSlots[Lists.inventorySlots[i]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds))
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    spriteBatch.Draw(characterInventory.itemSlots[Lists.inventorySlots[i]].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                    //spriteBatch.Draw(characterInventory.itemSlots[Lists.inventorySlots[i]].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
 
                     
 
@@ -430,6 +490,7 @@ namespace Eternal_Coin
                         {
                             Item.DrawItemInfo(spriteBatch, (Jewellry)characterInventory.itemSlots[Lists.inventorySlots[i]].item);
                         }
+                        
                     }
                 }
             }
@@ -441,11 +502,21 @@ namespace Eternal_Coin
             {
                 item.Update(gameTime);
                 item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                if (item.ItemClass == GVar.ItemClassName.jewellry)
+                {
+                    Jewellry jewl = (Jewellry)item;
+                    jewl.eternalCoinSlot.Update(gameTime);
+                }
             }
             foreach (Item item in Lists.characterItems)
             {
                 item.Update(gameTime);
                 item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                if (item.ItemClass == GVar.ItemClassName.jewellry)
+                {
+                    Jewellry jewl = (Jewellry)item;
+                    jewl.eternalCoinSlot.Update(gameTime);
+                }
             }
 
             for (int i = 0; i < Lists.inventoryButtons.Count; i++)
@@ -694,13 +765,13 @@ namespace Eternal_Coin
                                     string invslot = "Ring" + num.ToString();
                                     if (characterInventory.itemSlots[invslot].item == null)
                                     {
-                                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                         Item.ToCharacter(playerInventory.itemSlots[i].item, invslot);
                                         P.AddItemStats((Jewellry)playerInventory.itemSlots[i].item);
-                                        if (playerInventory.itemSlots[i].item.Attacks != null)
+                                        if (playerInventory.itemSlots[i].item.Attacks.Count > 0)
                                         {
                                             Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
-                                            foreach (string atkID in mouseInventory.heldItem.Attacks)
+                                            foreach (string atkID in playerInventory.itemSlots[i].item.Attacks)
                                             {
                                                 GVar.LogDebugInfo("Attack added: " + atkID, 1);
                                             }

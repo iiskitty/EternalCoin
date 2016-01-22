@@ -77,10 +77,12 @@ namespace Eternal_Coin
             this.inventorySlot = inventorySlot;
             this.material = material;
             this.type = type;
+            attacks = new List<string>();
         }
 
         public static void DrawItemInfo(SpriteBatch spriteBatch, Weapon w)
         {
+            spriteBatch.Draw(w.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, w.ItemName, new Vector2(45, 386), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + w.Damage.ToString(), new Vector2(45, 410), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchase Price: " + w.Cost.ToString(), new Vector2(45, 436), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
@@ -89,6 +91,7 @@ namespace Eternal_Coin
         }
         public static void DrawItemInfo(SpriteBatch spriteBatch, Armor a)
         {
+            spriteBatch.Draw(a.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, a.ItemName, new Vector2(45, 386), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + a.ArmorValue.ToString(), new Vector2(45, 410), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchase Price: " + a.Cost.ToString(), new Vector2(45, 436), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
@@ -97,9 +100,27 @@ namespace Eternal_Coin
         }
         public static void DrawItemInfo(SpriteBatch spriteBatch, Jewellry j)
         {
+            spriteBatch.Draw(j.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, j.ItemName, new Vector2(45, 386), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchase Price: " + j.Cost.ToString(), new Vector2(45, 436), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
             int cost = j.Cost / 2;
+            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), new Vector2(45, 460), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+
+            if (j.eternalCoinSlot.item != null)
+            {
+                spriteBatch.Draw(j.eternalCoinSlot.item.SpriteID, new Rectangle(200, 98, 60, 60), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, j.eternalCoinSlot.item.ItemName, new Vector2(45, 484), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchasing Price: " + j.eternalCoinSlot.item.Cost.ToString(), new Vector2(45, 508), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                int ECcost = j.eternalCoinSlot.item.Cost / 2;
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + ECcost.ToString(), new Vector2(45, 532), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            }
+        }
+        public static void DrawItemInfo(SpriteBatch spriteBatch, EternalCoin e)
+        {
+            spriteBatch.Draw(e.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, e.ItemName, new Vector2(45, 386), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchasing Price: " + e.Cost.ToString(), new Vector2(45, 436), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            int cost = e.Cost / 2;
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), new Vector2(45, 460), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
         }
 
@@ -168,7 +189,7 @@ namespace Eternal_Coin
                 }
                 catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!!ERROR!!! failed to create weapon. [" + e + "]", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
 
@@ -184,7 +205,7 @@ namespace Eternal_Coin
                 }
                 catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!!ERROR!!! failed to create armor. [" + e + "]", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
 
@@ -200,7 +221,29 @@ namespace Eternal_Coin
                 }
                 catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!!ERROR!!! failed to create jewellry. [" + e + "]", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                }
+            }
+
+            XmlNodeList eternalCoinItems = itemsDoc.SelectNodes("/items/eternalcoins/item");
+
+            foreach (XmlNode eternalCoin in eternalCoinItems)
+            {
+                try
+                {
+                    Item item = ItemBuilder.BuildItem(eternalCoin[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, eternalCoin[GVar.XmlTags.ItemTags.inventoryslot].InnerText, eternalCoin[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[eternalCoin[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[eternalCoin[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
+
+                    XmlNodeList attacks = itemsDoc.SelectNodes("/items/eternalcoins/item/" + item.Type.name + "Attack");
+                    foreach (XmlNode attack in attacks)
+                    {
+                        item.Attacks.Add(attack.InnerText);
+                    }
+
+                    Dictionaries.items.Add(item.itemName, item);
+                }
+                catch (Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
         }
@@ -267,6 +310,31 @@ namespace Eternal_Coin
         }
 
         public int ArmorValue { get { return armorValue; } set { armorValue = value; } }
+    }
+
+    public class EternalCoin : Item
+    {
+        public EternalCoin(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, string itemName, int cost, string inventorySlot, Material material, ItemType type)
+            : base(spriteID, position, size, colour, itemClass, itemName, cost, inventorySlot, material, type)
+        {
+
+        }
+
+        public EternalCoin(Item item)
+            : base(item)
+        {
+
+        }
+
+        public override void Update(float gameTime)
+        {
+            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
+        }
+
+        public override void AnimationDone(string animation)
+        {
+            
+        }
     }
 
     public class Jewellry : Item

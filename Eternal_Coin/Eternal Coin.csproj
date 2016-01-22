@@ -61,6 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Attacks\Attack.cs" />
+    <Compile Include="Attacks\Projectile.cs" />
     <Compile Include="BattlePlayer.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="Colour\Colours.cs" />

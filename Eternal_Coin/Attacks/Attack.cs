@@ -42,6 +42,7 @@ namespace Eternal_Coin
     {
         string id;
         string type;
+        string magicProjectile;
         Texture2D anim;
         List<AttackAnim> attackAnims;
 
@@ -49,6 +50,15 @@ namespace Eternal_Coin
         {
             this.id = id;
             this.type = type;
+            this.anim = anim;
+            attackAnims = new List<AttackAnim>();
+        }
+
+        public Attack(string id, string type, string magicProjectile, Texture2D anim)
+        {
+            this.id = id;
+            this.type = type;
+            this.magicProjectile = magicProjectile;
             this.anim = anim;
             attackAnims = new List<AttackAnim>();
         }
@@ -75,21 +85,6 @@ namespace Eternal_Coin
             {
                 GVar.LogDebugInfo("!error![" + e + "]", 1);
             }
-            //for (int i = 0; i < ids.Count; i++)
-            //{
-            //    string id = GVar.displayPicID + ids[i];
-            //    if (Lists.availableAttacksIDs.Count == i + 1 || Lists.availableAttacksIDs.Count == 0)
-            //    {
-            //        Lists.availableAttacksIDs.Add(id);
-            //        continue;
-            //    }
-            //    if (Lists.availableAttacksIDs.Count > 0 && id == Lists.availableAttacksIDs[i])
-            //    {
-            //        ids.RemoveAt(i);
-            //        i--;
-            //    }
-
-            //}
         }
 
         public static void TakeAvailableAttacks(List<string> ids)
@@ -214,6 +209,15 @@ namespace Eternal_Coin
                 {
                     GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
+                string magicProj = "";
+                try
+                {
+                    magicProj = attack["magicprojectile"].InnerText;
+                }
+                catch (Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                }
                 Texture2D anim = null;
                 try
                 {
@@ -228,7 +232,15 @@ namespace Eternal_Coin
 
                 try
                 {
-                    Attack atk = new Attack(id, type, anim);
+                    Attack atk = null;
+                    if (magicProj == "")
+                    {
+                        atk = new Attack(id, type, anim);
+                    }
+                    else
+                    {
+                        atk = new Attack(id, type, magicProj, anim);
+                    }
                     XmlNodeList animList = attack.SelectNodes("animation");
 
                     foreach (XmlNode anima in animList)
@@ -247,7 +259,7 @@ namespace Eternal_Coin
                 }
                 catch (Exception e)
                 {
-                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                    //GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
         }
@@ -266,6 +278,7 @@ namespace Eternal_Coin
 
         public string ID { get { return id; } set { id = value; } }
         public string Type { get { return type; } set { type = value; } }
+        public string MagicProjectile { get { return magicProjectile; } set { magicProjectile = value; } }
         public Texture2D Anim { get { return anim; } set { anim = value; } }
         public List<AttackAnim> AttackAnims { get { return attackAnims; } set { attackAnims = value; } }
     }

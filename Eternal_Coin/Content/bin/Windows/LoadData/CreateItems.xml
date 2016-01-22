@@ -31,6 +31,17 @@
       <inventoryslot>Ring</inventoryslot>
     </item>
   </jewellry>
+
+  <eternalcoins>
+    <item>
+      <class>EternalCoin</class>
+      <itemname>FireBall</itemname>
+      <itemtype>ECFireBall</itemtype>
+      <itemmaterial>Gold</itemmaterial>
+      <inventoryslot>EternalCoin</inventoryslot>
+      <ECFireBallAttack>FireBall</ECFireBallAttack>
+    </item>
+  </eternalcoins>
   
   <armor>
     <item>

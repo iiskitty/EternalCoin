@@ -12,6 +12,7 @@ namespace Eternal_Coin
 {
     public class Dictionaries
     {
+        public static Dictionary<string, Projectile> projectiles;
         public static Dictionary<string, Texture2D> maps;
         public static Dictionary<string, Texture2D> textures;
         public static Dictionary<string, DisplayPicture> displayPictures;
@@ -28,6 +29,7 @@ namespace Eternal_Coin
 
         public static void InitializeDictionaries()
         {
+            projectiles = new Dictionary<string, Projectile>();
             materials = new Dictionary<string, Material>();
             itemTypes = new Dictionary<string, ItemType>();
             maps = new Dictionary<string, Texture2D>();

@@ -184,6 +184,19 @@ namespace Eternal_Coin
             return null;
         }
 
+        public static void LoadProjectiles(ContentManager Content)
+        {
+            XmlDocument projectileDoc = new XmlDocument();
+            projectileDoc.Load("./Content/LoadData/LoadProjectiles.xml");
+            XmlNodeList projectiles = projectileDoc.SelectNodes("/projectiles/projectile");
+            
+            foreach (XmlNode proj in projectiles)
+            {
+                Projectile projectile = new Projectile(Content.Load<Texture2D>(proj["imagefilepath"].InnerText), Vector2.Zero, Vector2.Zero, new Vector2(40, 40), Color.White, proj["name"].InnerText, "Alive", Convert.ToInt32(proj["damage"].InnerText), 0f);
+                Dictionaries.projectiles.Add(proj["name"].InnerText, projectile);
+            }
+        }
+
         public static void LoadItemData(ContentManager Content)
         {
             XmlDocument itemData = new XmlDocument();

@@ -90,6 +90,11 @@
     <cost>10</cost>
     <imagefilepath>Sprites/tempIcon/Ring</imagefilepath>
   </itemtype>
+  <itemtype>
+    <name>ECFireBall</name>
+    <cost>20</cost>
+    <imagefilepath>Sprites/tempIcon/ECFireBall</imagefilepath>
+  </itemtype>
   
 	<material>
 		<name>Wood</name>

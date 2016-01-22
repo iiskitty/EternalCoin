@@ -167,6 +167,7 @@ namespace Eternal_Coin
             public const string weapon = "Weapon";
             public const string armor = "Armor";
             public const string jewellry = "Jewellry";
+            public const string eternalcoin = "EternalCoin";
         };
 
         public struct InventorySlot

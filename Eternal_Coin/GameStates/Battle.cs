@@ -25,6 +25,7 @@ namespace Eternal_Coin
         public static int silverReward;
 
         public static string currentAttackType = "";
+        public static string currentAttackProj = "";
         static string enemyNextAttack = string.Empty;
         static float enemyAttackTimer = 100;
 
@@ -63,7 +64,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -75,7 +76,7 @@ namespace Eternal_Coin
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -88,7 +89,7 @@ namespace Eternal_Coin
                         {
                             if (battleEnemy == null)
                             {
-                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 10f, 0f, 0f, 0);
+                                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
@@ -207,9 +208,21 @@ namespace Eternal_Coin
             battlePlayer.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             battleEnemy.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
+            for (int i = 0; i < Lists.activeProjectiles.Count; i++)
+            {
+                Lists.activeProjectiles[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                if (Lists.activeProjectiles[i].Bounds.Intersects(playerAttackRec))
+                {
+                    Projectile proj = (Projectile)Lists.activeProjectiles[i];
+                    battleEnemy.Health -= proj.Damage;
+                    Lists.activeProjectiles.RemoveAt(i);
+                }
+            }
+
             if (battlePlayer.Bounds.Intersects(playerAttackRec) && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.buildUp)
             {
                 battlePlayer.PlayAnimation(GVar.AttackAnimStates.attack);
+
             }
             else if (battlePlayer.Bounds.Intersects(playerPort) && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.retreat)
             {
@@ -257,6 +270,14 @@ namespace Eternal_Coin
                     try
                     {
                         currentAttackType = Dictionaries.availableAttacks[B.State].Type;
+                        try
+                        {
+                            currentAttackProj = Dictionaries.availableAttacks[B.State].MagicProjectile;
+                        }
+                        catch (Exception e)
+                        {
+                            GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                        }
                         battlePlayer.SetAttack(Dictionaries.availableAttacks[B.State]);
                         battlePlayer.PlayAnimation(GVar.AttackAnimStates.buildUp);
                     }
@@ -368,6 +389,12 @@ namespace Eternal_Coin
         {
             battlePlayer.Update(gameTime);
             battlePlayer.Draw(spriteBatch, battlePlayer.SpriteID, battlePlayer.Bounds, 0.2f, 0f, Vector2.Zero);
+
+            for (int i = 0; i < Lists.activeProjectiles.Count; i++)
+            {
+                Lists.activeProjectiles[i].Update(gameTime);
+                Lists.activeProjectiles[i].Draw(spriteBatch, Lists.activeProjectiles[i].SpriteID, Lists.activeProjectiles[i].Bounds, 0.2f, 0f, Vector2.Zero);
+            }
 
             if (battleWon)
             {

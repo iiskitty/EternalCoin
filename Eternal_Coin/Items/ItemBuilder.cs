@@ -33,6 +33,12 @@ namespace Eternal_Coin
                 GVar.LogDebugInfo("ItemCreated: " + GetItemInfo(jewellry), 2);
                 return jewellry;
             }
+            else if (itemClass == GVar.ItemClassName.eternalcoin)
+            {
+                EternalCoin eternalCoin = new EternalCoin(Dictionaries.itemTextures[type.name], Vector2.Zero, new Vector2(71, 71), Color.White, itemClass, itemName, material.cost + type.cost, inventorySlot, material, type);
+                GVar.LogDebugInfo("ItemCreated: " + GetItemInfo(eternalCoin), 2);
+                return eternalCoin;
+            }
             return null;
         }
         public static Item BuildItem(Item item)
@@ -55,6 +61,13 @@ namespace Eternal_Coin
                 Jewellry jewellry = new Jewellry(Dictionaries.itemTextures[item.Type.name], Vector2.Zero, new Vector2(71, 71), Color.White, item.ItemClass, item.ItemName, item.Material.cost + item.Type.cost, item.InventorySlot, item.Material, item.Type);
                 GVar.LogDebugInfo("ItemCreated: " + GetItemInfo(jewellry), 2);
                 return jewellry;
+            }
+            else if (item.ItemClass == GVar.ItemClassName.eternalcoin)
+            {
+                EternalCoin eternalCoin = new EternalCoin(Dictionaries.itemTextures[item.Type.name], Vector2.Zero, new Vector2(71, 71), Color.White, item.ItemClass, item.ItemName, item.Material.cost + item.Type.cost, item.InventorySlot, item.Material, item.Type);
+                eternalCoin.Attacks = item.Attacks;
+                GVar.LogDebugInfo("ItemCreated: " + GetItemInfo(eternalCoin), 2);
+                return eternalCoin;
             }
             return null;
         }
