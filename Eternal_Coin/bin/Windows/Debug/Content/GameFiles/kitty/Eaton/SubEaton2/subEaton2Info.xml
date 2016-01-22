@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
+
 <location>
-  <name>SubEaton2</name>
-  <description>you are in SubEaton2</description>
-  <searched>True</searched>
-  <hasnpc>false</hasnpc>
+
+	<name>SubEaton2</name>
+	<description>you are in SubEaton2</description>
+	<searched>false</searched>
+	<hasnpc>false</hasnpc>
   <hasshop>false</hasshop>
-  <hasenemy>False</hasenemy>
+  <hasenemy>true</hasenemy>
+
   <enemy>
     <name>hickie</name>
     <dpid>EDefault</dpid>
@@ -29,8 +32,10 @@
       </item>
     </loot>
   </enemy>
-  <actions>
-    <enter>Entering SubEaton2</enter>
-    <explore>Exploring SubEaton2</explore>
-  </actions>
+	
+	<actions>
+		<enter>Entering SubEaton2</enter>
+		<explore>Exploring SubEaton2</explore>
+	</actions>
+	
 </location>

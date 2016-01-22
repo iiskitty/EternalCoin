@@ -389,9 +389,10 @@ namespace Eternal_Coin
                         for (int j = 0; j < 40; j++)
                         {
                             if (shopInventory.itemSlots[j].item != null)
-                                Item.FromShop(shopInventory.itemSlots[i].item, i);
+                                shopInventory.itemSlots[j].item = null;
                         }
 
+                        shopInventory = new ShopInventory();
                         GVar.currentGameState = GVar.GameState.game;
                         GVar.previousGameState = GVar.GameState.inventory;
                     }

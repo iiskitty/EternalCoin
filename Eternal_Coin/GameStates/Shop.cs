@@ -40,13 +40,13 @@ namespace Eternal_Coin
 
             item.RemoveAll();
 
-            XmlNode itemNode = shopDoc.SelectSingleNode("/location/shop/inventory");
+            //XmlNode itemNode = shopDoc.SelectSingleNode("/location/shop/inventory");
 
             for (int i = 0; i < 40; i++)
             {
                 if (InventoryManager.shopInventory.itemSlots[i].item != null)
                 {
-                    itemNode.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.itemSlots[i].item, shopDoc));
+                    item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.itemSlots[i].item, shopDoc));
                 }
             }
             string fileDir = "Content/GameFiles/" + Lists.entity[0].Name + "/" + locationNode.LocatoinFilePath;

@@ -22,38 +22,10 @@ namespace Eternal_Coin
         {
             XmlElement itemElement = itemDoc.CreateElement(string.Empty, "item", string.Empty);
 
-            //XmlElement itemClass = itemDoc.CreateElement(string.Empty, "class", string.Empty);
-            //XmlText itemClassInner = itemDoc.CreateTextNode(item.ItemClass);
-            //itemClass.AppendChild(itemClassInner);
-            //itemElement.AppendChild(itemClass);
-
             XmlElement itemName = itemDoc.CreateElement(string.Empty, "itemname", string.Empty);
             XmlText itemNameInner = itemDoc.CreateTextNode(item.ItemName);
             itemName.AppendChild(itemNameInner);
             itemElement.AppendChild(itemName);
-
-            //XmlElement itemType = itemDoc.CreateElement(string.Empty, "itemtype", string.Empty);
-            //XmlText itemTypeInner = itemDoc.CreateTextNode(item.Type.name);
-            //itemType.AppendChild(itemTypeInner);
-            //itemElement.AppendChild(itemType);
-
-            //XmlElement itemMaterial = itemDoc.CreateElement(string.Empty, "itemmaterial", string.Empty);
-            //XmlText itemMaterialInner = itemDoc.CreateTextNode(item.Material.name);
-            //itemMaterial.AppendChild(itemMaterialInner);
-            //itemElement.AppendChild(itemMaterial);
-
-            //XmlElement itemInventorySlot = itemDoc.CreateElement(string.Empty, "inventoryslot", string.Empty);
-            //XmlText itemInventorySlotInner = itemDoc.CreateTextNode(item.InventorySlot);
-            //itemInventorySlot.AppendChild(itemInventorySlotInner);
-            //itemElement.AppendChild(itemInventorySlot);
-
-            //foreach (string id in item.Attacks)
-            //{
-            //    XmlElement attackNode = itemDoc.CreateElement(string.Empty, item.Type.name + "attack", string.Empty);
-            //    XmlText attackNodeInner = itemDoc.CreateTextNode(id);
-            //    attackNode.AppendChild(attackNodeInner);
-            //    itemElement.AppendChild(attackNode);
-            //}
 
             try
             {
