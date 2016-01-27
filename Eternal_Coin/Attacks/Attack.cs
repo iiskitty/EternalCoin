@@ -189,6 +189,7 @@ namespace Eternal_Coin
             XmlDocument attacksDoc = new XmlDocument();
             attacksDoc.Load("./Content/LoadData/LoadAttacks.xml");
             XmlNodeList attacks = attacksDoc.SelectNodes("/attacks/attack");
+            
             foreach (XmlNode attack in attacks)
             {
                 string id = "";
@@ -230,6 +231,8 @@ namespace Eternal_Coin
                     GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
 
+                Dictionaries.textures.Add(id, Content.Load<Texture2D>(attack["atkbutspritefileloc"].InnerText));
+
                 try
                 {
                     Attack atk = null;
@@ -259,7 +262,7 @@ namespace Eternal_Coin
                 }
                 catch (Exception e)
                 {
-                    //GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                 }
             }
         }

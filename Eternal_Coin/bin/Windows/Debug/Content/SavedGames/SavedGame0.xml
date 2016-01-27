@@ -2,10 +2,27 @@
 <savedgame>
   <filename>Content/SavedGames/SavedGame0.xml</filename>
   <filenumber>0</filenumber>
-  <dpid>Default</dpid>
+  <dpid>Altered</dpid>
   <name>kitty</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
   <playerinventory />
-  <characterinventory />
+  <characterinventory>
+    <item>
+      <itemname>Bronze Chestplate</itemname>
+      <playerinventoryslot>1</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>39</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <playerinventoryslot>37</playerinventoryslot>
+    </item>
+  </characterinventory>
 </savedgame>

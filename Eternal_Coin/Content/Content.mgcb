@@ -1023,9 +1023,6 @@
 #begin LoadData/ItemData.xml
 /copy:LoadData/ItemData.xml
 
-#begin LoadData/LoadAttacks.xml
-/copy:LoadData/LoadAttacks.xml
-
 #begin Sprites/tempIcon/ECFireBall.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1050,4 +1047,95 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Projectile/Magic/FireBall.png
+
+#begin LoadData/LoadAttacks.xml
+/copy:LoadData/LoadAttacks.xml
+
+#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png
+
+#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStab.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStab.png
+
+#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png
+
+#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/Punch.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/Punch.png
+
+#begin Sprites/Buttons/AttackButtons/FireBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/AttackButtons/FireBall.png
+
+#begin Sprites/Buttons/AttackButtons/IronSwordStab.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/AttackButtons/IronSwordStab.png
+
+#begin Sprites/Buttons/AttackButtons/IronSwordStrike.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/AttackButtons/IronSwordStrike.png
+
+#begin Sprites/Buttons/AttackButtons/Punch.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/AttackButtons/Punch.png
 

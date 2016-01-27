@@ -103,6 +103,7 @@
     <type>Magic</type>
     <magicprojectile>FireBall</magicprojectile>
     <animfileloc>Sprites/AttackAnim/DPID/FireBall</animfileloc>
+    <atkbutspritefileloc>Sprites/Buttons/AttackButtons/FireBall</atkbutspritefileloc>
     <animation>
       <name>Idle</name>
       <frames>4</frames>
@@ -148,6 +149,7 @@
     <id>Punch</id>
     <type>Physical</type>
     <animfileloc>Sprites/AttackAnim/DPID/Punch</animfileloc>
+    <atkbutspritefileloc>Sprites/Buttons/AttackButtons/Punch</atkbutspritefileloc>
     <animation>
       <name>Idle</name>
       <frames>4</frames>
@@ -193,6 +195,7 @@
     <id>IronSwordStab</id>
     <type>Physical</type>
     <animfileloc>Sprites/AttackAnim/DPID/IronSwordStab</animfileloc>
+    <atkbutspritefileloc>Sprites/Buttons/AttackButtons/IronSwordStab</atkbutspritefileloc>
     <animation>
       <name>Idle</name>
       <frames>4</frames>
@@ -238,6 +241,7 @@
     <id>IronSwordStrike</id>
     <type>Physical</type>
     <animfileloc>Sprites/AttackAnim/DPID/IronSwordStrike</animfileloc>
+    <atkbutspritefileloc>Sprites/Buttons/AttackButtons/IronSwordStrike</atkbutspritefileloc>
     <animation>
       <name>Idle</name>
       <frames>4</frames>

@@ -181,7 +181,7 @@ namespace Eternal_Coin
                 {
                     continue;
                 }
-                Button atkButton = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Blue, "Attack", Lists.availableAttacksIDs[i], 0f);
+                Button atkButton = new Button(Dictionaries.textures[Lists.availableAttacksIDs[i]], new Vector2(), new Vector2(25, 25), Color.White, "Attack", Lists.availableAttacksIDs[i], 0f);
                 Lists.attackButtons.Add(atkButton);
             }
 
@@ -206,7 +206,8 @@ namespace Eternal_Coin
         public static void UpdateBattle(GameTime gameTime)
         {
             battlePlayer.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            battleEnemy.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            if (!battleWon)
+                battleEnemy.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             for (int i = 0; i < Lists.activeProjectiles.Count; i++)
             {
@@ -311,7 +312,6 @@ namespace Eternal_Coin
                                     hasEnemy["hasenemy"].InnerText = "False";
                                     battleDoc.Save("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation[0].LocatoinFilePath);
                                     GVar.location.HasEnemy = false;
-                                    //SaveXml.SaveLocationXmlFile(E, E.CurrentLocation[0]);
                                 }
                                 battleWon = false;
                                 foreach(UIElement ui in Lists.uiElements)

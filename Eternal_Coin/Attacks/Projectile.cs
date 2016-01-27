@@ -20,7 +20,7 @@ namespace Eternal_Coin
             : base(spriteID, position, size, colour, name, state, worth)
         {
             FPS = 10;
-            AddAnimation(1, 0, 0, "def", (int)size.X, (int)size.Y, Vector2.Zero);
+            AddAnimation(8, 0, 0, "def", (int)size.X, (int)size.Y, Vector2.Zero);
             PlayAnimation("def");
             this.direction = direction;
             this.damage = damage;
