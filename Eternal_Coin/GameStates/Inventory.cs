@@ -74,7 +74,6 @@ namespace Eternal_Coin
                 if (MouseManager.mouseBounds.Intersects(playerInventory.itemSlots[i].bounds) && playerInventory.itemSlots[i].item != null)
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, playerInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    //spriteBatch.Draw(playerInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
                         if (playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.weapon)
@@ -107,14 +106,14 @@ namespace Eternal_Coin
                 {
                     if (mouseInventory.heldItem == null && GVar.silverMoney >= shopInventory.itemSlots[i].item.Cost)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         mouseInventory.heldItem = shopInventory.itemSlots[i].item;
                         GVar.silverMoney -= shopInventory.itemSlots[i].item.Cost;
                         Item.FromShop(shopInventory.itemSlots[i].item, i);
                     }
                     else if (mouseInventory.heldItem != null && GVar.silverMoney + (mouseInventory.heldItem.Cost / 2) >= shopInventory.itemSlots[i].item.Cost)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Item item = mouseInventory.heldItem;
                         mouseInventory.heldItem = shopInventory.itemSlots[i].item;
                         GVar.silverMoney += mouseInventory.heldItem.Cost / 2;
@@ -126,7 +125,7 @@ namespace Eternal_Coin
                 {
                     if (mouseInventory.heldItem != null)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Item.ToShop(mouseInventory.heldItem, i);
                         GVar.silverMoney += mouseInventory.heldItem.Cost / 2;
                         mouseInventory.heldItem = null;
@@ -144,7 +143,7 @@ namespace Eternal_Coin
                 {
                     if (mouseInventory.heldItem == null)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         mouseInventory.heldItem = playerInventory.itemSlots[i].item;
                         Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                     }
@@ -152,7 +151,7 @@ namespace Eternal_Coin
                     {
                         if (mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin && playerInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
                         {
-                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             Jewellry jewl = (Jewellry)playerInventory.itemSlots[i].item;
                             playerInventory.itemSlots[i].item = null;
                             jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(mouseInventory.heldItem);
@@ -162,9 +161,9 @@ namespace Eternal_Coin
                         }
                         else
                         {
-                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             Item item = mouseInventory.heldItem;
-                            mouseInventory.heldItem = playerInventory.itemSlots[i].item;
+                            mouseInventory.heldItem = ItemBuilder.BuildItem(playerInventory.itemSlots[i].item);
                             Item.ToPlayer(item, i);
                         }
                     }
@@ -173,7 +172,7 @@ namespace Eternal_Coin
                 {
                     if (mouseInventory.heldItem != null)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Item.ToPlayer(mouseInventory.heldItem, i);
                         mouseInventory.heldItem = null;
                     }
@@ -382,7 +381,7 @@ namespace Eternal_Coin
                 {
                     if (Lists.inventoryButtons[i].Name == "CloseInventory")
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Lists.inventoryButtons.Clear();
                         Shop.SaveShopInventory(GVar.curLocNode, Lists.entity[0].CurrentLocation[0]);
 
@@ -527,7 +526,7 @@ namespace Eternal_Coin
                 {
                     if (Lists.inventoryButtons[i].Name == "CloseInventory")
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Lists.inventoryButtons.Clear();
                         GVar.currentGameState = GVar.GameState.game;
                         GVar.previousGameState = GVar.GameState.inventory;
@@ -539,7 +538,7 @@ namespace Eternal_Coin
             characterInventory.UpdateInventoryBounds(gameTime);
             if (InputManager.IsKeyPressed(Keys.I))
             {
-                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                 GVar.currentGameState = GVar.GameState.game;
                 GVar.previousGameState = GVar.GameState.inventory;
             }
@@ -554,7 +553,7 @@ namespace Eternal_Coin
                         {
                             if (characterInventory.itemSlots[Lists.inventorySlots[j]].item == null && characterInventory.itemSlots[Lists.inventorySlots[j]].inventorySlot.Contains(mouseInventory.heldItem.InventorySlot))
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(mouseInventory.heldItem, Lists.inventorySlots[j]);
                                 if (mouseInventory.heldItem.Attacks != null)
                                 {
@@ -579,7 +578,7 @@ namespace Eternal_Coin
                             }
                             else if (characterInventory.itemSlots[Lists.inventorySlots[j]].item != null && characterInventory.itemSlots[Lists.inventorySlots[j]].inventorySlot.Contains(mouseInventory.heldItem.InventorySlot))
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item tempItem = mouseInventory.heldItem;
                                 mouseInventory.heldItem = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
@@ -629,7 +628,7 @@ namespace Eternal_Coin
                     {
                         if (mouseInventory.heldItem == null && characterInventory.itemSlots[Lists.inventorySlots[j]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Bounds) && InputManager.IsLMPressed())
                         {
-                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             mouseInventory.heldItem = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
                             P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                             if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
@@ -653,7 +652,7 @@ namespace Eternal_Coin
 
                             if (playerInventory.itemSlots[i].item == null)
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToPlayer(characterInventory.itemSlots[Lists.inventorySlots[j]].item, i);
                                 P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
@@ -682,7 +681,7 @@ namespace Eternal_Coin
                         {
                             if (characterInventory.itemSlots[playerInventory.itemSlots[i].item.InventorySlot].item == null)
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, playerInventory.itemSlots[i].item.InventorySlot);
                                 P.AddItemStats((Armor)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
@@ -709,7 +708,7 @@ namespace Eternal_Coin
                         {
                             if (characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item == null)
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.leftHandWeapon);
                                 P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
@@ -733,7 +732,7 @@ namespace Eternal_Coin
                             }
                             else if (characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.rightHandWeapon);
                                 P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)

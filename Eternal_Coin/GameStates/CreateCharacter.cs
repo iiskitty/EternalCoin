@@ -63,10 +63,6 @@ namespace Eternal_Coin
     {
         public static void UpdateCreateCharacter(GameTime gameTime)
         {
-            if (InputManager.IsLMDown())
-                GVar.preventclick = 1;
-            else if (InputManager.IsLMReleased())
-                GVar.preventclick = 0;
 
             for (int i = 0; i < Lists.chooseCharacterButtons.Count; i++)
             {
@@ -74,7 +70,7 @@ namespace Eternal_Coin
 
                 if (MouseManager.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
-                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.chooseCharacterButtons[i].Name, 2);
                     
                     if (Lists.chooseCharacterButtons[i].Name == "NewCharacter")
@@ -116,6 +112,7 @@ namespace Eternal_Coin
                     }
                     else if (Lists.chooseCharacterButtons[i].Name == "ChooseDP" && !GVar.choosingDP)
                     {
+                        GVar.preventclick = 1;
                         GVar.choosingDP = true;
                         Vector2 pos = new Vector2(150, 100);
                         for (int j = 0; j < Lists.displayPictureIDs.Count; j++)
@@ -136,7 +133,7 @@ namespace Eternal_Coin
 
                     if (MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds) && InputManager.IsLMPressed())
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         if (Lists.savedGames[i].buttons[j].Name == "LoadGame")
                         {
                             GVar.playerName = Lists.savedGames[i].buttons[j].State;
@@ -180,7 +177,7 @@ namespace Eternal_Coin
 
                     if (MouseManager.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds) && InputManager.IsLMPressed())
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("GameCreated: " + GVar.playerName, 2);
                         GVar.storyName = Lists.availableStoriesButtons[i].State;
                         Load.LoadLocationNodes(GVar.storyName);
@@ -202,9 +199,9 @@ namespace Eternal_Coin
                     {
                         Lists.displayPictureButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                        if (MouseManager.mouseBounds.Intersects(Lists.displayPictureButtons[i].Bounds) && InputManager.IsLMPressed())
+                        if (MouseManager.mouseBounds.Intersects(Lists.displayPictureButtons[i].Bounds) && InputManager.IsLMPressed() && GVar.preventclick == 0)
                         {
-                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             GVar.displayPicID = Lists.displayPictureButtons[i].State;
                             GVar.choosingDP = false;
                             break;
@@ -215,11 +212,13 @@ namespace Eternal_Coin
                 if (!GVar.choosingDP)
                     Text.RecordText();
             }
+            if (GVar.preventclick == 1)
+                GVar.preventclick = 0;
         }
 
         public static void DrawCreateCharacter(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
 
             foreach (Object b in Lists.chooseCharacterButtons)
             {

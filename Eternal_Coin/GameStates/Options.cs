@@ -20,7 +20,7 @@ namespace Eternal_Coin
                 Lists.optionsButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                 if (MouseManager.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
-                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.optionsButtons[i].Name, 2);
                     if (Lists.optionsButtons[i].Name == "MainMenu")
                     {
@@ -79,6 +79,7 @@ namespace Eternal_Coin
                     GVar.DrawBoundingBox(Lists.optionsButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 2, 0.2f, Color.Green);
                 }
             }
+            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
         }
 
         public static void LoadOptions()

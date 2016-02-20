@@ -12,6 +12,9 @@ namespace Eternal_Coin
 {
     public class Updates
     {
+        /// <summary>
+        /// checks for state changes (gameState)
+        /// </summary>
         public static void CheckForStateChange()
         {
             if (GVar.changeToBattle && !Colours.fadeIn)
@@ -56,7 +59,6 @@ namespace Eternal_Coin
                 MainWorld.LoadMainWorld();
                 GVar.previousGameState = GVar.GameState.chooseCharacter;
                 GVar.currentGameState = GVar.GameState.game;
-                //GVar.playerName = string.Empty;
                 GVar.startGame = false;
                 GVar.LogDebugInfo("GameState Change: game", 2);
             }
@@ -111,6 +113,7 @@ namespace Eternal_Coin
             {
                 Battle.battleEnemy = null;
                 Battle.battlePlayer = null;
+                Battle.battleWon = false;
                 Battle.loot.Clear();
                 Battle.silverReward = 0;
                 InventoryManager.enemyInventory = new EnemyInventory();
@@ -122,6 +125,11 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// Updates buttons when in inventory
+        /// </summary>
+        /// <param name="button">The button to update</param>
+        /// <param name="gameTime">gameTime for smoother stuff</param>
         public static void UpdateInventoryButtons(Object button, GameTime gameTime)
         {
             if (button.Name == "CloseInventory")
@@ -131,6 +139,12 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// Updates buttons when playing the game
+        /// </summary>
+        /// <param name="button">Button to update</param>
+        /// <param name="P">the player entity used for positioning of location buttons</param>
+        /// <param name="gameTime"></param>
         public static void UpdateGameButtons(Object button, Entity P, GameTime gameTime)
         {
             if (button.Name == "MainMenu")

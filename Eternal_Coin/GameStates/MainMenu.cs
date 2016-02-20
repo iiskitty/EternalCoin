@@ -22,13 +22,13 @@ namespace Eternal_Coin
                 {
                     if (Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "MouseOverButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
                     }
                     Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
 
                     if (InputManager.IsLMPressed())
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "CoinClick", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
                         if (Lists.mainMenuButtons[i].Name == "PlayButton")
                         {
@@ -65,7 +65,7 @@ namespace Eternal_Coin
 
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.verNum, new Vector2(560, 200), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
 
-            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, 1280, 720), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+            spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
             spriteBatch.Draw(Textures.Misc.title, new Rectangle(50, 10, 1180, Textures.Misc.title.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
 
             foreach (Object b in Lists.mainMenuButtons)

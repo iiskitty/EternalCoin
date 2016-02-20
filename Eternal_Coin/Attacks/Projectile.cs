@@ -16,6 +16,18 @@ namespace Eternal_Coin
         Vector2 direction;
         int damage;
 
+        /// <summary>
+        /// Create a projectile
+        /// </summary>
+        /// <param name="spriteID">sprite of projectile</param>
+        /// <param name="position">position of projectile</param>
+        /// <param name="direction">direction of projectile</param>
+        /// <param name="size">size of projectile</param>
+        /// <param name="colour">colour of projectile</param>
+        /// <param name="name">name of projectile</param>
+        /// <param name="state">state of projectile</param>
+        /// <param name="damage">damage of projectile</param>
+        /// <param name="worth">projectiles don't need worth</param>
         public Projectile(Texture2D spriteID, Vector2 position, Vector2 direction, Vector2 size, Color colour, string name, string state, int damage, float worth) 
             : base(spriteID, position, size, colour, name, state, worth)
         {
@@ -42,17 +54,34 @@ namespace Eternal_Coin
             
         }
 
+        /// <summary>
+        /// why have I done this
+        /// </summary>
         public static void CreateProjectile()
         {
 
         }
 
+        /// <summary>
+        /// Direction of projectile
+        /// </summary>
         public Vector2 Direction { get { return direction; } set { direction = value; } }
+        /// <summary>
+        /// Damage of projectile
+        /// </summary>
         public int Damage { get { return damage; } set { damage = value; } }
     }
 
     public class ProjectileBuilder
     {
+        /// <summary>
+        /// Builds and returns a projectile
+        /// </summary>
+        /// <param name="proj">pass in a pre-built projectile from dictionary</param>
+        /// <param name="position">position of projectile</param>
+        /// <param name="direction">direction of projectile</param>
+        /// <param name="state">state of projectile</param>
+        /// <returns></returns>
         public static Projectile BuildProjectile(Projectile proj, Vector2 position, Vector2 direction, string state)
         {
             proj = new Projectile(proj.SpriteID, position, direction, proj.Size, Color.White, proj.Name, state, proj.Damage, 0f);

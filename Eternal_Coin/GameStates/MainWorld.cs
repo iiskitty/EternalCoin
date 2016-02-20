@@ -117,7 +117,7 @@ namespace Eternal_Coin
 
             if (InputManager.IsKeyPressed(Keys.Q))
             {
-                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                 foreach (UIElement ui in Lists.uiElements)
                 {
                     if (ui.SpriteID == Textures.UI.questListUI)
@@ -144,7 +144,7 @@ namespace Eternal_Coin
 
             if (InputManager.IsKeyPressed(Keys.I))
             {
-                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                 Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
                 Lists.inventoryButtons.Add(closeInv);
                 GVar.currentGameState = GVar.GameState.inventory;
@@ -198,7 +198,7 @@ namespace Eternal_Coin
                     viewQuestInfoButtonPosition.Y += 18;
                     if (MouseManager.mouseBounds.Intersects(Lists.viewQuestInfoButtons[i].Bounds) && InputManager.IsLMPressed())
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("ButtonClicked: " + Lists.viewQuestInfoButtons[i].Name, 2);
                         for (int ui = 0; ui < Lists.uiElements.Count; ui++)
                         {
@@ -222,7 +222,7 @@ namespace Eternal_Coin
                     Updates.UpdateGameButtons(Lists.mainWorldButtons[i], P, gameTime);
                     if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("ButtonClicked: " + Lists.mainWorldButtons[i].Name, 2);
                         if (Lists.mainWorldButtons.Count > 0 && Lists.mainWorldButtons[i].Name == "QuestAcceptButton")
                         {
@@ -285,7 +285,7 @@ namespace Eternal_Coin
                     }
                     else if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds) && InputManager.IsLMPressed() && GVar.gamePaused)
                     {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickButton", false);
+                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         if (Lists.mainWorldButtons[i].Name == "MainMenu")
                         {
                             Save.SaveGame(GVar.savedGameLocation, P, Lists.quests);
@@ -329,7 +329,7 @@ namespace Eternal_Coin
 
                             if (MouseManager.mouseBounds.Intersects(Lists.locationButtons[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                             {
-                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickLocButton", false);
+                                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 GVar.LogDebugInfo("ButtonClicked: " + Lists.locationButtons[j].Name, 2);
                                 if (GVar.location != null && GVar.location.Searched)
                                 {
@@ -345,7 +345,7 @@ namespace Eternal_Coin
                                         try
                                         {
                                             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");
-                                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.hasquest].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questfinished].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText));
+                                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questfinished].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText));
                                             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
 
                                             if (GVar.npc.HasQuest && !GVar.npc.QuestAccepted)
@@ -565,7 +565,7 @@ namespace Eternal_Coin
                         if (MouseManager.mouseBounds.Intersects(P.CurrentLocation[i].LocNodeConnections[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                         {
                             UI.CloseNPCUI();
-                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clicklocnode], GVar.Volume.Audio.volume, GVar.Volume.Audio.pitch, GVar.Volume.Audio.pan, "ClickLocNode", false);
+                            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clicklocnode]);
                             ReadXml.ReadLocationXmlFile(P, P.CurrentLocation[i].LocNodeConnections[j]);
                             GVar.worldMap.SetMapSpeed(P, P.CurrentLocation[i].LocNodeConnections[j]);
                             foreach (LocationNode LN in P.CurrentLocation[i].LocNodeConnections[j].LocNodeConnections)

@@ -187,19 +187,61 @@ namespace Eternal_Coin
         /// <param name="gameTime">(float)gameTime.ElapsedGameTime.TotalSeconds</param>
         public abstract void HandleMovement(Vector2 pos, float gameTime);
 
+        /// <summary>
+        /// List of LocationNode should only contain one, so why am I useing a list???
+        /// </summary>
         public List<LocationNode> CurrentLocation { get { return currentLocation; } set { currentLocation = value; } }
+        /// <summary>
+        /// size of entity
+        /// </summary>
         public Vector2 Size { get { return size; } set { size = value; } }
+        /// <summary>
+        /// position of entity
+        /// </summary>
         public Vector2 Position { get { return position; } set { position = value; } }
+        /// <summary>
+        /// sprite of entity
+        /// </summary>
         public Texture2D SpriteID { get { return spriteID; } set { spriteID = value; } }
+        /// <summary>
+        /// spriteData used for pixel perfect collision(never used)
+        /// </summary>
         public Color[] SpriteIDData { get { return spriteIDData; } set { spriteIDData = value; } }
+        /// <summary>
+        /// colour of entity
+        /// </summary>
         public Color Colour { get { return colour; } set { colour = value; } }
+        /// <summary>
+        /// Rectangle Bounds of entity used for simple collisions
+        /// </summary>
         public Rectangle Bounds { get { return bounds; } set { bounds = value; } }
+        /// <summary>
+        /// health of entity
+        /// </summary>
         public float Health { get { return health; } set { health = value; } }
+        /// <summary>
+        /// max health of entity(health can not exceed this value)
+        /// </summary>
         public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
+        /// <summary>
+        /// velocity/speed of entity
+        /// </summary>
         public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
+        /// <summary>
+        /// armor of entity
+        /// </summary>
         public float Armour { get { return armor; } set { armor = value; } }
+        /// <summary>
+        /// damage this entity does
+        /// </summary>
         public float Damage { get { return damage; } set { damage = value; } }
+        /// <summary>
+        /// name of entity
+        /// </summary>
         public string Name { get { return name; } set { name = value; } }
+        /// <summary>
+        /// state of entity(dead/alive)
+        /// </summary>
         public string State { get { return state; } set { state = value; } }
     }
     
@@ -263,18 +305,57 @@ namespace Eternal_Coin
         /// <param name="gameTime">(float)gameTime.ElapsedGameTime.TotalSeconds</param>
         public abstract void HandleMovement(Vector2 pos, float gameTime);
 
+        /// <summary>
+        /// position of enemy
+        /// </summary>
         public Vector2 Position { get { return position; } set { position = value; } }
+        /// <summary>
+        /// velocity/speed of enemy
+        /// </summary>
         public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
+        /// <summary>
+        /// size of enemy
+        /// </summary>
         public Vector2 Size { get { return size; } set { size = value; } }
+        /// <summary>
+        /// score for killing enemy
+        /// </summary>
         public int Score { get { return score; } set { score = value; } }
+        /// <summary>
+        /// sprite of enemy
+        /// </summary>
         public Texture2D SpriteID { get { return spriteID; } set { spriteID = value; } }
+        /// <summary>
+        /// spriteData of enemy(for pixel perfect collision(never used))
+        /// </summary>
         public Color[] SpriteIDData { get { return spriteIDData; } set { spriteIDData = value; } }
+        /// <summary>
+        /// colour of enemy
+        /// </summary>
         public Color Colour { get { return colour; } set { colour = value; } }
+        /// <summary>
+        /// Renctangle Bounds of enemy(for simple collisions)
+        /// </summary>
         public Rectangle Bounds { get { return bounds; } set { bounds = value; } }
+        /// <summary>
+        /// health of enemy
+        /// </summary>
         public float Health { get { return health; } set { health = value; } }
+        /// <summary>
+        /// armor of enemy
+        /// </summary>
         public float Armor { get { return armor; } set { armor = value; } }
+        /// <summary>
+        /// name of enemy
+        /// </summary>
         public string Name { get { return name; } set { name = value; } }
+        /// <summary>
+        /// damage this enemy does
+        /// </summary>
         public float Damage { get { return damage; } set { damage = value; } }
+        /// <summary>
+        /// state of enemy(dead/alive)
+        /// </summary>
         public string State { get { return state; } set { state = value; } }
     }
 
@@ -328,16 +409,49 @@ namespace Eternal_Coin
         /// <param name="gameTime"></param>
         public abstract void HandleMovement(Vector2 pos, float gameTime);
 
+        /// <summary>
+        /// alpha colour of object(opacity, used for fading)
+        /// </summary>
         public byte ColourA { get { return colour.A; } set { colour.A = value; } }
+        /// <summary>
+        /// direction object can/is moving
+        /// </summary>
         public Vector2 Direction { get { return direction; } set { direction = value; } }
+        /// <summary>
+        /// sprite of object
+        /// </summary>
         public Texture2D SpriteID { get { return spriteID; } set { spriteID = value; } }
+        /// <summary>
+        /// spriteData of object(used for pixel perfect collision(never used))
+        /// </summary>
         public Color[] SpriteIDData { get { return spriteIDData; } set { spriteIDData = value; } }
+        /// <summary>
+        /// size of object
+        /// </summary>
         public Vector2 Size { get { return size; } set { size = value; } }
+        /// <summary>
+        /// position of object
+        /// </summary>
         public Vector2 Position { get { return position; } set { position = value; } }
+        /// <summary>
+        /// colour of object
+        /// </summary>
         public Color Colour { get { return colour; } set { colour = value; } }
+        /// <summary>
+        /// Rectangle Bounds of object(used for simple collisions
+        /// </summary>
         public Rectangle Bounds { get { return bounds; } set { bounds = value; } }
+        /// <summary>
+        /// name of object
+        /// </summary>
         public string Name { get { return name; } set { name = value; } }
+        /// <summary>
+        /// state of object(dead/alive)
+        /// </summary>
         public string State { get { return state; } set { state = value; } }
+        /// <summary>
+        /// object worth(for collecting or destroying object)
+        /// </summary>
         public float Worth { get { return worth; } set { worth = value; } }
     }
 
@@ -346,54 +460,26 @@ namespace Eternal_Coin
     /// </summary>
     public class SoundManager
     {
+        /// <summary>
+        /// List of SoundEffectInstance
+        /// </summary>
         public static List<SoundEffectInstance> sounds = new List<SoundEffectInstance>();
 
+        /// <summary>
+        /// if SoundEffect is not null, create a new SoundEffectInstance with SoundEffect, set volume, pitch and pan, add instance to List.
+        /// if List contains more than 12 SoundEffectInstance, sound will not play.
+        /// </summary>
+        /// <param name="sound">SoundEffect to be played</param>
         public static void PlaySound(SoundEffect sound)
         {
             if (sound != null)
             {
-                SoundEffectInstance soundInstance = sound.CreateInstance();
+                SoundEffectInstance soundInstance = sound.CreateInstance(); //new SoundEffectInstance with SoundEffect
 
                 soundInstance.Volume = GVar.Volume.Audio.volume;
                 soundInstance.Pitch = GVar.Volume.Audio.pitch;
                 soundInstance.Pan = GVar.Volume.Audio.pan;
                 soundInstance.IsLooped = false;
-                sounds.Add(soundInstance);
-                if (sounds.Count < 12)
-                {
-                    soundInstance.Play();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Creates a SoundEffectInstance adds it to a list and then plays the sound
-        /// </summary>
-        /// <param name="sound">Audio File to play</param>
-        /// <param name="volume">volume of audio</param>
-        /// <param name="pitch">pitch of audio</param>
-        /// <param name="pan">pan of audio</param>
-        /// <param name="name">name of sound(debug purposes</param>
-        /// <param name="isLooped">looping sound or not</param>
-        public static void PlaySound(SoundEffect sound, float volume, float pitch, float pan, string name, bool isLooped)
-        {
-            if (sound != null)
-            {
-                SoundEffectInstance soundInstance = sound.CreateInstance();
-
-                if (volume > 1.0f)
-                {
-                    volume = 1.0f;
-                }
-                if (volume < 0.0f)
-                {
-                    volume = 0.0f;
-                }
-
-                soundInstance.Volume = volume;
-                soundInstance.Pitch = pitch;
-                soundInstance.Pan = pan;
-                soundInstance.IsLooped = isLooped;
                 sounds.Add(soundInstance);
                 if (sounds.Count < 12)
                 {
@@ -421,6 +507,7 @@ namespace Eternal_Coin
 
     /// <summary>
     /// for all your user input needs
+    /// Call the Update() function to enable it
     /// </summary>
     public class InputManager
     {
@@ -433,7 +520,12 @@ namespace Eternal_Coin
         static GamePadState[] currentGamePadState = new GamePadState[4];
         static GamePadState[] previousGamePadState = new GamePadState[4];
         static bool[] Connected = new bool[4];
+        static bool updateGamePad = true;
 
+        /// <summary>
+        /// an array of Keys used for typing player name
+        /// NEED TO ADD SYMBOLS 
+        /// </summary>
         public static Keys[] keys = new Keys[]
         {
             Keys.Q,
@@ -486,6 +578,7 @@ namespace Eternal_Coin
         /// </summary>
         public static void Update()
         {
+            //if game window is active(not tabbed out) update keyboard, mouse and scroll wheel states
             if (GVar.windowIsActive)
             {
                 previousKeyboardState = currentKeyboardState;
@@ -497,15 +590,21 @@ namespace Eternal_Coin
 
                 try
                 {
-                    for (int i = 0; i < 4; i++)
+                    //if GamePad is supported GamePad states will be updated
+                    if (updateGamePad)
                     {
-                        previousGamePadState[i] = currentGamePadState[i];
-                        currentGamePadState[i] = GamePad.GetState((PlayerIndex)i);
-                        Connected[i] = GamePad.GetState((PlayerIndex)i).IsConnected;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            previousGamePadState[i] = currentGamePadState[i];
+                            currentGamePadState[i] = GamePad.GetState((PlayerIndex)i);
+                            Connected[i] = GamePad.GetState((PlayerIndex)i).IsConnected;
+                        }
                     }
                 }
                 catch
                 {
+                    GVar.LogDebugInfo("Xbox GamePad not supported on this machine", 1);
+                    updateGamePad = false;
                 }
             }
         }
@@ -755,7 +854,7 @@ namespace Eternal_Coin
     }
 
     /// <summary>
-    /// Creates a Rectangle at the mouses position
+    /// keeps mouse position and creates a Rectangle at the mouses position
     /// Call the Update() function to enable it.
     /// </summary>
     public class MouseManager
@@ -763,10 +862,12 @@ namespace Eternal_Coin
         static MouseState mouseState;
         public static Rectangle mouseBounds;
 
+
         public static void Update(bool isFullScreen)
         {
-            mouseState = Mouse.GetState();
-            mouseBounds = new Rectangle(mouseState.Position.X, mouseState.Position.Y, 2, 2);
+            mouseState = Mouse.GetState(); //keep mouseState up to date
+            mouseBounds = new Rectangle(mouseState.Position.X, mouseState.Position.Y, 2, 2); //keep mouseBounds up to date
+            //if fullscreen, keep mouse inside the game window
             if (isFullScreen)
             {
                 if (mouseState.Position.X > GVar.gameScreenX)
@@ -777,225 +878,15 @@ namespace Eternal_Coin
             
         }
 
+        /// <summary>
+        /// Gets and returns the position of the mouse
+        /// </summary>
+        /// <returns>Vector2 mousePos(mouse position)</returns>
         public static Vector2 GetMousePosition()
         {
             MouseState mouse = Mouse.GetState();
             Vector2 mousePos = new Vector2(mouse.Position.X, mouse.Position.Y);
             return mousePos;
-        }
-    }
-
-    /// <summary>
-    /// a very dodgy array of collision detection functions
-    /// </summary>
-    public class CollisionManager
-    {
-        /// <summary>
-        /// If the top right corner of rectangleA is intersecting with the bottom left corner of rectangleB
-        /// and rectangleA is more than half way up rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectTopRightCornerToBottomLeftCorner(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Top < rectangleB.Bottom && rectangleA.Bottom > rectangleB.Bottom && rectangleA.Right > rectangleB.Left && rectangleA.Left < rectangleB.Left)
-            {
-                if (rectangleA.Top < rectangleB.Bottom - rectangleA.Height / 3)
-                    return true;
-                else if (rectangleA.Right > rectangleB.Left + rectangleA.Width / 3)
-                    return false;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// If the top left corner of rectangleA is intersecting with the bottom right corner of rectangleB
-        /// and rectangleA is more than half way up rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectTopLeftCornerToBottomRightCorner(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Top < rectangleB.Bottom && rectangleA.Bottom > rectangleB.Bottom && rectangleA.Left < rectangleB.Right && rectangleA.Right > rectangleB.Right)
-            {
-                if (rectangleA.Top < rectangleB.Bottom - rectangleA.Height / 3)
-                    return true;
-                else if (rectangleA.Left > rectangleB.Right + rectangleA.Width / 3)
-                    return false;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// If the bottom left corner of rectangleA is intersecting with the top right corner of rectangleB
-        /// and rectangleA is more than half way down rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectBottomLeftCornerToTopRightCorner(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Bottom > rectangleB.Top && rectangleA.Top < rectangleB.Top && rectangleA.Left < rectangleB.Right && rectangleA.Right > rectangleB.Right)
-            {
-                if (rectangleA.Bottom > rectangleB.Top + rectangleA.Height / 3)
-                    return true;
-                else if (rectangleA.Left < rectangleB.Right - rectangleA.Width / 3)
-                    return false;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// If the bottom right corner of rectangleA is intersecting with the top left corner of rectangleB
-        /// and rectangleA is more than half way down rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectBottomRightCornerToTopLeftCorner(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Bottom > rectangleB.Top && rectangleA.Top < rectangleB.Top && rectangleA.Right > rectangleB.Left && rectangleA.Left < rectangleB.Left)
-            {
-                if (rectangleA.Bottom > rectangleB.Top + rectangleA.Height / 3)
-                    return true;
-                else if (rectangleA.Right > rectangleB.Left + rectangleA.Width / 3)
-                    return false;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// If the top side of rectangleA is intersecting with the bottom side of rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectTopToBottom(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Top < rectangleB.Bottom && rectangleA.Bottom > rectangleB.Bottom)// && rectangleA.Left > rectangleB.Left && rectangleA.Right < rectangleB.Right)
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// If the bottom side of rectangleA is intersecting with the top side of rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectBottomToTop(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Bottom > rectangleB.Top && rectangleA.Top < rectangleB.Top)// && rectangleA.Left > rectangleB.Left && rectangleA.Right < rectangleA.Left)
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// If the left side of rectangleA is intersecting with the right side of rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectLeftToRight(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Left < rectangleB.Right && rectangleA.Right > rectangleB.Right)// && rectangleA.Top > rectangleB.Top && rectangleA.Bottom < rectangleB.Bottom)
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// If the right side of rectangleA is intersecting with the left side of rectangleB
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectRightToLeft(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Right > rectangleB.Left && rectangleA.Left < rectangleB.Left)// && rectangleA.Top > rectangleB.Top && rectangleA.Bottom < rectangleB.Bottom)
-                return true;
-            else
-                return false;
-        }
-
-        /// <summary>
-        /// If rectanlgeA in intersecting with rectangleB in any way
-        /// will return true
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="nameA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="nameB"></param>
-        /// <returns></returns>
-        public static bool IntersectRectangle(Rectangle rectangleA, string nameA, Rectangle rectangleB, string nameB)
-        {
-            if (rectangleA.Intersects(rectangleB))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// supposed to be per pixel/pixel perfect collision, but doesnt seem to work correctly, avoid using this until fixed
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="dataA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="dataB"></param>
-        /// <returns></returns>
-        public static bool IntersectPixel(Rectangle rectangleA, Color[] dataA, Rectangle rectangleB, Color[] dataB)
-        {
-            int top = Math.Max(rectangleA.Top, rectangleB.Top);
-            int bottom = Math.Min(rectangleA.Bottom, rectangleB.Bottom);
-            int left = Math.Max(rectangleA.Left, rectangleB.Left);
-            int right = Math.Min(rectangleA.Right, rectangleB.Right);
-
-            for (int y = top; y < bottom; y++)
-            {
-                for (int x = left; x < right; x++)
-                {
-                    Color colourA = dataA[(x - rectangleA.Left) + (y - rectangleA.Top) * rectangleA.Width];
-                    Color colourB = dataB[(x - rectangleB.Left) + (y - rectangleB.Top) * rectangleB.Width];
-
-                    if (colourA.A != 0 && colourB.A != 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
         }
     }
 
@@ -1015,6 +906,19 @@ namespace Eternal_Coin
         float gravitySpeed;
         string id;
 
+        /// <summary>
+        /// ParticleGenerator creates x amount of particles based on the value that is passed in
+        /// </summary>
+        /// <param name="texture">texture of the particle</param>
+        /// <param name="colour">colour of the particle</param>
+        /// <param name="position">position of the particle</param>
+        /// <param name="size">sixe of the particle</param>
+        /// <param name="velocity">velocity of the particle</param>
+        /// <param name="hasGravity">if the particle should fall react to 'gravity' or not</param>
+        /// <param name="maxGravity">max speed the particle will fall</param>
+        /// <param name="gravitySpeed">how fast the particle will fall to maxGravity</param>
+        /// <param name="timeAlive">timer for how long the particle will stay alive(lifespan)</param>
+        /// <param name="id">I don't know</param>
         public Particle(Texture2D texture, Color colour, Vector2 position, Vector2 size, Vector2 velocity, bool hasGravity, float maxGravity, float gravitySpeed, float timeAlive, string id)
         {
             this.texture = texture;
@@ -1029,9 +933,21 @@ namespace Eternal_Coin
             this.id = id;
         }
 
+        /// <summary>
+        /// position of the particle
+        /// </summary>
         public Vector2 Position { get { return position; } set { position = value; } }
+        /// <summary>
+        /// lifespan of the particle
+        /// </summary>
         public float TimeAlive { get { return timeAlive; } set { timeAlive = value; } }
+        /// <summary>
+        /// size of the particle
+        /// </summary>
         public Vector2 Size { get { return size; } set { size = value; } }
+        /// <summary>
+        /// ID of the particle
+        /// </summary>
         public string ID { get { return id; } set { id = value; } }
 
         public void Update(GameTime gameTime)
@@ -1051,6 +967,10 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// Draw the particles!
+        /// </summary>
+        /// <param name="spriteBatch">pass in spriteBatch from Draw function in Game1.cs</param>
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.01f);
@@ -1086,16 +1006,20 @@ namespace Eternal_Coin
         public int NumoParticles { get { return numoParticles; } set { numoParticles = value; } }
 
         /// <summary>
-        /// Create all the particles!
+        /// call to create pretty particles!
         /// </summary>
-        /// <param name="numoParticles">The amount of particles</param>
-        /// <param name="minTimeAlive">The minmum time a particle stays on the screen</param>
-        /// <param name="maxTimeAlive">The maximum time a particle stays on the screen</param>
-        /// <param name="position">The position of where the particles start</param>
-        /// <param name="size">The size of the particles</param>
-        /// <param name="maxMinX">new Vector2(minX, maxX); this is the direction the particles follow on the X axis</param>
-        /// <param name="maxMinY">new Vector2(minY, maxY); this is the direction the particles follow on the Y axis</param>
-        /// <param name="colour">The colour of the particles</param>
+        /// <param name="numoParticles">Amount of particles</param>
+        /// <param name="minTimeAlive">minimum lifespan</param>
+        /// <param name="maxTimeAlive">maximum lifespan</param>
+        /// <param name="hasGravity">has gravity or not</param>
+        /// <param name="maxGravity">max speed the particles will fall</param>
+        /// <param name="gravitySpeed">how fast the particles gravity increases to maxGravity</param>
+        /// <param name="position">position to spawn particles</param>
+        /// <param name="size">size of particles</param>
+        /// <param name="minMaxX">new Vector2(minX, maxX); how fast particles will move along x axis</param>
+        /// <param name="minMaxY">new Vector2(minY, maxY); how fast particles will move along y axis</param>
+        /// <param name="colour">colour of particles</param>
+        /// <param name="id">id of particles</param>
         public void CreateParticle(int numoParticles, int minTimeAlive, int maxTimeAlive, bool hasGravity, float maxGravity, float gravitySpeed, Vector2 position, Vector2 size, Vector2 minMaxX, Vector2 minMaxY, Color colour, string id)
         {
             this.id = id;
@@ -1105,8 +1029,9 @@ namespace Eternal_Coin
 
             for (int i = 0; i < numoParticles; i++)
             {
+                //getting a random time to be alive(and what a time it is!)
                 tempTimeAlive = tempRand.Next(minTimeAlive, maxTimeAlive);
-
+                //creating a particle with the passed in values
                 particles.Add(new Particle(texture, colour, position, size, new Vector2(tempRand.Next(tempMinX, tempMaxX), tempRand.Next(tempMinY, tempMaxY)), hasGravity, maxGravity, gravitySpeed, tempTimeAlive, id));
             }
         }
@@ -1117,6 +1042,7 @@ namespace Eternal_Coin
         /// <param name="gameTime">gameTime for smoother movement</param>
         public void Update(GameTime gameTime)
         {
+            //updating and removing particles based on their timeAlive
             for (int i = 0; i < particles.Count; i++)
             {
                 particles[i].Update(gameTime);

@@ -1,0 +1,139 @@
+[3-55-53]TrueScreen X,Y: 1920 1080
+[3-55-53]GameScreen X,Y: 1280 720
+[3-55-53]Set Game Screen X,Y: 1280 720
+[3-55-53]!!!ERROR!!! first pass of creating item type failed, trying second. [System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Load.LoadItemData(ContentManager Content) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\SaveLoadDelete\Load.cs:line 213]
+[3-55-53]!!!ERROR!!! first pass of creating item type failed, trying second. [System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Load.LoadItemData(ContentManager Content) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\SaveLoadDelete\Load.cs:line 213]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-55-54]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-55-54]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-55-54]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-55-54]ItemCreated: [Class: EternalCoin, Name: FireBall, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-55-55]ButtonClicked: PlayButton
+[3-55-55]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-55-55]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-55-55]GameState Change: chooseCharacter
+[3-55-56]ButtonClicked: NewCharacter
+[3-55-59]ButtonClicked: StartGame
+[3-56-0]GameCreated: kitty
+[3-56-0]LocationCreated: Eaton
+[3-56-0]LocationCreated: Eaton
+[3-56-0]LocationCreated: Sub Eaton 1
+[3-56-0]LocationCreated: Sub Eaton 2
+[3-56-0]LocationCreated: Bunbury
+[3-56-0]LocationCreated: Bunbury
+[3-56-0]LocationCreated: Sub Bunbury 1
+[3-56-0]LocationCreated: Sub Bunbury 2
+[3-56-0]Saving Game.
+[3-56-1]Game Saved.
+[3-56-1]GameState Change: game
+[3-56-1]Map Created: EatonMap
+[3-56-1]Map Created: BunburyMap
+[3-56-1]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-1]ItemCreated: [Class: EternalCoin, Name: FireBall, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-56-1]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-56-3]ItemCreated: [Class: EternalCoin, Name: FireBall, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-56-3]Attack added: FireBall
+[3-56-3]Attack added: IronSwordStab
+[3-56-3]Attack added: IronSwordStrike
+[3-56-5]LocationChange: Sub Eaton 2
+[3-56-8]ButtonClicked: LookEyeButton
+[3-56-8]Attack ID: DefaultFireBall
+[3-56-8]Attack ID: DefaultIronSwordStab
+[3-56-8]Attack ID: DefaultIronSwordStrike
+[3-56-8]Attack ID: DefaultPunch
+[3-56-8]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-8]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-56-8]GameState Change: battle
+[3-56-20]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-20]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-56-21]GameState Change: game
+[3-56-22]Saving Game.
+[3-56-22]Save File Found.
+[3-56-22]Item Saved To Player Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-22]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-56-22]Item Saved To Character Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-22]Item Saved To Character Inventory: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-56-22]Game Saved.
+[3-56-22]GameState Change: mainMenu
+[3-56-24]ButtonClicked: PlayButton
+[3-56-24]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-56-24]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-56-24]GameState Change: chooseCharacter
+[3-56-25]GameDeleted: kitty
+[3-56-25]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-56-25]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-56-26]ButtonClicked: NewCharacter
+[3-56-27]ButtonClicked: StartGame
+[3-56-28]GameCreated: dfsdfsdf
+[3-56-28]LocationCreated: Eaton
+[3-56-28]LocationCreated: Eaton
+[3-56-28]LocationCreated: Sub Eaton 1
+[3-56-28]LocationCreated: Sub Eaton 2
+[3-56-28]LocationCreated: Bunbury
+[3-56-28]LocationCreated: Bunbury
+[3-56-28]LocationCreated: Sub Bunbury 1
+[3-56-28]LocationCreated: Sub Bunbury 2
+[3-56-28]Saving Game.
+[3-56-28]Game Saved.
+[3-56-28]GameState Change: game
+[3-56-28]Map Created: EatonMap
+[3-56-28]Map Created: BunburyMap
+[3-56-30]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-30]ItemCreated: [Class: EternalCoin, Name: FireBall, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-56-30]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-56-31]ItemCreated: [Class: EternalCoin, Name: FireBall, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-56-31]Attack added: FireBall
+[3-56-32]Attack added: IronSwordStab
+[3-56-32]Attack added: IronSwordStrike
+[3-56-35]LocationChange: Sub Eaton 2
+[3-56-39]ButtonClicked: LookEyeButton
+[3-56-39]Attack ID: DefaultFireBall
+[3-56-39]Attack ID: DefaultIronSwordStab
+[3-56-39]Attack ID: DefaultIronSwordStrike
+[3-56-39]Attack ID: DefaultPunch
+[3-56-39]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-56-39]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-56-40]GameState Change: battle

@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 
+<!-- * = REQUIRED -->
+
 <location>
-  <name></name> <!-- The name of the Location this is displayed to the screen -->
-  <description></description> <!-- The description of the Location that is displayed to the screen -->
-  <searched>false</searched> <!-- If the location has been searched or not -->
-  <hasnpc>true</hasnpc> <!-- If the location has an npc or not. If a location doesnt have a npc, delete the entire <npc> tag -->
-  <hasshop>true</hasshop> <!-- If the location has a shop or not. If a location doesnt have a shop, delete the entire <shop> tag -->
-  <hasenemy>false</hasenemy> <!-- If the location has an enemy or not. If a location doesn't have an enemy, delete the entire <enemy> tag -->
+  <name></name> <!-- * The name of the Location this is displayed to the screen -->
+  <description></description> <!-- * The description of the Location that is displayed to the screen -->
+  <searched>false</searched> <!-- * If the location has been searched or not -->
+  <hasnpc>true</hasnpc> <!-- * If the location has an npc or not. If a location doesnt have a npc, delete the entire <npc> tag -->
+  <hasshop>true</hasshop> <!-- * If the location has a shop or not. If a location doesnt have a shop, delete the entire <shop> tag -->
+  <hasenemy>false</hasenemy> <!-- * If the location has an enemy or not. If a location doesn't have an enemy, delete the entire <enemy> tag -->
 
   <npc> <!-- Delete this entire tag if a location doesn't have a npc -->
     <hasquest>true</hasquest> <!-- If the npc has a quest or not -->
@@ -90,9 +92,9 @@
   </enemy> <!-- Delete this entire tag if a location doesn't have an enemy -->
 
   <actions>
-    <enter>Entering *locationname*</enter> <!-- Entering a location (only happens if location has been previously explored -->
-    <explore>Exploring *locationname</explore> <!-- Exploing a location -->
-    <talknpc>Talking To *npcname*</talknpc> <!-- Talking to an npc -->
+    <enter>Entering *locationname*</enter> <!-- * Entering a location (only happens if location has been previously explored -->
+    <explore>Exploring *locationname</explore> <!-- * Exploing a location -->
+    <talknpc>Talking To *npcname*</talknpc> <!-- * Talking to an npc -->
   </actions>
 </location>
 

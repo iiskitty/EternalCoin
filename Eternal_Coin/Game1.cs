@@ -34,10 +34,12 @@ namespace Eternal_Coin
         /// </summary>
         protected override void Initialize()
         {
+            //Loads Options.xml to 
             XmlDocument options = new XmlDocument();
             options.Load("./Content/Options.xml");
             XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options");
 
+            //fullscreen option check
             if (Convert.ToBoolean(optionsNode["fullscreen"].InnerText) == true)
             {
                 graphics.IsFullScreen = true;
@@ -47,6 +49,7 @@ namespace Eternal_Coin
                 graphics.IsFullScreen = false;
             }
 
+            //debuglog option check
             if (Convert.ToBoolean(optionsNode["enabledebuglog"].InnerText) == true)
             {
                 GVar.debugLogEnabled = true;
@@ -54,22 +57,27 @@ namespace Eternal_Coin
                 GVar.CreateDebugLog();
             }
             
+            //getting x&y size of the screen
             GVar.trueScreenX = GraphicsDevice.Adapter.CurrentDisplayMode.Width;
             GVar.trueScreenY = GraphicsDevice.Adapter.CurrentDisplayMode.Height;
-            
-            GVar.screenToRefX = (GVar.gameScreenX / GVar.trueScreenX);
-            GVar.screenToRefY = (GVar.gameScreenY / GVar.trueScreenY);
-            GVar.refToScreenX = (GVar.trueScreenX / GVar.gameScreenX);
-            GVar.refToScreenY = (GVar.trueScreenY / GVar.gameScreenY);
+
+            //game will exit if true
             GVar.exitGame = false;
 
+            //setting volume for sounds
             GVar.Volume.Audio.volume = 0.3f;
             GVar.Volume.Audio.pan = 0f;
             GVar.Volume.Audio.pitch = 0f;
             
+            //setting gamestate to start game on mainmenu
             GVar.currentGameState = GVar.GameState.mainMenu;
+
+            //logging size of screen and size of game
             GVar.LogDebugInfo("TrueScreen X,Y: " + GVar.trueScreenX.ToString() + " " + GVar.trueScreenY.ToString(), 1);
             GVar.LogDebugInfo("GameScreen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 1);
+
+            //checking if size of game is larger than size of screen
+            //if game is larger than screen X or Y set the size of the game the same as the screen
             if (GVar.trueScreenX < GVar.gameScreenX)
             {
                 GVar.gameScreenX = GVar.trueScreenX;
@@ -80,22 +88,32 @@ namespace Eternal_Coin
                 GVar.gameScreenY = GVar.trueScreenY;
             }
 
+            //setting game size to set values
             graphics.PreferredBackBufferWidth = (int)GVar.gameScreenX;
             graphics.PreferredBackBufferHeight = (int)GVar.gameScreenY;
 
+            //logging the game size after change(if any)
             GVar.LogDebugInfo("Set Game Screen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 1);
 
             graphics.ApplyChanges();
 
+            //setting position of game window to top left corner
             Window.Position = new Point(10, 10);
             
+            //creating lists for game use
             Lists.InitializeLists();
+            //creating dictionaries for game use
             Dictionaries.InitializeDictionaries();
             base.Initialize();
+            //creating items used in game
             Item.CreateItems();
+            //creating vectors for game use(even though I rarely use them)
             Vector.InitilizeVectors();
+            //creating all UI elements for game use
             Lists.uiElements = UIElement.AddUIElements(Lists.uiElements);
+            //creating inventories for game use
             InventoryManager.CreateInventories();
+            //loading the main menu
             MainMenu.LoadMainMenu();
         }
 
@@ -106,16 +124,24 @@ namespace Eternal_Coin
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //loading item data (materials and types)
             Load.LoadItemData(Content);
+            //loading projectiles(magic and physical)
             Load.LoadProjectiles(Content);
+            //loading textures for game
             Textures.LoadTextures(Content);
+            //loading fonts for game
             Fonts.LoadFonts(Content);
+            //loading sounds for game
             Sounds.LoadSounds(Content);
+            //loading display pictures(for choosing characters)
             Load.LoadDisplayPictures(Content);
+            //loading all attacks for all display pictures(characters)
             foreach (string dpid in Lists.displayPictureIDs)
             {
                 Attack.LoadAttacks(Content, dpid);
             }
+            //loading all attacks for all ememies
             foreach (string dpid in Lists.eDisplayPictureIDs)
             {
                 Attack.LoadEnemyAttacks(Content, dpid);
@@ -138,6 +164,7 @@ namespace Eternal_Coin
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            //HAXOR
             if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
             {
                 Item item;
@@ -152,27 +179,35 @@ namespace Eternal_Coin
                 InventoryManager.playerInventory.itemSlots[37].item = item;
             }
 
+            //maps need to be loaded after eveything because shit fucks up
             if (GVar.loadData)
             {
                 Load.LoadWorldMaps(Content);
                 foreach (Entity e in Lists.entity)
                 {
+                    //setting map based on players current location
                     WorldMap.SelectNewMap(e.CurrentLocation[0]);
                 }
                 
                 GVar.loadData = false;
             }
 
+            //checking if the game window is active(tabbed out or not)
             GVar.windowIsActive = this.IsActive;
+
+            //checks if should exit game or not
             if (GVar.exitGame)
             {
                 if (graphics.IsFullScreen)
                 {
+                    //toggles full screen if is fullscreen
                     graphics.ToggleFullScreen();
                 }
+                //exit game
                 Exit();
             }
 
+            //sets fullscreen value to the opposite 
             if (GVar.toggleFullScreen)
             {
                 graphics.IsFullScreen = !graphics.IsFullScreen;
@@ -181,21 +216,26 @@ namespace Eternal_Coin
                 {
                     Window.Position = new Point(10, 10);
                 }
-                XmlDocument options = new XmlDocument();
-                options.Load("./Content/Options.xml");
-                XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options/fullscreen");
-                optionsNode.InnerText = Convert.ToString(graphics.IsFullScreen);
-                options.Save("./Content/Options.xml");
+                //opens Options.xml and saves the new value for fullscreen
+                XmlDocument options = new XmlDocument(); //creating an xml document
+                options.Load("./Content/Options.xml"); //loading the Options.xml document with the created one
+                XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options/fullscreen"); //creating a node and setting to the fullscreen node in the loaded document
+                optionsNode.InnerText = Convert.ToString(graphics.IsFullScreen); //setting the value of the node to the fullscreen value(true or false)
+                options.Save("./Content/Options.xml"); //saving the document
                 GVar.toggleFullScreen = false;
             }
-
+            //checks for GameState changes(main menu to choose charater, game to inventory etc.)
             Updates.CheckForStateChange();
+            //updates colours for game objects that use fading and the black fade between state changes
             Colours.UpdateColours(gameTime);
+            //updates the InputManager that checks for inputs from user
             InputManager.Update();
+            //updates the MouseManager keeping the mouse position and giving it a rectangle for clicking on things
             MouseManager.Update(graphics.IsFullScreen);
-
+            //checks for sounds that are no longer being used and...sends them off to live on a farm
             SoundManager.CheckSounds();
-
+            
+            //calls the Update function for the current gameState
             switch (GVar.currentGameState)
             {
                 case GVar.GameState.mainMenu:
@@ -236,11 +276,16 @@ namespace Eternal_Coin
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            //cornflowerblue is so last season
             GraphicsDevice.Clear(Color.Crimson);
 
+            //spritebatch begin with sorting front to back(layering)
             spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
+            //draw cursor image
             spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
+
+            //if the gamestate is the same as the one a UIElement has and its draw boolean is true, it will be drawn
             foreach (UIElement ui in Lists.uiElements)
             {
                 if (ui.GameState == GVar.currentGameState && ui.Draw)
@@ -249,16 +294,20 @@ namespace Eternal_Coin
                 }
             }
 
+            //if true draws the black fade in and out between gamestats
             if (Colours.drawBlackFade)
             {
                 Colours.DrawBlackFadeInOut(spriteBatch);
             }
 
+            //when changing main locations this fades the map to the new one
             if (Colours.drawFadeMap)
                 Colours.DrawMapFadeOut(spriteBatch);
 
+            //draws current and connecting location node names
             Location.DrawLocationNames(spriteBatch, gameTime);
 
+            //calls the Draw function for the current gamestate
             switch (GVar.currentGameState)
             {
                 case GVar.GameState.mainMenu:

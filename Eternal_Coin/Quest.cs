@@ -33,7 +33,7 @@ namespace Eternal_Coin
         public static void AcceptQuest(Entity P)
         {
             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");
-            locNPC[GVar.XmlTags.QuestTags.hasquest].InnerText = "False";
+            locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText = "False";
             locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/quest");
             LocationNode temp = P.CurrentLocation[0];

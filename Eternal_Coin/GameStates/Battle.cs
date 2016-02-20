@@ -12,23 +12,27 @@ namespace Eternal_Coin
 {
     public class Battle
     {
-        public static Rectangle playerAttackRec;
-        public static Rectangle playerPort;
-        public static Rectangle enemyPort;
-        public static Rectangle enemyAttackRec;
-        public static BattleEnemy battleEnemy;
-        public static BattlePlayer battlePlayer;
+        public static Rectangle playerAttackRec;            //rectangle for the player to start attacking
+        public static Rectangle playerPort;                 //rectangle for the player to sit idle
+        public static Rectangle enemyPort;                  //rectangle for the enemy to sit idle
+        public static Rectangle enemyAttackRec;             //rectangle for the enemy to start attacking
+        public static BattleEnemy battleEnemy;              //new enemy is created when entering a battle
+        public static BattlePlayer battlePlayer;            //new battleplayer is created when entering battle
 
-        public static bool battleWon = false;
+        public static bool battleWon = false;               //sets to true if a battle is won
 
-        public static List<Item> loot = new List<Item>();
-        public static int silverReward;
+        public static List<Item> loot = new List<Item>();   //List to hold loot for when a battle is won
+        public static int silverReward;                     //amount of money looted for when a battle is won
 
-        public static string currentAttackType = "";
-        public static string currentAttackProj = "";
-        static string enemyNextAttack = string.Empty;
-        static float enemyAttackTimer = 100;
+        public static string currentAttackType = "";        //type of current attack
+        public static string currentAttackProj = "";        //key of projectile (if any)
+        static string enemyNextAttack = string.Empty;       //key of enemy next attack
+        static float enemyAttackTimer = 100;                //timer for next enemy attack
 
+        /// <summary>
+        /// Loads the battle when player runs into an enemy
+        /// </summary>
+        /// <param name="battleDoc">current location</param>
         public static void LoadBattle(XmlDocument battleDoc)
         {
             enemyAttackTimer = 100;
@@ -53,7 +57,7 @@ namespace Eternal_Coin
                 XmlNode eNode = battleDoc.SelectSingleNode("/location/enemy");
                 GVar.eDisplayPicID = eNode["dpid"].InnerText;
 
-
+                //adds enemy attacks and creates a new BattleEnemy
                 foreach (XmlNode enemyItem in enemyItems)
                 {
                     Item item = ItemBuilder.BuildItem(Dictionaries.items[enemyItem[GVar.XmlTags.ItemTags.itemname].InnerText]);
@@ -100,7 +104,7 @@ namespace Eternal_Coin
                 try
                 {
                     XmlNode silver = battleDoc.SelectSingleNode("/location/enemy/loot/silver");
-                    silverReward = Convert.ToInt32(silver["amount"].InnerText);
+                    silverReward = Convert.ToInt32(silver["amount"].InnerText); //sets silverReward to the xml tag silver value
                 }
                 catch(Exception e)
                 {
@@ -112,19 +116,19 @@ namespace Eternal_Coin
                     
                     foreach (XmlNode lootItem in lootItems)
                     {
-                        loot.Add(Dictionaries.items[lootItem[GVar.XmlTags.ItemTags.itemname].InnerText]);
+                        loot.Add(Dictionaries.items[lootItem[GVar.XmlTags.ItemTags.itemname].InnerText]); //adds items to the loot List
                     }
                     Vector2 itemPos = new Vector2();
                     foreach (UIElement ui in Lists.uiElements)
                     {
                         if (ui.SpriteID == Textures.UI.endBattleUI)
                         {
-                            itemPos = new Vector2(ui.Position.X + 14, ui.Position.Y + 56);
+                            itemPos = new Vector2(ui.Position.X + 14, ui.Position.Y + 56); 
                         }
                     }
                     foreach (Item item in loot)
                     {
-                        item.Position = itemPos;
+                        item.Position = itemPos; //sets items position to the UI's position
                         itemPos.X += 82;
                     }
                 }
@@ -140,6 +144,7 @@ namespace Eternal_Coin
                 GVar.previousGameState = GVar.GameState.battle;
             }
 
+            //adds attack animations to created battlEnemy
             foreach (string eAtkID in Lists.enemyAttackIDs)
             {
                 foreach (AttackAnim eAtkAnim in Dictionaries.enemyAttacks[eAtkID].AttackAnims)
@@ -155,6 +160,7 @@ namespace Eternal_Coin
                 }
             }
 
+            //adds attack animations to created battlePlayer
             foreach (string atkID in Lists.availableAttacksIDs)
             {
                 foreach (AttackAnim atkAnim in Dictionaries.availableAttacks[atkID].AttackAnims)
@@ -179,10 +185,10 @@ namespace Eternal_Coin
             {
                 if (Lists.availableAttacksIDs[i] == "DefaultPunch" && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item != null)
                 {
-                    continue;
+                    continue; //if left hand weapon and right hand weapon are not null (both hands have a weapon) dont create a punch button
                 }
                 Button atkButton = new Button(Dictionaries.textures[Lists.availableAttacksIDs[i]], new Vector2(), new Vector2(25, 25), Color.White, "Attack", Lists.availableAttacksIDs[i], 0f);
-                Lists.attackButtons.Add(atkButton);
+                Lists.attackButtons.Add(atkButton); //if one hand does not have a weapon, create the punch button
             }
 
             Vector2 pos = new Vector2();
@@ -203,6 +209,10 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// Updates battle scene
+        /// </summary>
+        /// <param name="gameTime">game time to keep things smooth (delta time)</param>
         public static void UpdateBattle(GameTime gameTime)
         {
             battlePlayer.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -349,8 +359,6 @@ namespace Eternal_Coin
                 foreach (Item item in loot)
                 {
                     item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-
-                    
                 }
             }
         }
@@ -422,6 +430,7 @@ namespace Eternal_Coin
                         spriteBatch.Draw(Textures.UI.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.UI.itemInfoUI.Width, Textures.UI.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
                         spriteBatch.Draw(item.SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
                         spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                        
                     }
                 }
             }

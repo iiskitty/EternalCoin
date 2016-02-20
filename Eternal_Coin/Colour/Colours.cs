@@ -12,21 +12,62 @@ namespace Eternal_Coin
 {
     public class Colours
     {
+        /// <summary>
+        /// alpha value for black fade (between gamestates)
+        /// </summary>
         public static int blackFadeAlpha = 5;
+
+        /// <summary>
+        /// alpha value for map fade
+        /// </summary>
         public static int mapFadeAlpha = 250;
 
+        /// <summary>
+        /// alpha value for location names
+        /// </summary>
         public static byte locNameAlpha = 5;
 
+        /// <summary>
+        /// texture for fading previous map
+        /// </summary>
         public static Texture2D mapFadeTex;
+        /// <summary>
+        /// position to draw the fading map
+        /// </summary>
         public static Vector2 mapFadePos;
 
-        public static bool fadeIn = false, fadeOut = false, drawBlackFade = false, drawFadeMap = false;
-
+        /// <summary>
+        /// fade in boolean for black fade
+        /// </summary>
+        public static bool fadeIn = false;
+        /// <summary>
+        /// fade out boolean for black fade
+        /// </summary>
+        public static bool fadeOut = false;
+        /// <summary>
+        /// black fade will be drawn if true
+        /// </summary>
+        public static bool drawBlackFade = false;
+        /// <summary>
+        /// map fade will be drawn if true
+        /// </summary>
+        public static bool drawFadeMap = false;
+        /// <summary>
+        /// colour for black fade (its black)
+        /// </summary>
         static Color blackFadeColour;
+        /// <summary>
+        /// colour for map fade (its transparent)
+        /// </summary>
         static Color mapFadeColour;
-
+        /// <summary>
+        /// colour for location names (its black)
+        /// </summary>
         public static Color locNameColour;
-
+        /// <summary>
+        /// update all colours
+        /// </summary>
+        /// <param name="gameTime">game time for smooth fading (delta time)</param>
         public static void UpdateColours(GameTime gameTime)
         {
             blackFadeColour = Color.FromNonPremultiplied(0, 0, 0, blackFadeAlpha);
@@ -34,7 +75,7 @@ namespace Eternal_Coin
 
             if (fadeIn && fadeOut)
             {
-                fadeIn = false;
+                fadeIn = false; //in the event fadeIn and fadeOut are both true, set fade in to false (this has happened)
             }
 
             if (fadeIn && blackFadeAlpha < 251)
@@ -73,10 +114,12 @@ namespace Eternal_Coin
 
             
         }
-
+        /// <summary>
+        /// updates alpha values for location nodes, location buttons and location node names (i think)
+        /// </summary>
+        /// <param name="node"></param>
         public static void UpdateMainAlphas(LocationNode node)
         {
-
             foreach (Object LB in Lists.locationButtons)
             {
                 if (LB.ColourA < 250)
@@ -95,6 +138,9 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// enables map fade
+        /// </summary>
         public static void EnableFadeOutMap()
         {
             drawFadeMap = true;

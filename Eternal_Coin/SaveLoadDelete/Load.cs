@@ -192,7 +192,7 @@ namespace Eternal_Coin
             
             foreach (XmlNode proj in projectiles)
             {
-                Projectile projectile = new Projectile(Content.Load<Texture2D>(proj["imagefilepath"].InnerText), Vector2.Zero, Vector2.Zero, new Vector2(40, 40), Color.White, proj["name"].InnerText, "Alive", Convert.ToInt32(proj["damage"].InnerText), 0f);
+                Projectile projectile = new Projectile(Content.Load<Texture2D>(proj["imagefilepath"].InnerText), Vector2.Zero, Vector2.Zero, new Vector2(64, 64), Color.White, proj["name"].InnerText, "Alive", Convert.ToInt32(proj["damage"].InnerText), 0f);
                 Dictionaries.projectiles.Add(proj["name"].InnerText, projectile);
             }
         }

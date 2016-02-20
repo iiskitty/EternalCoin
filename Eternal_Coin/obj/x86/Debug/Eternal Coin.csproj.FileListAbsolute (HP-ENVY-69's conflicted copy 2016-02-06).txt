@@ -1,0 +1,319 @@
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Eternal Coin.exe
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Eternal Coin.pdb
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\MonoGame.Framework.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XAudio2.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D11.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.DXGI.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct2D1.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XInput.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.RawInput.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D9.dll
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\MonoGame.Framework.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XAudio2.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D11.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.DXGI.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct2D1.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XInput.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.RawInput.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.exe
+c:\users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.pdb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\pixel.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\PlayButtonSpinAnim.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Coins\CoinBack.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitButtonSpinAnim.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sounds\CoinClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\LocationNodeTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\LocationInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\LookEyeTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\NPCInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\NPCButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\EnterLocationButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitLocationButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Maps\WorldMap.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.exe
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.pdb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Bunbury\MainBunbury\MainBunburyInfo.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Bunbury\subBunbury1\subBunbury1Info.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Bunbury\subBunbury\subBunburyInfo.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Eaton\MainEaton\MainEatonInfo.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Eaton\subEaton1\subEaton1Info.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Eaton\subEaton2\subEaton2Info.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Eaton\subEaton\subEatonInfo.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\test.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Bold.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Regular.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Bold.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Regular.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Bold.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Regular.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Bold.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Regular.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Bunbury\BunburyMap.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\Eaton\EatonMap.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sounds\CoinClick.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\EnterLocationButtonTex.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitButtonSpinAnim.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitLocationButtonTex.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\LocationNodeTex.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\LookEyeTex.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\NPCButtonTex.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\PlayButtonSpinAnim.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Coins\CoinBack.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Maps\WorldMap.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\pixel.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\LocationInfoUI.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\NPCInfoUI.xnb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Eternal Coin.exe
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Eternal Coin.pdb
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\kitty\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\QuestListUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\Cross.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\Tick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\QuestInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\clearpixel.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Eternal Coin.exe.config
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\GameFiles\ignorethis.txt
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\SavedGames\ignorethis.txt
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\sword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\InventoryUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\axe.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\boot.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\chestplate.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\gauntlet.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\helmet.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\leggings.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\mace.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\robe.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\spear.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\staff.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\sword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\wand.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\ItemData.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\bronzesword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\CreateLocationNodes.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Options.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Cursor.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\Buttons\OptionsButtonSpinAnim.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\PauseUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\ShopInventoryUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\LoadTextures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\SetTextures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\LoadSounds.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\SetSounds.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\LoadAttacks.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\UI\BattleUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\AvailableStories.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\BunburyMap.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\MainBunbury\MainBunburyInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury1\subBunbury1Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury2\subBunbury2Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury\subBunburyInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\EatonMap.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\MainEaton\MainEatonInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton1\subEaton1Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton2\subEaton2Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton\subEatonInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location template.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location with npc template.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\LoadDisplayPictures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\DP\Default.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\DP\Altered.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\xnafx40_redist (1).msi
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\LoadData\CreateItems.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\DP\enemy\EDefault.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sounds\LocationNodeClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sounds\ButtonClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\Eternal Coin\Eternal Coin\bin\Windows\Debug\Content\Sprites\tempIcon\Ring.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Eternal Coin.exe.config
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Eternal Coin.exe
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Eternal Coin.pdb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.exe
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.pdb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\AvailableStories.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Bold.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Regular.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\GameFiles\ignorethis.txt
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\CreateItems.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\CreateLocationNodes.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\ItemData.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadAttacks.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadDisplayPictures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadSounds.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadTextures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\SetSounds.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\SetTextures.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\BunburyMap.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\MainBunbury\MainBunburyInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury1\subBunbury1Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury2\subBunbury2Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury\subBunburyInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\EatonMap.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\MainEaton\MainEatonInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton1\subEaton1Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton2\subEaton2Info.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton\subEatonInfo.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location template.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location with npc template.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Options.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\SavedGames\ignorethis.txt
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\ButtonClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\CoinClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\LocationNodeClick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\EDefault\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Background.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\DeleteButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\EnterLocationButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ExitLocationButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\InventoryButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LoadButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LocationNodeTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LookEyeTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\NPCButtonTex.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\OptionsButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\PlayButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\clearpixel.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Coins\CoinBack.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Cursor.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\Altered.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\Default.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\enemy\EDefault.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Maps\WorldMap.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\pixel.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\sword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\axe.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\boot.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\bronzesword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\chestplate.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\gauntlet.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\helmet.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\leggings.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\mace.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\Ring.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\robe.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\spear.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\staff.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\sword.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\wand.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Title.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\BattleUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\Cross.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\InventoryUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\LocationInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NPCInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\PauseUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\QuestInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\QuestListUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\SavedGameUIBorder.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\SavedGameUIInner.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\SaveGameUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\ShopInventoryUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\Tick.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\xnafx40_redist (1).msi
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\BackButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\NewButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\StartButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NewGameUIBorder.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NewGameUIInner.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LeftDarkGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\LeftLightGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\MiddleDarkGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\MiddleLightGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\RightDarkGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\RightLightGenButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\MouseOverButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\CloseButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\Punch.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\EndBattleUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\ContinueButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\ItemInfoUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Altered\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Altered\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Altered\Punch.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Altered\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\AttackAnim\Default\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\ECFireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadProjectiles.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Projectile\Magic\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\AttackButtons\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\AttackButtons\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\AttackButtons\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\AttackButtons\Punch.xnb

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-
 <options>
-  <fullscreen>false</fullscreen>
+  <fullscreen>False</fullscreen>
   <enabledebuglog>true</enabledebuglog>
   <debuglevel>2</debuglevel>
 </options>
