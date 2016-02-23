@@ -875,12 +875,6 @@
 /processorParam:Quality=Best
 /build:Sounds/MouseOverButton.wav
 
-#begin LoadData/LoadSounds.xml
-/copy:LoadData/LoadSounds.xml
-
-#begin LoadData/SetSounds.xml
-/copy:LoadData/SetSounds.xml
-
 #begin Sounds/ButtonClick.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -944,12 +938,6 @@
 
 #begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
 /copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-
-#begin LoadData/LoadTextures.xml
-/copy:LoadData/LoadTextures.xml
-
-#begin LoadData/SetTextures.xml
-/copy:LoadData/SetTextures.xml
 
 #begin Sprites/UI/ItemInfoUI.png
 /importer:TextureImporter
@@ -1016,12 +1004,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/AttackAnim/Default/FireBall.png
-
-#begin LoadData/CreateItems.xml
-/copy:LoadData/CreateItems.xml
-
-#begin LoadData/ItemData.xml
-/copy:LoadData/ItemData.xml
 
 #begin Sprites/tempIcon/ECFireBall.png
 /importer:TextureImporter
@@ -1138,4 +1120,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/AttackButtons/Punch.png
+
+#begin LoadData/Data.xml
+/copy:LoadData/Data.xml
 

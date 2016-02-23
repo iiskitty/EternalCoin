@@ -163,7 +163,8 @@ namespace Eternal_Coin
                         {
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             Item item = mouseInventory.heldItem;
-                            mouseInventory.heldItem = ItemBuilder.BuildItem(playerInventory.itemSlots[i].item);
+                            mouseInventory.heldItem = playerInventory.itemSlots[i].item;
+                            Item.FromPlayer(playerInventory.itemSlots[i].item, i);
                             Item.ToPlayer(item, i);
                         }
                     }

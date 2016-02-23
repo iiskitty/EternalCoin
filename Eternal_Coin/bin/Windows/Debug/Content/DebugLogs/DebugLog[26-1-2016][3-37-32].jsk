@@ -1,7 +1,0 @@
-[3-37-32]TrueScreen X,Y: 1920 1080
-[3-37-32]GameScreen X,Y: 1280 720
-[3-37-32]Set Game Screen X,Y: 1280 720
-[3-37-32]!!!ERROR!!! first pass of creating item type failed, trying second. [System.NullReferenceException: Object reference not set to an instance of an object.
-   at Eternal_Coin.Load.LoadItemData(ContentManager Content) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\SaveLoadDelete\Load.cs:line 213]
-[3-37-32]!!!ERROR!!! first pass of creating item type failed, trying second. [System.NullReferenceException: Object reference not set to an instance of an object.
-   at Eternal_Coin.Load.LoadItemData(ContentManager Content) in c:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\SaveLoadDelete\Load.cs:line 213]

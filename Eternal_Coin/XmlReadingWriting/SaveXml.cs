@@ -26,6 +26,22 @@ namespace Eternal_Coin
             XmlText itemNameInner = itemDoc.CreateTextNode(item.ItemName);
             itemName.AppendChild(itemNameInner);
             itemElement.AppendChild(itemName);
+            
+            if (item.ItemClass == GVar.ItemClassName.jewellry)
+            {
+                try
+                {
+                    Jewellry jewl = (Jewellry)item;
+                    XmlElement eternalCoin = itemDoc.CreateElement(string.Empty, "eternalcoin", string.Empty);
+                    XmlText eternalCoinInner = itemDoc.CreateTextNode(jewl.eternalCoinSlot.item.ItemName);
+                    eternalCoin.AppendChild(eternalCoinInner);
+                    itemElement.AppendChild(eternalCoin);
+                }
+                catch (Exception e)
+                {
+                    GVar.LogDebugInfo("!!!ERROR!!![" + e  + "]", 1);
+                }
+            }
 
             try
             {
