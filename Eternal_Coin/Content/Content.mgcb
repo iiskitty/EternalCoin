@@ -493,9 +493,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/DP/enemy/EDefault.png
 
-#begin LoadData/LoadDisplayPictures.xml
-/copy:LoadData/LoadDisplayPictures.xml
-
 #begin Sounds/LocationNodeClick.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -844,9 +841,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/RightLightGenButton.png
 
-#begin LoadData/CreateLocationNodes.xml
-/copy:LoadData/CreateLocationNodes.xml
-
 #begin Sprites/UI/InventoryUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1016,9 +1010,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/tempIcon/ECFireBall.png
 
-#begin LoadData/LoadProjectiles.xml
-/copy:LoadData/LoadProjectiles.xml
-
 #begin Sprites/Projectile/Magic/FireBall.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1029,9 +1020,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Projectile/Magic/FireBall.png
-
-#begin LoadData/LoadAttacks.xml
-/copy:LoadData/LoadAttacks.xml
 
 #begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png
 /importer:TextureImporter

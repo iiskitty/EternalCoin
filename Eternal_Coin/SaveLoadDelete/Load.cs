@@ -16,9 +16,9 @@ namespace Eternal_Coin
         public static void LoadDisplayPictures(ContentManager Content)
         {
             XmlDocument displayPicDoc = new XmlDocument();
-            displayPicDoc.Load("./Content/LoadData/LoadDisplayPictures.xml");
-            XmlNodeList displayPics = displayPicDoc.SelectNodes("/pictures/picture");
-            XmlNodeList eDisplayPics = displayPicDoc.SelectNodes("/pictures/epicture");
+            displayPicDoc.Load("./Content/LoadData/Data.xml");
+            XmlNodeList displayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/picture");
+            XmlNodeList eDisplayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/epicture");
 
             foreach (XmlNode displayPic in displayPics)
             {
@@ -170,7 +170,11 @@ namespace Eternal_Coin
                             {
                                 if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot) && InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item == null)
                                 {
-                                    InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = item;
+                                    Jewellry jewl = (Jewellry)item;
+                                    jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(Dictionaries.items[I["eternalcoin"].InnerText]);
+                                    jewl.Attacks = jewl.eternalCoinSlot.item.Attacks;
+                                    InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = jewl;
+                                    Attack.AddAvailableAttacks(jewl.Attacks);
                                     P.AddItemStats(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item);
                                     GVar.LogDebugInfo("Jewelry Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
                                     break;
@@ -203,8 +207,8 @@ namespace Eternal_Coin
         public static void LoadProjectiles(ContentManager Content)
         {
             XmlDocument projectileDoc = new XmlDocument();
-            projectileDoc.Load("./Content/LoadData/LoadProjectiles.xml");
-            XmlNodeList projectiles = projectileDoc.SelectNodes("/projectiles/projectile");
+            projectileDoc.Load("./Content/LoadData/Data.xml");
+            XmlNodeList projectiles = projectileDoc.SelectNodes("data/createprojectiles/projectiles/projectile");
             
             foreach (XmlNode proj in projectiles)
             {

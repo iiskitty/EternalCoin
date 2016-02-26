@@ -3,9 +3,19 @@
   <filename>Content/SavedGames/SavedGame0.xml</filename>
   <filenumber>0</filenumber>
   <dpid>Default</dpid>
-  <name>dgd</name>
+  <name>hgs</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
   <playerinventory />
-  <characterinventory />
+  <characterinventory>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>39</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Ring</itemname>
+      <eternalcoin>FireBall</eternalcoin>
+      <playerinventoryslot>37</playerinventoryslot>
+    </item>
+  </characterinventory>
 </savedgame>

@@ -5,7 +5,7 @@
   <searched>True</searched>
   <hasnpc>false</hasnpc>
   <hasshop>false</hasshop>
-  <hasenemy>true</hasenemy>
+  <hasenemy>False</hasenemy>
   <enemy>
     <name>hickie</name>
     <dpid>EDefault</dpid>

@@ -187,8 +187,8 @@ namespace Eternal_Coin
         public static void LoadEnemyAttacks(ContentManager Content, string edpid)
         {
             XmlDocument attacksDoc = new XmlDocument();
-            attacksDoc.Load("./Content/LoadData/LoadAttacks.xml");
-            XmlNodeList attacks = attacksDoc.SelectNodes("/attacks/enemyattacks/attack");
+            attacksDoc.Load("./Content/LoadData/Data.xml");
+            XmlNodeList attacks = attacksDoc.SelectNodes("/data/loadattacks/attacks/enemyattacks/attack");
             foreach (XmlNode attack in attacks)
             {
                 string id = "";
@@ -260,8 +260,8 @@ namespace Eternal_Coin
         public static void LoadAttacks(ContentManager Content, string dpid)
         {
             XmlDocument attacksDoc = new XmlDocument();
-            attacksDoc.Load("./Content/LoadData/LoadAttacks.xml");
-            XmlNodeList attacks = attacksDoc.SelectNodes("/attacks/attack");
+            attacksDoc.Load("./Content/LoadData/Data.xml");
+            XmlNodeList attacks = attacksDoc.SelectNodes("/data/loadattacks/attacks/attack");
             
             foreach (XmlNode attack in attacks)
             {
