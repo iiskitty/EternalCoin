@@ -34,7 +34,7 @@ namespace Eternal_Coin
 
         public void Update(float gameTime)
         {
-            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
+            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X + Textures.Button.leftLightSide.Width * 2, (int)size.Y);
         }
 
         public void DrawLightButton(SpriteBatch spriteBatch)

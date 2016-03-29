@@ -242,3 +242,20 @@ C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\SharpDX.RawInput.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\SharpDX.Direct3D9.xml
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Release\Eternal Coin.csprojResolveAssemblyReference.cache
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\LoadData\Data.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\LoadData\LoadProjectiles.xml
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Altered\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Altered\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Altered\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Altered\Punch.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Default\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\AttackAnim\Default\Punch.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Buttons\AttackButtons\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Buttons\AttackButtons\IronSwordStab.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Buttons\AttackButtons\IronSwordStrike.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Buttons\AttackButtons\Punch.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Buttons\ContinueButton.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\Projectile\Magic\FireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\tempIcon\ECFireBall.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\UI\EndBattleUI.xnb
+C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Release\Content\Sprites\UI\ItemInfoUI.xnb

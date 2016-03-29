@@ -430,7 +430,27 @@ namespace Eternal_Coin
                         spriteBatch.Draw(Textures.UI.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.UI.itemInfoUI.Width, Textures.UI.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
                         spriteBatch.Draw(item.SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
                         spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
-                        
+
+                        if (item.ItemClass.Contains(GVar.ItemClassName.armor))
+                        {
+                            Armor armor = (Armor)item;
+                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + armor.ArmorValue.ToString(), new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                        }
+                        else if (item.ItemClass.Contains(GVar.ItemClassName.weapon))
+                        {
+                            Weapon weapon = (Weapon)item;
+                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + weapon.Damage.ToString(), new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                        }
+                        else if (item.ItemClass.Contains(GVar.ItemClassName.jewellry))
+                        {
+                            Jewellry jewl = (Jewellry)item;
+                            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, jewl.ItemName, new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                            if (jewl.eternalCoinSlot.item != null)
+                            {
+                                EternalCoin EC = (EternalCoin)jewl.eternalCoinSlot.item;
+                                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, EC.ItemName, new Vector2(position.X + 99, position.Y + 47), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                            }
+                        }
                     }
                 }
             }

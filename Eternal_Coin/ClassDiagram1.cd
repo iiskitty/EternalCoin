@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Eternal_Coin.AttackAnim" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAQAQAAAAEAAgAAAAIABAAAAAQAAAgE=</HashCode>
+      <FileName>Attacks\Attack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Attack" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAAEgACAEBAAAAAAAAABgAAAATEAAAEAAiE=</HashCode>
+      <FileName>Attacks\Attack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Projectile" Collapsed="true">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAoAAAACAAAAAAAAAAAAAAACAAACAAACA=</HashCode>
+      <FileName>Attacks\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ProjectileBuilder" Collapsed="true">
+    <Position X="31.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attacks\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.BattleEnemy" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYAKAAAAAAAAAAAIAAAAAAAAAAAAAAAgCAAACAAAAA=</HashCode>
+      <FileName>BattleEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.BattlePlayer" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAACAAAAA=</HashCode>
+      <FileName>BattlePlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.GeneratedButton" Collapsed="true">
+    <Position X="36.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAEAAAgAAhAIAAIAQAAAAEAAAEAAACBAAAAoA=</HashCode>
+      <FileName>Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Button" Collapsed="true">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAAAAAAAAAAAAAAAABAACAAACAAAAA=</HashCode>
+      <FileName>Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Colours" Collapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAQAgIAAAQQAgAAAAAAIgKAAAAAAEAAAA4AIAAA=</HashCode>
+      <FileName>Colour\Colours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Game1" Collapsed="true">
+    <Position X="34.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Battle" Collapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAIIAkBABgABAIAQAAAAgAEAAAAKAKAAAAAg=</HashCode>
+      <FileName>GameStates\Battle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.DisplayPicture" Collapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\CreateCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.SavedGame" Collapsed="true">
+    <Position X="38.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABAAAAABAAIAAAAAASAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\CreateCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.CreateCharacter" Collapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAQBAAAAAAACAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\CreateCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.InventoryManager" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAMACAAgAgCCAAABAQgUAAAQAAgACAAACAEAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ShopInventory" Collapsed="true">
+    <Position X="29.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.PlayerInventory" Collapsed="true">
+    <Position X="27.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.EnemyInventory" Collapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.CharacterInventory" Collapsed="true">
+    <Position X="33" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAQAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ItemSlot" Collapsed="true">
+    <Position X="31.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAIQAIAAAAAAAAAAAAAECAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.MouseInventory" Collapsed="true">
+    <Position X="31.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.MainMenu" Collapsed="true">
+    <Position X="40" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.MainWorld" Collapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAQAAAAAAAAAAAAAAAAAACAAgAAAAAAAA=</HashCode>
+      <FileName>GameStates\MainWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Options" Collapsed="true">
+    <Position X="36.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\Options.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Shop" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>GameStates\Shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Updates" Collapsed="true">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAAAAAA=</HashCode>
+      <FileName>GameStates\Update\Update.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.GVar" Collapsed="true">
+    <Position X="38.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAQIRABEAuAAMICoTkgAQAmBAAEAAAQAACYAMJCEwg=</HashCode>
+      <FileName>GVar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.AnimationManager" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBQAgAAAAABAAgAAAABAEAAQAABgAAAAACAAIAAAACA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Entity" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACACIEAAAiAAgAIgAIAwAEAAMAAAEAIQCBDAEAgg=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Enemy" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACACAEAAAgAggAIAIIAQAEAAEAAAEEIQCBDAEAgg=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Object" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAEAAAoAAgAKAAIAQAEAAEAAAECIACBDAAAwA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.SoundManager" Collapsed="true">
+    <Position X="31.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.InputManager" Collapsed="true">
+    <Position X="40" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEQAAAQkAACJQAkAAAAIAUAAAEAQAAAAAiIAQAAQAAA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.MouseManager" Collapsed="true">
+    <Position X="33" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Particle" Collapsed="true">
+    <Position X="38.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAggAgAIABIAAAAAABAgAAAAQAABAAAgg=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ParticleGenerator" Collapsed="true">
+    <Position X="40" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAgAAAAAIAAEAgAABAAAAAAAAgA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.DebugLog" Collapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAMAAAAAAAAAAAAqAAUAAAAEAA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Camera" Collapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAgEACAIBQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HLG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Item" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQMAAABBAEAgAEgQIIhYBAAAIgVQAAAAaECCABAAgg=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Weapon" Collapsed="true">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAgAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Armor" Collapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQACAAEAAAAAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.EternalCoin" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Jewellry" Collapsed="true">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAACAAAAAAAAAAADAAAAAQAAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ItemBuilder" Collapsed="true">
+    <Position X="29.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Items\ItemBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ItemType" Collapsed="true">
+    <Position X="33" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAUAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Items\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Material" Collapsed="true">
+    <Position X="29.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAUAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Items\Material.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Fonts" Collapsed="true">
+    <Position X="33" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAECEAAAg=</HashCode>
+      <FileName>LoadContent\Fonts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Dictionaries" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAACEAAAEAAAAMAAAgAAQAAAQAEgAAABABCAABAAQA=</HashCode>
+      <FileName>LoadContent\Initialize\Dictionaries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Lists" Collapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIADbACAIAAggKAIAVBAAABSUAAAAAkAAAAABAUAQI=</HashCode>
+      <FileName>LoadContent\Initialize\Lists.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Vector" Collapsed="true">
+    <Position X="29.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAgAQAMQAgAEAAAAAIAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>LoadContent\Initialize\Vector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Sounds" Collapsed="true">
+    <Position X="33" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>LoadContent\Sounds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Textures" Collapsed="true">
+    <Position X="36.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadContent\Textures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Node" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAACAEACgACgBqAEIIQgRCBUAEEEnIIDBLAAAgQ=</HashCode>
+      <FileName>LocationNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.LocationNode" Collapsed="true">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAA=</HashCode>
+      <FileName>LocationNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Location" Collapsed="true">
+    <Position X="38.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAABAAAAAgAAAGIAAAAAQAAAAUAEAAEAAAAAAAAAI=</HashCode>
+      <FileName>LocationNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.NPC" Collapsed="true">
+    <Position X="34.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAAGAAAQAgAAEAAYAAAECAAAAACA=</HashCode>
+      <FileName>NPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Player" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAAAAIAAAAAAAAAAAAAAAACAAACAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Program" Collapsed="true">
+    <Position X="29.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Quest" Collapsed="true">
+    <Position X="33" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAAAAgAAAgggAAIAIAAAAAAAAAAgBAAAgAgBAAQAAQA=</HashCode>
+      <FileName>Quest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Delete" Collapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveLoadDelete\Delete.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Load" Collapsed="true">
+    <Position X="36.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACgAAACAAAAAAQAAAAAAAAAAAAAAEAAAAAQE=</HashCode>
+      <FileName>SaveLoadDelete\Load.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Save" Collapsed="true">
+    <Position X="36.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveLoadDelete\Save.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.Text" Collapsed="true">
+    <Position X="34.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Text\Text.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.UI" Collapsed="true">
+    <Position X="38.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAQAAAAAAAICAAAAAAAgAAAA=</HashCode>
+      <FileName>UI\UI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.UIElement" Collapsed="true">
+    <Position X="40" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAgAIIAIAAAAAAAAAAEAIAgBAAAIAQ=</HashCode>
+      <FileName>UI\UIElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.WorldMap" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAEFAAAAgIQggIAEIAAAAAAAIAIAAKACABAAggA=</HashCode>
+      <FileName>WorldMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.ReadXml" Collapsed="true">
+    <Position X="34.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XmlReadingWriting\ReadXml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eternal_Coin.SaveXml" Collapsed="true">
+    <Position X="40" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAQAAAAAAA=</HashCode>
+      <FileName>XmlReadingWriting\SaveXml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

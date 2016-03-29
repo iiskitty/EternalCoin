@@ -89,11 +89,15 @@
     <type>
       <name>Ring</name>
       <cost>10</cost>
+      <damage>0</damage>
+      <armor>0</armor>
       <imagefilepath>Sprites/tempIcon/Ring</imagefilepath>
     </type>
     <type>
       <name>ECFireBall</name>
       <cost>20</cost>
+      <damage>0</damage>
+      <armor>0</armor>
       <imagefilepath>Sprites/tempIcon/ECFireBall</imagefilepath>
     </type>
 
@@ -169,8 +173,8 @@
         <itemtype>Mace</itemtype>
         <itemmaterial>Bronze</itemmaterial>
         <inventoryslot>Weapon</inventoryslot>
-        <MaceAttack>MaceStrike</MaceAttack>
-        <MaceAttack>MaceSwing</MaceAttack>
+        <Maceattack>MaceStrike</Maceattack>
+        <Maceattack>MaceSwing</Maceattack>
       </item>
     </weapons>
 
@@ -187,11 +191,11 @@
     <eternalcoins>
       <item>
         <class>EternalCoin</class>
-        <itemname>FireBall</itemname>
+        <itemname>Fire Ball</itemname>
         <itemtype>ECFireBall</itemtype>
         <itemmaterial>Gold</itemmaterial>
         <inventoryslot>EternalCoin</inventoryslot>
-        <ECFireBallAttack>FireBall</ECFireBallAttack>
+        <ECFireBallattack>FireBall</ECFireBallattack>
       </item>
     </eternalcoins>
 
@@ -624,11 +628,6 @@
 
   <loadattacks>
     <attacks>
-      <!--
-  <enemyids>
-    <id>EDefault</id>  don't need this anymore
-  </enemyids>
--->
       <enemyattacks>
         <attack>
           <id>IronSwordStab</id>

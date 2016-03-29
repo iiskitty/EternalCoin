@@ -123,12 +123,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B34172115CEA4ED1837F26074A4DE51E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B46A02C88AAE452C39EB623DE7EBEE11"
         "OwnerKey" = "8:_33F33907A05CC330CCDDAF0F02501AD0"
         "MsmSig" = "8:_UNDEFINED"
@@ -214,13 +208,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F7B7639CBACB4CE3818716163FC9FED9"
+        "OwnerKey" = "8:_F1D676A987334092B3363F3F61CBF780"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F1D676A987334092B3363F3F61CBF780"
+        "OwnerKey" = "8:_F7B7639CBACB4CE3818716163FC9FED9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -624,26 +618,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B34172115CEA4ED1837F26074A4DE51E"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\xnafx40_redist (1).msi"
-            "TargetName" = "8:xnafx40_redist.msi"
-            "Tag" = "8:"
-            "Folder" = "8:_8A56405495034043AE9FAC308E43AB92"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B46A02C88AAE452C39EB623DE7EBEE11"

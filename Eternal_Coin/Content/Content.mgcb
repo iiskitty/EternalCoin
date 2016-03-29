@@ -448,9 +448,6 @@
 #begin LocationTemplates/MainStory/location with npc template.xml
 /copy:LocationTemplates/MainStory/location with npc template.xml
 
-#begin AvailableStories.xml
-/copy:AvailableStories.xml
-
 #begin Sprites/DP/Default.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1111,4 +1108,7 @@
 
 #begin LoadData/Data.xml
 /copy:LoadData/Data.xml
+
+#begin AvailableStories.xml
+/copy:AvailableStories.xml
 

@@ -4,4 +4,7 @@
   <story>
     <name>MainStory</name>
   </story>
+  <story>
+    <name>Tutorial</name>
+  </story>
 </stories>

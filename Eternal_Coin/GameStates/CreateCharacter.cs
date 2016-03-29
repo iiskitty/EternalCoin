@@ -373,7 +373,7 @@ namespace Eternal_Coin
             foreach (GeneratedButton B in Lists.availableStoriesButtons)
             {
                 B.Position = pos;
-                pos.X += 170;
+                pos.X += B.Size.X + 30;
             }
         }
 

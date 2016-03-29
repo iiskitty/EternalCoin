@@ -2,20 +2,48 @@
 <savedgame>
   <filename>Content/SavedGames/SavedGame0.xml</filename>
   <filenumber>0</filenumber>
-  <dpid>Default</dpid>
-  <name>hgs</name>
+  <dpid>Altered</dpid>
+  <name>kitty</name>
   <storyname>MainStory</storyname>
   <currentlocation>SubEaton</currentlocation>
   <playerinventory />
   <characterinventory>
     <item>
+      <itemname>Bronze Helmet</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Chestplate</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Bronze Leggings</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Left Bronze Boot</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Right Bronze Boot</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Right Bronze Gauntlet</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
       <itemname>Iron Sword</itemname>
-      <playerinventoryslot>39</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
+    </item>
+    <item>
+      <itemname>Iron Sword</itemname>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
     <item>
       <itemname>Iron Ring</itemname>
       <eternalcoin>FireBall</eternalcoin>
-      <playerinventoryslot>37</playerinventoryslot>
+      <playerinventoryslot>0</playerinventoryslot>
     </item>
   </characterinventory>
 </savedgame>

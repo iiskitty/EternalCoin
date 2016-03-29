@@ -19,7 +19,7 @@ namespace Eternal_Coin
             displayPicDoc.Load("./Content/LoadData/Data.xml");
             XmlNodeList displayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/picture");
             XmlNodeList eDisplayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/epicture");
-
+            
             foreach (XmlNode displayPic in displayPics)
             {
                 Dictionaries.displayPictures.Add(displayPic["id"].InnerText, new DisplayPicture(displayPic["id"].InnerText, Content.Load<Texture2D>(displayPic["filepath"].InnerText)));
