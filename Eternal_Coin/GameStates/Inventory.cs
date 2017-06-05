@@ -37,10 +37,10 @@ namespace Eternal_Coin
             {
                 if (characterInventory.itemSlots[Lists.inventorySlots[i]].item != null)
                 {
-                    foreach (Player P in Lists.entity)
-                    {
-                        P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[i]].item);
-                    }
+                    //foreach (Player P in Lists.entity)
+                    //{
+                        GVar.player.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[i]].item);
+                    //}
                     Item.FromCharacter(characterInventory.itemSlots[Lists.inventorySlots[i]].item, Lists.inventorySlots[i]);
                 }
             }
@@ -380,7 +380,7 @@ namespace Eternal_Coin
                     {
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Lists.inventoryButtons.Clear();
-                        Shop.SaveShopInventory(GVar.curLocNode, Lists.entity[0].CurrentLocation);
+                        Shop.SaveShopInventory(GVar.curLocNode, GVar.player.CurrentLocation);
 
                         for (int j = 0; j < 40; j++)
                         {
@@ -445,11 +445,11 @@ namespace Eternal_Coin
                 }
             }
 
-            foreach (Player P in Lists.entity)
-            {
-                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + P.Damage.ToString(), new Vector2(879, 572), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + P.Armour.ToString(), new Vector2(879, 590), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-            }
+            //foreach (Player P in Lists.entity)
+            //{
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + GVar.player.Damage.ToString(), new Vector2(879, 572), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + GVar.player.Armour.ToString(), new Vector2(879, 590), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            //}
 
             for (int i = 0; i < Lists.inventoryButtons.Count; i++)
             {
@@ -539,8 +539,8 @@ namespace Eternal_Coin
 
             if (mouseInventory.heldItem != null)
             {
-                foreach (Player P in Lists.entity)
-                {
+                //foreach (Player P in Lists.entity)
+                //{
                     for (int j = 0; j < Lists.inventorySlots.Count; j++)
                     {
                         if (MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[j]].bounds) && InputManager.IsLMPressed())
@@ -567,7 +567,7 @@ namespace Eternal_Coin
                                         }
                                     //}
                                 }
-                                P.AddItemStats(mouseInventory.heldItem);
+                                GVar.player.AddItemStats(mouseInventory.heldItem);
                                 mouseInventory.heldItem = null;
                             }
                             else if (characterInventory.itemSlots[Lists.inventorySlots[j]].item != null && characterInventory.itemSlots[Lists.inventorySlots[j]].inventorySlot.Contains(mouseInventory.heldItem.InventorySlot))
@@ -611,11 +611,11 @@ namespace Eternal_Coin
                             }
                         }
                     }
-                }
+                //}
             }
             int preventclick = 0;
-            foreach (Player P in Lists.entity)
-            {
+            //foreach (Player P in Lists.entity)
+            //{
                 for (int i = 0; i < 40; i++)
                 {
                     for (int j = 0; j < Lists.inventorySlots.Count; j++)
@@ -625,7 +625,7 @@ namespace Eternal_Coin
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             
                             mouseInventory.heldItem = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
-                            P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
+                            GVar.player.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                             if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                             {
                                 //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
@@ -649,7 +649,7 @@ namespace Eternal_Coin
                             {
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToPlayer(characterInventory.itemSlots[Lists.inventorySlots[j]].item, i);
-                                P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
+                                GVar.player.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                                 if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
                                 {
                                     //for (int k = 0; k < characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks.Count; k++)
@@ -678,7 +678,7 @@ namespace Eternal_Coin
                             {
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, playerInventory.itemSlots[i].item.InventorySlot);
-                                P.AddItemStats((Armor)playerInventory.itemSlots[i].item);
+                                GVar.player.AddItemStats((Armor)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
                                 //{
                                     try
@@ -705,7 +705,7 @@ namespace Eternal_Coin
                             {
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.leftHandWeapon);
-                                P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
+                                GVar.player.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
                                 //{
                                     try
@@ -729,7 +729,7 @@ namespace Eternal_Coin
                             {
                                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                 Item.ToCharacter(playerInventory.itemSlots[i].item, GVar.InventorySlot.rightHandWeapon);
-                                P.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
+                                GVar.player.AddItemStats((Weapon)playerInventory.itemSlots[i].item);
                                 //for (int k = 0; k < playerInventory.itemSlots[i].item.Attacks.Count; k++)
                                 //{
                                     try
@@ -762,7 +762,7 @@ namespace Eternal_Coin
                                     {
                                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                                         Item.ToCharacter(playerInventory.itemSlots[i].item, invslot);
-                                        P.AddItemStats((Jewellry)playerInventory.itemSlots[i].item);
+                                        GVar.player.AddItemStats((Jewellry)playerInventory.itemSlots[i].item);
                                         if (playerInventory.itemSlots[i].item.Attacks.Count > 0)
                                         {
                                             Attack.AddAvailableAttacks(playerInventory.itemSlots[i].item.Attacks);
@@ -780,7 +780,7 @@ namespace Eternal_Coin
                         }
                     }
                 }
-            }
+            //}
             
         }
     }

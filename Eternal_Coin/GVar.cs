@@ -12,6 +12,9 @@ namespace Eternal_Coin
 {
     public class GVar
     {
+
+        public static Player player = null;
+
         /// <summary>
         /// version number for Eternal Coin
         /// </summary>

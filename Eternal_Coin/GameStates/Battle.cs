@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System;
-using Microsoft.Xna.Framework.Audio;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -39,7 +35,7 @@ namespace Eternal_Coin
             Attack.LoadDefaultAttack();
             try
             {
-                battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), Lists.entity[0].Name, "Alive", new Vector2(), Color.White, Lists.entity[0].Health, Lists.entity[0].Armour, Lists.entity[0].Damage);
+                battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), GVar.player.Name, "Alive", new Vector2(), Color.White, GVar.player.Health, GVar.player.Armour, GVar.player.Damage);
                 try
                 {
                     foreach (string atkID in Lists.availableAttacksIDs)
@@ -315,14 +311,14 @@ namespace Eternal_Coin
                             if (B.Name == "Continue")
                             {
                                 XmlDocument battleDoc = new XmlDocument();
-                                foreach (Entity E in Lists.entity)
-                                {
-                                    battleDoc.Load("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation.LocatoinFilePath);
+                                //foreach (Entity E in Lists.entity)
+                                //{
+                                    battleDoc.Load("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
                                     XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
                                     hasEnemy["hasenemy"].InnerText = "False";
-                                    battleDoc.Save("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation.LocatoinFilePath);
+                                    battleDoc.Save("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
                                     GVar.location.HasEnemy = false;
-                                }
+                                //}
                                 battleWon = false;
                                 foreach(UIElement ui in Lists.uiElements)
                                 {

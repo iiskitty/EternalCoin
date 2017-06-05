@@ -49,7 +49,7 @@ namespace Eternal_Coin
                     item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.itemSlots[i].item, shopDoc));
                 }
             }
-            string fileDir = "Content/GameFiles/" + Lists.entity[0].Name + "/" + locationNode.LocatoinFilePath;
+            string fileDir = "Content/GameFiles/" + GVar.player.Name + "/" + locationNode.LocatoinFilePath;
             shopDoc.Save(fileDir);
         }
     }

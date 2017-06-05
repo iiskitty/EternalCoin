@@ -51,7 +51,7 @@ namespace Eternal_Coin
                 GVar.debugLevel = Convert.ToInt32(optionsNode["debuglevel"].InnerText);
                 GVar.CreateDebugLog();
             }
-            
+
             //getting x&y size of the screen
             GVar.trueScreenX = GraphicsDevice.Adapter.CurrentDisplayMode.Width;
             GVar.trueScreenY = GraphicsDevice.Adapter.CurrentDisplayMode.Height;
@@ -63,7 +63,7 @@ namespace Eternal_Coin
             GVar.Volume.Audio.volume = 0.3f;
             GVar.Volume.Audio.pan = 0f;
             GVar.Volume.Audio.pitch = 0f;
-            
+
             //setting gamestate to start game on mainmenu
             GVar.currentGameState = GVar.GameState.mainMenu;
 
@@ -94,7 +94,7 @@ namespace Eternal_Coin
 
             //setting position of game window to top left corner
             Window.Position = new Point(10, 10);
-            
+
             //creating lists for game use
             Lists.InitializeLists();
             //creating dictionaries for game use
@@ -149,7 +149,7 @@ namespace Eternal_Coin
         /// </summary>
         protected override void UnloadContent()
         {
-            
+
         }
 
         /// <summary>
@@ -178,12 +178,10 @@ namespace Eternal_Coin
             if (GVar.loadData)
             {
                 Load.LoadWorldMaps(Content);
-                foreach (Entity e in Lists.entity)
-                {
-                    //setting map based on players current location
-                    WorldMap.SelectNewMap(e.CurrentLocation);
-                }
-                
+
+                //setting map based on players current location
+                WorldMap.SelectNewMap(GVar.player.CurrentLocation);
+
                 GVar.loadData = false;
             }
 
@@ -229,7 +227,7 @@ namespace Eternal_Coin
             MouseManager.Update(graphics.IsFullScreen);
             //checks for sounds that are no longer being used and...sends them off to live on a farm
             SoundManager.CheckSounds();
-            
+
             //calls the Update function for the current gameState
             switch (GVar.currentGameState)
             {

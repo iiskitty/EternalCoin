@@ -47,7 +47,7 @@ namespace Eternal_Coin
                 XmlNode node = doc.DocumentElement.SelectSingleNode("/data/createlocationnodes/locationnode/" + GVar.storyName + "/startinglocation");
 
                 player.CurrentLocation = Load.SetStartingLocation(node.InnerText);
-                Lists.entity.Add(player);
+                GVar.player = player;
                 Save.SaveGame(GVar.savedGameLocation, player, Lists.quests);
                 MainWorld.LoadMainWorld();
                 GVar.previousGameState = GVar.GameState.chooseCharacter;

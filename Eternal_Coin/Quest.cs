@@ -74,7 +74,7 @@ namespace Eternal_Coin
             XmlNodeList questRewardItems = GVar.curLocNode.SelectNodes("/location/npc/quest/reward/item");
             foreach (XmlNode QRI in questRewardItems)
             {
-                
+
                 for (int i = 0; i < 40; i++)
                 {
                     if (InventoryManager.playerInventory.itemSlots[i].item == null)
@@ -102,7 +102,7 @@ namespace Eternal_Coin
                     locNode[GVar.XmlTags.QuestTags.questfinished].InnerText = "True";
                     locNode[GVar.XmlTags.QuestTags.questaccepted].InnerText = "False";
                     xmlDoc.Save(Lists.quests[i].LocationFilePath);
-                    Save.SaveGame(GVar.savedGameLocation, Lists.entity[0], Lists.quests);
+                    Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
                 }
 
                 if (Lists.quests[i].CompletingAction == action && Lists.quests[i].CompletingLocation == locationNode.SubName)
@@ -114,7 +114,7 @@ namespace Eternal_Coin
                     locNode[GVar.XmlTags.QuestTags.questfinished].InnerText = "True";
                     locNode[GVar.XmlTags.QuestTags.questaccepted].InnerText = "False";
                     xmlDoc.Save(Lists.quests[i].LocationFilePath);
-                    Save.SaveGame(GVar.savedGameLocation, Lists.entity[0], Lists.quests);
+                    Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
                 }
             }
             action = "";

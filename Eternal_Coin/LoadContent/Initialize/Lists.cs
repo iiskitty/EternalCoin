@@ -21,7 +21,6 @@ namespace Eternal_Coin
         public static List<Object> viewQuestInfoButtons;
         public static List<GeneratedButton> availableStoriesButtons;
         public static List<Object> mainWorldButtons;
-        public static List<Entity> entity;
         public static List<Enemy> enemy;
         public static List<UIElement> uiElements;
         public static List<Node> subNodes;
@@ -48,7 +47,6 @@ namespace Eternal_Coin
             availableStoriesButtons = new List<GeneratedButton>();
             mainWorldButtons = new List<Object>();
             locationButtons = new List<Object>();
-            entity = new List<Entity>();
             enemy = new List<Enemy>();
             chooseCharacterButtons = new List<Object>();
             uiElements = new List<UIElement>();
@@ -90,10 +88,7 @@ namespace Eternal_Coin
 
         public static void ClearPlayerLists()
         {
-            foreach (Entity e in entity)
-            {
-                e.CurrentLocation = null;
-            }
+            GVar.player.CurrentLocation = null;
         }
 
         public static void ClearGameLists()
@@ -103,7 +98,6 @@ namespace Eternal_Coin
             quests.Clear();
             viewQuestInfoButtons.Clear();
             mainWorldButtons.Clear();
-            entity.Clear();
             availableAttacksIDs.Clear();
             attackButtons.Clear();
             enemyAttackIDs.Clear();

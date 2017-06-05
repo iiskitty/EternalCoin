@@ -154,26 +154,20 @@ namespace Eternal_Coin
         {
             if (GVar.currentGameState == GVar.GameState.game)
             {
-                for (int i = 0; i < Lists.entity.Count; i++)
+                if (GVar.player.CurrentLocation.Searched)
                 {
-                    //for (int j = 0; j < Lists.entity[i].CurrentLocation.Count; j++)
-                    //{
-                        if (Lists.entity[i].CurrentLocation.Searched)
-                        {
-                            string curLocName = Lists.entity[i].CurrentLocation.Name;
-                            Vector2 curLocPos = Lists.entity[i].CurrentLocation.Position;
-                            spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocName, new Vector2(curLocPos.X - curLocName.Length / 2, curLocPos.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
-                        }
-                        for (int k = 0; k < Lists.entity[i].CurrentLocation.LocNodeConnections.Count; k++)
-                        {
-                            if (Lists.entity[i].CurrentLocation.LocNodeConnections[k].Searched)
-                            {
-                                string curLocConName = Lists.entity[i].CurrentLocation.LocNodeConnections[k].Name;
-                                Vector2 curLocConPos = Lists.entity[i].CurrentLocation.LocNodeConnections[k].Position;
-                                spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocConName, new Vector2(curLocConPos.X - curLocConName.Length / 2, curLocConPos.Y + 20), Color.FromNonPremultiplied(0, 0, 0, Lists.entity[i].CurrentLocation.LocNodeConnections[k].ColourA), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
-                            }
-                        }
-                    //}
+                    string curLocName = GVar.player.CurrentLocation.Name;
+                    Vector2 curLocPos = GVar.player.CurrentLocation.Position;
+                    spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocName, new Vector2(curLocPos.X - curLocName.Length / 2, curLocPos.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
+                }
+                for (int k = 0; k < GVar.player.CurrentLocation.LocNodeConnections.Count; k++)
+                {
+                    if (GVar.player.CurrentLocation.LocNodeConnections[k].Searched)
+                    {
+                        string curLocConName = GVar.player.CurrentLocation.LocNodeConnections[k].Name;
+                        Vector2 curLocConPos = GVar.player.CurrentLocation.LocNodeConnections[k].Position;
+                        spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocConName, new Vector2(curLocConPos.X - curLocConName.Length / 2, curLocConPos.Y + 20), Color.FromNonPremultiplied(0, 0, 0, GVar.player.CurrentLocation.LocNodeConnections[k].ColourA), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
+                    }
                 }
             }
         }
