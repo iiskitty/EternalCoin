@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -384,7 +380,7 @@ namespace Eternal_Coin
                     {
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         Lists.inventoryButtons.Clear();
-                        Shop.SaveShopInventory(GVar.curLocNode, Lists.entity[0].CurrentLocation[0]);
+                        Shop.SaveShopInventory(GVar.curLocNode, Lists.entity[0].CurrentLocation);
 
                         for (int j = 0; j < 40; j++)
                         {
@@ -473,9 +469,6 @@ namespace Eternal_Coin
                 if (characterInventory.itemSlots[Lists.inventorySlots[i]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds))
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, characterInventory.itemSlots[Lists.inventorySlots[i]].item.Bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    //spriteBatch.Draw(characterInventory.itemSlots[Lists.inventorySlots[i]].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
-
-                    
 
                     if (mouseInventory.heldItem == null)
                     {
@@ -630,6 +623,7 @@ namespace Eternal_Coin
                         if (mouseInventory.heldItem == null && characterInventory.itemSlots[Lists.inventorySlots[j]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Bounds) && InputManager.IsLMPressed())
                         {
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+                            
                             mouseInventory.heldItem = characterInventory.itemSlots[Lists.inventorySlots[j]].item;
                             P.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[j]].item);
                             if (characterInventory.itemSlots[Lists.inventorySlots[j]].item.Attacks != null)
@@ -646,7 +640,7 @@ namespace Eternal_Coin
                                     }
                                 //}
                             }
-                            characterInventory.itemSlots[Lists.inventorySlots[j]].item = null;
+                            Item.FromCharacter(characterInventory.itemSlots[Lists.inventorySlots[j]].item, Lists.inventorySlots[j]);
                         }
                         else if (characterInventory.itemSlots[Lists.inventorySlots[j]].item != null && MouseManager.mouseBounds.Intersects(characterInventory.itemSlots[Lists.inventorySlots[j]].item.Bounds) && InputManager.IsRMPressed() && preventclick == 0)
                         {

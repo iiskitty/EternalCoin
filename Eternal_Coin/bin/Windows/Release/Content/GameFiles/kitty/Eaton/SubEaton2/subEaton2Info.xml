@@ -5,20 +5,29 @@
   <searched>True</searched>
   <hasnpc>false</hasnpc>
   <hasshop>false</hasshop>
-  <hasenemy>true</hasenemy>
+  <hasenemy>False</hasenemy>
   <enemy>
     <name>hickie</name>
+    <dpid>EDefault</dpid>
     <inventory>
       <item>
-        <class>Weapon</class>
         <itemname>Iron Sword</itemname>
-        <itemtype>IronSword</itemtype>
-        <itemmaterial>Iron</itemmaterial>
-        <inventoryslot>Weapon</inventoryslot>
-        <IronSwordattack>IronSwordStab</IronSwordattack>
-        <IronSwordattack>IronSwordStrike</IronSwordattack>
+      </item>
+      <item>
+        <itemname>Bronze Chestplate</itemname>
       </item>
     </inventory>
+    <loot>
+      <silver>
+        <amount>50</amount>
+      </silver>
+      <item>
+        <itemname>Iron Sword</itemname>
+      </item>
+      <item>
+        <itemname>Bronze Chestplate</itemname>
+      </item>
+    </loot>
   </enemy>
   <actions>
     <enter>Entering SubEaton2</enter>

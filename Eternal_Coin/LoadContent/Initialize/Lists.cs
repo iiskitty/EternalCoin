@@ -1,12 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
+﻿using System.Collections.Generic;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -97,9 +90,9 @@ namespace Eternal_Coin
 
         public static void ClearPlayerLists()
         {
-            foreach (Entity e in Lists.entity)
+            foreach (Entity e in entity)
             {
-                e.CurrentLocation.Clear();
+                e.CurrentLocation = null;
             }
         }
 

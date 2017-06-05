@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 
 namespace Eternal_Coin
 {
@@ -133,7 +129,8 @@ namespace Eternal_Coin
     /// </summary>
     public abstract class Entity : AnimationManager
     {
-        protected List<LocationNode> currentLocation;
+        //protected List<LocationNode> currentLocation;
+        protected LocationNode currentLocation;
 
         protected Vector2 position;
         protected Vector2 size;
@@ -171,7 +168,7 @@ namespace Eternal_Coin
             this.armor = armor;
             this.damage = damage;
             bounds = new Rectangle();
-            currentLocation = new List<LocationNode>();
+            currentLocation = null;
         }
 
         /// <summary>
@@ -188,9 +185,9 @@ namespace Eternal_Coin
         public abstract void HandleMovement(Vector2 pos, float gameTime);
 
         /// <summary>
-        /// List of LocationNode should only contain one, so why am I useing a list???
+        /// Current Location of the Player.
         /// </summary>
-        public List<LocationNode> CurrentLocation { get { return currentLocation; } set { currentLocation = value; } }
+        public LocationNode CurrentLocation { get { return currentLocation; } set { currentLocation = value; } }
         /// <summary>
         /// size of entity
         /// </summary>
@@ -490,7 +487,7 @@ namespace Eternal_Coin
 
         /// <summary>
         /// checks the list of sounds, if a sound is inactive dispose and delete from the list
-        /// this cause me problems in the past with sounds not being disposed of properly when finished playing
+        /// this caused me problems in the past with sounds not being disposed of properly when finished playing
         /// </summary>
         public static void CheckSounds()
         {

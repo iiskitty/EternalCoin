@@ -89,11 +89,15 @@
     <type>
       <name>Ring</name>
       <cost>10</cost>
+      <damage>0</damage>
+      <armor>0</armor>
       <imagefilepath>Sprites/tempIcon/Ring</imagefilepath>
     </type>
     <type>
       <name>ECFireBall</name>
       <cost>20</cost>
+      <damage>0</damage>
+      <armor>0</armor>
       <imagefilepath>Sprites/tempIcon/ECFireBall</imagefilepath>
     </type>
 
@@ -169,8 +173,8 @@
         <itemtype>Mace</itemtype>
         <itemmaterial>Bronze</itemmaterial>
         <inventoryslot>Weapon</inventoryslot>
-        <MaceAttack>MaceStrike</MaceAttack>
-        <MaceAttack>MaceSwing</MaceAttack>
+        <Maceattack>MaceStrike</Maceattack>
+        <Maceattack>MaceSwing</Maceattack>
       </item>
     </weapons>
 
@@ -187,11 +191,11 @@
     <eternalcoins>
       <item>
         <class>EternalCoin</class>
-        <itemname>FireBall</itemname>
+        <itemname>Fire Ball</itemname>
         <itemtype>ECFireBall</itemtype>
         <itemmaterial>Gold</itemmaterial>
         <inventoryslot>EternalCoin</inventoryslot>
-        <ECFireBallAttack>FireBall</ECFireBallAttack>
+        <ECFireBallattack>FireBall</ECFireBallattack>
       </item>
     </eternalcoins>
 
@@ -522,7 +526,7 @@
           <positiony>1891</positiony>
           <sublocnode>SubEaton</sublocnode>
           <mainlocnode>null</mainlocnode>
-          <MainEatonconnection>MainBunbury</MainEatonconnection>
+          <MainEatonconnection>null</MainEatonconnection>
         </node>
         <node>
           <name>Eaton</name>
@@ -558,51 +562,6 @@
           <mainlocnode>null</mainlocnode>
           <SubEaton2connection>SubEaton</SubEaton2connection>
         </node>
-        <node>
-          <name>Bunbury</name>
-          <mainname>Bunbury</mainname>
-          <subname>MainBunbury</subname>
-          <state>Main</state>
-          <positionx>1890</positionx>
-          <positiony>1800</positiony>
-          <sublocnode>SubBunbury</sublocnode>
-          <mainlocnode>null</mainlocnode>
-          <MainBunburyconnection>MainEaton</MainBunburyconnection>
-        </node>
-        <node>
-          <name>Bunbury</name>
-          <mainname>Bunbury</mainname>
-          <subname>SubBunbury</subname>
-          <state>Sub</state>
-          <positionx>1890</positionx>
-          <positiony>1800</positiony>
-          <sublocnode>null</sublocnode>
-          <mainlocnode>MainBunbury</mainlocnode>
-          <SubBunburyconnection>SubBunbury1</SubBunburyconnection>
-          <SubBunburyconnection>SubBunbury2</SubBunburyconnection>
-        </node>
-        <node>
-          <name>Sub Bunbury 1</name>
-          <mainname>Bunbury</mainname>
-          <subname>SubBunbury1</subname>
-          <state>state</state>
-          <positionx>1970</positionx>
-          <positiony>1900</positiony>
-          <sublocnode>null</sublocnode>
-          <mainlocnode>null</mainlocnode>
-          <SubBunbury1connection>SubBunbury</SubBunbury1connection>
-        </node>
-        <node>
-          <name>Sub Bunbury 2</name>
-          <mainname>Bunbury</mainname>
-          <subname>SubBunbury2</subname>
-          <state>state</state>
-          <positionx>1930</positionx>
-          <positiony>1720</positiony>
-          <sublocnode>null</sublocnode>
-          <mainlocnode>null</mainlocnode>
-          <SubBunbury2connection>SubBunbury</SubBunbury2connection>
-        </node>
       </MainStory>
 
       <Tutorial>
@@ -624,11 +583,6 @@
 
   <loadattacks>
     <attacks>
-      <!--
-  <enemyids>
-    <id>EDefault</id>  don't need this anymore
-  </enemyids>
--->
       <enemyattacks>
         <attack>
           <id>IronSwordStab</id>

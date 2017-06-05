@@ -33,29 +33,29 @@
 				<item>
 					<class>Weapon</class>
 					<itemname>Bronze Sword</itemname>
-          <itemtype>BronzeSword</itemtype>
+					<itemtype>BronzeSword</itemtype>
 					<itemmaterial>Bronze</itemmaterial>
 					<inventoryslot>Weapon</inventoryslot>
 				</item>
 				<item>
 					<class>Armor</class>
-          <itemname>Bronze Leggings</itemname>
+					<itemname>Bronze Leggings</itemname>
 					<itemtype>Leggings</itemtype>
-          <itemmaterial>Bronze</itemmaterial>
+					<itemmaterial>Bronze</itemmaterial>
 					<inventoryslot>Leggings</inventoryslot>
 				</item>
 				<item>
 					<class>Armor</class>
-          <itemname>Bronze Boot</itemname>
-          <itemtype>Boot</itemtype>
-          <itemmaterial>Bronze</itemmaterial>
+					<itemname>Bronze Boot</itemname>
+					<itemtype>Boot</itemtype>
+					<itemmaterial>Bronze</itemmaterial>
 					<inventoryslot>LeftBoot</inventoryslot>
 				</item>
 				<item>
 					<class>Armor</class>
-          <itemname>Bronze Boot</itemname>
-          <itemtype>Boot</itemtype>
-          <itemmaterial>Bronze</itemmaterial>
+					<itemname>Bronze Boot</itemname>
+					<itemtype>Boot</itemtype>
+					<itemmaterial>Bronze</itemmaterial>
 					<inventoryslot>RightBoot</inventoryslot>
 				</item>
 			</reward>

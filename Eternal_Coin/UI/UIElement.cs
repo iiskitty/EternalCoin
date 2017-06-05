@@ -1,18 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Content;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
 
 namespace Eternal_Coin
 {
     public class UIElement
     {
-        
         Texture2D spriteID;
         Vector2 position;
         Vector2 size;
@@ -32,8 +25,8 @@ namespace Eternal_Coin
 
         public static List<UIElement> AddUIElements(List<UIElement> uiElements)
         {
-            uiElements.Add(new UIElement(Textures.UI.locationInfoUITex, new Vector2(GVar.gameScreenX / 2 - Textures.UI.locationInfoUITex.Width / 2, 0 + (GVar.gameScreenY - Textures.UI.locationInfoUITex.Height)), new Vector2(Textures.UI.locationInfoUITex.Width, Textures.UI.locationInfoUITex.Height), 0.18f, true, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.UI.NPCInfoUITex, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.UI.NPCInfoUITex.Width / 2), GVar.gameScreenY / 2 - Textures.UI.NPCInfoUITex.Height / 2), new Vector2(Textures.UI.NPCInfoUITex.Width, Textures.UI.NPCInfoUITex.Height), 0.18f, false, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.locationInfoUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.locationInfoUI.Width / 2, 0 + (GVar.gameScreenY - Textures.UI.locationInfoUI.Height)), new Vector2(Textures.UI.locationInfoUI.Width, Textures.UI.locationInfoUI.Height), 0.18f, true, GVar.GameState.game));
+            uiElements.Add(new UIElement(Textures.UI.NPCInfoUI, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.UI.NPCInfoUI.Width / 2), GVar.gameScreenY / 2 - Textures.UI.NPCInfoUI.Height / 2), new Vector2(Textures.UI.NPCInfoUI.Width, Textures.UI.NPCInfoUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.questListUI, new Vector2(0, 0), new Vector2(Textures.UI.questListUI.Width, Textures.UI.questListUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.questInfoUI, new Vector2(Textures.UI.questListUI.Width, 0), new Vector2(Textures.UI.questInfoUI.Width, Textures.UI.questInfoUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.inventoryUI, new Vector2(0, 0), new Vector2(Textures.UI.inventoryUI.Width, Textures.UI.inventoryUI.Height), 0.18f, true, GVar.GameState.inventory));

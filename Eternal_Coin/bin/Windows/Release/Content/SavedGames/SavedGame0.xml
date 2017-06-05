@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <savedgame>
   <filename>Content/SavedGames/SavedGame0.xml</filename>
+  <filenumber>0</filenumber>
   <dpid>Default</dpid>
   <name>kitty</name>
   <storyname>MainStory</storyname>

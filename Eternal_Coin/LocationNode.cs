@@ -146,39 +146,48 @@ namespace Eternal_Coin
             this.hasEnemy = hasEnemy;
         }
 
-        public static void DrawLocationNames(SpriteBatch spriteBatch, GameTime gameTime)
+        /// <summary>
+        /// Cycle through current location and connecting locations, if location have been explored, draw their names.
+        /// </summary>
+        /// <param name="spriteBatch">SpriteBatch to draw strings</param>
+        public static void DrawLocationNames(SpriteBatch spriteBatch)
         {
             if (GVar.currentGameState == GVar.GameState.game)
             {
                 for (int i = 0; i < Lists.entity.Count; i++)
                 {
-                    for (int j = 0; j < Lists.entity[i].CurrentLocation.Count; j++)
-                    {
-                        if (Lists.entity[i].CurrentLocation[j].Searched)
+                    //for (int j = 0; j < Lists.entity[i].CurrentLocation.Count; j++)
+                    //{
+                        if (Lists.entity[i].CurrentLocation.Searched)
                         {
-                            string curLocName = Lists.entity[i].CurrentLocation[j].Name;
-                            Vector2 curLocPos = Lists.entity[i].CurrentLocation[j].Position;
+                            string curLocName = Lists.entity[i].CurrentLocation.Name;
+                            Vector2 curLocPos = Lists.entity[i].CurrentLocation.Position;
                             spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocName, new Vector2(curLocPos.X - curLocName.Length / 2, curLocPos.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
                         }
-                        for (int k = 0; k < Lists.entity[i].CurrentLocation[j].LocNodeConnections.Count; k++)
+                        for (int k = 0; k < Lists.entity[i].CurrentLocation.LocNodeConnections.Count; k++)
                         {
-                            if (Lists.entity[i].CurrentLocation[j].LocNodeConnections[k].Searched)
+                            if (Lists.entity[i].CurrentLocation.LocNodeConnections[k].Searched)
                             {
-                                string curLocConName = Lists.entity[i].CurrentLocation[j].LocNodeConnections[k].Name;
-                                Vector2 curLocConPos = Lists.entity[i].CurrentLocation[j].LocNodeConnections[k].Position;
-                                spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocConName, new Vector2(curLocConPos.X - curLocConName.Length / 2, curLocConPos.Y + 20), Color.FromNonPremultiplied(0, 0, 0, Lists.entity[i].CurrentLocation[j].LocNodeConnections[k].ColourA), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
+                                string curLocConName = Lists.entity[i].CurrentLocation.LocNodeConnections[k].Name;
+                                Vector2 curLocConPos = Lists.entity[i].CurrentLocation.LocNodeConnections[k].Position;
+                                spriteBatch.DrawString(Fonts.lucidaConsole20Bold, curLocConName, new Vector2(curLocConPos.X - curLocConName.Length / 2, curLocConPos.Y + 20), Color.FromNonPremultiplied(0, 0, 0, Lists.entity[i].CurrentLocation.LocNodeConnections[k].ColourA), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.16f);
                             }
                         }
-                    }
+                    //}
                 }
             }
         }
 
+        /// <summary>
+        /// Draws location name and description if the location has been explored.
+        /// </summary>
+        /// <param name="spriteBatch">SpriteBatch to draw strings.</param>
+        /// <param name="location">Current location</param>
         public static void DrawLocationInfo(SpriteBatch spriteBatch, Location location)
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.UI.locationInfoUITex)
+                if (ui.SpriteID == Textures.UI.locationInfoUI)
                 {
                     if (GVar.location.Searched)
                     {

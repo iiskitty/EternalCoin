@@ -36,7 +36,7 @@ namespace Eternal_Coin
             locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText = "False";
             locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/quest");
-            LocationNode temp = P.CurrentLocation[0];
+            LocationNode temp = P.CurrentLocation;
             Lists.quests.Add(new Quest(locNPC[GVar.XmlTags.QuestTags.description].InnerText, locNPC[GVar.XmlTags.QuestTags.shortdescription].InnerText, locNPC[GVar.XmlTags.QuestTags.completingaction].InnerText, locNPC[GVar.XmlTags.QuestTags.completinglocation].InnerText, false, "Content/GameFiles/" + P.Name + "/" + temp.LocatoinFilePath));
             foreach (UIElement ui in Lists.uiElements)
             {
@@ -55,7 +55,7 @@ namespace Eternal_Coin
         public static void HandInQuest(Entity P)
         {
             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");
-            LocationNode temp = P.CurrentLocation[0];
+            LocationNode temp = P.CurrentLocation;
             locNPC[GVar.XmlTags.QuestTags.questfinished].InnerText = "False";
             locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");

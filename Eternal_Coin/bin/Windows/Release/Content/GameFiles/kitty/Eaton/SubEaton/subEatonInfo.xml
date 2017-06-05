@@ -44,27 +44,31 @@
     <inventory>
       <item>
         <itemname>Bronze Mace</itemname>
+        <playerinventoryslot>0</playerinventoryslot>
       </item>
       <item>
         <itemname>Iron Sword</itemname>
-      </item>
-      <item>
-        <itemname>Left Bronze Boot</itemname>
-      </item>
-      <item>
-        <itemname>Right Bronze Boot</itemname>
+        <playerinventoryslot>1</playerinventoryslot>
       </item>
       <item>
         <itemname>Left Bronze Gauntlet</itemname>
+        <playerinventoryslot>4</playerinventoryslot>
       </item>
       <item>
         <itemname>Right Bronze Gauntlet</itemname>
-      </item>
-      <item>
-        <itemname>Bronze Leggings</itemname>
+        <playerinventoryslot>5</playerinventoryslot>
       </item>
       <item>
         <itemname>Bronze Chestplate</itemname>
+        <playerinventoryslot>7</playerinventoryslot>
+      </item>
+      <item>
+        <itemname>Bronze Chestplate</itemname>
+        <playerinventoryslot>8</playerinventoryslot>
+      </item>
+      <item>
+        <itemname>Iron Sword</itemname>
+        <playerinventoryslot>9</playerinventoryslot>
       </item>
     </inventory>
   </shop>

@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System;
-using Microsoft.Xna.Framework.Audio;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -27,19 +23,23 @@ namespace Eternal_Coin
 
         public Item() { }
 
+        /// <summary>
+        /// Create a copy of another item
+        /// </summary>
+        /// <param name="item"></param>
         public Item(Item item) 
             : base(item.Position, item.colour)
         {
-            this.spriteID = item.spriteID;
-            this.position = item.Position;
-            this.size = item.Size;
-            this.itemName = item.ItemName;
-            this.inventorySlot = item.InventorySlot;
-            this.playerInventorySlot = item.PlayerInventorySlot;
-            this.itemClass = item.ItemClass;
-            this.material = item.Material;
-            this.type = item.Type;
-            this.cost = item.Cost;
+            spriteID = item.spriteID;
+            position = item.Position;
+            size = item.Size;
+            itemName = item.ItemName;
+            inventorySlot = item.InventorySlot;
+            playerInventorySlot = item.PlayerInventorySlot;
+            itemClass = item.ItemClass;
+            material = item.Material;
+            type = item.Type;
+            cost = item.Cost;
             AddAnimation(1, 0, 0, GVar.AnimStates.Button.def, spriteID.Width, spriteID.Height, Vector2.Zero);
             PlayAnimation(GVar.AnimStates.Button.def);
             attacks = new List<string>();
@@ -167,6 +167,9 @@ namespace Eternal_Coin
             
         }
 
+        /// <summary>
+        /// Create all items from Data.xml
+        /// </summary>
         public static void CreateItems()
         {
             XmlDocument itemsDoc = new XmlDocument();
@@ -296,7 +299,7 @@ namespace Eternal_Coin
         public Armor(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, int cost, int armor, string armorName, int playerInventorySlot, string inventorySlot, Material material, ItemType type)
             : base(spriteID, position, size, colour, itemClass, cost, armorName, playerInventorySlot, inventorySlot, material, type)
         {
-            this.armorValue = armor;
+            armorValue = armor;
         }
 
         public override void Update(float gameTime)
@@ -354,7 +357,7 @@ namespace Eternal_Coin
         public Jewellry(Item item) 
             : base(item)
         {
-            this.spriteID = item.SpriteID;
+            spriteID = item.SpriteID;
         }
 
         public override void Update(float gameTime)

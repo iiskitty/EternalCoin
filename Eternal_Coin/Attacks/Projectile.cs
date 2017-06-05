@@ -1,19 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Content;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
     public class Projectile : Object
     {
-        Vector2 direction;
         int damage;
 
         /// <summary>
@@ -34,7 +25,7 @@ namespace Eternal_Coin
             FPS = 10;
             AddAnimation(8, 0, 0, "def", (int)size.X, (int)size.Y, Vector2.Zero);
             PlayAnimation("def");
-            this.direction = direction;
+            Direction = direction;
             this.damage = damage;
         }
 
@@ -62,10 +53,6 @@ namespace Eternal_Coin
 
         }
 
-        /// <summary>
-        /// Direction of projectile
-        /// </summary>
-        public Vector2 Direction { get { return direction; } set { direction = value; } }
         /// <summary>
         /// Damage of projectile
         /// </summary>

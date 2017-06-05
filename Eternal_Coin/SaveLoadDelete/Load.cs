@@ -1,13 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -61,7 +56,7 @@ namespace Eternal_Coin
             GVar.displayPicID = saveNode["dpid"].InnerText;
             LocationNode locNode = SetStartingLocation(saveNode[GVar.XmlTags.Player.currentlocation].InnerText);
             
-            player.CurrentLocation.Add(locNode);
+            player.CurrentLocation = locNode;
 
             
 
@@ -271,7 +266,10 @@ namespace Eternal_Coin
                     ln.SubLocNode.Add(Dictionaries.locNodes[ln.SubLocNodeName]);
                     foreach (string locName in ln.LocNodeConName)
                     {
-                        ln.AddConnection(Dictionaries.locNodes[locName]);
+                        if (locName != "null")
+                        {
+                            ln.AddConnection(Dictionaries.locNodes[locName]);
+                        }
                     }
                 }
                 else if (ln.State == "Sub")
@@ -317,7 +315,7 @@ namespace Eternal_Coin
 
         public static void LoadLocationNodes(string storyName)
         {
-            GVar.worldMap = new WorldMap(Textures.Misc.worldMapTex, Vector.worldMapPosition, Vector.worldMapSize, Color.White);
+            GVar.worldMap = new WorldMap(Textures.Misc.worldMap, Vector.worldMapPosition, Vector.worldMapSize, Color.White);
 
             
 
@@ -329,7 +327,7 @@ namespace Eternal_Coin
             {
                 if (n["state"].InnerText == "Main")
                 {
-                    LocationNode locNode = new LocationNode(Textures.Button.locationNodeTex, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.mainLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
+                    LocationNode locNode = new LocationNode(Textures.Button.locationNode, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.mainLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;
@@ -343,7 +341,7 @@ namespace Eternal_Coin
                 }
                 else if (n["state"].InnerText == "Sub")
                 {
-                    LocationNode locNode = new LocationNode(Textures.Button.locationNodeTex, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.mainLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
+                    LocationNode locNode = new LocationNode(Textures.Button.locationNode, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.mainLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;
@@ -357,7 +355,7 @@ namespace Eternal_Coin
                 }
                 else
                 {
-                    LocationNode locNode = new LocationNode(Textures.Button.locationNodeTex, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.subLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
+                    LocationNode locNode = new LocationNode(Textures.Button.locationNode, new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), new Vector2(Convert.ToInt32(n["positionx"].InnerText), Convert.ToInt32(n["positiony"].InnerText)), Vector.subLocationSize, Color.White, false, n["name"].InnerText, n["mainname"].InnerText, n["subname"].InnerText, n["state"].InnerText);
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;

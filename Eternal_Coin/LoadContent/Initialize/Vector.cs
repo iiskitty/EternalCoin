@@ -1,12 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -25,8 +17,8 @@ namespace Eternal_Coin
 
         public static void InitilizeVectors()
         {
-            worldMapPosition = new Vector2((0 - Textures.Misc.worldMapTex.Width / 2 + GVar.gameScreenX / 2), (0 - Textures.Misc.worldMapTex.Height / 2 + GVar.gameScreenY / 2));
-            worldMapSize = new Vector2(Textures.Misc.worldMapTex.Width, Textures.Misc.worldMapTex.Height);
+            worldMapPosition = new Vector2((0 - Textures.Misc.worldMap.Width / 2 + GVar.gameScreenX / 2), (0 - Textures.Misc.worldMap.Height / 2 + GVar.gameScreenY / 2));
+            worldMapSize = new Vector2(Textures.Misc.worldMap.Width, Textures.Misc.worldMap.Height);
             lookEyeSize = new Vector2(50, 25);
             locationButtonSize = new Vector2(30, 30);
             mainLocationSize = new Vector2(30, 30);

@@ -1,0 +1,105 @@
+[4-14-56]TrueScreen X,Y: 1920 1080
+[4-14-56]GameScreen X,Y: 1280 720
+[4-14-56]Set Game Screen X,Y: 1280 720
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[4-14-56]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[4-14-56]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[4-14-56]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[4-14-56]ItemCreated: [Class: EternalCoin, Name: Fire Ball, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[4-14-58]ButtonClicked: PlayButton
+[4-14-58]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[4-14-58]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[4-14-58]GameState Change: chooseCharacter
+[4-14-59]ButtonClicked: NewCharacter
+[4-15-1]ButtonClicked: StartGame
+[4-15-3]GameCreated: asdf
+[4-15-3]LocationCreated: Eaton
+[4-15-3]LocationCreated: Eaton
+[4-15-3]LocationCreated: Sub Eaton 1
+[4-15-3]LocationCreated: Sub Eaton 2
+[4-15-3]Saving Game.
+[4-15-3]Game Saved.
+[4-15-3]GameState Change: game
+[4-15-3]Map Created: EatonMap
+[4-15-8]ButtonClicked: LookEyeButton
+[4-15-9]ButtonClicked: NPCButton
+[4-15-9]ButtonClicked: NPCButton
+[4-15-9]ButtonClicked: NPCButton
+[4-15-10]ButtonClicked: QuestAcceptButton
+[4-15-10]Saving Game.
+[4-15-10]Save File Found.
+[4-15-10]Quest Saved.Explore Sub Eaton 1
+[4-15-10]Game Saved.
+[4-15-11]ButtonClicked: CloseNPCUIButton
+[4-15-13]LocationChange: Sub Eaton 1
+[4-15-15]ButtonClicked: LookEyeButton
+[4-15-15]Saving Game.
+[4-15-15]Save File Found.
+[4-15-15]Quest Saved.Explore Sub Eaton 1
+[4-15-15]Game Saved.
+[4-15-15]ButtonClicked: NPCButton
+[4-15-15]ButtonClicked: NPCButton
+[4-15-17]ButtonClicked: CloseNPCUIButton
+[4-15-18]LocationChange: Eaton
+[4-15-21]ButtonClicked: NPCButton
+[4-15-21]ButtonClicked: NPCButton
+[4-15-21]ButtonClicked: NPCButton
+[4-15-22]ButtonClicked: HandInQuestButton
+[4-15-22]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[4-15-22]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[4-15-22]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[4-15-22]Saving Game.
+[4-15-22]Save File Found.
+[4-15-22]Item Saved To Player Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[4-15-22]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[4-15-22]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[4-15-22]Game Saved.
+[4-15-23]ButtonClicked: CloseNPCUIButton
+[4-15-24]ButtonClicked: DisplayInventory
+[4-15-30]Attack added: IronSwordStab
+[4-15-30]Attack added: IronSwordStrike
+[4-15-42]ButtonClicked: DisplayQuests
+[4-15-44]ButtonClicked: CloseQuestListUI
+[4-15-46]LocationChange: Sub Eaton 1
+[4-15-47]ButtonClicked: NPCButton
+[4-15-47]ButtonClicked: NPCButton
+[4-15-48]ButtonClicked: QuestAcceptButton
+[4-15-48]Saving Game.
+[4-15-48]Save File Found.
+[4-15-48]Quest Saved.Explore Sub Bunbury 1
+[4-15-48]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[4-15-48]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[4-15-48]Item Saved To Character Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[4-15-48]Game Saved.
+[4-15-49]ButtonClicked: CloseNPCUIButton
+[4-15-50]LocationChange: Eaton
+[4-15-52]ButtonClicked: DisplayQuests
+[4-15-53]ButtonClicked: ViewQuestInfo
+[4-15-57]ButtonClicked: CloseQuestInfoUI
+[4-15-58]ButtonClicked: CloseQuestListUI

@@ -1,11 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
 
 namespace Eternal_Coin
 {
@@ -30,11 +24,17 @@ namespace Eternal_Coin
 
         public NPC() { }
 
+        /// <summary>
+        /// Draws the name and current greeting of the NPC being talked to.
+        /// </summary>
+        /// <param name="spriteBatch">SpriteBatch to draw strings.</param>
+        /// <param name="name">Name of NPC</param>
+        /// <param name="greeting">Greeting of NPC</param>
         public static void DrawNPCInfo(SpriteBatch spriteBatch, string name, string greeting)
         {
             foreach (UIElement ui in Lists.uiElements)
             {
-                if (ui.SpriteID == Textures.UI.NPCInfoUITex && ui.Draw)
+                if (ui.SpriteID == Textures.UI.NPCInfoUI && ui.Draw)
                 {
                     if (GVar.location != null && GVar.location.Searched)
                     {

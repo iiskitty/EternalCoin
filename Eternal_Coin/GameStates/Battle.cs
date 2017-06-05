@@ -317,10 +317,10 @@ namespace Eternal_Coin
                                 XmlDocument battleDoc = new XmlDocument();
                                 foreach (Entity E in Lists.entity)
                                 {
-                                    battleDoc.Load("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation[0].LocatoinFilePath);
+                                    battleDoc.Load("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation.LocatoinFilePath);
                                     XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
                                     hasEnemy["hasenemy"].InnerText = "False";
-                                    battleDoc.Save("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation[0].LocatoinFilePath);
+                                    battleDoc.Save("Content/GameFiles/" + E.Name + "/" + E.CurrentLocation.LocatoinFilePath);
                                     GVar.location.HasEnemy = false;
                                 }
                                 battleWon = false;

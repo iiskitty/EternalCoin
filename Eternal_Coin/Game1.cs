@@ -1,13 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Content;
 using System;
-using Microsoft.Xna.Framework.Audio;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -171,7 +166,7 @@ namespace Eternal_Coin
                 item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
                 Lists.playerItems.Add(item);
                 InventoryManager.playerInventory.itemSlots[39].item = item;
-                item = ItemBuilder.BuildItem(Dictionaries.items["FireBall"]);
+                item = ItemBuilder.BuildItem(Dictionaries.items["Fire Ball"]);
                 Lists.playerItems.Add(item);
                 InventoryManager.playerInventory.itemSlots[38].item = item;
                 item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
@@ -186,14 +181,14 @@ namespace Eternal_Coin
                 foreach (Entity e in Lists.entity)
                 {
                     //setting map based on players current location
-                    WorldMap.SelectNewMap(e.CurrentLocation[0]);
+                    WorldMap.SelectNewMap(e.CurrentLocation);
                 }
                 
                 GVar.loadData = false;
             }
 
             //checking if the game window is active(tabbed out or not)
-            GVar.windowIsActive = this.IsActive;
+            GVar.windowIsActive = IsActive;
 
             //checks if should exit game or not
             if (GVar.exitGame)
@@ -305,7 +300,7 @@ namespace Eternal_Coin
                 Colours.DrawMapFadeOut(spriteBatch);
 
             //draws current and connecting location node names
-            Location.DrawLocationNames(spriteBatch, gameTime);
+            Location.DrawLocationNames(spriteBatch);
 
             //calls the Draw function for the current gamestate
             switch (GVar.currentGameState)

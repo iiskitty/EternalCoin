@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/MouseOverButton.wav</SourceFile>
-  <SourceTime>2016-01-12T15:45:11.3453578+08:00</SourceTime>
-  <DestFile>C:/Users/insainmonkey69/JSKDropBox/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sounds/MouseOverButton.xnb</DestFile>
-  <DestTime>2016-02-06T14:14:18.8874945+08:00</DestTime>
+  <SourceFile>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/MouseOverButton.wav</SourceFile>
+  <SourceTime>2016-01-12T15:45:11+08:00</SourceTime>
+  <DestFile>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sounds/MouseOverButton.xnb</DestFile>
+  <DestTime>2017-06-04T16:08:59.8831243+08:00</DestTime>
   <Importer>WavImporter</Importer>
-  <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
+  <ImporterTime>2017-03-01T23:05:36+08:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2015-04-30T01:14:44+08:00</ProcessorTime>
+  <ProcessorTime>2017-03-01T23:05:36+08:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>

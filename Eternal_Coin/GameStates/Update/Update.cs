@@ -1,12 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -50,10 +43,10 @@ namespace Eternal_Coin
                 Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
 
                 XmlDocument doc = new XmlDocument();
-                doc.Load("Content/LoadData/CreateLocationNodes.xml");
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/locationnode/" + GVar.storyName + "/startinglocation");
+                doc.Load("Content/LoadData/Data.xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/data/createlocationnodes/locationnode/" + GVar.storyName + "/startinglocation");
 
-                player.CurrentLocation.Add(Load.SetStartingLocation(node.InnerText));
+                player.CurrentLocation = Load.SetStartingLocation(node.InnerText);
                 Lists.entity.Add(player);
                 Save.SaveGame(GVar.savedGameLocation, player, Lists.quests);
                 MainWorld.LoadMainWorld();
@@ -173,7 +166,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.locationInfoUITex)
+                    if (ui.SpriteID == Textures.UI.locationInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -184,7 +177,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.locationInfoUITex)
+                    if (ui.SpriteID == Textures.UI.locationInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - (button.Size.X * 2.2f), ui.Position.Y + 22);
                         button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -221,7 +214,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }
@@ -248,7 +241,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y);
                     }
@@ -259,7 +252,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }
@@ -270,7 +263,7 @@ namespace Eternal_Coin
             {
                 foreach (UIElement ui in Lists.uiElements)
                 {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUITex)
+                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
                     {
                         button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
                     }

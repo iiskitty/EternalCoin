@@ -86,7 +86,7 @@ namespace Eternal_Coin
                 body.AppendChild(storyName);
 
                 XmlElement currentLocation = tempDoc.CreateElement(string.Empty, "currentlocation", string.Empty);
-                XmlText currentLocationInner = tempDoc.CreateTextNode(P.CurrentLocation[0].SubName);
+                XmlText currentLocationInner = tempDoc.CreateTextNode(P.CurrentLocation.SubName);
                 currentLocation.AppendChild(currentLocationInner);
                 body.AppendChild(currentLocation);
 

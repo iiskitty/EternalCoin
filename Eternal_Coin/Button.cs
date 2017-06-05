@@ -93,17 +93,17 @@ namespace Eternal_Coin
         {
             if (node.State.Contains("Sub"))
             {
-                Button exitLocationButton = new Button(Textures.Button.exitLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", GVar.States.Button.locationbutton, 0f);
+                Button exitLocationButton = new Button(Textures.Button.exitLocationButton, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", GVar.States.Button.locationbutton, 0f);
                 Lists.locationButtons.Add(exitLocationButton);
 
                 if (GVar.location != null && !GVar.location.Searched)
                 {
-                    Button lookEyeButton = new Button(Textures.Button.lookEyeTex, node.Position, Vector.lookEyeSize, Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
+                    Button lookEyeButton = new Button(Textures.Button.lookEye, node.Position, Vector.lookEyeSize, Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(lookEyeButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasNPC)
                 {
-                    Button npcButton = new Button(Textures.Button.npcButtonTex, node.Position, Vector.locationButtonSize, Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
+                    Button npcButton = new Button(Textures.Button.npcButton, node.Position, Vector.locationButtonSize, Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(npcButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasShop)
@@ -114,19 +114,19 @@ namespace Eternal_Coin
             }
             else if (node.State.Contains("Main"))
             {
-                Button enterLocationButton = new Button(Textures.Button.enterLocationButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", GVar.States.Button.locationbutton, 0f);
+                Button enterLocationButton = new Button(Textures.Button.enterLocationButton, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", GVar.States.Button.locationbutton, 0f);
                 Lists.locationButtons.Add(enterLocationButton);
             }
             else
             {
                 if (GVar.location != null && !GVar.location.Searched)
                 {
-                    Button lookEyeButton = new Button(Textures.Button.lookEyeTex, node.Position, new Vector2(Vector.lookEyeSize.X, Vector.lookEyeSize.Y), Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
+                    Button lookEyeButton = new Button(Textures.Button.lookEye, node.Position, new Vector2(Vector.lookEyeSize.X, Vector.lookEyeSize.Y), Color.White, "LookEyeButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(lookEyeButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasNPC)
                 {
-                    Button npcButton = new Button(Textures.Button.npcButtonTex, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
+                    Button npcButton = new Button(Textures.Button.npcButton, node.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "NPCButton", GVar.States.Button.locationbutton, 0f);
                     Lists.locationButtons.Add(npcButton);
                 }
                 if (GVar.location != null && GVar.location.Searched && GVar.location.HasShop)
@@ -142,13 +142,16 @@ namespace Eternal_Coin
             }
         }
 
+        /// <summary>
+        /// Check if MainWorldButtons state has been set to "delete", if so delete it.
+        /// </summary>
         public static void CheckButtonsForDelete()
         {
             for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
             {
-                if (Lists.mainWorldButtons[i].State == "delete")
+                if (Lists.mainWorldButtons[i].State == "delete")//check button state if set to "delete"
                 {
-                    Lists.mainWorldButtons.RemoveAt(i);
+                    Lists.mainWorldButtons.RemoveAt(i);//delete button.
                 }
             }
         }

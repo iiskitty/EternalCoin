@@ -28,7 +28,6 @@ namespace Eternal_Coin
 
     public class SavedGame
     {
-        //public static Texture2D displayPic;
         public string displayPicID;
 
         public string name;
