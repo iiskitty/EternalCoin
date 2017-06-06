@@ -14,22 +14,25 @@ namespace Eternal_Coin
     {
         public static void LoadShopInventory(XmlDocument shopDoc)
         {
-            
-
             XmlNodeList itemList = shopDoc.SelectNodes("/location/shop/inventory/item");
 
-            foreach (XmlNode item in itemList)
+            for (int i = 0; i < itemList.Count; i++)//foreach (XmlNode item in itemList)
             {
-                Item shopItem = ItemBuilder.BuildItem(Dictionaries.items[item[GVar.XmlTags.ItemTags.itemname].InnerText]);
-                
-                for (int i = 0; i < 40; i++)
+                Item shopItem = ItemBuilder.BuildItem(Dictionaries.items[itemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
+
+                AddItemToShopInventory(shopItem);
+            }
+        }
+
+        public static void AddItemToShopInventory(Item item)
+        {
+            for (int j = 0; j < 40; j++)
+            {
+                if (InventoryManager.shopInventory.itemSlots[j].item == null)
                 {
-                    if (InventoryManager.shopInventory.itemSlots[i].item == null)
-                    {
-                        InventoryManager.shopInventory.itemSlots[i].item = shopItem;
-                        Lists.shopItems.Add(InventoryManager.shopInventory.itemSlots[i].item);
-                        break;
-                    }
+                    InventoryManager.shopInventory.itemSlots[j].item = item;
+                    Lists.shopItems.Add(InventoryManager.shopInventory.itemSlots[j].item);
+                    break;
                 }
             }
         }

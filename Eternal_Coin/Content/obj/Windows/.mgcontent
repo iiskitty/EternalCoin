@@ -33,7 +33,6 @@
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/sword.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/BattleUI.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Cursor.png</File>
-    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/Default.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/Altered.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/DP/enemy/EDefault.png</File>
@@ -85,10 +84,6 @@
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/AttackAnim/Default/FireBall.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/tempIcon/ECFireBall.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Projectile/Magic/FireBall.png</File>
-    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png</File>
-    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStab.png</File>
-    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png</File>
-    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/../../Eternal Coin Content/Sprites/Buttons/AttackButtons/Punch.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/AttackButtons/FireBall.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/AttackButtons/IronSwordStab.png</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png</File>
@@ -109,5 +104,6 @@
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole22Regular.spritefont</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Bold.spritefont</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Regular.spritefont</File>
+    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</File>
   </SourceFiles>
 </SourceFileCollection>

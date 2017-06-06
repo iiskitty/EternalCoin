@@ -78,7 +78,5 @@
 		<enter>Entering SubEaton</enter>
 		<explore>Exploring SubEaton</explore>
 		<talknpc>Talking To Dick</talknpc>
-		<acceptquest>Accepted Quest</acceptquest>
-		<handinquest>Handed In Quest</handinquest>
 	</actions>
 </location>

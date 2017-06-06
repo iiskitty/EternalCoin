@@ -27,6 +27,25 @@ namespace Eternal_Coin
                     Lists.uiElements[i].Draw = true;//Activate Quests UI.
                 }
             }
+
+            //position for View Quest Info Buttons.
+            Vector2 viewQuestInfoButtonPosition = new Vector2();
+
+            //cycle through UIElements.
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.questListUI)//if Sprite is Quest List UI && position has not been set.
+                {
+                    viewQuestInfoButtonPosition = new Vector2(Lists.uiElements[i].SpriteID.Width - 277, Lists.uiElements[i].SpriteID.Height - 366); //set Quest Info Button position based on Quest List UI's position.
+                }
+            }
+
+            //cycle through View Quest Info Buttons.
+            for (int i = 0; i < Lists.viewQuestInfoButtons.Count; i++)
+            {
+                Lists.viewQuestInfoButtons[i].Position = viewQuestInfoButtonPosition;//set position to ViewQuestInfoButtonPosition.
+                viewQuestInfoButtonPosition.Y += 18;//move the position down for next button.
+            }
         }
 
         /// <summary>

@@ -364,18 +364,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Cursor.png
 
-#begin LocationTemplates/MainStory/Eaton/EatonMap.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:LocationTemplates/MainStory/Eaton/EatonMap.png
-
 #begin Sprites/DP/Default.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -399,15 +387,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/DP/Altered.png
-
-#begin LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
-
-#begin LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
-/copy:LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
-
-#begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
 
 #begin Sprites/DP/enemy/EDefault.png
 /importer:TextureImporter
@@ -883,9 +862,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/ContinueButton.png
 
-#begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-
 #begin Sprites/UI/ItemInfoUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -981,54 +957,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Projectile/Magic/FireBall.png
-
-#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/FireBall.png
-
-#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStab.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStab.png
-
-#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/IronSwordStrike.png
-
-#begin ../../Eternal Coin Content/Sprites/Buttons/AttackButtons/Punch.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Eternal Coin Content/Sprites/Buttons/AttackButtons/Punch.png
 
 #begin Sprites/Buttons/AttackButtons/FireBall.png
 /importer:TextureImporter
@@ -1196,6 +1124,30 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/LucidaConsole24Regular.spritefont
 
+#begin LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
+/copy:LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
+
+#begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
+/copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
+
+#begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
+/copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
+
+#begin LocationTemplates/MainStory/Eaton/EatonMap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LocationTemplates/MainStory/Eaton/EatonMap.png
+
 #begin LocationTemplates/location template.xml
 /copy:LocationTemplates/location template.xml
+
+#begin LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
+/copy:LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
 

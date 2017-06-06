@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using System.Xml;
 
 namespace Eternal_Coin
 {
@@ -147,143 +144,393 @@ namespace Eternal_Coin
         /// </summary>
         public static void CheckButtonsForDelete()
         {
+            //cycle through MainWorldButtons.
             for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
             {
-                if (Lists.mainWorldButtons[i].State == "delete")//check button state if set to "delete"
+                if (Lists.mainWorldButtons[i].State == "delete")//check button state if set to "delete".
                 {
                     Lists.mainWorldButtons.RemoveAt(i);//delete button.
                 }
             }
         }
 
+        /// <summary>
+        /// Update MainWorldButtons.
+        /// </summary>
+        /// <param name="gameTime">GameTime for smooth movement.</param>
         public static void UpdateMainWorldButtons(GameTime gameTime)
         {
+            //cycle through MainWorldButtons.
             for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
             {
-                Updates.UpdateGameButtons(Lists.mainWorldButtons[j], GVar.player, gameTime);
+                Updates.UpdateGameButtons(Lists.mainWorldButtons[j], GVar.player, gameTime);//Updates main buttons that are seen all the time.
+
+                //check for mouse intersecting MainWorldButton and left mouse click and game not paused.
                 if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.mainWorldButtons[j].Name, 2);
-                    if (Lists.mainWorldButtons.Count > 0 && Lists.mainWorldButtons[j].Name == "QuestAcceptButton")
+
+                    //if button is Quest Accept Button.
+                    if (Lists.mainWorldButtons[j].Name == "QuestAcceptButton")
                     {
-                        Quest.AcceptQuest(GVar.player);
-                        Lists.mainWorldButtons.RemoveAt(j);
+                        Quest.AcceptQuest(GVar.player);//accept the quest.
+                        Lists.mainWorldButtons.RemoveAt(j);//remove Quest Accept Button.
                         break;
                     }
-                    else if (Lists.mainWorldButtons.Count > 0 && Lists.mainWorldButtons[j].Name == "HandInQuestButton")
+                    //if button is Hand In Qeust Button.
+                    else if (Lists.mainWorldButtons[j].Name == "HandInQuestButton")
                     {
-                        Quest.HandInQuest(GVar.player);
-                        Lists.mainWorldButtons.RemoveAt(j);
+                        Quest.HandInQuest(GVar.player);//hand in the quest.
+                        Lists.mainWorldButtons.RemoveAt(j);//remove Hand In Quest Button.
                     }
+                    //if button is Open Shop Button.
                     else if (Lists.mainWorldButtons[j].Name == "OpenShop")
                     {
-                        Shop.LoadShopInventory(GVar.curLocNode);
+                        Shop.LoadShopInventory(GVar.curLocNode);//load shop inventory of current location.
 
-                        Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
-                        Lists.inventoryButtons.Add(closeInv);
+                        Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);//create button to close inventory.
+                        Lists.inventoryButtons.Add(closeInv);//add close button to InventoryButtons.
 
-                        Lists.mainWorldButtons.RemoveAt(j);
+                        Lists.mainWorldButtons.RemoveAt(j);//remove Open Shop Button.
 
-                        GVar.currentGameState = GVar.GameState.shop;
-                        GVar.previousGameState = GVar.GameState.game;
+                        GVar.currentGameState = GVar.GameState.shop;//set current GameState to shop.
+                        GVar.previousGameState = GVar.GameState.game;//set previous GameState to game.
 
-                        UI.CloseNPCUI();
+                        UI.CloseNPCUI();//close NPC UI.
                     }
+                    //if button is Display Quests.
                     else if (Lists.mainWorldButtons[j].Name == "DisplayQuests")
                     {
-                        UI.DisplayQuests();
+                        UI.DisplayQuests();//activate Quests UI.
                     }
+                    //if button is Display Inventory.
                     else if (Lists.mainWorldButtons[j].Name == "DisplayInventory")
                     {
-                        Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);
-                        Lists.inventoryButtons.Add(closeInv);
-                        GVar.currentGameState = GVar.GameState.inventory;
-                        GVar.previousGameState = GVar.GameState.game;
+                        Button closeInv = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);//create button to close inventory.
+                        Lists.inventoryButtons.Add(closeInv);//add close button to InventoryButtons.
+                        GVar.currentGameState = GVar.GameState.inventory;//set current GameState to inventory.
+                        GVar.previousGameState = GVar.GameState.game;//set previous GameState to game.
                     }
+                    //if button is Close Quests UI.
                     else if (Lists.mainWorldButtons[j].Name == "CloseQuestListUI")
                     {
-                        UI.CloseQuestListUI();
-                        Lists.mainWorldButtons.RemoveAt(j);
-                        Lists.viewQuestInfoButtons.Clear();
+                        UI.CloseQuestListUI();//deactiate Quests UI.
+                        Lists.mainWorldButtons.RemoveAt(j);//remove Close Quests UI Button.
+                        Lists.viewQuestInfoButtons.Clear();//delete Quest Info Buttons.
                     }
+                    //if button is close Quest Info UI.
                     else if (Lists.mainWorldButtons[j].Name == "CloseQuestInfoUI")
                     {
-                        UI.CloseQuestInfoUI();
-                        Lists.mainWorldButtons.RemoveAt(j);
+                        UI.CloseQuestInfoUI();//deactivate Quest Info UI.
+                        Lists.mainWorldButtons.RemoveAt(j);//remove Close Quest Info UI Button.
                     }
+                    //if button is close NPC UI Button.
                     else if (Lists.mainWorldButtons[j].Name == "CloseNPCUIButton")
                     {
-                        Lists.mainWorldButtons.RemoveAt(j);
+                        Lists.mainWorldButtons.RemoveAt(j);//delete Close NPC UI Button.
+                        //cycle through MainWorldButtons.
                         for (int k = 0; k < Lists.mainWorldButtons.Count; k++)
                         {
-                            if (Lists.mainWorldButtons[k].Name == "OpenShop")
-                                Lists.mainWorldButtons.RemoveAt(k);
+                            if (Lists.mainWorldButtons[k].Name == "OpenShop")//if Button is Open Shop Button.
+                                Lists.mainWorldButtons.RemoveAt(k);//delete Open Shop Button.
                         }
-                        UI.CloseNPCUI();
+                        UI.CloseNPCUI();//deactivate NPC UI.
                         break;
                     }
                 }
+                //check for mouse intersecting MainWorldButtons and left mouse click and game is paused.
                 else if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && GVar.gamePaused)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+
+                    //if button is Main Menu Button.
                     if (Lists.mainWorldButtons[j].Name == "MainMenu")
                     {
-                        Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
-                        GVar.changeToMainMenu = true;
-                        Colours.drawBlackFade = true;
-                        Colours.fadeIn = true;
-                        GVar.playerName = string.Empty;
+                        Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);//Save the game.
+                        GVar.changeToMainMenu = true;//change to menu bool to true.
+                        Colours.drawBlackFade = true;//draw black fade in bool to true.
+                        Colours.fadeIn = true;//fade in bool to true.
+                        GVar.playerName = string.Empty;//reset players name.
                     }
+                    //if button is Options Button.
                     else if (Lists.mainWorldButtons[j].Name == "Options")
                     {
-                        Button backToGame = new Button(Textures.Misc.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "BackToGame", "Alive", 0f);
-                        Lists.optionsButtons.Add(backToGame);
-                        GVar.changeToOptions = true;
-                        Colours.drawBlackFade = true;
-                        Colours.fadeIn = true;
+                        Button backToGame = new Button(Textures.Misc.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "BackToGame", "Alive", 0f);//create Back to Game Button.
+                        Lists.optionsButtons.Add(backToGame);//add Back to Game Button to Options Button.
+                        GVar.changeToOptions = true;//change to options bool to true.
+                        Colours.drawBlackFade = true;//draw black fade in bool to true.
+                        Colours.fadeIn = true;//fade in bool to true.
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Update View Quest Info Buttons.
+        /// </summary>
+        /// <param name="gameTime">GameTime for smooth movement.</param>
         public static void UpdateViewQuestButtons(GameTime gameTime)
         {
-            Vector2 viewQuestInfoButtonPosition = new Vector2();
-
-
-            for (int j = 0; j < Lists.uiElements.Count; j++)
-            {
-                if (Lists.uiElements[j].SpriteID == Textures.UI.questListUI)
-                {
-                    viewQuestInfoButtonPosition = new Vector2(Lists.uiElements[j].SpriteID.Width - 277, Lists.uiElements[j].SpriteID.Height - 366);
-                }
-            }
-
-
+            //cycle through View Quest Info Buttons.
             for (int j = 0; j < Lists.viewQuestInfoButtons.Count; j++)
             {
-                Lists.viewQuestInfoButtons[j].Position = viewQuestInfoButtonPosition;
-                Lists.viewQuestInfoButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                viewQuestInfoButtonPosition.Y += 18;
-                if (MouseManager.mouseBounds.Intersects(Lists.viewQuestInfoButtons[j].Bounds) && InputManager.IsLMPressed())
+                Lists.viewQuestInfoButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update View Quest Info Buttons.
+
+                if (MouseManager.mouseBounds.Intersects(Lists.viewQuestInfoButtons[j].Bounds) && InputManager.IsLMPressed())//check if mouse intersects View Quest Info Buttons and left mouse click.
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.viewQuestInfoButtons[j].Name, 2);
+
+                    //cycle through UIElements.
                     for (int ui = 0; ui < Lists.uiElements.Count; ui++)
                     {
-                        if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && !Lists.uiElements[ui].Draw)
+                        if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && !Lists.uiElements[ui].Draw)//if Sprite is Quest Info UI and is not active.
                         {
-                            Lists.mainWorldButtons.Add(new Button(Textures.Misc.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestInfoUI", "Alive", 0f));
-                            Lists.uiElements[ui].Draw = true;
-                            GVar.questInfo = Lists.quests[j].Description;
-                            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);
+                            Lists.mainWorldButtons.Add(new Button(Textures.Misc.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestInfoUI", "Alive", 0f));//create Close Quest Info UI Button.
+                            Lists.uiElements[ui].Draw = true;//activate View Quest Info UI.
+                            GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
+                            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
                         }
-                        else if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && Lists.uiElements[ui].Draw)
+                        else if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && Lists.uiElements[ui].Draw)//if Sprite is Quest Info UI and is active.
                         {
-                            GVar.questInfo = Lists.quests[j].Description;
-                            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);
+                            GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
+                            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
                         }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Check for location buttons being clicked.
+        /// </summary>
+        /// <param name="i">index number from a for loop.</param>
+        public static void CheckLocationButtonClick(int i)
+        {
+            //check if mouse intersects location button and left mouse click and game not paused.
+            if (MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
+            {
+                SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+                GVar.LogDebugInfo("ButtonClicked: " + Lists.locationButtons[i].Name, 2);
+
+                //if button is Enter Location Button.
+                if (Lists.locationButtons[i].Name == "EnterLocation")
+                {
+                    UI.CloseNPCUI();//deactivate NPC UI.
+
+                    Colours.EnableFadeOutMap();//activate map fade out.
+
+                    //cycle through sub location nodes of current location(only ever one i should change this).
+                    for (int l = 0; l < GVar.player.CurrentLocation.SubLocNode.Count; l++)
+                    {
+                        //cycle through connected location nodes of the sub location node of the current location.
+                        for (int slnc = 0; slnc < GVar.player.CurrentLocation.SubLocNode[l].LocNodeConnections.Count; slnc++)
+                        {
+                            ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.SubLocNode[l].LocNodeConnections[slnc]);//read the xml file of the connected location node of the sub location node of the current location node.
+                            GVar.player.CurrentLocation.SubLocNode[l].LocNodeConnections[slnc].ColourA = 5;//set the alpha colour value of the connected location node of the sub location node of the current location ready for fade in.
+                        }
+                        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.SubLocNode[l]);//read the xml file of the sub location node of the current location.
+                        XmlNode tempNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");//grab the actions tag from the current locations xml file.
+                        Quest.CheckAction(tempNode[GVar.XmlTags.Actions.enter].InnerText, GVar.player.CurrentLocation);//check actions for current active quests.
+
+                        WorldMap.SelectNewMap(GVar.player.CurrentLocation.SubLocNode[l]);//set new map to the sub location of the current location.
+                        GVar.player.CurrentLocation.SubLocNode[l].ColourA = 5;//set the alpha colour value of the sub location of the current location ready for fade in.
+
+                        GVar.LogDebugInfo("LocationChange: " + GVar.player.CurrentLocation.SubLocNode[l].Name, 2);
+
+                        GVar.npc = new NPC();//set NPC to nothing.
+                        Lists.locationButtons.Clear();//clear location buttons ready for next location.
+                        GVar.player.CurrentLocation = GVar.player.CurrentLocation.SubLocNode[l];//set the current location to the sub location of the current location.
+                        CreateLocationButtons(GVar.player.CurrentLocation);//create location buttons for the new current location.
+                    }
+                }
+                //if button is Exit Location Button.
+                else if (Lists.locationButtons[i].Name == "ExitLocation")
+                {
+                    UI.CloseNPCUI();//deactivate NPC UI.
+
+                    Colours.EnableFadeOutMap();//activate map fade out.
+
+                    //cycle through current locations connected main locations(only ever one i should change this)
+                    for (int l = 0; l < GVar.player.CurrentLocation.MainLocNode.Count; l++)
+                    {
+                        //cycle through current locations main locations connected main location nodes.
+                        for (int slnc = 0; slnc < GVar.player.CurrentLocation.MainLocNode[l].LocNodeConnections.Count; slnc++)
+                        {
+                            ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.MainLocNode[l].LocNodeConnections[slnc]);//read current locations connected main locations main location node xml file.
+                            GVar.player.CurrentLocation.MainLocNode[l].LocNodeConnections[slnc].ColourA = 5;//set the alpha colour value of the current locations main locations main location node ready for fade in.
+                        }
+                        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.MainLocNode[l]);//read current location connected main location xml file.
+
+                        GVar.worldMap.SpriteID = Textures.Misc.worldMap;//set current map to world map.
+                        GVar.player.CurrentLocation.MainLocNode[l].ColourA = 5;//set the alpha colour value of the current locations connected main location ready for fade in.
+
+                        GVar.LogDebugInfo("LocationChange: " + GVar.player.CurrentLocation.MainLocNode[l].Name, 2);
+
+                        GVar.npc = new NPC();//set NPC to nothing.
+                        Lists.locationButtons.Clear();//clear location buttons ready for next location.
+                        //check if current locations connected main location is in fact a main location.
+                        if (GVar.player.CurrentLocation.MainLocNode[l].State.Contains("Main"))
+                        {
+                            Button enterLocationButton = new Button(Textures.Button.enterLocationButton, GVar.player.CurrentLocation.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "EnterLocation", "Alive", 0f);//create Enter Location Button.
+                            enterLocationButton.PlayAnimation(GVar.AnimStates.Button.def);//set animation state of EnterLocationButton to default.
+                            Lists.locationButtons.Add(enterLocationButton);//add EnterLocationButton to LocationButtons.
+                        }
+                        GVar.player.CurrentLocation = GVar.player.CurrentLocation.MainLocNode[l];//set current location to current locations connected main location.
+                    }
+                }
+
+                //if current location is not null and current location has been searched.
+                if (GVar.location != null && GVar.location.Searched)
+                {
+                    //if button is NPC Button.
+                    if (Lists.locationButtons[i].Name == "NPCButton")
+                    {
+                        //cycle through MainWorldButtons.
+                        for (int k = 0; k < Lists.mainWorldButtons.Count; k++)
+                        {
+                            //if button is Open Shop Button.
+                            if (Lists.mainWorldButtons[k].Name == "OpenShop")
+                            {
+                                Lists.mainWorldButtons[k].State = "delete";//delete Open Shop Button.
+                            }
+                        }
+                        try
+                        {
+                            XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");//grab npc tag from the current locations xml file.
+                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questfinished].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText));//create new NPC with data from the current locations xml file.
+                            locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");//grab greeting tag inside npc tag from the current locations xml file. 
+
+
+                            if (GVar.npc.HasQuest && !GVar.npc.QuestAccepted)
+                            {
+                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
+                                foreach (UIElement ui in Lists.uiElements)
+                                {
+                                    if (ui.SpriteID == Textures.UI.NPCInfoUI && !ui.Draw)
+                                    {
+                                        Button acceptQuest = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);
+                                        acceptQuest.PlayAnimation(GVar.AnimStates.Button.def);
+                                        Lists.mainWorldButtons.Add(acceptQuest);
+                                    }
+                                }
+                            }
+                            else if (!GVar.npc.HasQuest && GVar.npc.QuestAccepted)
+                            {
+                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;
+                            }
+                            else if (!GVar.npc.HasQuest && GVar.npc.QuestFinished)
+                            {
+                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
+                                foreach (UIElement ui in Lists.uiElements)
+                                {
+                                    if (ui.SpriteID == Textures.UI.NPCInfoUI && !ui.Draw)
+                                    {
+                                        Button handInQuest = new Button(Textures.Misc.pixel, new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);
+                                        handInQuest.PlayAnimation(GVar.AnimStates.Button.def);
+                                        Lists.mainWorldButtons.Add(handInQuest);
+                                    }
+                                }
+                            }
+                            else if (!GVar.npc.HasQuest && GVar.npc.QuestCompleted)
+                            {
+                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questcompleted].InnerText;
+                            }
+                            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, GVar.npcTextWrapLength);
+
+                            locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");
+                            Quest.CheckAction(locNPC[GVar.XmlTags.Actions.talknpc].InnerText, GVar.player.CurrentLocation);
+
+                            foreach (UIElement ui in Lists.uiElements)
+                            {
+                                if (ui.SpriteID == Textures.UI.NPCInfoUI && !ui.Draw)
+                                {
+                                    Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.Button.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
+                                    closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
+                                    Lists.mainWorldButtons.Add(closeNPCUI);
+                                    ui.Draw = true;
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            GVar.npc = new NPC();
+                        }
+                    }
+                    else if (Lists.locationButtons[i].Name == "ShopButton")
+                    {
+                        XmlNode shopKeep = GVar.curLocNode.SelectSingleNode("/location/shop");
+
+                        string greeting = Text.WrapText(Fonts.lucidaConsole14Regular, shopKeep["greeting"].InnerText, GVar.npcTextWrapLength);
+
+                        GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, false, false, false);
+
+                        Button openShop = new Button(Textures.Misc.pixel, Vector2.Zero, new Vector2(25, 15), Color.Yellow, "OpenShop", "Alive", 0f);
+                        
+                        Lists.mainWorldButtons.Add(openShop);
+
+                        foreach (UIElement ui in Lists.uiElements)
+                        {
+                            if (ui.SpriteID == Textures.UI.NPCInfoUI && !ui.Draw)
+                            {
+                                Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(ui.Position.X + ui.Size.X - Textures.Button.closeButton.Width, ui.Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);
+                                closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);
+                                Lists.mainWorldButtons.Add(closeNPCUI);
+                                ui.Draw = true;
+                            }
+                        }
+                    }
+                }
+
+
+                if (GVar.location != null && !GVar.location.Searched)
+                {
+                    if (Lists.locationButtons[i].Name == "LookEyeButton")
+                    {
+                        if (GVar.player.CurrentLocation.State.Contains("Sub"))
+                        {
+                            for (int k = 0; k < GVar.player.CurrentLocation.MainLocNode.Count; k++)
+                            {
+                                Button exitLocationButton = new Button(Textures.Button.exitLocationButton, GVar.player.CurrentLocation.Position, new Vector2(Vector.locationButtonSize.X, Vector.locationButtonSize.Y), Color.White, "ExitLocation", "Alive", 0f);
+                                exitLocationButton.PlayAnimation(GVar.AnimStates.Button.def);
+                                Lists.locationButtons.Add(exitLocationButton);
+                                ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.MainLocNode[k]);
+                                GVar.location.Searched = true;
+                                GVar.player.CurrentLocation.MainLocNode[k].Searched = true;
+                                XmlNode mainLocNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location");
+                                mainLocNode[GVar.XmlTags.LocationTags.searched].InnerText = GVar.location.Searched.ToString();
+                                SaveXml.SaveLocationXmlFile(GVar.player, GVar.player.CurrentLocation.MainLocNode[k]);
+                                GVar.location = null;
+                            }
+                        }
+                        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation);
+                        GVar.location.Searched = true;
+                        GVar.player.CurrentLocation.Searched = true;
+                        XmlNode locNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location");
+                        locNode[GVar.XmlTags.LocationTags.searched].InnerText = GVar.location.Searched.ToString();
+
+                        locNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");
+                        Quest.CheckAction(locNode[GVar.XmlTags.Actions.explore].InnerText, GVar.player.CurrentLocation);
+
+                        SaveXml.SaveLocationXmlFile(GVar.player, GVar.player.CurrentLocation);
+
+                        if (GVar.location.HasNPC)
+                        {
+                            Button npcButton = new Button(Textures.Button.npcButton, GVar.player.CurrentLocation.Position, Vector.locationButtonSize, Color.White, "NPCButton", "Alive", 0f);
+                            npcButton.PlayAnimation(GVar.AnimStates.Button.def);
+                            Lists.locationButtons.Add(npcButton);
+                        }
+
+                        if (GVar.location.HasShop)
+                        {
+                            Button shopButton = new Button(Textures.Misc.pixel, GVar.player.CurrentLocation.Position, Vector.locationButtonSize, Color.Blue, "ShopButton", "Alive", 0f);
+                            shopButton.PlayAnimation(GVar.AnimStates.Button.def);
+                            Lists.locationButtons.Add(shopButton);
+                        }
+
+                        Lists.locationButtons.RemoveAt(i);
                     }
                 }
             }
