@@ -37,10 +37,7 @@ namespace Eternal_Coin
             {
                 if (characterInventory.itemSlots[Lists.inventorySlots[i]].item != null)
                 {
-                    //foreach (Player P in Lists.entity)
-                    //{
-                        GVar.player.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[i]].item);
-                    //}
+                    GVar.player.TakeItemStats(characterInventory.itemSlots[Lists.inventorySlots[i]].item);
                     Item.FromCharacter(characterInventory.itemSlots[Lists.inventorySlots[i]].item, Lists.inventorySlots[i]);
                 }
             }
@@ -184,7 +181,6 @@ namespace Eternal_Coin
                 if (MouseManager.mouseBounds.Intersects(shopInventory.itemSlots[i].bounds) && shopInventory.itemSlots[i].item != null)
                 {
                     spriteBatch.Draw(Textures.Misc.clearPixel, shopInventory.itemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);
-                    //spriteBatch.Draw(shopInventory.itemSlots[i].item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
                     if (mouseInventory.heldItem == null)
                     {
                         if (shopInventory.itemSlots[i].item.ItemClass == GVar.ItemClassName.weapon)
@@ -224,8 +220,7 @@ namespace Eternal_Coin
                     }
                     GVar.DrawBoundingBox(jewl.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
                 }
-
-                //spriteBatch.Draw(mouseInventory.heldItem.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.192f);
+                
 
                 if (GVar.currentGameState == GVar.GameState.inventory)
                 {

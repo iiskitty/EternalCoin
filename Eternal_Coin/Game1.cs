@@ -29,6 +29,7 @@ namespace Eternal_Coin
         /// </summary>
         protected override void Initialize()
         {
+            IsMouseVisible = true;
             //Loads Options.xml to 
             XmlDocument options = new XmlDocument();
             options.Load("./Content/Options.xml");
@@ -93,7 +94,7 @@ namespace Eternal_Coin
             graphics.ApplyChanges();
 
             //setting position of game window to top left corner
-            Window.Position = new Point(10, 10);
+            Window.Position = new Point(150, 50);
 
             //creating lists for game use
             Lists.InitializeLists();
@@ -207,7 +208,7 @@ namespace Eternal_Coin
                 graphics.ApplyChanges();
                 if (!graphics.IsFullScreen)
                 {
-                    Window.Position = new Point(10, 10);
+                    Window.Position = new Point(150, 50);
                 }
                 //opens Options.xml and saves the new value for fullscreen
                 XmlDocument options = new XmlDocument(); //creating an xml document
@@ -276,7 +277,7 @@ namespace Eternal_Coin
             spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
             //draw cursor image
-            spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
+            //spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
 
             //if the gamestate is the same as the one a UIElement has and its draw boolean is true, it will be drawn
             foreach (UIElement ui in Lists.uiElements)

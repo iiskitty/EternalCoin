@@ -260,7 +260,7 @@ namespace Eternal_Coin
             {
                 if (ln.State == "Main")
                 {
-                    ln.SubLocNode.Add(Dictionaries.locNodes[ln.SubLocNodeName]);
+                    ln.SubLocNode = Dictionaries.locNodes[ln.SubLocNodeName];
                     foreach (string locName in ln.LocNodeConName)
                     {
                         if (locName != "null")
@@ -271,7 +271,7 @@ namespace Eternal_Coin
                 }
                 else if (ln.State == "Sub")
                 {
-                    ln.MainLocNode.Add(Dictionaries.locNodes[ln.MainLocNodeName]);
+                    ln.MainLocNode = Dictionaries.locNodes[ln.MainLocNodeName];
                     foreach (string locName in ln.LocNodeConName)
                     {
                         ln.AddConnection(Dictionaries.locNodes[locName]);

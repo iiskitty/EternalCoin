@@ -7,8 +7,8 @@
   <hasshop>false</hasshop>
   <hasenemy>false</hasenemy>
   <npc>
-    <hasquest>False</hasquest>
-    <questaccepted>True</questaccepted>
+    <hasquest>true</hasquest>
+    <questaccepted>false</questaccepted>
     <questfinished>false</questfinished>
     <questcompleted>false</questcompleted>
     <name>John</name>

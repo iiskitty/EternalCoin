@@ -2,7 +2,6 @@
 using System.IO;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 using System.Xml;
 
 namespace Eternal_Coin
@@ -229,14 +228,17 @@ namespace Eternal_Coin
             //Update MainWorldButtons.
             Button.UpdateMainWorldButtons(gameTime);
 
+            //another temp save key combo, cant remember where the other one is.
             if (InputManager.IsKeyDown(Keys.LeftShift) && InputManager.IsKeyPressed(Keys.S))
                 Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
 
-            GVar.player.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
+            GVar.player.Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update the player.
 
+            //if the player intersects the "dock" or "port" of the current location.
             if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
             {
+                //if the location has an enemy and black fade in is disabled and change to battle is disabled and location has been searched...the fuck.
                 if (GVar.location.HasEnemy && !Colours.fadeIn && !GVar.changeToBattle && GVar.location.Searched)
                 {
                     Colours.fadeIn = true;
@@ -244,107 +246,131 @@ namespace Eternal_Coin
                     GVar.changeToBattle = true;
                 }
 
-                Colours.UpdateMainAlphas(GVar.player.CurrentLocation);
+                Colours.UpdateMainAlphas(GVar.player.CurrentLocation);//update alpha colours of locations buttons and location nodes.
 
+                //cycle through LocationButtons.
                 for (int j = 0; j < Lists.locationButtons.Count; j++)
                 {
-                    Updates.UpdateGameButtons(Lists.locationButtons[j], GVar.player, gameTime);
+                    Updates.UpdateGameButtons(Lists.locationButtons[j], GVar.player, gameTime);//upate the LocationButtons.
 
-                    Button.CheckLocationButtonClick(j);
+                    Button.CheckLocationButtonClick(j);//Check for click on LocationButtons.
                 }
             }
+            //if the player does not intersect the "dock" or "port" of the current location.
             if (!GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
             {
-                GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation);
-                GVar.worldMap.MapMovement((float)gameTime.ElapsedGameTime.TotalSeconds);
+                GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation);//set the maps movement speed(the whole map moves around the player, the player does not move at all)
+                GVar.worldMap.MapMovement((float)gameTime.ElapsedGameTime.TotalSeconds);//move the map.
             }
-            else
+            else//for what ever reason the above does not work.
             {
-                GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation);
-                GVar.worldMap.MapMovement((float)gameTime.ElapsedGameTime.TotalSeconds);
+                GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation);//make sure the maps movement speed is set.
+                GVar.worldMap.MapMovement((float)gameTime.ElapsedGameTime.TotalSeconds);//move the map.
             }
 
-            GVar.player.CurrentLocation.HandleMovement(GVar.worldMap.Position);
+            //update the player.
             GVar.player.CurrentLocation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            int count = 0;
+            //keeps the current locations node in the right position when the map is moving.
+            GVar.player.CurrentLocation.HandleMovement(GVar.worldMap.Position);
+            int count = 0;//int counter.
 
+            //if the current locations connecting location nodes count is greater than zero.
             if (GVar.player.CurrentLocation.LocNodeConnections.Count > 0)
-                count = GVar.player.CurrentLocation.LocNodeConnections.Count;
+                count = GVar.player.CurrentLocation.LocNodeConnections.Count;//set counter to ammount of connecting location nodes of the current location.
             else
-                count = 1;
+                count = 1;//if there are no connecting locations set counter to 1???
 
+            //for loop with counter as max.
             for (int j = 0; j < count; j++)
             {
+                //again check for connecting locations.
                 if (GVar.player.CurrentLocation.LocNodeConnections.Count > 0)
-                    GVar.player.CurrentLocation.LocNodeConnections[j].HandleMovement(GVar.worldMap.Position);
+                    GVar.player.CurrentLocation.LocNodeConnections[j].HandleMovement(GVar.worldMap.Position);//keeps the current locations connecting locations nodes in the right position when the map is moving.
                 
+                //why am i doing this.
                 if (GVar.player.CurrentLocation.LocNodeConnections.Count > 0)
                 {
+                    //if the mouse intersects and connting location nodes and left mouse is pressed and the game is not paused.
                     if (MouseManager.mouseBounds.Intersects(GVar.player.CurrentLocation.LocNodeConnections[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                     {
-                        UI.CloseNPCUI();
+                        UI.CloseNPCUI();//deactivate NPC UI.
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clicklocnode]);
-                        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);
-                        GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);
-                        foreach (LocationNode LN in GVar.player.CurrentLocation.LocNodeConnections[j].LocNodeConnections)
+                        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);//read the current locations connceting locations xml file.
+                        GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);//set the movement speed of the map.
+
+                        //cycle through the current location nodes connected locations connected location nodes.
+                        for (int k = 0; k < GVar.player.CurrentLocation.LocNodeConnections[j].LocNodeConnections.Count; k++)
                         {
-                            if (LN.Name != GVar.player.CurrentLocation.Name)
+                            //if the current locations connected location connected locations name is not the current locations name.
+                            if (GVar.player.CurrentLocation.LocNodeConnections[j].LocNodeConnections[k].Name != GVar.player.CurrentLocation.Name)
                             {
-                                LN.ColourA = 5;
+                                GVar.player.CurrentLocation.LocNodeConnections[j].LocNodeConnections[k].ColourA = 5;//set the alpha colour value of the node ready for fade in.
                             }
                         }
                         GVar.LogDebugInfo("LocationChange: " + GVar.player.CurrentLocation.LocNodeConnections[j].Name, 2);
 
 
-                        GVar.npc = new NPC();
-                        Lists.locationButtons.Clear();
-                        Button.CreateLocationButtons(GVar.player.CurrentLocation.LocNodeConnections[j]);
+                        GVar.npc = new NPC();//set NPC to nothing.
+                        Lists.locationButtons.Clear();//clear the location buttons ready for next location.
+                        Button.CreateLocationButtons(GVar.player.CurrentLocation.LocNodeConnections[j]);//create location buttons for new location.
 
-                        XmlNode tempNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");
-                        Quest.CheckAction(tempNode[GVar.XmlTags.Actions.enter].InnerText, GVar.player.CurrentLocation.LocNodeConnections[j]);
+                        XmlNode tempNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");//grab the actions tag of the next locations xml file.
+                        Quest.CheckAction(tempNode[GVar.XmlTags.Actions.enter].InnerText, GVar.player.CurrentLocation.LocNodeConnections[j]);//check the action against any active quests.
 
-                        GVar.player.CurrentLocation = GVar.player.CurrentLocation.LocNodeConnections[j];
+                        GVar.player.CurrentLocation = GVar.player.CurrentLocation.LocNodeConnections[j];//set the current location to the current locations connected location.
                         break;
                     }
-                    GVar.player.CurrentLocation.LocNodeConnections[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    GVar.player.CurrentLocation.LocNodeConnections[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update connecting location nodes of the current location.
                 }
 
             }
         }
 
+        /// <summary>
+        /// Loads the main world.
+        /// </summary>
         public static void LoadMainWorld()
         {
-            string folderDir = "Content/GameFiles/" + GVar.playerName;
-            string locationTemplate = "Content/LocationTemplates/" + GVar.storyName;
+            string folderDir = "Content/GameFiles/" + GVar.playerName;//set string for directory of current players game files.
+            string locationTemplate = "Content/LocationTemplates/" + GVar.storyName;//set string for directory of current story being played.
 
+            //check if player game files does not exist.
             if (!Directory.Exists(folderDir))
             {
-                Directory.CreateDirectory(folderDir);
+                Directory.CreateDirectory(folderDir);//create directory for game files.
 
-                DirectoryCopy(locationTemplate, folderDir, true);
+                DirectoryCopy(locationTemplate, folderDir, true);//copy the files for the story being played.
 
-                GVar.loadData = true;
+                GVar.loadData = true;//data loaded.
             }
 
-            Button quests = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);
-            Button inventory = new Button(Textures.Button.inventoryButton, new Vector2(), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);
-            Lists.mainWorldButtons.Add(inventory);
-            Lists.mainWorldButtons.Add(quests);
+            Button quests = new Button(Textures.Misc.pixel, new Vector2(), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);//create button for quests.
+            Button inventory = new Button(Textures.Button.inventoryButton, new Vector2(), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);//create button for inventory.
+            Lists.mainWorldButtons.Add(inventory);//add inventory button to MainWorldButtons.
+            Lists.mainWorldButtons.Add(quests);//add quests button to MainWorldButtons.
 
+            //cycle through the current locations connecting locations.
             for (int k = 0; k < GVar.player.CurrentLocation.LocNodeConnections.Count; k++)
             {
-                ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[k]);
+                ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[k]);//read the current locations connecting locations xml file.
             }
-            ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation);
-            GameTime gameTime = new GameTime();
-            GVar.player.CurrentLocation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            GVar.worldMap.SetMapPosition(GVar.player.CurrentLocation);
+            ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation);//read the current locations xml file.
+            GameTime gameTime = new GameTime();//gameTime???
+            GVar.player.CurrentLocation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);//Update the current location once, sets positions and such.
+            GVar.worldMap.SetMapPosition(GVar.player.CurrentLocation);//set the map position on the current locations position.
 
-            Button.CreateLocationButtons(GVar.player.CurrentLocation);
+            Button.CreateLocationButtons(GVar.player.CurrentLocation);//create location buttons for the current locations.
 
-            GVar.npc = new NPC();
+            GVar.npc = new NPC();//set NPC to nothing.
         }
 
+        /// <summary>
+        /// Copies an entire directory from one place to another.
+        /// I did not wright this code, but I don't remember where I got it from.
+        /// </summary>
+        /// <param name="sourceDirName">Directory the files are coming from.</param>
+        /// <param name="destDirName">Directory the files are going to.</param>
+        /// <param name="copySubDirs">copy sub directories or not.</param>
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
         {
             // Get the subdirectories for the specified directory.

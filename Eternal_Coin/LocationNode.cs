@@ -1,19 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
 
 namespace Eternal_Coin
 {
     public abstract class Node : AnimationManager
     {
         protected List<LocationNode> locNodeConnections;
-        protected List<LocationNode> mainLocNode;
-        protected List<LocationNode> subLocNode;
+        protected LocationNode mainLocNode;
+        protected LocationNode subLocNode;
         protected string locationFilePath;
         protected Rectangle bounds;
         protected Rectangle playerPort;
@@ -75,8 +70,8 @@ namespace Eternal_Coin
         public string LocName { get { return locName; } set { locName = value; } }
         public string LocatoinFilePath { get { return locationFilePath; } set { locationFilePath = value; } }
         public List<LocationNode> LocNodeConnections { get { return locNodeConnections; } }
-        public List<LocationNode> SubLocNode { get { return subLocNode; } set { subLocNode = value; } }
-        public List<LocationNode> MainLocNode { get { return mainLocNode; } set { mainLocNode = value; } }
+        public LocationNode SubLocNode { get { return subLocNode; } set { subLocNode = value; } }
+        public LocationNode MainLocNode { get { return mainLocNode; } set { mainLocNode = value; } }
         public bool Searched { get { return searched; } set { searched = value; } }
         public string MainName { get { return mainName; } set { mainName = value; } }
         public string MainLocNodeName { get { return mainLocNodeName; } set { mainLocNodeName = value; } }
@@ -92,8 +87,8 @@ namespace Eternal_Coin
             AddAnimation(1, 0, 0, "LocationNode", spriteID.Width, spriteID.Height, Vector2.Zero);
             PlayAnimation("LocationNode");
             locNodeConnections = new List<LocationNode>();
-            subLocNode = new List<LocationNode>();
-            mainLocNode = new List<LocationNode>();
+            subLocNode = null;
+            mainLocNode = null;
             locNodeConName = new List<string>();
         }
 

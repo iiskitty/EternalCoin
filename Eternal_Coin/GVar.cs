@@ -21,7 +21,7 @@ namespace Eternal_Coin
         public static string verNum = "Alpha 0.34";
 
         /// <summary>
-        /// XmlDocument for Entity.CurrentLocation[0]
+        /// Set to what ever location is passed into ReadLocationXmlFile function in ReadXml.cs.
         /// </summary>
         public static XmlDocument curLocNode = new XmlDocument();
 
