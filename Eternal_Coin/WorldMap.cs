@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
-using System.IO;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Audio;
-using System.Xml;
 
 namespace Eternal_Coin
 {
@@ -39,8 +31,8 @@ namespace Eternal_Coin
 
         public void SetMapSpeed(Entity player, Node locationNode)
         {
-            this.playerPosition = new Vector2(player.Position.X, player.Position.Y);
-            this.nodePosition = new Vector2(locationNode.PlayerPort.X, locationNode.PlayerPort.Y);
+            playerPosition = new Vector2(player.Position.X, player.Position.Y);
+            nodePosition = new Vector2(locationNode.PlayerPort.X, locationNode.PlayerPort.Y);
 
             //distanceX = 60 * (x / (x + y)) and distanceY = 60 * (y / (x + y))
 

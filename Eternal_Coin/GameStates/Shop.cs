@@ -16,7 +16,7 @@ namespace Eternal_Coin
         {
             XmlNodeList itemList = shopDoc.SelectNodes("/location/shop/inventory/item");
 
-            for (int i = 0; i < itemList.Count; i++)//foreach (XmlNode item in itemList)
+            for (int i = 0; i < itemList.Count; i++)
             {
                 Item shopItem = ItemBuilder.BuildItem(Dictionaries.items[itemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
 

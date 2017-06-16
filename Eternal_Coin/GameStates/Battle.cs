@@ -38,9 +38,9 @@ namespace Eternal_Coin
                 battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), GVar.player.Name, "Alive", new Vector2(), Color.White, GVar.player.Health, GVar.player.Armour, GVar.player.Damage);
                 try
                 {
-                    foreach (string atkID in Lists.availableAttacksIDs)
+                    for (int i = 0; i < Lists.availableAttacksIDs.Count; i++)
                     {
-                        GVar.LogDebugInfo("Attack ID: " + atkID, 1);
+                        GVar.LogDebugInfo("Attack ID: " + Lists.availableAttacksIDs[i], 1);
                     }
                 }
                 catch (Exception e)
@@ -115,16 +115,16 @@ namespace Eternal_Coin
                         loot.Add(Dictionaries.items[lootItem[GVar.XmlTags.ItemTags.itemname].InnerText]); //adds items to the loot List
                     }
                     Vector2 itemPos = new Vector2();
-                    foreach (UIElement ui in Lists.uiElements)
+                    for (int i = 0; i < Lists.uiElements.Count; i++)
                     {
-                        if (ui.SpriteID == Textures.UI.endBattleUI)
+                        if (Lists.uiElements[i].SpriteID == Textures.UI.endBattleUI)
                         {
-                            itemPos = new Vector2(ui.Position.X + 14, ui.Position.Y + 56); 
+                            itemPos = new Vector2(Lists.uiElements[i].Position.X + 14, Lists.uiElements[i].Position.Y + 56); 
                         }
                     }
-                    foreach (Item item in loot)
+                    for (int i = 0; i < loot.Count; i++)
                     {
-                        item.Position = itemPos; //sets items position to the UI's position
+                        loot[i].Position = itemPos; //sets items position to the UI's position
                         itemPos.X += 82;
                     }
                 }
@@ -141,13 +141,13 @@ namespace Eternal_Coin
             }
 
             //adds attack animations to created battlEnemy
-            foreach (string eAtkID in Lists.enemyAttackIDs)
+            for (int i = 0; i < Lists.enemyAttackIDs.Count; i++)
             {
-                foreach (AttackAnim eAtkAnim in Dictionaries.enemyAttacks[eAtkID].AttackAnims)
+                for (int j = 0; j < Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims.Count; j++)
                 {
                     try
                     {
-                        battleEnemy.AddAnimation(eAtkAnim.Frames, eAtkAnim.YPos, eAtkAnim.XPos, eAtkAnim.ID, eAtkAnim.Width, eAtkAnim.Height, Vector2.Zero);
+                        battleEnemy.AddAnimation(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].Frames, Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].YPos, Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].XPos, Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].ID, Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].Width, Dictionaries.enemyAttacks[Lists.enemyAttackIDs[i]].AttackAnims[j].Height, Vector2.Zero);
                     }
                     catch
                     {
@@ -157,13 +157,13 @@ namespace Eternal_Coin
             }
 
             //adds attack animations to created battlePlayer
-            foreach (string atkID in Lists.availableAttacksIDs)
+            for (int i = 0; i < Lists.availableAttacksIDs.Count; i++)
             {
-                foreach (AttackAnim atkAnim in Dictionaries.availableAttacks[atkID].AttackAnims)
+                for (int j = 0; j < Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims.Count; j++)
                 {
                     try
                     {
-                        battlePlayer.AddAnimation(atkAnim.Frames, atkAnim.YPos, atkAnim.XPos, atkAnim.ID, atkAnim.Width, atkAnim.Height, Vector2.Zero);
+                        battlePlayer.AddAnimation(Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].Frames, Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].YPos, Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].XPos, Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].ID, Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].Width, Dictionaries.availableAttacks[Lists.availableAttacksIDs[i]].AttackAnims[j].Height, Vector2.Zero);
                     }
                     catch
                     {
@@ -189,18 +189,18 @@ namespace Eternal_Coin
 
             Vector2 pos = new Vector2();
 
-            foreach (UIElement ui in Lists.uiElements)
+            for (int i = 0; i < Lists.uiElements.Count; i++)
             {
-                if (ui.SpriteID == Textures.UI.battleUI)
+                if (Lists.uiElements[i].SpriteID == Textures.UI.battleUI)
                 {
-                    pos.X = ui.Position.X + 473;
-                    pos.Y = ui.Position.Y + 35;
+                    pos.X = Lists.uiElements[i].Position.X + 473;
+                    pos.Y = Lists.uiElements[i].Position.Y + 35;
                 }
             }
 
-            foreach (Object B in Lists.attackButtons)
+            for (int i = 0; i < Lists.attackButtons.Count; i++)
             {
-                B.Position = pos;
+                Lists.attackButtons[i].Position = pos;
                 pos.X += 30;
             }
         }
@@ -267,25 +267,25 @@ namespace Eternal_Coin
             }
                 
 
-            foreach (Object B in Lists.attackButtons)
+            for (int i = 0; i < Lists.attackButtons.Count; i++)
             {
-                B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                Lists.attackButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                 
-                if (MouseManager.mouseBounds.Intersects(B.Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle && !battleWon)
+                if (MouseManager.mouseBounds.Intersects(Lists.attackButtons[i].Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle && !battleWon)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     try
                     {
-                        currentAttackType = Dictionaries.availableAttacks[B.State].Type;
+                        currentAttackType = Dictionaries.availableAttacks[Lists.attackButtons[i].State].Type;
                         try
                         {
-                            currentAttackProj = Dictionaries.availableAttacks[B.State].MagicProjectile;
+                            currentAttackProj = Dictionaries.availableAttacks[Lists.attackButtons[i].State].MagicProjectile;
                         }
                         catch (Exception e)
                         {
                             GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                         }
-                        battlePlayer.SetAttack(Dictionaries.availableAttacks[B.State]);
+                        battlePlayer.SetAttack(Dictionaries.availableAttacks[Lists.attackButtons[i].State]);
                         battlePlayer.PlayAnimation(GVar.AttackAnimStates.buildUp);
                     }
                     catch (Exception e)
@@ -297,49 +297,46 @@ namespace Eternal_Coin
 
             if (battleWon)
             {
-                foreach (Object B in Lists.battleSceneButtons)
+                for (int i = 0; i < Lists.battleSceneButtons.Count; i++)
                 {
-                    B.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    Lists.battleSceneButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                    if (MouseManager.mouseBounds.Intersects(B.Bounds))
+                    if (MouseManager.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds))
                     {
-                        B.PlayAnimation(GVar.AnimStates.Button.mouseover);
+                        Lists.battleSceneButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
 
                         if (InputManager.IsLMPressed() && battleWon)
                         {
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-                            if (B.Name == "Continue")
+                            if (Lists.battleSceneButtons[i].Name == "Continue")
                             {
                                 XmlDocument battleDoc = new XmlDocument();
-                                //foreach (Entity E in Lists.entity)
-                                //{
-                                    battleDoc.Load("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
-                                    XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
-                                    hasEnemy["hasenemy"].InnerText = "False";
-                                    battleDoc.Save("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
-                                    GVar.location.HasEnemy = false;
-                                //}
+                                battleDoc.Load("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
+                                XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
+                                hasEnemy["hasenemy"].InnerText = "False";
+                                battleDoc.Save("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
+                                GVar.location.HasEnemy = false;
                                 battleWon = false;
-                                foreach(UIElement ui in Lists.uiElements)
+                                for (int j = 0; j < Lists.uiElements.Count; j++)
                                 {
-                                    if (ui.SpriteID == Textures.UI.endBattleUI)
+                                    if (Lists.uiElements[i].SpriteID == Textures.UI.endBattleUI)
                                     {
-                                        ui.Draw = false;
+                                        Lists.uiElements[i].Draw = false;
                                     }
                                 }
                                 GVar.changeBackToGame = true;
                                 Colours.drawBlackFade = true;
                                 Colours.fadeIn = true;
                                 GVar.silverMoney += silverReward;
-                                for (int i = 0; i < loot.Count; i++)
+                                for (int j = 0; j < loot.Count; j++)
                                 {
-                                    for (int j = 0; j < 40; j++)
+                                    for (int k = 0; k < 40; k++)
                                     {
-                                        if (InventoryManager.playerInventory.itemSlots[j].item == null)
+                                        if (InventoryManager.playerInventory.itemSlots[k].item == null)
                                         {
-                                            Item item = ItemBuilder.BuildItem(loot[i]);
+                                            Item item = ItemBuilder.BuildItem(loot[j]);
                                             Lists.playerItems.Add(item);
-                                            InventoryManager.playerInventory.itemSlots[j].item = item;
+                                            InventoryManager.playerInventory.itemSlots[k].item = item;
                                             break;
                                         }
                                     }
@@ -347,44 +344,44 @@ namespace Eternal_Coin
                             }
                         }
                     }
-                    if (!MouseManager.mouseBounds.Intersects(B.Bounds) && B.CurrentAnimation != GVar.AnimStates.Button.def)
+                    if (!MouseManager.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds) && Lists.battleSceneButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
                     {
-                        B.PlayAnimation(GVar.AnimStates.Button.def);
+                        Lists.battleSceneButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
                     }
                 }
-                foreach (Item item in loot)
+                for (int i = 0; i < loot.Count; i++)
                 {
-                    item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    loot[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                 }
             }
         }
 
         public static void DrawPlayerInfo(SpriteBatch spriteBatch)
         {
-            foreach (UIElement ui in Lists.uiElements)
+            for (int i = 0; i < Lists.uiElements.Count; i++)
             {
-                if (ui.SpriteID == Textures.UI.battleUI)
+                if (Lists.uiElements[i].SpriteID == Textures.UI.battleUI)
                 {
-                    spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)ui.Position.X + 10, (int)ui.Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battlePlayer.Name, new Vector2(ui.Position.X + 62, ui.Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Damage: " + battlePlayer.Damage.ToString(), new Vector2(ui.Position.X + 33, ui.Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Armor: " + battlePlayer.Armour.ToString(), new Vector2(ui.Position.X + 316, ui.Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Health: " + battlePlayer.Health.ToString(), new Vector2(ui.Position.X + 176, ui.Position.Y + 114), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)Lists.uiElements[i].Position.X + 10, (int)Lists.uiElements[i].Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battlePlayer.Name, new Vector2(Lists.uiElements[i].Position.X + 62, Lists.uiElements[i].Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Damage: " + battlePlayer.Damage.ToString(), new Vector2(Lists.uiElements[i].Position.X + 33, Lists.uiElements[i].Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Armor: " + battlePlayer.Armour.ToString(), new Vector2(Lists.uiElements[i].Position.X + 316, Lists.uiElements[i].Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Health: " + battlePlayer.Health.ToString(), new Vector2(Lists.uiElements[i].Position.X + 176, Lists.uiElements[i].Position.Y + 114), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
                 }
             }
         }
 
         public static void DrawEnemyInfo(SpriteBatch spriteBatch)
         {
-            foreach (UIElement ui in Lists.uiElements)
+            for (int i = 0; i < Lists.uiElements.Count; i++)
             {
-                if (ui.SpriteID == Textures.UI.battleUI)
+                if (Lists.uiElements[i].SpriteID == Textures.UI.battleUI)
                 {
-                    spriteBatch.Draw(Dictionaries.eDisplayPictures[GVar.eDisplayPicID].displayPic, new Rectangle((int)ui.Position.X + 861, (int)ui.Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battleEnemy.Name, new Vector2(ui.Position.X + 912, ui.Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Damage: " + battleEnemy.Damage.ToString(), new Vector2(ui.Position.X + 883, ui.Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Armor: " + battleEnemy.Armor.ToString(), new Vector2(ui.Position.X + 1136, ui.Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Health: " + battleEnemy.Health.ToString(), new Vector2(ui.Position.X + 1026, ui.Position.Y + 114), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.Draw(Dictionaries.eDisplayPictures[GVar.eDisplayPicID].displayPic, new Rectangle((int)Lists.uiElements[i].Position.X + 861, (int)Lists.uiElements[i].Position.Y + 10, 50, 50), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, battleEnemy.Name, new Vector2(Lists.uiElements[i].Position.X + 912, Lists.uiElements[i].Position.Y + 32), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Damage: " + battleEnemy.Damage.ToString(), new Vector2(Lists.uiElements[i].Position.X + 883, Lists.uiElements[i].Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Armor: " + battleEnemy.Armor.ToString(), new Vector2(Lists.uiElements[i].Position.X + 1136, Lists.uiElements[i].Position.Y + 227), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+                    spriteBatch.DrawString(Fonts.lucidaConsole10Regular, "Health: " + battleEnemy.Health.ToString(), new Vector2(Lists.uiElements[i].Position.X + 1026, Lists.uiElements[i].Position.Y + 114), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
                 }
             }
         }
@@ -402,44 +399,44 @@ namespace Eternal_Coin
 
             if (battleWon)
             {
-                foreach (UIElement ui in Lists.uiElements)
+                for (int i = 0; i < Lists.uiElements.Count; i++)
                 {
-                    if (ui.SpriteID == Textures.UI.endBattleUI)
+                    if (Lists.uiElements[i].SpriteID == Textures.UI.endBattleUI)
                     {
-                        spriteBatch.DrawString(Fonts.lucidaConsole16Regular, "You defeated " + battleEnemy.Name + "!", new Vector2(ui.Position.X + 123, ui.Position.Y + 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
-                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Silver: " + silverReward, new Vector2(ui.Position.X + 160, ui.Position.Y + 135), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole16Regular, "You defeated " + battleEnemy.Name + "!", new Vector2(Lists.uiElements[i].Position.X + 123, Lists.uiElements[i].Position.Y + 5), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Silver: " + silverReward, new Vector2(Lists.uiElements[i].Position.X + 160, Lists.uiElements[i].Position.Y + 135), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.182f);
                     }
                 }
-                foreach (Object B in Lists.battleSceneButtons)
+                for (int i = 0; i < Lists.battleSceneButtons.Count; i++)
                 {
-                    B.Update(gameTime);
-                    B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.182f, 0f, Vector2.Zero);
+                    Lists.battleSceneButtons[i].Update(gameTime);
+                    Lists.battleSceneButtons[i].Draw(spriteBatch, Lists.battleSceneButtons[i].SpriteID, Lists.battleSceneButtons[i].Bounds, 0.182f, 0f, Vector2.Zero);
                 }
-                foreach (Item item in loot)
+                for (int i = 0; i < loot.Count; i++)
                 {
-                    item.Update(gameTime);
-                    item.Draw(spriteBatch, item.SpriteID, item.Bounds, 0.183f, 0f, Vector2.Zero);
+                    loot[i].Update(gameTime);
+                    loot[i].Draw(spriteBatch, loot[i].SpriteID, loot[i].Bounds, 0.183f, 0f, Vector2.Zero);
 
-                    if (MouseManager.mouseBounds.Intersects(item.Bounds))
+                    if (MouseManager.mouseBounds.Intersects(loot[i].Bounds))
                     {
                         Vector2 position = new Vector2(MouseManager.GetMousePosition().X, MouseManager.GetMousePosition().Y - Textures.UI.itemInfoUI.Height);
                         spriteBatch.Draw(Textures.UI.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.UI.itemInfoUI.Width, Textures.UI.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
-                        spriteBatch.Draw(item.SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
-                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
+                        spriteBatch.Draw(loot[i].SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, loot[i].ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
 
-                        if (item.ItemClass.Contains(GVar.ItemClassName.armor))
+                        if (loot[i].ItemClass.Contains(GVar.ItemClassName.armor))
                         {
-                            Armor armor = (Armor)item;
+                            Armor armor = (Armor)loot[i];
                             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + armor.ArmorValue.ToString(), new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
                         }
-                        else if (item.ItemClass.Contains(GVar.ItemClassName.weapon))
+                        else if (loot[i].ItemClass.Contains(GVar.ItemClassName.weapon))
                         {
-                            Weapon weapon = (Weapon)item;
+                            Weapon weapon = (Weapon)loot[i];
                             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + weapon.Damage.ToString(), new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
                         }
-                        else if (item.ItemClass.Contains(GVar.ItemClassName.jewellry))
+                        else if (loot[i].ItemClass.Contains(GVar.ItemClassName.jewellry))
                         {
-                            Jewellry jewl = (Jewellry)item;
+                            Jewellry jewl = (Jewellry)loot[i];
                             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, jewl.ItemName, new Vector2(position.X + 99, position.Y + 27), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);
                             if (jewl.eternalCoinSlot.item != null)
                             {
@@ -471,10 +468,10 @@ namespace Eternal_Coin
                 spriteBatch.DrawString(Fonts.lucidaConsole14Regular, timer.ToString(), new Vector2(1200, 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
             }
 
-            foreach (Object B in Lists.attackButtons)
+            for (int i = 0; i < Lists.attackButtons.Count; i++)
             {
-                B.Update(gameTime);
-                B.Draw(spriteBatch, B.SpriteID, B.Bounds, 0.1801f, 0f, Vector2.Zero);
+                Lists.attackButtons[i].Update(gameTime);
+                Lists.attackButtons[i].Draw(spriteBatch, Lists.attackButtons[i].SpriteID, Lists.attackButtons[i].Bounds, 0.1801f, 0f, Vector2.Zero);
             }
 
             InventoryManager.DrawMiniInventory(spriteBatch, InventoryManager.characterInventory);

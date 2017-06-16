@@ -113,21 +113,21 @@ namespace Eternal_Coin
         /// <param name="node"></param>
         public static void UpdateMainAlphas(LocationNode node)
         {
-            foreach (Object LB in Lists.locationButtons)
+            for (int i = 0; i < Lists.locationButtons.Count; i++)
             {
-                if (LB.ColourA < 250)
+                if (Lists.locationButtons[i].ColourA < 250)
                 {
-                    LB.ColourA += 10;
+                    Lists.locationButtons[i].ColourA += 10;
                 }
             }
 
             if (node.ColourA < 250)
                 node.ColourA += 10;
 
-            foreach (LocationNode LN in node.LocNodeConnections)
+            for (int i = 0; i < node.LocNodeConnections.Count; i++)
             {
-                if (LN.ColourA < 250)
-                    LN.ColourA += 10;
+                if (node.LocNodeConnections[i].ColourA < 250)
+                    node.LocNodeConnections[i].ColourA += 10;
             }
         }
 

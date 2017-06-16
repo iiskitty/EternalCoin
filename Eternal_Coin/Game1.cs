@@ -133,14 +133,14 @@ namespace Eternal_Coin
             //loading display pictures(for choosing characters)
             Load.LoadDisplayPictures(Content);
             //loading all attacks for all display pictures(characters)
-            foreach (string dpid in Lists.displayPictureIDs)
+            for (int i = 0; i < Lists.displayPictureIDs.Count; i++)
             {
-                Attack.LoadAttacks(Content, dpid);
+                Attack.LoadAttacks(Content, Lists.displayPictureIDs[i]);
             }
             //loading all attacks for all ememies
-            foreach (string dpid in Lists.eDisplayPictureIDs)
+            for (int i = 0; i < Lists.eDisplayPictureIDs.Count; i++)
             {
-                Attack.LoadEnemyAttacks(Content, dpid);
+                Attack.LoadEnemyAttacks(Content, Lists.eDisplayPictureIDs[i]);
             }
         }
 
@@ -280,11 +280,11 @@ namespace Eternal_Coin
             //spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
 
             //if the gamestate is the same as the one a UIElement has and its draw boolean is true, it will be drawn
-            foreach (UIElement ui in Lists.uiElements)
+            for (int i = 0; i < Lists.uiElements.Count; i++)
             {
-                if (ui.GameState == GVar.currentGameState && ui.Draw)
+                if (Lists.uiElements[i].GameState == GVar.currentGameState && Lists.uiElements[i].Draw)
                 {
-                    UI.DrawUIElement(spriteBatch, ui.SpriteID, ui.Position, ui.Size, ui.Layer);
+                    UI.DrawUIElement(spriteBatch, Lists.uiElements[i].SpriteID, Lists.uiElements[i].Position, Lists.uiElements[i].Size, Lists.uiElements[i].Layer);
                 }
             }
 

@@ -106,18 +106,18 @@ namespace Eternal_Coin
             if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
             {
                 //Update and Draw the location buttons(The eye, NPC and shop button, exit and enter button)
-                foreach (Object LB in Lists.locationButtons)
+                for (int i = 0; i < Lists.locationButtons.Count; i++)
                 {
-                    LB.Update(gameTime);
-                    LB.Draw(spriteBatch, LB.SpriteID, LB.Bounds, 0.17f, 0f, Vector2.Zero);
+                    Lists.locationButtons[i].Update(gameTime);
+                    Lists.locationButtons[i].Draw(spriteBatch, Lists.locationButtons[i].SpriteID, Lists.locationButtons[i].Bounds, 0.17f, 0f, Vector2.Zero);
 
-                    if (MouseManager.mouseBounds.Intersects(LB.Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
+                    if (MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
                     {
-                        LB.PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover if the mouse is hovering over a button.
+                        Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover if the mouse is hovering over a button.
                     }
-                    if (LB.CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(LB.Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
+                    if (Lists.locationButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
                     {
-                        LB.PlayAnimation(GVar.AnimStates.Button.def);//change the animation state to default if the mouse is not hovering over a button.
+                        Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change the animation state to default if the mouse is not hovering over a button.
                     }
                 }
             }
@@ -127,10 +127,10 @@ namespace Eternal_Coin
             GVar.player.CurrentLocation.Draw(spriteBatch, GVar.player.CurrentLocation.SpriteID, GVar.player.CurrentLocation.Bounds, 0.17f, 0f, Vector2.Zero);
 
             //update and draw connecting location nodes of the current location node.
-            foreach (Node conLocNode in GVar.player.CurrentLocation.LocNodeConnections)
+            for (int i = 0; i < GVar.player.CurrentLocation.LocNodeConnections.Count; i++)
             {
-                conLocNode.Update(gameTime);
-                conLocNode.Draw(spriteBatch, conLocNode.SpriteID, conLocNode.Bounds, 0.17f, 0f, Vector2.Zero);
+                GVar.player.CurrentLocation.LocNodeConnections[i].Update(gameTime);
+                GVar.player.CurrentLocation.LocNodeConnections[i].Draw(spriteBatch, GVar.player.CurrentLocation.LocNodeConnections[i].SpriteID, GVar.player.CurrentLocation.LocNodeConnections[i].Bounds, 0.17f, 0f, Vector2.Zero);
             }
             //}
         }
@@ -392,19 +392,19 @@ namespace Eternal_Coin
 
             // Get the files in the directory and copy them to the new location.
             FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
+            for (int i = 0; i < files.Length; i++)//foreach (FileInfo file in files)
             {
-                string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, false);
+                string temppath = Path.Combine(destDirName, files[i].Name);
+                files[i].CopyTo(temppath, false);
             }
 
             // If copying subdirectories, copy them and their contents to new location. 
             if (copySubDirs)
             {
-                foreach (DirectoryInfo subdir in dirs)
+                for (int i = 0; i < dirs.Length; i++)//foreach (DirectoryInfo subdir in dirs)
                 {
-                    string temppath = Path.Combine(destDirName, subdir.Name);
-                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                    string temppath = Path.Combine(destDirName, dirs[i].Name);
+                    DirectoryCopy(dirs[i].FullName, temppath, copySubDirs);
                 }
             }
         }

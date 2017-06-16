@@ -346,12 +346,12 @@ namespace Eternal_Coin
         /// </summary>
         public static void LoadDefaultAttack()
         {
-            foreach (string atkID in Lists.attackIDs)
+            for (int i = 0; i < Lists.attackIDs.Count; i++)
             {
-                if (atkID == "DefaultPunch")
+                if (Lists.attackIDs[i] == "DefaultPunch")
                 {
-                    Lists.availableAttacksIDs.Add(atkID);
-                    Dictionaries.availableAttacks.Add(atkID, Dictionaries.attacks[atkID]);
+                    Lists.availableAttacksIDs.Add(Lists.attackIDs[i]);
+                    Dictionaries.availableAttacks.Add(Lists.attackIDs[i], Dictionaries.attacks[Lists.attackIDs[i]]);
                 }
             }
         }

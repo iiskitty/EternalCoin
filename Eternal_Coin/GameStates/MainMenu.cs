@@ -61,10 +61,10 @@ namespace Eternal_Coin
             spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
             spriteBatch.Draw(Textures.Misc.title, new Rectangle(50, 10, 1180, Textures.Misc.title.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
 
-            foreach (Object b in Lists.mainMenuButtons)
+            for (int i = 0; i < Lists.mainMenuButtons.Count; i++)
             {
-                b.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                b.Draw(spriteBatch, b.SpriteID, b.Bounds, 0.2f, 0f, Vector2.Zero);
+                Lists.mainMenuButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                Lists.mainMenuButtons[i].Draw(spriteBatch, Lists.mainMenuButtons[i].SpriteID, Lists.mainMenuButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
             }
         }
 
