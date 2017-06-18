@@ -1,0 +1,181 @@
+[3-7-11]TrueScreen X,Y: 1920 1080
+[3-7-11]GameScreen X,Y: 1280 720
+[3-7-11]Set Game Screen X,Y: 1280 720
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-7-11]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-7-11]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-7-11]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-7-11]ItemCreated: [Class: EternalCoin, Name: Fire Ball, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-7-12]ButtonClicked: PlayButton
+[3-7-12]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-7-12]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-7-12]GameState Change: chooseCharacter
+[3-7-13]GameDeleted: asdf
+[3-7-13]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-7-13]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-7-14]ButtonClicked: NewCharacter
+[3-7-15]ButtonClicked: StartGame
+[3-7-16]GameCreated: asdf
+[3-7-16]LocationCreated: Eaton
+[3-7-16]LocationCreated: Eaton
+[3-7-16]LocationCreated: Sub Eaton 1
+[3-7-16]LocationCreated: Sub Eaton 2
+[3-7-16]Saving Game.
+[3-7-16]Game Saved.
+[3-7-16]GameState Change: game
+[3-7-16]Map Created: EatonMap
+[3-7-21]ButtonClicked: LookEyeButton
+[3-7-22]ButtonClicked: ShopButton
+[3-7-23]ButtonClicked: OpenShop
+[3-7-23]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-7-23]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-7-23]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-7-33]Attack added: IronSwordStab
+[3-7-33]Attack added: IronSwordStrike
+[3-7-36]LocationChange: Sub Eaton 2
+[3-7-39]ButtonClicked: LookEyeButton
+[3-7-40]Attack ID: DefaultIronSwordStab
+[3-7-40]Attack ID: DefaultIronSwordStrike
+[3-7-40]Attack ID: DefaultPunch
+[3-7-40]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-7-40]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-7-40]GameState Change: battle
+[3-7-55]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-7-55]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-7-55]GameState Change: game
+[3-7-57]LocationChange: Eaton
+[3-8-2]ButtonClicked: ExitLocation
+[3-8-2]LocationChange: Eaton
+[3-8-2]ButtonClicked: EnterLocation
+[3-8-2]LocationChange: Eaton
+[3-8-3]ButtonClicked: ExitLocation
+[3-8-3]LocationChange: Eaton
+[3-8-5]ButtonClicked: EnterLocation
+[3-8-5]LocationChange: Eaton
+[3-8-6]ButtonClicked: ExitLocation
+[3-8-6]LocationChange: Eaton
+[3-8-9]ButtonClicked: EnterLocation
+[3-8-9]LocationChange: Eaton
+[3-8-11]ButtonClicked: ExitLocation
+[3-8-11]LocationChange: Eaton
+[3-8-12]ButtonClicked: EnterLocation
+[3-8-12]LocationChange: Eaton
+[3-8-13]ButtonClicked: ExitLocation
+[3-8-13]LocationChange: Eaton
+[3-8-14]ButtonClicked: EnterLocation
+[3-8-14]LocationChange: Eaton
+[3-8-15]ButtonClicked: ExitLocation
+[3-8-15]LocationChange: Eaton
+[3-8-16]ButtonClicked: EnterLocation
+[3-8-16]LocationChange: Eaton
+[3-8-17]LocationChange: Sub Eaton 1
+[3-8-19]LocationChange: Eaton
+[3-8-22]LocationChange: Sub Eaton 2
+[3-8-23]LocationChange: Eaton
+[3-8-25]LocationChange: Sub Eaton 1
+[3-8-27]LocationChange: Eaton
+[3-8-29]LocationChange: Sub Eaton 2
+[3-8-33]LocationChange: Eaton
+[3-8-37]LocationChange: Sub Eaton 1
+[3-8-38]ButtonClicked: LookEyeButton
+[3-8-40]LocationChange: Eaton
+[3-8-44]Saving Game.
+[3-8-44]Save File Found.
+[3-8-44]Item Saved To Player Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-44]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-44]Game Saved.
+[3-8-44]Saving Game.
+[3-8-44]Save File Found.
+[3-8-44]Item Saved To Player Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-44]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-44]Item Saved To Character Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-44]Game Saved.
+[3-8-47]Saving Game.
+[3-8-47]Save File Found.
+[3-8-47]Item Saved To Player Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-47]Item Saved To Player Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-8-47]Item Saved To Character Inventory: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-8-47]Game Saved.
+[3-8-48]GameState Change: mainMenu
+[3-8-49]ButtonClicked: PlayButton
+[3-8-50]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-8-50]GameState Change: chooseCharacter
+[3-8-50]GameDeleted: asdf
+[3-8-50]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-8-50]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-8-51]ButtonClicked: MainMenu
+[3-8-52]GameState Change: mainMenu
+[3-8-53]ButtonClicked: ExitButton

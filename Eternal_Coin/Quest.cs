@@ -70,10 +70,10 @@ namespace Eternal_Coin
 
                 for (int i = 0; i < 40; i++)
                 {
-                    if (InventoryManager.playerInventory.itemSlots[i].item == null)
+                    if (InventoryManager.playerInventory.ItemSlots[i].item == null)
                     {
-                        InventoryManager.playerInventory.itemSlots[i].item = ItemBuilder.BuildItem(Dictionaries.items[QRI[GVar.XmlTags.ItemTags.itemname].InnerText]);
-                        Lists.playerItems.Add(InventoryManager.playerInventory.itemSlots[i].item);
+                        InventoryManager.playerInventory.ItemSlots[i].item = ItemBuilder.BuildItem(Dictionaries.items[QRI[GVar.XmlTags.ItemTags.itemname].InnerText]);
+                        Lists.playerItems.Add(InventoryManager.playerInventory.ItemSlots[i].item);
                         break;
                     }
                 }

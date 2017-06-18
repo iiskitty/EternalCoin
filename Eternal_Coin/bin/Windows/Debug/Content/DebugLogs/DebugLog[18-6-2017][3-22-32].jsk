@@ -1,0 +1,78 @@
+[3-22-32]TrueScreen X,Y: 1920 1080
+[3-22-32]GameScreen X,Y: 1280 720
+[3-22-32]Set Game Screen X,Y: 1280 720
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-32]!!!ERROR!!![System.NullReferenceException: Object reference not set to an instance of an object.
+   at Eternal_Coin.Attack.LoadAttacks(ContentManager Content, String dpid) in C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\Attacks\Attack.cs:line 289]
+[3-22-33]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-22-33]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Bronze Helmet, Inventory Slot: Helmet, Cost: 15, Damage: 10, Armor: 15, Type: Helmet, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-22-33]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-22-33]ItemCreated: [Class: EternalCoin, Name: Fire Ball, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-22-35]ButtonClicked: PlayButton
+[3-22-36]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-22-36]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-22-36]GameState Change: chooseCharacter
+[3-22-36]GameDeleted: asdf
+[3-22-37]!!!File [Content/SavedGames/SavedGame0.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame1.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame2.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame3.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame4.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame5.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame6.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame7.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame8.xml] Not Found!!!
+[3-22-37]!!!File [Content/SavedGames/SavedGame9.xml] Not Found!!!
+[3-22-37]ButtonClicked: NewCharacter
+[3-22-39]ButtonClicked: StartGame
+[3-22-40]GameCreated: asdf
+[3-22-40]LocationCreated: Eaton
+[3-22-40]LocationCreated: Eaton
+[3-22-40]LocationCreated: Sub Eaton 1
+[3-22-40]LocationCreated: Sub Eaton 2
+[3-22-41]Saving Game.
+[3-22-41]Game Saved.
+[3-22-41]GameState Change: game
+[3-22-41]Map Created: EatonMap
+[3-22-42]ButtonClicked: LookEyeButton
+[3-22-42]ButtonClicked: ShopButton
+[3-22-43]ButtonClicked: OpenShop
+[3-22-43]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Weapon, Name: Iron Sword, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 15, Type: IronSword, Material: Iron]
+[3-22-43]ItemCreated: [Class: Armor, Name: Left Bronze Boot, Inventory Slot: LeftBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Armor, Name: Right Bronze Boot, Inventory Slot: RightBoot, Cost: 15, Damage: 10, Armor: 15, Type: Boot, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Armor, Name: Left Bronze Gauntlet, Inventory Slot: LeftGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Armor, Name: Right Bronze Gauntlet, Inventory Slot: RightGauntlet, Cost: 15, Damage: 10, Armor: 15, Type: Gauntlet, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Armor, Name: Bronze Leggings, Inventory Slot: Leggings, Cost: 20, Damage: 10, Armor: 20, Type: Leggings, Material: Bronze]
+[3-22-43]ItemCreated: [Class: Armor, Name: Bronze Chestplate, Inventory Slot: Chestplate, Cost: 20, Damage: 10, Armor: 20, Type: Chestplate, Material: Bronze]
+[3-22-54]ItemCreated: [Class: EternalCoin, Name: Fire Ball, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]
+[3-22-54]ItemCreated: [Class: Jewellry, Name: Iron Ring, Inventory Slot: Ring, Cost: 25, Damage: 15, Armor: 15, Type: Ring, Material: Iron]
+[3-23-2]Attack added: IronSwordStab
+[3-23-2]Attack added: IronSwordStrike
+[3-23-4]ButtonClicked: ShopButton
+[3-23-5]ButtonClicked: OpenShop
+[3-23-5]ItemCreated: [Class: Weapon, Name: Bronze Mace, Inventory Slot: Weapon, Cost: 20, Damage: 20, Armor: 10, Type: Mace, Material: Bronze]
+[3-23-10]ItemCreated: [Class: EternalCoin, Name: Fire Ball, Inventory Slot: EternalCoin, Cost: 70, Damage: 50, Armor: 50, Type: ECFireBall, Material: Gold]

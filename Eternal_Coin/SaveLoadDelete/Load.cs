@@ -72,18 +72,18 @@ namespace Eternal_Coin
             int itemCount = 0;
             for (int i = 0; i < piItemList.Count; i++)
             {
-                if (InventoryManager.playerInventory.itemSlots[itemCount].item == null)
+                if (InventoryManager.playerInventory.ItemSlots[itemCount].item == null)
                 {
                     try
                     {
-                        InventoryManager.playerInventory.itemSlots[itemCount].item = ItemBuilder.BuildItem(Dictionaries.items[piItemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
-                        Lists.playerItems.Add(InventoryManager.playerInventory.itemSlots[itemCount].item);
+                        InventoryManager.playerInventory.ItemSlots[itemCount].item = ItemBuilder.BuildItem(Dictionaries.items[piItemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
+                        Lists.playerItems.Add(InventoryManager.playerInventory.ItemSlots[itemCount].item);
 
                         try
                         {
-                            if (InventoryManager.playerInventory.itemSlots[itemCount].item.ItemClass == GVar.ItemClassName.jewellry)
+                            if (InventoryManager.playerInventory.ItemSlots[itemCount].item.ItemClass == GVar.ItemClassName.jewellry)
                             {
-                                Jewellry jewl = (Jewellry)InventoryManager.playerInventory.itemSlots[itemCount].item;
+                                Jewellry jewl = (Jewellry)InventoryManager.playerInventory.ItemSlots[itemCount].item;
                                 jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(Dictionaries.items[piItemList[i]["eternalcoin"].InnerText]);
                                 jewl.Attacks = jewl.eternalCoinSlot.item.Attacks;
                                 Lists.playerItems.Add(jewl.eternalCoinSlot.item);
@@ -95,7 +95,7 @@ namespace Eternal_Coin
                             GVar.LogDebugInfo("!!!ERROR!!![" + e + "]", 1);
                         }
 
-                        GVar.LogDebugInfo("Item Loaded To Player Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.playerInventory.itemSlots[itemCount].item), 1);
+                        GVar.LogDebugInfo("Item Loaded To Player Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.playerInventory.ItemSlots[itemCount].item), 1);
                     }
                     catch
                     {
@@ -116,19 +116,19 @@ namespace Eternal_Coin
                 {
                     try
                     {
-                        if (InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item == null)
+                        if (InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item == null)
                         {
-                            InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item = item;
-                            GVar.player.AddItemStats(InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item);
+                            InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item = item;
+                            GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item);
                             Attack.AddAvailableAttacks(item.Attacks);
-                            GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item), 2);
+                            GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item), 2);
                         }
-                        else if (InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
+                        else if (InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
                         {
-                            InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item = item;
-                            GVar.player.AddItemStats(InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item);
+                            InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item = item;
+                            GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item);
                             Attack.AddAvailableAttacks(item.Attacks);
-                            GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item), 2);
+                            GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item), 2);
                         }
                     }
                     catch (Exception e)
@@ -142,11 +142,11 @@ namespace Eternal_Coin
                     {
                         try
                         {
-                            if (item.InventorySlot == InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot)
+                            if (item.InventorySlot == InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].inventorySlot)
                             {
-                                InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = item;
-                                GVar.player.AddItemStats(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item);
-                                GVar.LogDebugInfo("Armor Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
+                                InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item = item;
+                                GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item);
+                                GVar.LogDebugInfo("Armor Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item), 2);
                             }
                         }
                         catch (Exception e)
@@ -161,15 +161,15 @@ namespace Eternal_Coin
                     {
                         try
                         {
-                            if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot) && InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item == null)
+                            if (InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].inventorySlot.Contains(item.InventorySlot) && InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item == null)
                             {
                                 Jewellry jewl = (Jewellry)item;
                                 jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(Dictionaries.items[I["eternalcoin"].InnerText]);
                                 jewl.Attacks = jewl.eternalCoinSlot.item.Attacks;
-                                InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item = jewl;
+                                InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item = jewl;
                                 Attack.AddAvailableAttacks(jewl.Attacks);
-                                GVar.player.AddItemStats(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item);
-                                GVar.LogDebugInfo("Jewelry Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
+                                GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item);
+                                GVar.LogDebugInfo("Jewelry Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item), 2);
                                 break;
                             }
                         }

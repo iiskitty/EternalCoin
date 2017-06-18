@@ -139,13 +139,13 @@ namespace Eternal_Coin
                 body.AppendChild(pInventory);
                 for (int i = 0; i < 40; i++)
                 {
-                    if (InventoryManager.playerInventory.itemSlots[i].item != null)
+                    if (InventoryManager.playerInventory.ItemSlots[i].item != null)
                     {
                         try
                         {
-                            pInventory.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.playerInventory.itemSlots[i].item, tempDoc));
+                            pInventory.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.playerInventory.ItemSlots[i].item, tempDoc));
 
-                            GVar.LogDebugInfo("Item Saved To Player Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.playerInventory.itemSlots[i].item), 2);
+                            GVar.LogDebugInfo("Item Saved To Player Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.playerInventory.ItemSlots[i].item), 2);
                         }
                         catch
                         {
@@ -157,13 +157,13 @@ namespace Eternal_Coin
                 body.AppendChild(cInventory);
                 for (int i = 0; i < Lists.inventorySlots.Count; i++)
                 {
-                    if (InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item != null)
+                    if (InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item != null)
                     {
                         try
                         {
-                            cInventory.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item, tempDoc));
+                            cInventory.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item, tempDoc));
 
-                            GVar.LogDebugInfo("Item Saved To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.itemSlots[Lists.inventorySlots[i]].item), 2);
+                            GVar.LogDebugInfo("Item Saved To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item), 2);
                         }
                         catch
                         {

@@ -59,7 +59,7 @@ namespace Eternal_Coin
                     Item item = ItemBuilder.BuildItem(Dictionaries.items[enemyItem[GVar.XmlTags.ItemTags.itemname].InnerText]);
                     if (item.ItemClass == GVar.ItemClassName.weapon)
                     {
-                        if (InventoryManager.enemyInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item == null)
+                        if (InventoryManager.enemyInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item == null)
                         {
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
@@ -68,10 +68,10 @@ namespace Eternal_Coin
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
-                            InventoryManager.enemyInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item = item;
+                            InventoryManager.enemyInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item = item;
                             
                         }
-                        else if (InventoryManager.enemyInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.enemyInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
+                        else if (InventoryManager.enemyInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.enemyInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
                         {
                             Attack.AddEnemyAttack(item.Attacks);
                             if (battleEnemy == null)
@@ -80,12 +80,12 @@ namespace Eternal_Coin
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
-                            InventoryManager.enemyInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item = item;
+                            InventoryManager.enemyInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item = item;
                         }
                     }
                     else if (item.ItemClass == GVar.ItemClassName.armor)
                     {
-                        if (InventoryManager.enemyInventory.itemSlots[item.InventorySlot].item == null)
+                        if (InventoryManager.enemyInventory.ItemSlots[item.InventorySlot].item == null)
                         {
                             if (battleEnemy == null)
                             {
@@ -93,7 +93,7 @@ namespace Eternal_Coin
                                 enemyNextAttack = Lists.enemyAttackIDs[0];
                             }
                             battleEnemy.AddItemStats(item);
-                            InventoryManager.enemyInventory.itemSlots[item.InventorySlot].item = item;
+                            InventoryManager.enemyInventory.ItemSlots[item.InventorySlot].item = item;
                         }
                     }
                 }
@@ -179,7 +179,7 @@ namespace Eternal_Coin
 
             for (int i = 0; i < Lists.availableAttacksIDs.Count; i++)
             {
-                if (Lists.availableAttacksIDs[i] == "DefaultPunch" && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.itemSlots[GVar.InventorySlot.rightHandWeapon].item != null)
+                if (Lists.availableAttacksIDs[i] == "DefaultPunch" && InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item != null)
                 {
                     continue; //if left hand weapon and right hand weapon are not null (both hands have a weapon) dont create a punch button
                 }
@@ -332,11 +332,11 @@ namespace Eternal_Coin
                                 {
                                     for (int k = 0; k < 40; k++)
                                     {
-                                        if (InventoryManager.playerInventory.itemSlots[k].item == null)
+                                        if (InventoryManager.playerInventory.ItemSlots[k].item == null)
                                         {
                                             Item item = ItemBuilder.BuildItem(loot[j]);
                                             Lists.playerItems.Add(item);
-                                            InventoryManager.playerInventory.itemSlots[k].item = item;
+                                            InventoryManager.playerInventory.ItemSlots[k].item = item;
                                             break;
                                         }
                                     }
@@ -475,7 +475,7 @@ namespace Eternal_Coin
             }
 
             InventoryManager.DrawMiniInventory(spriteBatch, InventoryManager.characterInventory);
-            InventoryManager.DrawMiniInventory(spriteBatch, InventoryManager.enemyInventory);
+            InventoryManager.DrawEnemyMiniInventory(spriteBatch, InventoryManager.enemyInventory);
         }
     }
 }

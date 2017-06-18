@@ -127,37 +127,37 @@ namespace Eternal_Coin
         public static void ToPlayer(Item item, int i)
         {
             Lists.playerItems.Add(item);
-            InventoryManager.playerInventory.itemSlots[i].item = item;
+            InventoryManager.playerInventory.ItemSlots[i].item = item;
         }
 
         public static void FromPlayer(Item item, int i)
         {
             Lists.playerItems.Remove(item);
-            InventoryManager.playerInventory.itemSlots[i].item = null;
+            InventoryManager.playerInventory.ItemSlots[i].item = null;
         }
 
         public static void ToCharacter(Item item, string invSlot)
         {
             Lists.characterItems.Add(item);
-            InventoryManager.characterInventory.itemSlots[invSlot].item = item;
+            InventoryManager.characterInventory.ItemSlots[invSlot].item = item;
         }
 
         public static void FromCharacter(Item item, string invSlot)
         {
             Lists.characterItems.Remove(item);
-            InventoryManager.characterInventory.itemSlots[invSlot].item = null;
+            InventoryManager.characterInventory.ItemSlots[invSlot].item = null;
         }
 
         public static void ToShop(Item item, int i)
         {
             Lists.shopItems.Add(item);
-            InventoryManager.shopInventory.itemSlots[i].item = item;
+            InventoryManager.shopInventory.ItemSlots[i].item = item;
         }
 
         public static void FromShop(Item item, int i)
         {
             Lists.shopItems.Remove(item);
-            InventoryManager.shopInventory.itemSlots[i].item = null;
+            InventoryManager.shopInventory.ItemSlots[i].item = null;
         }
 
         public abstract void Update(float gameTime);
@@ -263,119 +263,5 @@ namespace Eternal_Coin
         public int PlayerInventorySlot { get { return playerInventorySlot; } set { playerInventorySlot = value; } }
         public int Cost { get { return cost; } set { cost = value; } }
         public List<string> Attacks { get { return attacks; } set { attacks = value; } }
-    }
-
-    public class Weapon : Item
-    {
-        int damage;
-
-        public Weapon() { }
-
-        public Weapon(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, int cost, int damage, string weaponName, int playerInventorySlot, string inventorySlot, Material material, ItemType type) 
-            : base(spriteID, position, size, colour, itemClass, cost, weaponName, playerInventorySlot, inventorySlot, material, type)
-        {
-            this.damage = damage;
-        }
-
-        public override void Update(float gameTime)
-        {
-            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
-        }
-
-        public override void AnimationDone(string animation)
-        {
-            
-        }
-
-        public int Damage { get { return damage; } set { damage = value; } }
-    }
-
-    public class Armor : Item
-    {
-        int armorValue;
-
-        public Armor() { }
-
-        public Armor(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, int cost, int armor, string armorName, int playerInventorySlot, string inventorySlot, Material material, ItemType type)
-            : base(spriteID, position, size, colour, itemClass, cost, armorName, playerInventorySlot, inventorySlot, material, type)
-        {
-            armorValue = armor;
-        }
-
-        public override void Update(float gameTime)
-        {
-            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
-        }
-
-        public override void AnimationDone(string animation)
-        {
-            
-        }
-
-        public int ArmorValue { get { return armorValue; } set { armorValue = value; } }
-    }
-
-    public class EternalCoin : Item
-    {
-        public EternalCoin(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, string itemName, int cost, string inventorySlot, Material material, ItemType type)
-            : base(spriteID, position, size, colour, itemClass, itemName, cost, inventorySlot, material, type)
-        {
-
-        }
-
-        public EternalCoin(Item item)
-            : base(item)
-        {
-
-        }
-
-        public override void Update(float gameTime)
-        {
-            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
-        }
-
-        public override void AnimationDone(string animation)
-        {
-            
-        }
-    }
-
-    public class Jewellry : Item
-    {
-        public ItemSlot eternalCoinSlot;
-
-        Vector2 jPos;
-        Vector2 jSize;
-
-        public Jewellry(Texture2D spriteID, Vector2 position, Vector2 size, Color colour, string itemClass, string itemName, int cost, string inventorySlot, Material material, ItemType type) 
-            : base(spriteID, position, size, colour, itemClass, itemName, cost, inventorySlot, material, type)
-        {
-            this.spriteID = SpriteID;
-            eternalCoinSlot = new ItemSlot(new Vector2(position.X - 10, position.Y - 2), Vector2.Zero, new Vector2(15, 15), Vector2.Zero, "EternalCoin");
-        }
-
-        public Jewellry(Item item) 
-            : base(item)
-        {
-            spriteID = item.SpriteID;
-        }
-
-        public override void Update(float gameTime)
-        {
-            jPos = new Vector2(position.X + size.X / 2.2f, position.Y + 2);
-            jSize = new Vector2(size.X / 3, size.Y / 3);
-
-            eternalCoinSlot.position = jPos;
-
-            eternalCoinSlot.bounds = new Rectangle((int)eternalCoinSlot.position.X, (int)eternalCoinSlot.position.Y, (int)eternalCoinSlot.size.X, (int)eternalCoinSlot.size.Y);
-            eternalCoinSlot.size = jSize;
-
-            bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);
-        }
-
-        public override void AnimationDone(string animation)
-        {
-            
-        }
     }
 }

@@ -160,20 +160,22 @@ namespace Eternal_Coin
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            //HAXOR
+            #region HAX
             if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
             {
                 Item item;
-                item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
-                Lists.playerItems.Add(item);
-                InventoryManager.playerInventory.itemSlots[39].item = item;
                 item = ItemBuilder.BuildItem(Dictionaries.items["Fire Ball"]);
                 Lists.playerItems.Add(item);
-                InventoryManager.playerInventory.itemSlots[38].item = item;
+                InventoryManager.playerInventory.ItemSlots[38].item = item;
                 item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
                 Lists.playerItems.Add(item);
-                InventoryManager.playerInventory.itemSlots[37].item = item;
+                InventoryManager.playerInventory.ItemSlots[37].item = item;
             }
+            if (InputManager.IsKeyPressed(Keys.M) && GVar.currentGameState == GVar.GameState.game)
+            {
+                GVar.silverMoney += 1000;
+            }
+            #endregion
 
             //maps need to be loaded after eveything because shit fucks up
             if (GVar.loadData)
@@ -253,7 +255,7 @@ namespace Eternal_Coin
                     break;
 
                 case GVar.GameState.shop:
-                    InventoryManager.ManageShopInventories(gameTime, InventoryManager.playerInventory, InventoryManager.mouseInventory, InventoryManager.shopInventory);
+                    Shop.UpdateShopInventories(gameTime, InventoryManager.playerInventory, InventoryManager.mouseInventory, InventoryManager.shopInventory);
                     break;
 
                 case GVar.GameState.battle:
@@ -324,7 +326,7 @@ namespace Eternal_Coin
                     break;
 
                 case GVar.GameState.shop:
-                    InventoryManager.DrawShopInventories(spriteBatch, gameTime, InventoryManager.playerInventory, InventoryManager.mouseInventory, InventoryManager.shopInventory);
+                    Shop.DrawShopInventories(spriteBatch, gameTime, InventoryManager.playerInventory, InventoryManager.mouseInventory, InventoryManager.shopInventory);
                     break;
 
                 case GVar.GameState.battle:
