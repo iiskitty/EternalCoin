@@ -12,7 +12,7 @@ namespace Eternal_Coin
         /// <param name="locationNode">current location.</param>
         public static void ReadLocationXmlFile(Entity player, Node locationNode)
         {
-            string fileDir = "Content/GameFiles/" + player.Name + "/" + locationNode.LocatoinFilePath;//set string to xml file's directory location.
+            string fileDir = GVar.gameFilesLocation + player.Name + "/" + locationNode.LocatoinFilePath;//set string to xml file's directory location.
             try
             {
                 GVar.curLocNode.Load(fileDir);//load the xml file with the created string.

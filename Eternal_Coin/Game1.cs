@@ -2,7 +2,15 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.IO;
 using System.Xml;
+
+/*TODO
+ * 1: make a way for quests to require other quests to be completed.
+ * 2: fix the map jittering.
+ * 
+ * /*read through all the code, comment the code, fix and tweak the code where necessary*\
+ */
 
 namespace Eternal_Coin
 {
@@ -35,6 +43,20 @@ namespace Eternal_Coin
             options.Load("./Content/Options.xml");
             XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options");
 
+            string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            GVar.savedGameLocation = Path.Combine(saveFolder, "EternalCoin\\GameSaves\\");
+
+            string fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            GVar.gameFilesLocation = Path.Combine(fileFolder, "EternalCoin\\GameFiles\\");
+
+            string debugFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            GVar.debugFilesLocation = Path.Combine(debugFolder, "EternalCoin\\DebugFiles\\");
+
+            if (!Directory.Exists(GVar.savedGameLocation))
+                Directory.CreateDirectory(GVar.savedGameLocation);
+            GVar.savedGameLocation += "GameSave";
+
+            
             //fullscreen option check
             if (Convert.ToBoolean(optionsNode["fullscreen"].InnerText) == true)
             {

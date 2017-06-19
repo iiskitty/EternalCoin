@@ -520,7 +520,9 @@ namespace Eternal_Coin
         /// </summary>
         public static float trueScreenY;
 
-        public static string savedGameLocation = "Content/SavedGames/SavedGame";
+        public static string savedGameLocation = string.Empty;
+        public static string gameFilesLocation = string.Empty;
+        public static string debugFilesLocation = string.Empty;
         public static bool creatingCharacter = false;
         public static string playerName = "";
 
@@ -564,12 +566,12 @@ namespace Eternal_Coin
         /// </summary>
         public static void CreateDebugLog()
         {
-            if (!Directory.Exists("Content/DebugLogs"))
+            if (!Directory.Exists(debugFilesLocation))
             {
-                Directory.CreateDirectory("Content/DebugLogs");
+                Directory.CreateDirectory(debugFilesLocation);
             }
 
-            debugFilePath = "Content/DebugLogs/DebugLog" + GetDate() + GetTime() + ".jsk";
+            debugFilePath = debugFilesLocation + "DebugLog" + GetDate() + GetTime() + ".jsk";
             debugFile = new FileStream(debugFilePath, FileMode.Create);
             debugFile.Close();
         }

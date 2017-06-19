@@ -300,7 +300,7 @@ namespace Eternal_Coin
                 foreach (LocationNode locNode in ln.LocNodeConnections)
                 {
                     XmlDocument locNodeDoc = new XmlDocument();
-                    string filePath = "./Content/GameFiles/" + GVar.playerName + "/" + locNode.LocatoinFilePath;
+                    string filePath = GVar.gameFilesLocation + GVar.playerName + "/" + locNode.LocatoinFilePath;
                     locNodeDoc.Load(filePath);
 
                     XmlNode node = locNodeDoc.SelectSingleNode("/location/searched");

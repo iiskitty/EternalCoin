@@ -7,7 +7,7 @@ namespace Eternal_Coin
     {
         public static void SaveLocationXmlFile(Entity player, Node locationNode)
         {
-            string fileDir = "Content/GameFiles/" + player.Name + "/" + locationNode.LocatoinFilePath;
+            string fileDir = GVar.gameFilesLocation + player.Name + "/" + locationNode.LocatoinFilePath;
             GVar.curLocNode.Save(fileDir);
         }
 
@@ -38,10 +38,10 @@ namespace Eternal_Coin
 
             try
             {
-                XmlElement itemPlayerInventorySlot = itemDoc.CreateElement(string.Empty, GVar.XmlTags.ItemTags.playerinventoryslot, string.Empty);
+                XmlElement itemInventorySlot = itemDoc.CreateElement(string.Empty, GVar.XmlTags.ItemTags.inventoryslot, string.Empty);
                 XmlText itemPlayerInventorySlotInner = itemDoc.CreateTextNode(item.PlayerInventorySlot.ToString());
-                itemPlayerInventorySlot.AppendChild(itemPlayerInventorySlotInner);
-                itemElement.AppendChild(itemPlayerInventorySlot);
+                itemInventorySlot.AppendChild(itemPlayerInventorySlotInner);
+                itemElement.AppendChild(itemInventorySlot);
             }
             catch
             {

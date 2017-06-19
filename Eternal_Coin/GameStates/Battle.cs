@@ -311,10 +311,10 @@ namespace Eternal_Coin
                             if (Lists.battleSceneButtons[i].Name == "Continue")
                             {
                                 XmlDocument battleDoc = new XmlDocument();
-                                battleDoc.Load("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
+                                battleDoc.Load(GVar.gameFilesLocation + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
                                 XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
                                 hasEnemy["hasenemy"].InnerText = "False";
-                                battleDoc.Save("Content/GameFiles/" + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
+                                battleDoc.Save(GVar.gameFilesLocation + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
                                 GVar.location.HasEnemy = false;
                                 battleWon = false;
                                 for (int j = 0; j < Lists.uiElements.Count; j++)

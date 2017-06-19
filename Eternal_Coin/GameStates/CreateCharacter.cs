@@ -153,7 +153,7 @@ namespace Eternal_Coin
                                 if (playerName == saveNode[GVar.XmlTags.Player.name].InnerText)
                                 {
                                     string saveFileLocation = saveNode["filename"].InnerText;
-                                    string locationFilesLocation = "./Content/GameFiles/" + playerName;
+                                    string locationFilesLocation = GVar.gameFilesLocation + playerName;
                                     Lists.savedGamesXmlDoc.Clear();
                                     Delete.DeleteGame(saveFileLocation, locationFilesLocation);
                                 }

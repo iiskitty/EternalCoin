@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Xml;
 
 namespace Eternal_Coin
@@ -13,20 +14,37 @@ namespace Eternal_Coin
             for (int i = 0; i < itemList.Count; i++)
             {
                 Item shopItem = ItemBuilder.BuildItem(Dictionaries.items[itemList[i][GVar.XmlTags.ItemTags.itemname].InnerText]);
+                int invSlot = 99;
+                try
+                {
+                    invSlot = Convert.ToInt32(itemList[i][GVar.XmlTags.ItemTags.inventoryslot].InnerText);
+                }
+                catch (Exception e)
+                {
+                    GVar.LogDebugInfo(e.ToString(), 2);
+                }
 
-                AddItemToShopInventory(shopItem);
+                AddItemToShopInventory(shopItem, invSlot);
             }
         }
 
-        public static void AddItemToShopInventory(Item item)
+        public static void AddItemToShopInventory(Item item, int invSlot)
         {
-            for (int j = 0; j < 40; j++)
+            if (invSlot != 99)
             {
-                if (InventoryManager.shopInventory.ItemSlots[j].item == null)
+                InventoryManager.shopInventory.ItemSlots[invSlot].item = ItemBuilder.BuildItem(item);
+                Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[invSlot].item);
+            }
+            else
+            {
+                for (int j = 0; j < 40; j++)
                 {
-                    InventoryManager.shopInventory.ItemSlots[j].item = item;
-                    Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[j].item);
-                    break;
+                    if (InventoryManager.shopInventory.ItemSlots[j].item == null)
+                    {
+                        InventoryManager.shopInventory.ItemSlots[j].item = item;
+                        Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[j].item);
+                        break;
+                    }
                 }
             }
         }
@@ -99,6 +117,7 @@ namespace Eternal_Coin
                         }
 
                         shopInventory = new Inventory(new Vector2(862, 51));
+                        Lists.shopItems.Clear();
                         GVar.currentGameState = GVar.GameState.game;
                         GVar.previousGameState = GVar.GameState.inventory;
                     }
@@ -180,7 +199,7 @@ namespace Eternal_Coin
                     item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));
                 }
             }
-            string fileDir = "Content/GameFiles/" + GVar.player.Name + "/" + locationNode.LocatoinFilePath;
+            string fileDir = GVar.gameFilesLocation + GVar.player.Name + "/" + locationNode.LocatoinFilePath;
             shopDoc.Save(fileDir);
         }
     }

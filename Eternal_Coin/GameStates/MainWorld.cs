@@ -331,7 +331,7 @@ namespace Eternal_Coin
         /// </summary>
         public static void LoadMainWorld()
         {
-            string folderDir = "Content/GameFiles/" + GVar.playerName;//set string for directory of current players game files.
+            string folderDir = GVar.gameFilesLocation + GVar.playerName;//set string for directory of current players game files.
             string locationTemplate = "Content/LocationTemplates/" + GVar.storyName;//set string for directory of current story being played.
 
             //check if player game files does not exist.

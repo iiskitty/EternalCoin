@@ -30,7 +30,7 @@ namespace Eternal_Coin
             locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/quest");
             LocationNode temp = P.CurrentLocation;
-            Lists.quests.Add(new Quest(locNPC[GVar.XmlTags.QuestTags.description].InnerText, locNPC[GVar.XmlTags.QuestTags.shortdescription].InnerText, locNPC[GVar.XmlTags.QuestTags.completingaction].InnerText, locNPC[GVar.XmlTags.QuestTags.completinglocation].InnerText, false, "Content/GameFiles/" + P.Name + "/" + temp.LocatoinFilePath));
+            Lists.quests.Add(new Quest(locNPC[GVar.XmlTags.QuestTags.description].InnerText, locNPC[GVar.XmlTags.QuestTags.shortdescription].InnerText, locNPC[GVar.XmlTags.QuestTags.completingaction].InnerText, locNPC[GVar.XmlTags.QuestTags.completinglocation].InnerText, false, GVar.gameFilesLocation + P.Name + "/" + temp.LocatoinFilePath));
             foreach (UIElement ui in Lists.uiElements)
             {
                 if (ui.SpriteID == Textures.UI.questListUI && ui.Draw)

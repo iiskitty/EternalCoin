@@ -16,47 +16,31 @@
 		<name>John</name>
 		
 		<greeting>
-			<questunaccepted>Hello stranger, could you please go explore Sub Bunbury 1 for me.</questunaccepted>
-			<questaccepted>How is your quest for Sub Bunbury 1 going?</questaccepted>
-			<acceptquest>I hope you have no troubles in your quest.</acceptquest>
-			<questfinished>Thank you very much! I have some stuff for you.</questfinished>
-			<handinquest>That sword is very dull, be careful now.</handinquest>
+			<questunaccepted>Why did you come here? you should have gone to Sub Eaton 2. Idiot. Go do that.</questunaccepted>
+			<questaccepted>How is your quest for Sub Eaton 2 going?</questaccepted>
+			<acceptquest>I hope you have troubles in your quest.</acceptquest>
+			<questfinished>Oh. You're alive. Take this and leave me alone.</questfinished>
+			<handinquest>That sword is very dull. But im sure you could kill yourself with it if you really tried.</handinquest>
 			<questcompleted>I have nothing for you to do, go away.</questcompleted>
 		</greeting>
 		
 		<quest>
-			<description>Explore Sub Bunbury 1 and come back to John.</description>
-			<shortdescription>Explore Sub Bunbury 1</shortdescription>
-			<completingaction>Exploring SubBunbury1</completingaction>
-			<completinglocation>SubBunbury1</completinglocation>
+			<description>Explore Sub Eaton 2 and come back to John.</description>
+			<shortdescription>Explore Sub Eaton 2</shortdescription>
+			<completingaction>Exploring SubEaton2</completingaction>
+			<completinglocation>SubEaton2</completinglocation>
 			<reward>
 				<item>
-					<class>Weapon</class>
-					<itemname>Bronze Sword</itemname>
-					<itemtype>BronzeSword</itemtype>
-					<itemmaterial>Bronze</itemmaterial>
-					<inventoryslot>Weapon</inventoryslot>
+					<itemname>Iron Sword</itemname>
 				</item>
 				<item>
-					<class>Armor</class>
 					<itemname>Bronze Leggings</itemname>
-					<itemtype>Leggings</itemtype>
-					<itemmaterial>Bronze</itemmaterial>
-					<inventoryslot>Leggings</inventoryslot>
 				</item>
 				<item>
-					<class>Armor</class>
-					<itemname>Bronze Boot</itemname>
-					<itemtype>Boot</itemtype>
-					<itemmaterial>Bronze</itemmaterial>
-					<inventoryslot>LeftBoot</inventoryslot>
+					<itemname>Right Bronze Boot</itemname>
 				</item>
 				<item>
-					<class>Armor</class>
-					<itemname>Bronze Boot</itemname>
-					<itemtype>Boot</itemtype>
-					<itemmaterial>Bronze</itemmaterial>
-					<inventoryslot>RightBoot</inventoryslot>
+					<itemname>Left Bronze Boot</itemname>
 				</item>
 			</reward>
 		</quest>
