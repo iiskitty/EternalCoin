@@ -7,19 +7,18 @@ namespace Eternal_Coin
     {
         string name;
         string greeting;
-        bool hasQuest;
-        bool questAccepted;
-        bool questFinished;
-        bool questCompleted;
 
-        public NPC(string name, string greeting, bool hasQuest, bool questAccepted, bool questFinished, bool questCompleted)
+        string questID;
+        string currentQuest;
+
+        bool hasQuest;
+
+        public NPC(string name, string greeting, bool hasQuest, string questID)
         {
             this.name = name;
             this.greeting = greeting;
             this.hasQuest = hasQuest;
-            this.questAccepted = questAccepted;
-            this.questFinished = questFinished;
-            this.questCompleted = questCompleted;
+            this.questID = questID;
         }
 
         public NPC() { }
@@ -47,11 +46,11 @@ namespace Eternal_Coin
             }
         }
 
+        public string QuestID { get { return questID; } set { questID = value; } }
+        public string CurrentQuest { get { return currentQuest; } set { currentQuest = value; } }
+
         public string Name { get { return name; } set { name = value; } }
         public string Greeting { get { return greeting; } set { greeting = value; } }
         public bool HasQuest { get { return hasQuest; } set { hasQuest = value; } }
-        public bool QuestAccepted { get { return questAccepted; } set { questAccepted = value; } }
-        public bool QuestFinished { get { return questFinished; } set { questFinished = value; } }
-        public bool QuestCompleted { get { return questCompleted; } set { questCompleted = value; } }
     }
 }

@@ -254,6 +254,8 @@ namespace Eternal_Coin
                 /// </summary>
                 public static string hasquest = "hasquest";
 
+                public static string currentquest = "currentquest";
+
                 /// <summary>
                 /// greeting tags for the npc
                 /// </summary>
@@ -279,10 +281,8 @@ namespace Eternal_Coin
                     /// tag that holds the greeting for when the player has finished the quest
                     /// </summary>
                     public static string questfinished = "questfinished";
-                    /// <summary>
-                    /// tag the holds the greeting for when the play has finished and handed in the npc's quest
-                    /// </summary>
-                    public static string questcompleted = "questcompleted";
+
+                    public static string normalgreeting = "normalgreeting";
                 };
             };
 
@@ -291,18 +291,6 @@ namespace Eternal_Coin
             /// </summary>
             public struct QuestTags
             {
-                /// <summary>
-                /// tag that holds true or false for if the quest is finished
-                /// </summary>
-                public static string questfinished = "questfinished";
-                /// <summary>
-                /// tag that holds true or false for if the quest is completed
-                /// </summary>
-                public static string questcompleted = "questcompleted";
-                /// <summary>
-                /// tag that hold true or false for if the quest is accepted or not
-                /// </summary>
-                public static string questaccepted = "questaccepted";
                 /// <summary>
                 /// tag that holds the description for the quest
                 /// </summary>
@@ -323,6 +311,17 @@ namespace Eternal_Coin
                 /// tag that holds true or false for is the quest is completed or not
                 /// </summary>
                 public static string completed = "completed";
+
+                public static string accepted = "accepted";
+
+                public static string handedin = "handedin";
+
+                public static string unlocked = "unlocked";
+
+                public static string unlockrequirement = "unlockrequirement";
+
+                public static string questid = "questid";
+
                 /// <summary>
                 /// tag that holds the location's file path for the quest
                 /// </summary>

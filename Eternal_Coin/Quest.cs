@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using System.Xml;
 
 namespace Eternal_Coin
@@ -26,7 +27,7 @@ namespace Eternal_Coin
         public static void AcceptQuest(Entity P)
         {
             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");
-            locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText = "False";
+            locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText = "false";
             locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText = "True";
             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/quest");
             LocationNode temp = P.CurrentLocation;
@@ -42,6 +43,37 @@ namespace Eternal_Coin
             GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.acceptquest].InnerText;
             GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
             SaveXml.SaveLocationXmlFile(P, temp);
+            Save.SaveGame(GVar.savedGameLocation, P, Lists.quests);
+        }
+
+        public static void AcceptQuest(Entity P, string questid)
+        {
+            XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");
+            XmlNode locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + questid);
+            XmlNodeList quests = GVar.curLocNode.DocumentElement.SelectNodes("/location/npc/quest");
+
+            locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText = questid;
+
+            for (int i = 0; i < quests.Count; i++)
+            {
+                if (quests[i][GVar.XmlTags.QuestTags.questid].InnerText == questid)
+                {
+                    quests[i][GVar.XmlTags.QuestTags.accepted].InnerText = "true";
+                    Lists.quests.Add(new Quest(quests[i][GVar.XmlTags.QuestTags.description].InnerText, quests[i][GVar.XmlTags.QuestTags.shortdescription].InnerText, quests[i][GVar.XmlTags.QuestTags.completingaction].InnerText, quests[i][GVar.XmlTags.QuestTags.completinglocation].InnerText, Convert.ToBoolean(quests[i][GVar.XmlTags.QuestTags.completed].InnerText), quests[i][GVar.XmlTags.QuestTags.completinglocation].InnerText));
+                }
+            }
+
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.questListUI && Lists.uiElements[i].Draw)
+                {
+                    Lists.viewQuestInfoButtons.Add(new Button(Textures.Misc.clearPixel, new Vector2(), new Vector2(268, 15), Color.White, "ViewQuestInfoButton", "Alive", 0f));
+                }
+            }
+
+            GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.acceptquest].InnerText;
+            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
+            SaveXml.SaveLocationXmlFile(P, P.CurrentLocation);
             Save.SaveGame(GVar.savedGameLocation, P, Lists.quests);
         }
 

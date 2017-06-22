@@ -18,6 +18,7 @@ namespace Eternal_Coin
         public static List<Object> battleSceneButtons;
         public static List<Object> activeProjectiles;
         public static List<Quest> quests;
+        public static List<string> completedQuests;
         public static List<Object> viewQuestInfoButtons;
         public static List<GeneratedButton> availableStoriesButtons;
         public static List<Object> mainWorldButtons;
@@ -51,6 +52,7 @@ namespace Eternal_Coin
             chooseCharacterButtons = new List<Object>();
             uiElements = new List<UIElement>();
             quests = new List<Quest>();
+            completedQuests = new List<string>();
             viewQuestInfoButtons = new List<Object>();
             subNodes = new List<Node>();
             locNodes = new List<LocationNode>();

@@ -43,18 +43,18 @@ namespace Eternal_Coin
             options.Load("./Content/Options.xml");
             XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options");
 
-            string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);//sets the directory for GameSave files.
             GVar.savedGameLocation = Path.Combine(saveFolder, "EternalCoin\\GameSaves\\");
 
-            string fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);//sets the directory for GameFiles corresponding to GameSave's.
             GVar.gameFilesLocation = Path.Combine(fileFolder, "EternalCoin\\GameFiles\\");
 
-            string debugFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string debugFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);//sets the directory for debug logs.
             GVar.debugFilesLocation = Path.Combine(debugFolder, "EternalCoin\\DebugFiles\\");
 
-            if (!Directory.Exists(GVar.savedGameLocation))
+            if (!Directory.Exists(GVar.savedGameLocation))//if the GameSave directory doesn't exist, create it.
                 Directory.CreateDirectory(GVar.savedGameLocation);
-            GVar.savedGameLocation += "GameSave";
+            GVar.savedGameLocation += "GameSave";//add GameSave to the end of the path so files will be named GameSave0.xml, GameSave1.xml etc.
 
             
             //fullscreen option check
@@ -182,6 +182,7 @@ namespace Eternal_Coin
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            //this is my hacks, don't worry about it.
             #region HAX
             if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
             {
@@ -197,7 +198,7 @@ namespace Eternal_Coin
             {
                 GVar.silverMoney += 1000;
             }
-            #endregion
+            #endregion 
 
             //maps need to be loaded after eveything because shit fucks up
             if (GVar.loadData)

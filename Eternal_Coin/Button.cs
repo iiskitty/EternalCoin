@@ -420,51 +420,82 @@ namespace Eternal_Coin
                         try
                         {
                             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");//grab npc tag from the current locations xml file.
-                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questaccepted].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questfinished].InnerText), Convert.ToBoolean(locNPC[GVar.XmlTags.QuestTags.questcompleted].InnerText));//create new NPC with data from the current locations xml file.
+                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
                             locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");//grab greeting tag inside npc tag from the current locations xml file. 
 
-                            //if NPC has a quest and the quest has not been accepted.
-                            if (GVar.npc.HasQuest && !GVar.npc.QuestAccepted)
-                            {
-                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;//set the NPC's greeting appropriately.
+                            XmlNodeList quests = GVar.curLocNode.DocumentElement.SelectNodes("/location/npc/quest");
 
-                                //cycle through UIElements.
-                                for (int k = 0; k < Lists.uiElements.Count; k++)
+
+                            if(GVar.npc.HasQuest && locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText == "QUESTID")
+                            {
+                                bool questToAccept = false;
+
+                                for (int j = 0; j < quests.Count; j++)
                                 {
-                                    //if Sprite is NPC Info UI and is not active.
-                                    if (Lists.uiElements[k].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[k].Draw)
+                                    if(!Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText))
                                     {
-                                        Button acceptQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[k].Position.X, Lists.uiElements[k].Position.Y + Lists.uiElements[k].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);//create Accept Quest Button.
-                                        acceptQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation sate to default.
-                                        Lists.mainWorldButtons.Add(acceptQuest);//add Accept Quest Button to MainWorldButtons.
+                                        for (int k = 0; k < Lists.completedQuests.Count; k++)
+                                        {
+                                            if (quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText == Lists.completedQuests[k])
+                                            {
+                                                quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText = "true";
+                                            }
+                                        }
+                                    }
+                                    if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText) && !Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted]))
+                                    {
+                                        GVar.npc.QuestID = quests[j][GVar.XmlTags.QuestTags.questid].InnerText;
+                                        GVar.npc.Greeting = locNPC["greeting/questid/" + GVar.npc.QuestID + "/" + GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
+                                        questToAccept = true;
+                                        break;
+                                    }
+                                }
+                                if (questToAccept)
+                                {
+                                    //cycle through UIElements.
+                                    for (int j = 0; j < Lists.uiElements.Count; j++)
+                                    {
+                                        //if Sprite is NPC Info UI and is not active.
+                                        if (Lists.uiElements[j].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[j].Draw)
+                                        {
+                                            Button acceptQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[j].Position.X, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);//create Accept Quest Button.
+                                            acceptQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation sate to default.
+                                            Lists.mainWorldButtons.Add(acceptQuest);//add Accept Quest Button to MainWorldButtons.
+                                        }
                                     }
                                 }
                             }
                             //if NPC has a quest and the quest had been accepted.
-                            else if (!GVar.npc.HasQuest && GVar.npc.QuestAccepted)
+                            else if (GVar.npc.HasQuest && locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText != "QUESTID")
                             {
-                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;//set NPC's greeting appropriately.
-                            }
-                            //if NPC doesn't have a quest and quest is finished.
-                            else if (!GVar.npc.HasQuest && GVar.npc.QuestFinished)
-                            {
-                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;//set NPC's greeting appropriately.
-                                //cycle through UIElements.
-                                for (int k = 0; k < Lists.uiElements.Count; k++)
+                                GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;//set NPC's greeting appropriately.
+
+                                for (int j = 0; j < quests.Count; j++)
                                 {
-                                    //if Sprite is NPC Info UI and is not active.
-                                    if (Lists.uiElements[k].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[k].Draw)
+                                    if (quests[j][GVar.XmlTags.QuestTags.questid].InnerText == locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText)
                                     {
-                                        Button handInQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[k].Position.X, Lists.uiElements[k].Position.Y + Lists.uiElements[k].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);//create Hand In Quest Button.
-                                        handInQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation state to default.
-                                        Lists.mainWorldButtons.Add(handInQuest);//add button to MainWorldButtons.
+                                        if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.completed].InnerText))
+                                        {
+                                            GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
+                                            //cycle through UIElements.
+                                            for (int k = 0; k < Lists.uiElements.Count; k++)
+                                            {
+                                                //if Sprite is NPC Info UI and is not active.
+                                                if (Lists.uiElements[k].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[k].Draw)
+                                                {
+                                                    Button handInQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[k].Position.X, Lists.uiElements[k].Position.Y + Lists.uiElements[k].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);//create Hand In Quest Button.
+                                                    handInQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation state to default.
+                                                    Lists.mainWorldButtons.Add(handInQuest);//add button to MainWorldButtons.
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
                             //if NPC does not have a quest and quest is completed.
-                            else if (!GVar.npc.HasQuest && GVar.npc.QuestCompleted)
+                            else if (!GVar.npc.HasQuest)
                             {
-                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.questcompleted].InnerText;//set NPC's greeting appropriately.
+                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
                             }
                             GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, GVar.npcTextWrapLength);//wrap NPC's greeting text to fit in NPC Info UI/.
 
@@ -498,7 +529,7 @@ namespace Eternal_Coin
 
                         string greeting = Text.WrapText(Fonts.lucidaConsole14Regular, shopKeep["greeting"].InnerText, GVar.npcTextWrapLength);//wrap ShopKeeps greeting to fit in UI.
 
-                        GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, false, false, false);//create NPC(ShopKeep) with name and greeting.
+                        GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, "QUESTID");//create NPC(ShopKeep) with name and greeting.
 
                         Button openShop = new Button(Textures.Misc.pixel, Vector2.Zero, new Vector2(25, 15), Color.Yellow, "OpenShop", "Alive", 0f);//create OpenShop Button.
                         
