@@ -1127,9 +1127,6 @@
 #begin LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
 /copy:LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
 
-#begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
-
 #begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
 /copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
 
@@ -1147,6 +1144,9 @@
 
 #begin LocationTemplates/location template.xml
 /copy:LocationTemplates/location template.xml
+
+#begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
+/copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
 
 #begin LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
 /copy:LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml

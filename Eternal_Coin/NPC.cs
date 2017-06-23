@@ -21,7 +21,10 @@ namespace Eternal_Coin
             this.questID = questID;
         }
 
-        public NPC() { }
+        public NPC()
+        {
+            greeting = string.Empty;
+        }
 
         /// <summary>
         /// Draws the name and current greeting of the NPC being talked to.

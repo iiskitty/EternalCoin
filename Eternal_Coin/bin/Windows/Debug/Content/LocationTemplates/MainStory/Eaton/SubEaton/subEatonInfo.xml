@@ -10,21 +10,34 @@
 	
 	<npc>
 		<hasquest>true</hasquest>
-		<questaccepted>false</questaccepted>
-		<questfinished>false</questfinished>
-		<questcompleted>false</questcompleted>
+
+    <currentquest>QUESTID</currentquest>
+
 		<name>Dick</name>
 		
 		<greeting>
-			<questunaccepted>How do you do, I have a quest for you. Go to SubEaton1.</questunaccepted>
-			<questaccepted>How do you do, how goes your quest to SubEaton1</questaccepted>
-			<acceptquest>Good luck adventurer!</acceptquest>
-			<questfinished>Thank you kind sir. Have some stuff</questfinished>
-			<handinquest>Be careful with that axe now.</handinquest>
-			<questcompleted>How do you do do doooooo do do do do dooooooo.</questcompleted>
+      <normalgreeting>How are you today *gender*</normalgreeting>
+      <questid>
+          <explsubeaton1>
+            <questunaccepted>How do you do I have a quest for you. Go to SubEaton1.</questunaccepted>
+            <questaccepted>How do you do how goes your quest to SubEaton1</questaccepted>
+			      <acceptquest>Good luck adventurer!</acceptquest>
+			      <questfinished>Thank you kind sir. Have some stuff</questfinished>
+			      <handinquest>Be careful with that axe now.</handinquest>
+          </explsubeaton1>
+      </questid>
 		</greeting>
 		
 		<quest>
+      <questid>explsubeaton1</questid>
+
+      <unlocked>true</unlocked>
+      <unlockrequirement>QUESTID</unlockrequirement>
+
+      <accepted>false</accepted>
+      <completed>false</completed>
+      <handedin>false></handedin>
+
 			<description>Explore Sub Eaton 1 and come back to Dick.</description>
 			<shortdescription>Explore Sub Eaton 1</shortdescription>
 			<completingaction>Exploring SubEaton1</completingaction>
@@ -41,6 +54,7 @@
         </item>
 			</reward>
 		</quest>
+    
 	</npc>
 
   <shop>

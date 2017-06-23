@@ -201,14 +201,14 @@ namespace Eternal_Coin
                     //if button is Quest Accept Button.
                     if (Lists.mainWorldButtons[j].Name == "QuestAcceptButton")
                     {
-                        Quest.AcceptQuest(GVar.player);//accept the quest.
+                        Quest.AcceptQuest(GVar.player, GVar.npc.QuestID);//accept the quest.
                         Lists.mainWorldButtons.RemoveAt(j);//remove Quest Accept Button.
                         break;
                     }
                     //if button is Hand In Qeust Button.
                     else if (Lists.mainWorldButtons[j].Name == "HandInQuestButton")
                     {
-                        Quest.HandInQuest(GVar.player);//hand in the quest.
+                        Quest.HandInQuest(GVar.player, GVar.npc.QuestID);//hand in the quest.
                         Lists.mainWorldButtons.RemoveAt(j);//remove Hand In Quest Button.
                     }
                     //if button is Open Shop Button.
@@ -420,8 +420,9 @@ namespace Eternal_Coin
                         try
                         {
                             XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");//grab npc tag from the current locations xml file.
-                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, "", Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
-                            locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");//grab greeting tag inside npc tag from the current locations xml file. 
+                            XmlNode locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid");
+                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, string.Empty, Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
+                            //locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");//grab greeting tag inside npc tag from the current locations xml file. 
 
                             XmlNodeList quests = GVar.curLocNode.DocumentElement.SelectNodes("/location/npc/quest");
 
@@ -442,10 +443,11 @@ namespace Eternal_Coin
                                             }
                                         }
                                     }
-                                    if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText) && !Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted]))
+                                    if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText) && !Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted].InnerText))
                                     {
                                         GVar.npc.QuestID = quests[j][GVar.XmlTags.QuestTags.questid].InnerText;
-                                        GVar.npc.Greeting = locNPC["greeting/questid/" + GVar.npc.QuestID + "/" + GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
+                                        locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + GVar.npc.QuestID);
+                                        GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
                                         questToAccept = true;
                                         break;
                                     }
@@ -468,7 +470,9 @@ namespace Eternal_Coin
                             //if NPC has a quest and the quest had been accepted.
                             else if (GVar.npc.HasQuest && locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText != "QUESTID")
                             {
-                                GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;//set NPC's greeting appropriately.
+                                //GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;//set NPC's greeting appropriately.
+                                locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);
+                                GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;
 
                                 for (int j = 0; j < quests.Count; j++)
                                 {
@@ -476,7 +480,9 @@ namespace Eternal_Coin
                                     {
                                         if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.completed].InnerText))
                                         {
-                                            GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
+                                            //GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
+                                            GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
+
                                             //cycle through UIElements.
                                             for (int k = 0; k < Lists.uiElements.Count; k++)
                                             {
@@ -493,9 +499,10 @@ namespace Eternal_Coin
                                 }
                             }
                             //if NPC does not have a quest and quest is completed.
-                            else if (!GVar.npc.HasQuest)
+                            if (GVar.npc.Greeting == String.Empty)
                             {
-                                GVar.npc.Greeting = locNPC[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
+                                locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
+                                GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
                             }
                             GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, GVar.npcTextWrapLength);//wrap NPC's greeting text to fit in NPC Info UI/.
 
@@ -517,9 +524,10 @@ namespace Eternal_Coin
                                 }
                             }
                         }
-                        catch
+                        catch(Exception e)
                         {
                             GVar.npc = new NPC();//set NPC to nothing if anything fails.
+                            GVar.LogDebugInfo(e.ToString(), 1);
                         }
                     }
                     //if button is Shop Button.

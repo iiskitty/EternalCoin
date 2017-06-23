@@ -90,6 +90,11 @@ namespace Eternal_Coin
                         XmlElement quest = tempDoc.CreateElement(string.Empty, "quest", string.Empty);
                         body.AppendChild(quest);
 
+                        XmlElement questid = tempDoc.CreateElement(string.Empty, "questid", string.Empty);
+                        XmlText questidInner = tempDoc.CreateTextNode(quests[i].QuestID);
+                        questid.AppendChild(questidInner);
+                        quest.AppendChild(questid);
+
                         XmlElement description = tempDoc.CreateElement(string.Empty, GVar.XmlTags.QuestTags.description, string.Empty);
                         XmlText descriptionInner = tempDoc.CreateTextNode(quests[i].Description);
                         description.AppendChild(descriptionInner);

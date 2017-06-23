@@ -7,7 +7,8 @@ using System.Xml;
 
 /*TODO
  * 1: make a way for quests to require other quests to be completed.
- * 2: fix the map jittering.
+ * 2: when handing in a quest, the items in the reward tag aren't found, need a better way to get them.
+ * 3: fix the map jittering.
  * 
  * /*read through all the code, comment the code, fix and tweak the code where necessary*\
  */
