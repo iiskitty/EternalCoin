@@ -52,6 +52,8 @@ namespace Eternal_Coin
                 }
             }
 
+            
+
             //draw quest info UI buttons.
             for (int i = 0; i < Lists.viewQuestInfoButtons.Count; i++)
             {
@@ -223,7 +225,7 @@ namespace Eternal_Coin
             }
 
             //Update ViewQuestButtons.
-            Button.UpdateViewQuestButtons(gameTime);
+            Button.UpdateQuestListButtons(gameTime);
 
             //Update MainWorldButtons.
             Button.UpdateMainWorldButtons(gameTime);

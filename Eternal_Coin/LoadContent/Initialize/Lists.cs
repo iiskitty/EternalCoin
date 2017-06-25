@@ -20,6 +20,8 @@ namespace Eternal_Coin
         public static List<Quest> quests;
         public static List<string> completedQuests;
         public static List<Object> viewQuestInfoButtons;
+        public static List<Object> NPCQuestButtons;
+        public static List<Quest> NPCQuests;
         public static List<GeneratedButton> availableStoriesButtons;
         public static List<Object> mainWorldButtons;
         public static List<Enemy> enemy;
@@ -54,6 +56,8 @@ namespace Eternal_Coin
             quests = new List<Quest>();
             completedQuests = new List<string>();
             viewQuestInfoButtons = new List<Object>();
+            NPCQuestButtons = new List<Object>();
+            NPCQuests = new List<Quest>();
             subNodes = new List<Node>();
             locNodes = new List<LocationNode>();
             optionsButtons = new List<Object>();

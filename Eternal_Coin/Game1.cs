@@ -6,9 +6,10 @@ using System.IO;
 using System.Xml;
 
 /*TODO
- * 1: make a way for quests to require other quests to be completed.
- * 2: when handing in a quest, the items in the reward tag aren't found, need a better way to get them.
- * 3: fix the map jittering.
+ * 1: make a way for quests to require other quests to be completed. (possibly done, need more testing.)
+ * 2: make a way to see a list of quests a NPC has, make them clickable to see information about the quest and to accept or hand in the quest.
+ * 3: make a way to play sound clips for voice acting from location xml files.
+ * 4: fix the map jittering.
  * 
  * /*read through all the code, comment the code, fix and tweak the code where necessary*\
  */

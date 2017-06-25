@@ -27,6 +27,23 @@
 				</explsubeaton2>
 			</questid>
 		</greeting>
+
+		<questrewards>
+			<explsubeaton2>
+				<item>
+					<itemname>Iron Sword</itemname>
+				</item>
+				<item>
+					<itemname>Bronze Leggings</itemname>
+				</item>
+				<item>
+					<itemname>Right Bronze Boot</itemname>
+				</item>
+				<item>
+					<itemname>Left Bronze Boot</itemname>
+				</item>
+			</explsubeaton2>
+		</questrewards>
 		
 		<quest>
 			<questid>explsubeaton2</questid>
@@ -42,20 +59,6 @@
 			<shortdescription>Explore Sub Eaton 2</shortdescription>
 			<completingaction>Exploring SubEaton2</completingaction>
 			<completinglocation>SubEaton2</completinglocation>
-			<reward>
-				<item>
-					<itemname>Iron Sword</itemname>
-				</item>
-				<item>
-					<itemname>Bronze Leggings</itemname>
-				</item>
-				<item>
-					<itemname>Right Bronze Boot</itemname>
-				</item>
-				<item>
-					<itemname>Left Bronze Boot</itemname>
-				</item>
-			</reward>
 		</quest>
 	</npc>
 	

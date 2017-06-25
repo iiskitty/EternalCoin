@@ -64,7 +64,7 @@ namespace Eternal_Coin
             XmlNodeList quests = saveDoc.SelectNodes("/savedgame/quest");
             foreach (XmlNode q in quests)
             {
-                Lists.quests.Add(new Quest(q[GVar.XmlTags.QuestTags.questid].InnerText, q[GVar.XmlTags.QuestTags.description].InnerText, q[GVar.XmlTags.QuestTags.shortdescription].InnerText, q[GVar.XmlTags.QuestTags.completingaction].InnerText, q[GVar.XmlTags.QuestTags.completinglocation].InnerText, Convert.ToBoolean(q[GVar.XmlTags.QuestTags.completed].InnerText), q[GVar.XmlTags.QuestTags.locationfilepath].InnerText));
+                Lists.quests.Add(new Quest(q[GVar.XmlTags.QuestTags.questid].InnerText, q[GVar.XmlTags.QuestTags.description].InnerText, q[GVar.XmlTags.QuestTags.shortdescription].InnerText, q[GVar.XmlTags.QuestTags.completingaction].InnerText, q[GVar.XmlTags.QuestTags.completinglocation].InnerText, Convert.ToBoolean(q[GVar.XmlTags.QuestTags.unlocked].InnerText), q[GVar.XmlTags.QuestTags.unlockrequirement].InnerText, Convert.ToBoolean(q[GVar.XmlTags.QuestTags.accepted].InnerText), Convert.ToBoolean(q[GVar.XmlTags.QuestTags.completed].InnerText), Convert.ToBoolean(q[GVar.XmlTags.QuestTags.handedin].InnerText), q[GVar.XmlTags.QuestTags.locationfilepath].InnerText));
                 GVar.LogDebugInfo("Guest Loaded: " + q[GVar.XmlTags.QuestTags.shortdescription].InnerText, 2);
             }
             saveNode = saveDoc.DocumentElement.SelectSingleNode("/savedgame/playerinventory");

@@ -248,6 +248,17 @@ namespace Eternal_Coin
                 }
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
+            if (button.Name == "ViewQuests")
+            {
+                foreach (UIElement ui in Lists.uiElements)
+                {
+                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
+                    {
+                        button.Position = new Vector2(ui.Position.X + ui.Size.X - button.Size.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
+                    }
+                }
+                button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
             if (button.Name == "QuestAcceptButton")
             {
                 foreach (UIElement ui in Lists.uiElements)
