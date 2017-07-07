@@ -105,5 +105,8 @@
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Bold.spritefont</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Regular.spritefont</File>
     <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/Eaton/EatonMap.png</File>
+    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NPCQuestListUI.png</File>
+    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/QuestsButton.png</File>
+    <File>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/PadLock.png</File>
   </SourceFiles>
 </SourceFileCollection>

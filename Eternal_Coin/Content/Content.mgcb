@@ -1006,9 +1006,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/AttackButtons/Punch.png
 
-#begin LoadData/Data.xml
-/copy:LoadData/Data.xml
-
 #begin AvailableStories.xml
 /copy:AvailableStories.xml
 
@@ -1148,6 +1145,45 @@
 #begin LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
 /copy:LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
 
+#begin Sprites/UI/NPCQuestListUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/NPCQuestListUI.png
+
 #begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
 /copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
+
+#begin Sprites/Buttons/QuestsButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/QuestsButton.png
+
+#begin Sprites/UI/PadLock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/PadLock.png
+
+#begin LoadData/Data.xml
+/copy:LoadData/Data.xml
 

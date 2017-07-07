@@ -10,6 +10,7 @@ using System.Xml;
  * 2: make a way to see a list of quests a NPC has, make them clickable to see information about the quest and to accept or hand in the quest.
  * 3: make a way to play sound clips for voice acting from location xml files.
  * 4: fix the map jittering.
+ * 5: add all buttons to a single List<> for easy click detection, make functions in Button.cs for updating and drawing for all buttons, instead of all over the place.
  * 
  * /*read through all the code, comment the code, fix and tweak the code where necessary*\
  */

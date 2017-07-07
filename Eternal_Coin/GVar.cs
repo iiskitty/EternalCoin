@@ -492,10 +492,10 @@ namespace Eternal_Coin
 
         public static GameState currentGameState, previousGameState;
 
-        public static string npcQuestDescription = string.Empty;
-        public static string npcQuestShortDescription = string.Empty;
-        public static bool npcQuestCompleted = false;
-        public static bool npcQuestAccepted = false;
+        //public static string npcQuestDescription = string.Empty;
+        //public static string npcQuestShortDescription = string.Empty;
+        //public static bool npcQuestCompleted = false;
+        //public static bool npcQuestAccepted = false;
 
         /// <summary>
         /// Global variable to exit game
@@ -503,6 +503,11 @@ namespace Eternal_Coin
         public static bool exitGame;
         public static bool exitAfterFade;
         public static bool gamePaused = false;
+
+        public static string NPCQuestName = string.Empty;
+        public static string NPCQuestDescription = string.Empty;
+        public static bool NPCQuestUnlocked = false;
+        public static bool drawNPCQuestInfo = false;
 
         /// <summary>
         /// X size of the game

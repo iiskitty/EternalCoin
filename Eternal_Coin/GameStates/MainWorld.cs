@@ -42,9 +42,9 @@ namespace Eternal_Coin
                     for (int j = 0; j < Lists.quests.Count; j++)
                     {
                         if (Lists.quests[j].Completed)//if quest is complete draw a tick.
-                            spriteBatch.Draw(Textures.Misc.tick, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.Misc.tick.Width, Textures.Misc.tick.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);//draw tick.
+                            spriteBatch.Draw(Textures.UI.tick, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.UI.tick.Width, Textures.UI.tick.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);//draw tick.
                         else if (!Lists.quests[j].Completed)//if quest not complete draw a cross.
-                            spriteBatch.Draw(Textures.Misc.cross, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.Misc.cross.Width, Textures.Misc.cross.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);//draw cross.
+                            spriteBatch.Draw(Textures.UI.cross, new Rectangle((int)questCompletedPosition.X, (int)questCompletedPosition.Y, Textures.UI.cross.Width, Textures.UI.cross.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);//draw cross.
                         spriteBatch.DrawString(Fonts.lucidaConsole10Regular, Lists.quests[j].ShortDescription, questInfoPosition, Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);//draw quest short description.
                         questInfoPosition.Y += 18;//move position down for next quest info to be drawn at.
                         questCompletedPosition.Y += 18;//move position down for next quests cross or tick to be drawn at.
@@ -89,6 +89,27 @@ namespace Eternal_Coin
                 if (Lists.mainWorldButtons[i].Name == "Options")///*TEMPORARY
                 {
                     spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Options", new Vector2(Lists.mainWorldButtons[i].Position.X + Lists.mainWorldButtons[i].Size.X / 4, Lists.mainWorldButtons[i].Position.Y + Lists.mainWorldButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.21f);//draw Options on options button.
+                }
+            }
+
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+                {
+                    for (int j = 0; j < Lists.NPCQuestButtons.Count; j++)
+                    {
+                        Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        Lists.NPCQuestButtons[j].DrawLightButton(spriteBatch);
+                    }
+                    if (GVar.drawNPCQuestInfo)
+                    {
+                        if (!GVar.NPCQuestUnlocked)
+                        {
+                            spriteBatch.Draw(Textures.UI.padLock, new Rectangle((int)Lists.uiElements[i].Position.X + (int)Lists.uiElements[i].Size.X - 30, (int)Lists.uiElements[i].Position.Y + 5, 25, 25), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.9f);
+                        }
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestName, new Vector2(Lists.uiElements[i].Position.X + 10, Lists.uiElements[i].Position.Y + 2), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestDescription, new Vector2(Lists.uiElements[i].Position.X + 146, Lists.uiElements[i].Position.Y + 44), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
+                    }
                 }
             }
 
@@ -229,6 +250,8 @@ namespace Eternal_Coin
 
             //Update MainWorldButtons.
             Button.UpdateMainWorldButtons(gameTime);
+
+            Updates.UpdateNPCQuestButtons(gameTime);
 
             //another temp save key combo, cant remember where the other one is.
             if (InputManager.IsKeyDown(Keys.LeftShift) && InputManager.IsKeyPressed(Keys.S))

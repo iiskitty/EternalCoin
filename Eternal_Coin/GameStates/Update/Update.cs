@@ -132,6 +132,85 @@ namespace Eternal_Coin
             }
         }
 
+        public static void UpdateNPCQuestButtons(GameTime gameTime)
+        {
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+                {
+                    Vector2 startPos = new Vector2(Lists.uiElements[i].Position.X + 5, Lists.uiElements[i].Position.Y + 40);
+
+                    for (int j = 0; j < Lists.NPCQuestButtons.Count; j++)
+                    {
+                        Lists.NPCQuestButtons[j].Position = startPos;
+                        Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        startPos.Y += Lists.NPCQuestButtons[j].Size.Y + 2;
+
+                        if (Lists.NPCQuestButtons[j].ID == "QuestAcceptButton")
+                        {
+                            Lists.NPCQuestButtons[j].Position = new Vector2(Lists.uiElements[i].Position.X + Lists.uiElements[i].Size.X - (Lists.NPCQuestButtons[j].Size.X + (Textures.Button.rightLightSide.Width * 2)), Lists.uiElements[i].Position.Y + Lists.uiElements[i].Size.Y - Lists.NPCQuestButtons[j].Size.Y);
+                            Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        }
+                        if (Lists.NPCQuestButtons[j].ID == "HandInQuestButton")
+                        {
+                            Lists.NPCQuestButtons[j].Position = new Vector2(Lists.uiElements[i].Position.X + Lists.uiElements[i].Size.X - (Lists.NPCQuestButtons[j].Size.X + (Textures.Button.rightLightSide.Width * 2)), Lists.uiElements[i].Position.Y + Lists.uiElements[i].Size.Y - Lists.NPCQuestButtons[j].Size.Y);
+                            Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        }
+                    }
+                }
+            }
+            GeneratedButton questButton = null;
+            for (int i = 0; i < Lists.NPCQuestButtons.Count; i++)
+            {
+                
+                if (MouseManager.mouseBounds.Intersects(Lists.NPCQuestButtons[i].Bounds) && InputManager.IsLMPressed())
+                {
+                    for (int j = 0; j < Lists.NPCQuests.Count; j++)
+                    {
+                        if (Lists.NPCQuests[j].QuestID == Lists.NPCQuestButtons[i].State)
+                        {
+                            GVar.NPCQuestName = Lists.NPCQuests[j].ShortDescription;
+                            GVar.NPCQuestDescription = Lists.NPCQuests[j].Description;
+                            GVar.NPCQuestUnlocked = Lists.NPCQuests[j].Unlocked;
+                            GVar.NPCQuestDescription = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.NPCQuestDescription, 350);
+                            GVar.drawNPCQuestInfo = true;
+                        }
+                    }
+
+                    if (Lists.NPCQuestButtons[i].ID == "QuestAcceptButton")
+                    {
+                        Quest.AcceptQuest(GVar.player, Lists.NPCQuestButtons[i].State);//accept the quest.
+                        Quest.CreateNPCQuestsButtons();
+                        break;
+                    }
+                    else if (Lists.NPCQuestButtons[i].ID == "HandInQuestButton")
+                    {
+                        Quest.HandInQuest(GVar.player, Lists.NPCQuestButtons[i].State);//hand in the quest.
+                        Quest.CreateNPCQuestsButtons();
+                    }
+                    else
+                    {
+                        questButton = (GeneratedButton)Lists.NPCQuestButtons[i];
+                    }
+
+                    SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+
+                    
+                }
+            }
+            if (questButton != null)
+            {
+                for (int i = 0; i < Lists.NPCQuestButtons.Count; i++)
+                {
+                    if (Lists.NPCQuestButtons[i].ID == "QuestAcceptButton" || Lists.NPCQuestButtons[i].ID== "HandInQuestButton")
+                    {
+                        Lists.NPCQuestButtons[i].State = "delete";
+                    }
+                }
+                Quest.AddAcceptOrHandInQuestButtons(questButton);
+            }
+        }
+
         /// <summary>
         /// Updates buttons when playing the game
         /// </summary>
@@ -259,28 +338,7 @@ namespace Eternal_Coin
                 }
                 button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
-            if (button.Name == "QuestAcceptButton")
-            {
-                foreach (UIElement ui in Lists.uiElements)
-                {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
-                    {
-                        button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
-                    }
-                }
-                button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            }
-            if (button.Name == "HandInQuestButton")
-            {
-                foreach (UIElement ui in Lists.uiElements)
-                {
-                    if (ui.SpriteID == Textures.UI.NPCInfoUI)
-                    {
-                        button.Position = new Vector2(ui.Position.X, ui.Position.Y + ui.Size.Y - button.Size.Y);
-                    }
-                }
-                button.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            }
+            
             
         }
     }

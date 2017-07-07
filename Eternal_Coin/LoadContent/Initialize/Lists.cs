@@ -5,25 +5,27 @@ namespace Eternal_Coin
 {
     public class Lists
     {
+        public static List<Object> locationButtons;
+        public static List<Object> mainWorldButtons;
+        public static List<Object> inventoryButtons;
+        public static List<Object> viewQuestInfoButtons;
+        public static List<Object> optionsButtons;
+        public static List<GeneratedButton> NPCQuestButtons;
+        public static List<Object> chooseCharacterButtons;
+        public static List<Object> mainMenuButtons;
+        public static List<GeneratedButton> availableStoriesButtons;
+        public static List<Object> attackButtons;
+        public static List<Object> battleSceneButtons;
+        public static List<Object> displayPictureButtons;
+        
+
         public static List<Item> playerItems;
         public static List<Item> characterItems;
         public static List<Item> shopItems;
-        public static List<Object> mainMenuButtons;
-        public static List<Object> inventoryButtons;
-        public static List<Object> chooseCharacterButtons;
-        public static List<Object> optionsButtons;
-        public static List<Object> locationButtons;
-        public static List<Object> attackButtons;
-        public static List<Object> displayPictureButtons;
-        public static List<Object> battleSceneButtons;
         public static List<Object> activeProjectiles;
         public static List<Quest> quests;
         public static List<string> completedQuests;
-        public static List<Object> viewQuestInfoButtons;
-        public static List<Object> NPCQuestButtons;
         public static List<Quest> NPCQuests;
-        public static List<GeneratedButton> availableStoriesButtons;
-        public static List<Object> mainWorldButtons;
         public static List<Enemy> enemy;
         public static List<UIElement> uiElements;
         public static List<Node> subNodes;
@@ -40,31 +42,32 @@ namespace Eternal_Coin
 
         public static void InitializeLists()
         {
-            activeProjectiles = new List<Object>();
+            locationButtons = new List<Object>();
+            mainWorldButtons = new List<Object>();
+            inventoryButtons = new List<Object>();
+            viewQuestInfoButtons = new List<Object>();
+            optionsButtons = new List<Object>();
+            NPCQuestButtons = new List<GeneratedButton>();
+            chooseCharacterButtons = new List<Object>();
+            mainMenuButtons = new List<Object>();
+            availableStoriesButtons = new List<GeneratedButton>();
+            attackButtons = new List<Object>();
             battleSceneButtons = new List<Object>();
+            displayPictureButtons = new List<Object>();
+
+            activeProjectiles = new List<Object>();
             characterItems = new List<Item>();
             shopItems = new List<Item>();
             playerItems = new List<Item>();
-            mainMenuButtons = new List<Object>();
-            inventoryButtons = new List<Object>();
-            availableStoriesButtons = new List<GeneratedButton>();
-            mainWorldButtons = new List<Object>();
-            locationButtons = new List<Object>();
             enemy = new List<Enemy>();
-            chooseCharacterButtons = new List<Object>();
             uiElements = new List<UIElement>();
             quests = new List<Quest>();
             completedQuests = new List<string>();
-            viewQuestInfoButtons = new List<Object>();
-            NPCQuestButtons = new List<Object>();
             NPCQuests = new List<Quest>();
             subNodes = new List<Node>();
             locNodes = new List<LocationNode>();
-            optionsButtons = new List<Object>();
             savedGames = new List<SavedGame>();
             savedGamesXmlDoc = new List<XmlDocument>();
-            displayPictureButtons = new List<Object>();
-            attackButtons = new List<Object>();
             attackIDs = new List<string>();
             availableAttacksIDs = new List<string>();
             enemyAttackIDs = new List<string>();

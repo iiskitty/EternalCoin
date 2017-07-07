@@ -16,15 +16,22 @@
 	  	<name>Dick</name>
       
 	  	<greeting>
-            <normalgreeting>How are you today *gender*</normalgreeting>
+            <normalgreeting>How are you today, adventurer.</normalgreeting>
             <questid>
                 <explsubeaton1>
-                    <questunaccepted>How do you do I have a quest for you. Go to SubEaton1.</questunaccepted>
-                    <questaccepted>How do you do how goes your quest to SubEaton1</questaccepted>
-	  	            <acceptquest>Good luck adventurer!</acceptquest>
-	  	            <questfinished>Thank you kind sir. Have some stuff</questfinished>
-	  	            <handinquest>Be careful with that axe now.</handinquest>
+                    <questunaccepted>If you could please go check out Sub Eaton 1 that would be great. You will be rewarded of course.</questunaccepted>
+                    <questaccepted>How do you do, how goes your quest to SubEaton1</questaccepted>
+	  	            <acceptquest>Good luck, adventurer!</acceptquest>
+	  	            <questfinished>Thank you for doing this.</questfinished>
+	  	            <handinquest>Be careful with that sword now.</handinquest>
                 </explsubeaton1>
+                <explsubeaton2>
+                    <questunaccepted>If you could please Explore Sub Eaton 2, I will be greatful.</questunaccepted>
+                    <questaccepted>How do you do, how goes your quest to SubEaton2</questaccepted>
+	  	            <acceptquest>Good luck.</acceptquest>
+	  	            <questfinished>Thank you for doing this.</questfinished>
+	  	            <handinquest>Here is some more stuff.</handinquest>
+                </explsubeaton2>
             </questid>
 	  	</greeting>
 
@@ -40,6 +47,17 @@
                     <itemname>Bronze Chestplate</itemname>
                 </item>
             </explsubeaton1>
+            <explsubeaton2>
+                <item>
+                    <itemname>Bronze Leggings</itemname>
+                </item>
+                <item>
+                    <itemname>Right Bronze Gauntlet</itemname>
+                </item>
+                <item>
+                    <itemname>Left Bronze Gauntlet</itemname>
+                </item>
+            </explsubeaton2>
         </questrewards>
       
 	  	<quest>
@@ -57,6 +75,21 @@
 	  	  	<completingaction>Exploring SubEaton1</completingaction>
 	  	  	<completinglocation>SubEaton1</completinglocation>
 	  	</quest>
+        <quest>
+            <questid>explsubeaton2</questid>
+
+            <unlocked>false</unlocked>
+            <unlockrequirement>explsubeaton1</unlockrequirement>
+
+            <accepted>false</accepted>
+            <completed>false</completed>
+            <handedin>false</handedin>
+
+            <description>Explore Sub Eaton 2 and come back to Dick.</description>
+            <shortdescription>Explore Sub Eaton 2</shortdescription>
+            <completingaction>Exploring SubEaton2</completingaction>
+            <completinglocation>SubEaton2</completinglocation>
+        </quest>
 
 	</npc>
 

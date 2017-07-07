@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml;
 
 namespace Eternal_Coin
 {
@@ -47,6 +48,14 @@ namespace Eternal_Coin
                     }
                 }
             }
+        }
+
+        public static void SetGreeting(string questid, string tag)
+        {
+            XmlNode greeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + questid);
+
+            GVar.npc.Greeting = greeting[tag].InnerText;
+            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
         }
 
         public string QuestID { get { return questID; } set { questID = value; } }

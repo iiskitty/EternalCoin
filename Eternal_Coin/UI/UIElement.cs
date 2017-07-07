@@ -26,7 +26,9 @@ namespace Eternal_Coin
         public static List<UIElement> AddUIElements(List<UIElement> uiElements)
         {
             uiElements.Add(new UIElement(Textures.UI.locationInfoUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.locationInfoUI.Width / 2, 0 + (GVar.gameScreenY - Textures.UI.locationInfoUI.Height)), new Vector2(Textures.UI.locationInfoUI.Width, Textures.UI.locationInfoUI.Height), 0.18f, true, GVar.GameState.game));
-            uiElements.Add(new UIElement(Textures.UI.NPCInfoUI, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.UI.NPCInfoUI.Width / 2), GVar.gameScreenY / 2 - Textures.UI.NPCInfoUI.Height / 2), new Vector2(Textures.UI.NPCInfoUI.Width, Textures.UI.NPCInfoUI.Height), 0.18f, false, GVar.GameState.game));
+            UIElement NPCInfoUI = new UIElement(Textures.UI.NPCInfoUI, new Vector2(0 + (GVar.gameScreenX / 2 - Textures.UI.NPCInfoUI.Width / 2), GVar.gameScreenY / 2 - Textures.UI.NPCInfoUI.Height * 1.2f), new Vector2(Textures.UI.NPCInfoUI.Width, Textures.UI.NPCInfoUI.Height), 0.18f, false, GVar.GameState.game);
+            uiElements.Add(NPCInfoUI);
+            uiElements.Add(new UIElement(Textures.UI.NPCQuestListUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.NPCQuestListUI.Width / 2, NPCInfoUI.Position.Y + Textures.UI.NPCInfoUI.Height), new Vector2(Textures.UI.NPCQuestListUI.Width, Textures.UI.NPCQuestListUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.questListUI, new Vector2(0, 0), new Vector2(Textures.UI.questListUI.Width, Textures.UI.questListUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.questInfoUI, new Vector2(Textures.UI.questListUI.Width, 0), new Vector2(Textures.UI.questInfoUI.Width, Textures.UI.questInfoUI.Height), 0.18f, false, GVar.GameState.game));
             uiElements.Add(new UIElement(Textures.UI.inventoryUI, new Vector2(0, 0), new Vector2(Textures.UI.inventoryUI.Width, Textures.UI.inventoryUI.Height), 0.18f, true, GVar.GameState.inventory));
@@ -35,7 +37,6 @@ namespace Eternal_Coin
             uiElements.Add(new UIElement(Textures.UI.battleUI, new Vector2(0, GVar.gameScreenY - Textures.UI.battleUI.Height), new Vector2(Textures.UI.battleUI.Width, Textures.UI.battleUI.Height), 0.18f, true, GVar.GameState.battle));
             uiElements.Add(new UIElement(Textures.UI.newGameUIBorder, new Vector2(GVar.gameScreenX / 2 - Textures.UI.newGameUIBorder.Width / 2, GVar.gameScreenY / 2 - Textures.UI.newGameUIBorder.Height / 2), new Vector2(Textures.UI.newGameUIBorder.Width, Textures.UI.newGameUIBorder.Height), 0.19f, false, GVar.GameState.chooseCharacter));
             uiElements.Add(new UIElement(Textures.UI.endBattleUI, new Vector2(GVar.gameScreenX / 2 - Textures.UI.endBattleUI.Width / 2, GVar.gameScreenY / 2 - Textures.UI.endBattleUI.Height / 2), new Vector2(Textures.UI.endBattleUI.Width, Textures.UI.endBattleUI.Height), 0.181f, false, GVar.GameState.battle));
-            uiElements.Add(new UIElement(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2 - 250, GVar.gameScreenY / 2 + 150), new Vector2(500, 300), 0.18f, false, GVar.GameState.game));
             return uiElements;
         }
 

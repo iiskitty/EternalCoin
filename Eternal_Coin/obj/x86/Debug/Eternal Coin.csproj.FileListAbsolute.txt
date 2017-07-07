@@ -604,3 +604,6 @@ C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Sharp
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.xml
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\location template.xml
+C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NPCQuestListUI.xnb
+C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\QuestsButton.xnb
+C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\PadLock.xnb

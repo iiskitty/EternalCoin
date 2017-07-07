@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace Eternal_Coin
 {
@@ -45,6 +46,42 @@ namespace Eternal_Coin
             {
                 Lists.viewQuestInfoButtons[i].Position = viewQuestInfoButtonPosition;//set position to ViewQuestInfoButtonPosition.
                 viewQuestInfoButtonPosition.Y += 18;//move the position down for next button.
+            }
+        }
+
+        public static void DisplayNPCQuestList()
+        {
+            try
+            {
+                Quest.CreateNPCQuestsButtons();
+            }
+            catch (Exception e)
+            {
+                GVar.LogDebugInfo(e.ToString(), 1);
+            }
+
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI)
+                {
+                    Lists.uiElements[i].Draw = true;
+                }
+            }
+        }
+
+        public static void CloseNPCQuestListUI()
+        {
+            for (int i = 0; i < Lists.uiElements.Count; i++)
+            {
+                if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI)
+                {
+                    Lists.uiElements[i].Draw = false;
+                    Lists.NPCQuestButtons.Clear();
+                    GVar.NPCQuestDescription = string.Empty;
+                    GVar.NPCQuestName = string.Empty;
+                    GVar.drawNPCQuestInfo = false;
+                    GVar.NPCQuestUnlocked = false;
+                }
             }
         }
 
@@ -107,15 +144,7 @@ namespace Eternal_Coin
                     //cycle through MainWorldButtons.
                     for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
                     {
-                        if (Lists.mainWorldButtons[j].Name == "HandInQuestButton")//if button is Hand In Quest Button.
-                        {
-                            Lists.mainWorldButtons[j].State = "delete";//delete the button.
-                        }
-                        else if (Lists.mainWorldButtons[j].Name == "CloseNPCUIButton")//if button is Close NPC Info UI.
-                        {
-                            Lists.mainWorldButtons[j].State = "delete";//delete the button.
-                        }
-                        else if (Lists.mainWorldButtons[j].Name == "QuestAcceptButton")//if button is Quest Accept Button.
+                        if (Lists.mainWorldButtons[j].Name == "CloseNPCUIButton")//if button is Close NPC Info UI.
                         {
                             Lists.mainWorldButtons[j].State = "delete";//delete the button.
                         }
@@ -125,6 +154,12 @@ namespace Eternal_Coin
                         }
                     }
                     Lists.uiElements[i].Draw = false;//Deactivate NPC Info UI.
+                }
+                else if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+                {
+                    if (Lists.NPCQuestButtons.Count > 0)
+                        Lists.NPCQuestButtons.Clear();
+                    Lists.uiElements[i].Draw = false;
                 }
             }
         }

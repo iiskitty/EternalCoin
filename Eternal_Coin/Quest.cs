@@ -28,6 +28,7 @@ namespace Eternal_Coin
             this.completingLocation = completingLocation;
             this.unlocked = unlocked;
             this.unlockRequirement = unlockRequirement;
+            this.locationFilePath = locationFilePath;
             this.accepted = accepted;
             this.completed = completed;
             this.handedIn = handedIn;
@@ -47,7 +48,8 @@ namespace Eternal_Coin
 
         public static string GetLocationFilePath(Entity P)
         {
-            return GVar.gameFilesLocation + P.Name + "/" + P.CurrentLocation.LocatoinFilePath;
+            string path = GVar.gameFilesLocation + P.Name + "/" + P.CurrentLocation.LocatoinFilePath;
+            return path;
         }
 
         public static void AcceptQuest(Entity P, string questid)
@@ -158,6 +160,76 @@ namespace Eternal_Coin
                     quests[j][GVar.XmlTags.QuestTags.completed].InnerText = "true";
                     locDoc.Save(Lists.quests[i].LocationFilePath);
                     Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
+                }
+            }
+        }
+
+        public static void CreateNPCQuestsButtons()
+        {
+            Lists.NPCQuestButtons.Clear();
+            Lists.NPCQuests.Clear();
+            
+
+            XmlNodeList quests = GVar.curLocNode.DocumentElement.SelectNodes("/location/npc/quest");
+
+            for (int j = 0; j < quests.Count; j++)
+            {
+                if (!Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText))
+                {
+                    for (int k = 0; k < Lists.completedQuests.Count; k++)
+                    {
+                        if (quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText == Lists.completedQuests[k])
+                        {
+                            quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText = "true";
+                        }
+                    }
+                }
+                if (quests[j][GVar.XmlTags.QuestTags.completingaction].InnerText.Contains("Exploring"))
+                {
+                    Lists.NPCQuestButtons.Add(new GeneratedButton(Vector2.Zero, Color.White, 20, "NPCQuestButton", "Explore", quests[j][GVar.XmlTags.QuestTags.questid].InnerText));
+                }
+                else if (quests[j][GVar.XmlTags.QuestTags.completingaction].InnerText.Contains("Talking"))
+                {
+                    Lists.NPCQuestButtons.Add(new GeneratedButton(Vector2.Zero, Color.White, 20, "NPCQuestButton", "Talk", quests[j][GVar.XmlTags.QuestTags.questid].InnerText));
+                }
+                Lists.NPCQuests.Add(new Quest(quests[j][GVar.XmlTags.QuestTags.questid].InnerText, quests[j][GVar.XmlTags.QuestTags.description].InnerText, quests[j][GVar.XmlTags.QuestTags.shortdescription].InnerText, quests[j][GVar.XmlTags.QuestTags.completingaction].InnerText, quests[j][GVar.XmlTags.QuestTags.completinglocation].InnerText, Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText), quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText, Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted].InnerText), Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.completed].InnerText), Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.handedin].InnerText), Quest.GetLocationFilePath(GVar.player)));
+            }
+        }
+        
+        public static void AddAcceptOrHandInQuestButtons(GeneratedButton button)
+        {
+            for (int i = 0; i < Lists.NPCQuests.Count; i++)
+            {
+                if (Lists.NPCQuests[i].QuestID == button.State)
+                {
+                    Quest Q = Lists.NPCQuests[i];
+                    if (!Q.Unlocked && !Q.Accepted)
+                    {
+                        NPC.SetGreeting(button.State, GVar.XmlTags.NPCTags.Greetings.questunaccepted);
+                        break;
+                    }
+                    else if (Q.Unlocked && !Q.Accepted)
+                    {
+                        GeneratedButton acceptButton = new GeneratedButton(new Vector2(9999, 9999), Color.White, 20, "QuestAcceptButton", "Accept", button.State);
+                        Lists.NPCQuestButtons.Add(acceptButton);
+                        NPC.SetGreeting(button.State, GVar.XmlTags.NPCTags.Greetings.questunaccepted);
+                    }
+                    else if (Q.Unlocked && Q.Accepted && !Q.Completed)
+                    {
+                        NPC.SetGreeting(button.State, GVar.XmlTags.NPCTags.Greetings.questaccepted);
+                        break;
+                    }
+                    else if (Q.Unlocked && Q.Accepted && Q.Completed && !Q.HandedIn)
+                    {
+                        GeneratedButton handInButton = new GeneratedButton(new Vector2(9999, 9999), Color.White, 20, "HandInQuestButton", "Hand In", button.State);
+                        Lists.NPCQuestButtons.Add(handInButton);
+                        NPC.SetGreeting(button.State, GVar.XmlTags.NPCTags.Greetings.questfinished);
+                    }
+                    else if (Q.Unlocked && Q.Accepted && Q.Completed && Q.HandedIn)
+                    {
+                        NPC.SetGreeting(button.State, GVar.XmlTags.NPCTags.Greetings.questfinished);
+                        break;
+                    }
                 }
             }
         }

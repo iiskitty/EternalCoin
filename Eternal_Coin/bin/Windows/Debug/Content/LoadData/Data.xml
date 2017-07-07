@@ -303,6 +303,10 @@
         <filepath>Sprites/UI/Cross</filepath>
       </texture>
       <texture>
+        <id>PadLock</id>
+        <filepath>Sprites/UI/PadLock</filepath>
+      </texture>
+      <texture>
         <id>ItemInfoUI</id>
         <filepath>Sprites/UI/ItemInfoUI</filepath>
       </texture>
@@ -313,6 +317,10 @@
       <texture>
         <id>StartButton</id>
         <filepath>Sprites/Buttons/StartButton</filepath>
+      </texture>
+      <texture>
+        <id>QuestsButton</id>
+        <filepath>Sprites/Buttons/QuestsButton</filepath>
       </texture>
       <texture>
         <id>BackButton</id>
@@ -403,6 +411,10 @@
         <filepath>Sprites/UI/NPCInfoUI</filepath>
       </texture>
       <texture>
+        <id>NPCQuestList</id>
+        <filepath>Sprites/UI/NPCQuestListUI</filepath>
+      </texture>
+      <texture>
         <id>QuestList</id>
         <filepath>Sprites/UI/QuestListUI</filepath>
       </texture>
@@ -446,6 +458,8 @@
       <locnode>LocationNode</locnode>
       <tick>Tick</tick>
       <cross>Cross</cross>
+      <padlock>PadLock</padlock>
+      <questsbut>QuestsButton</questsbut>
       <startbut>StartButton</startbut>
       <backbut>BackButton</backbut>
       <newbut>NewButton</newbut>
@@ -475,6 +489,7 @@
       <UIsavedgameinner>SavedGameUIInner</UIsavedgameinner>
       <UIlocinfo>LocationInfo</UIlocinfo>
       <UInpcinfo>NPCInfo</UInpcinfo>
+      <UInpcquestlist>NPCQuestList</UInpcquestlist>
       <UIquestlist>QuestList</UIquestlist>
       <UIquestinfo>QuestInfo</UIquestinfo>
       <UIinv>Inventory</UIinv>

@@ -13,6 +13,10 @@ namespace Eternal_Coin
 
         Color colour;
 
+        SpriteFont font;
+
+        string id;
+        int fontSize;
         string name;
         string state;
 
@@ -24,16 +28,48 @@ namespace Eternal_Coin
         /// </summary>
         /// <param name="position">Position of the button.</param>
         /// <param name="colour">Colour of the button.</param>
+        /// <param name="fontSize">Size of the font determines size of button(10, 12, 14, 16, 18 or 20)</param>
+        /// <param name="id">identification for the button.</param>
         /// <param name="name">Name of the button.</param>
         /// <param name="state">State of the button.</param>
-        public GeneratedButton(Vector2 position, Color colour, string name, string state)
+        public GeneratedButton(Vector2 position, Color colour, int fontSize, string id, string name, string state)
         {
             this.position = position;
             this.colour = colour;
+            this.fontSize = fontSize;
+            this.id = id;
             this.name = name;
             this.state = state;
 
-            size = new Vector2(state.Length * 19, Textures.Button.middleLight.Height);
+            switch (fontSize)
+            {
+                case 10:
+                    font = Fonts.lucidaConsole10Regular;
+                    size = new Vector2(name.Length * 8, Textures.Button.middleLight.Height - 13);
+                    break;
+                case 12:
+                    font = Fonts.lucidaConsole12Regular;
+                    size = new Vector2(name.Length * 10, Textures.Button.middleLight.Height - 10);
+                    break;
+                case 14:
+                    font = Fonts.lucidaConsole14Regular;
+                    size = new Vector2(name.Length * 11, Textures.Button.middleLight.Height - 8);
+                    break;
+                case 16:
+                    font = Fonts.lucidaConsole16Regular;
+                    size = new Vector2(name.Length * 13, Textures.Button.middleLight.Height - 6);
+                    break;
+                case 18:
+                    font = Fonts.lucidaConsole18Regular;
+                    size = new Vector2(name.Length * 14, Textures.Button.middleLight.Height - 5);
+                    break;
+                case 20:
+                    font = Fonts.lucidaConsole20Regular;
+                    size = new Vector2(name.Length * 16, Textures.Button.middleLight.Height);
+                    break;
+            }
+
+            
         }
 
         public void Update(float gameTime)
@@ -47,10 +83,10 @@ namespace Eternal_Coin
         /// <param name="spriteBatch">SpriteBatch to draw sprites.</param>
         public void DrawLightButton(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Textures.Button.leftLightSide, new Rectangle((int)position.X, (int)position.Y, Textures.Button.leftLightSide.Width, Textures.Button.leftLightSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.Draw(Textures.Button.middleLight, new Rectangle((int)position.X + Textures.Button.leftLightSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.Draw(Textures.Button.rightLightSide, new Rectangle((int)position.X + Textures.Button.leftLightSide.Width + (int)size.X, (int)position.Y, Textures.Button.rightLightSide.Width, Textures.Button.rightLightSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.DrawString(Fonts.lucidaConsole24Regular, state, new Vector2(position.X + Textures.Button.leftLightSide.Width, position.Y + 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.leftLightSide, new Rectangle((int)position.X, (int)position.Y, Textures.Button.leftDarkSide.Width, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.middleLight, new Rectangle((int)position.X + Textures.Button.leftLightSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.rightLightSide, new Rectangle((int)position.X + Textures.Button.leftLightSide.Width + (int)size.X, (int)position.Y, Textures.Button.rightLightSide.Width, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.DrawString(font, name, new Vector2(position.X + Textures.Button.leftLightSide.Width, position.Y + 6), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
         }
 
         /// <summary>
@@ -59,15 +95,17 @@ namespace Eternal_Coin
         /// <param name="spriteBatch">SpriteBatch to draw sprites.</param>
         public void DrawDarkButton(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Textures.Button.leftDarkSide, new Rectangle((int)position.X, (int)position.Y, Textures.Button.leftDarkSide.Width, Textures.Button.leftDarkSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.Draw(Textures.Button.middleDark, new Rectangle((int)position.X + Textures.Button.leftDarkSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.Draw(Textures.Button.rightDarkSide, new Rectangle((int)position.X + Textures.Button.leftDarkSide.Width + (int)size.X, (int)position.Y, Textures.Button.rightDarkSide.Width, Textures.Button.rightDarkSide.Height), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.DrawString(Fonts.lucidaConsole24Regular, state, new Vector2(position.X + Textures.Button.leftDarkSide.Width, position.Y + 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.leftDarkSide, new Rectangle((int)position.X, (int)position.Y, Textures.Button.leftDarkSide.Width, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.middleDark, new Rectangle((int)position.X + Textures.Button.leftDarkSide.Width, (int)position.Y, (int)size.X, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.Draw(Textures.Button.rightDarkSide, new Rectangle((int)position.X + Textures.Button.leftDarkSide.Width + (int)size.X, (int)position.Y, Textures.Button.rightDarkSide.Width, (int)size.Y), null, colour, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+                spriteBatch.DrawString(font, name, new Vector2(position.X + Textures.Button.leftDarkSide.Width, position.Y + 6), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
         }
 
         public Rectangle Bounds { get { return bounds; } set { bounds = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Size { get { return size; } set { size = value; } }
+        public int FontSize { get { return fontSize; } set { fontSize = value; } }
+        public string ID { get { return id; } set { id = value; } }
         public string Name { get { return name; } set { name = value; } }
         public string State { get { return state; } set { state = value; } }
     }
@@ -101,15 +139,9 @@ namespace Eternal_Coin
             bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);//sets rectangle(bounding box) based on position and size.
         }
 
-        public override void HandleMovement(Vector2 pos, float gameTime)
-        {
-            
-        }
+        public override void HandleMovement(Vector2 pos, float gameTime) { }
 
-        public override void AnimationDone(string animation)
-        {
-
-        }
+        public override void AnimationDone(string animation) { }
 
         public static void CreateButtonsForLocations(LocationNode node)
         {
@@ -179,6 +211,13 @@ namespace Eternal_Coin
                     Lists.mainWorldButtons.RemoveAt(i);//delete button.
                 }
             }
+            for (int i = 0; i < Lists.NPCQuestButtons.Count; i++)
+            {
+                if (Lists.NPCQuestButtons[i].State == "delete")
+                {
+                    Lists.NPCQuestButtons.RemoveAt(i);
+                }
+            }
         }
 
         /// <summary>
@@ -190,29 +229,15 @@ namespace Eternal_Coin
             //cycle through MainWorldButtons.
             for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
             {
-                Updates.UpdateGameButtons(Lists.mainWorldButtons[j], GVar.player, gameTime);//Updates main buttons that are seen all the time.
-
+                Updates.UpdateGameButtons(Lists.mainWorldButtons[j], GVar.player, gameTime);
                 //check for mouse intersecting MainWorldButton and left mouse click and game not paused.
                 if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.mainWorldButtons[j].Name, 2);
-
-                    //if button is Quest Accept Button.
-                    if (Lists.mainWorldButtons[j].Name == "QuestAcceptButton")
-                    {
-                        Quest.AcceptQuest(GVar.player, GVar.npc.QuestID);//accept the quest.
-                        Lists.mainWorldButtons.RemoveAt(j);//remove Quest Accept Button.
-                        break;
-                    }
-                    //if button is Hand In Qeust Button.
-                    else if (Lists.mainWorldButtons[j].Name == "HandInQuestButton")
-                    {
-                        Quest.HandInQuest(GVar.player, GVar.npc.QuestID);//hand in the quest.
-                        Lists.mainWorldButtons.RemoveAt(j);//remove Hand In Quest Button.
-                    }
+                    
                     //if button is Open Shop Button.
-                    else if (Lists.mainWorldButtons[j].Name == "OpenShop")
+                    if (Lists.mainWorldButtons[j].Name == "OpenShop")
                     {
                         Shop.LoadShopInventory(GVar.curLocNode);//load shop inventory of current location.
 
@@ -230,6 +255,16 @@ namespace Eternal_Coin
                     else if (Lists.mainWorldButtons[j].Name == "DisplayQuests")
                     {
                         UI.DisplayQuests();//activate Quests UI.
+                    }
+                    else if (Lists.mainWorldButtons[j].Name == "ViewQuests")
+                    {
+                        for (int i = 0; i < Lists.uiElements.Count; i++)
+                        {
+                            if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && !Lists.uiElements[i].Draw)
+                                UI.DisplayNPCQuestList();
+                            else if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+                                UI.CloseNPCQuestListUI();
+                        }
                     }
                     //if button is Display Inventory.
                     else if (Lists.mainWorldButtons[j].Name == "DisplayInventory")
@@ -264,6 +299,7 @@ namespace Eternal_Coin
                         }
                         Lists.NPCQuests.Clear();
                         UI.CloseNPCUI();//deactivate NPC UI.
+                        UI.CloseNPCQuestListUI();
                         break;
                     }
                 }
@@ -418,152 +454,26 @@ namespace Eternal_Coin
                                 Lists.mainWorldButtons[k].State = "delete";//delete Open Shop Button.
                             }
                         }
-                        try
+
+                        XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");//grab npc tag from the current locations xml file.
+                        XmlNode locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
+                        GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, string.Empty, Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
+                        GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
+                        GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
+
+                        for (int j = 0; j < Lists.uiElements.Count; j++)
                         {
-                            Lists.NPCQuestButtons.Clear();
-                            Lists.NPCQuests.Clear();
-                            XmlNode locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc");//grab npc tag from the current locations xml file.
-                            XmlNode locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
-                            GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, string.Empty, Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
-                            GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
-                            GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, 500);
-
-                            XmlNodeList quests = GVar.curLocNode.DocumentElement.SelectNodes("/location/npc/quest");
-
-                            for (int j = 0; j < quests.Count; j++)
+                            //if Sprite is NPC Info UI && is not active.
+                            if (Lists.uiElements[j].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[j].Draw)
                             {
-                                if (!Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText))
-                                {
-                                    for(int k = 0; k < Lists.completedQuests.Count; k++)
-                                    {
-                                        if (quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText == Lists.completedQuests[k])
-                                        {
-                                            quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText = "true";
-                                        }
-                                    }
-                                }
-                                Lists.NPCQuestButtons.Add(new Button(Textures.Misc.pixel, Vector2.Zero, new Vector2(150, 40), Color.LightBlue, quests[j][GVar.XmlTags.QuestTags.shortdescription].InnerText, quests[j][GVar.XmlTags.QuestTags.questid].InnerText, 0f));
-                                Lists.NPCQuests.Add(new Quest(quests[j][GVar.XmlTags.QuestTags.questid].InnerText, quests[j][GVar.XmlTags.QuestTags.description].InnerText, quests[j][GVar.XmlTags.QuestTags.shortdescription].InnerText, quests[j][GVar.XmlTags.QuestTags.completingaction].InnerText, quests[j][GVar.XmlTags.QuestTags.completinglocation].InnerText, Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText), quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText, Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted].InnerText), Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.completed].InnerText), Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.handedin].InnerText), Quest.GetLocationFilePath(GVar.player)));
+                                Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(Lists.uiElements[j].Position.X + Lists.uiElements[j].Size.X - Textures.Button.closeButton.Width, Lists.uiElements[j].Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);//create close NPC UI Button.
+                                closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);//set animation state of button to default.
+                                Button viewQuests = new Button(Textures.Button.questsButton, new Vector2(Lists.uiElements[j].Position.X + Lists.uiElements[j].Size.X - 50, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y - 20), new Vector2(80, 30), Color.LightBlue, "ViewQuests", "Alive", 0f);
+                                viewQuests.PlayAnimation(GVar.AnimStates.Button.def);
+                                Lists.mainWorldButtons.Add(closeNPCUI);//add close NPC UI button to MainWorldButton.
+                                Lists.mainWorldButtons.Add(viewQuests);
+                                Lists.uiElements[j].Draw = true;//activate NPC Info UI.
                             }
-
-                            for (int j = 0; j < Lists.uiElements.Count; j++)
-                            {
-                                //if Sprite is NPC Info UI && is not active.
-                                if (Lists.uiElements[j].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[j].Draw)
-                                {
-                                    Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(Lists.uiElements[j].Position.X + Lists.uiElements[j].Size.X - Textures.Button.closeButton.Width, Lists.uiElements[j].Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);//create close NPC UI Button.
-                                    closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);//set animation state of button to default.
-                                    Button viewQuests = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[j].Position.X + Lists.uiElements[j].Size.X - 50, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y - 20), new Vector2(50, 20), Color.LightBlue, "ViewQuests", "Alive", 0f);
-                                    viewQuests.PlayAnimation(GVar.AnimStates.Button.def);
-                                    Lists.mainWorldButtons.Add(closeNPCUI);//add close NPC UI button to MainWorldButton.
-                                    Lists.mainWorldButtons.Add(viewQuests);
-                                    Lists.uiElements[j].Draw = true;//activate NPC Info UI.
-                                }
-                            }
-
-                            #region old quest stuff
-                            //if(locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText == "QUESTID")
-                            //{
-                            //    bool questToAccept = false;
-
-                            //    for (int j = 0; j < quests.Count; j++)
-                            //    {
-                            //        if(!Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText))
-                            //        {
-                            //            for (int k = 0; k < Lists.completedQuests.Count; k++)
-                            //            {
-                            //                if (quests[j][GVar.XmlTags.QuestTags.unlockrequirement].InnerText == Lists.completedQuests[k])
-                            //                {
-                            //                    quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText = "true";
-                            //                }
-                            //            }
-                            //        }
-                            //        if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.unlocked].InnerText) && !Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.accepted].InnerText))
-                            //        {
-                            //            GVar.npc.QuestID = quests[j][GVar.XmlTags.QuestTags.questid].InnerText;
-                            //            locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + GVar.npc.QuestID);
-                            //            GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questunaccepted].InnerText;
-                            //            questToAccept = true;
-                            //            break;
-                            //        }
-                            //    }
-                            //    if (questToAccept)
-                            //    {
-                            //        //cycle through UIElements.
-                            //        for (int j = 0; j < Lists.uiElements.Count; j++)
-                            //        {
-                            //            //if Sprite is NPC Info UI and is not active.
-                            //            if (Lists.uiElements[j].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[j].Draw)
-                            //            {
-                            //                Button acceptQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[j].Position.X, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Green, "QuestAcceptButton", "Alive", 0f);//create Accept Quest Button.
-                            //                acceptQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation sate to default.
-                            //                Lists.mainWorldButtons.Add(acceptQuest);//add Accept Quest Button to MainWorldButtons.
-                            //            }
-                            //        }
-                            //    }
-                            //}
-                            ////if NPC has a quest and the quest had been accepted.
-                            //else if (GVar.npc.HasQuest && locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText != "QUESTID")
-                            //{
-                            //    //GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;//set NPC's greeting appropriately.
-                            //    locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);
-                            //    GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questaccepted].InnerText;
-
-                            //    for (int j = 0; j < quests.Count; j++)
-                            //    {
-                            //        if (quests[j][GVar.XmlTags.QuestTags.questid].InnerText == locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText)
-                            //        {
-                            //            if (Convert.ToBoolean(quests[j][GVar.XmlTags.QuestTags.completed].InnerText))
-                            //            {
-                            //                //GVar.npc.Greeting = locNPC["greetings/questid/" + locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText + "/" + GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
-                            //                GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.questfinished].InnerText;
-
-                            //                //cycle through UIElements.
-                            //                for (int k = 0; k < Lists.uiElements.Count; k++)
-                            //                {
-                            //                    //if Sprite is NPC Info UI and is not active.
-                            //                    if (Lists.uiElements[k].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[k].Draw)
-                            //                    {
-                            //                        Button handInQuest = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[k].Position.X, Lists.uiElements[k].Position.Y + Lists.uiElements[k].Size.Y - Textures.Misc.pixel.Width), new Vector2(25, 15), Color.Blue, "HandInQuestButton", "Alive", 0f);//create Hand In Quest Button.
-                            //                        handInQuest.PlayAnimation(GVar.AnimStates.Button.def);//set animation state to default.
-                            //                        Lists.mainWorldButtons.Add(handInQuest);//add button to MainWorldButtons.
-                            //                    }
-                            //                }
-                            //            }
-                            //        }
-                            //    }
-                            //}
-                            ////if NPC does not have a quest and quest is completed.
-                            //if (GVar.npc.Greeting == String.Empty)
-                            //{
-                            //    locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
-                            //    GVar.npc.Greeting = locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText;
-                            //}
-                            //GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, GVar.npc.Greeting, GVar.npcTextWrapLength);//wrap NPC's greeting text to fit in NPC Info UI/.
-
-                            ////grab actions tag from current locations xml file.
-                            //locNPC = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");
-                            ////check action(talk to npc) against any active quest.
-                            //Quest.CheckAction(locNPC[GVar.XmlTags.Actions.talknpc].InnerText, GVar.player.CurrentLocation);
-
-                            ////cycle through UIElements.
-                            //for (int k = 0; k < Lists.uiElements.Count; k++)
-                            //{
-                            //    //if Sprite is NPC Info UI && is not active.
-                            //    if (Lists.uiElements[k].SpriteID == Textures.UI.NPCInfoUI && !Lists.uiElements[k].Draw)
-                            //    {
-                            //        Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(Lists.uiElements[k].Position.X + Lists.uiElements[k].Size.X - Textures.Button.closeButton.Width, Lists.uiElements[k].Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);//create close NPC UI Button.
-                            //        closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);//set animation state of button to default.
-                            //        Lists.mainWorldButtons.Add(closeNPCUI);//add close NPC UI button to MainWorldButton.
-                            //        Lists.uiElements[k].Draw = true;//activate NPC Info UI.
-                            //    }
-                            //}
-                            #endregion
-                        }
-                        catch (Exception e)
-                        {
-                            GVar.npc = new NPC();//set NPC to nothing if anything fails.
-                            GVar.LogDebugInfo(e.ToString(), 1);
                         }
                     }
                     //if button is Shop Button.

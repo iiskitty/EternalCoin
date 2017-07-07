@@ -1,13 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -20,8 +14,8 @@ namespace Eternal_Coin
 
         public DisplayPicture(string ID, Texture2D pic)
         {
-            this.displayPic = pic;
-            this.displayPicID = ID;
+            displayPic = pic;
+            displayPicID = ID;
             position = new Vector2();
         }
     }
@@ -178,7 +172,7 @@ namespace Eternal_Coin
                     {
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("GameCreated: " + GVar.playerName, 2);
-                        GVar.storyName = Lists.availableStoriesButtons[i].State;
+                        GVar.storyName = Lists.availableStoriesButtons[i].Name;
                         Load.LoadLocationNodes(GVar.storyName);
                         GVar.chooseStory = false;
                         GVar.startGame = true;
@@ -362,7 +356,7 @@ namespace Eternal_Coin
             XmlNodeList stories = storiesDoc.SelectNodes("stories/story");
             foreach (XmlNode story in stories)
             {
-                GeneratedButton storyButton = new GeneratedButton(Vector2.Zero, Color.White, "LoadStory", story["name"].InnerText);
+                GeneratedButton storyButton = new GeneratedButton(Vector2.Zero, Color.White, 20, "LoadStory", story["name"].InnerText, "LoadStory");
                 Lists.availableStoriesButtons.Add(storyButton);
             }
 
