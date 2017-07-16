@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/pixel.png</SourceFile>
+  <SourceFile>C:/Users/kitty/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/pixel.png</SourceFile>
   <SourceTime>2015-08-15T01:36:56+08:00</SourceTime>
-  <DestFile>C:/Users/JSKGa/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sprites/pixel.xnb</DestFile>
-  <DestTime>2017-07-05T13:37:36.222837+08:00</DestTime>
+  <DestFile>C:/Users/kitty/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sprites/pixel.xnb</DestFile>
+  <DestTime>2017-07-17T02:07:48.1609478+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T23:05:36+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

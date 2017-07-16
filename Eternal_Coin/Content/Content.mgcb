@@ -1009,118 +1009,6 @@
 #begin AvailableStories.xml
 /copy:AvailableStories.xml
 
-#begin Fonts/LucidaConsole14Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole14Bold.spritefont
-
-#begin Fonts/LucidaConsole14Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole14Regular.spritefont
-
-#begin Fonts/LucidaConsole10Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole10Bold.spritefont
-
-#begin Fonts/LucidaConsole10Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole10Regular.spritefont
-
-#begin Fonts/LucidaConsole12Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole12Bold.spritefont
-
-#begin Fonts/LucidaConsole12Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole12Regular.spritefont
-
-#begin Fonts/LucidaConsole16Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole16Bold.spritefont
-
-#begin Fonts/LucidaConsole16Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole16Regular.spritefont
-
-#begin Fonts/LucidaConsole18Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole18Regular.spritefont
-
-#begin Fonts/LucidaConsole18Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole18Bold.spritefont
-
-#begin Fonts/LucidaConsole20Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole20Bold.spritefont
-
-#begin Fonts/LucidaConsole20Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole20Regular.spritefont
-
-#begin Fonts/LucidaConsole22Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole22Bold.spritefont
-
-#begin Fonts/LucidaConsole22Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole22Regular.spritefont
-
-#begin Fonts/LucidaConsole24Bold.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole24Bold.spritefont
-
-#begin Fonts/LucidaConsole24Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/LucidaConsole24Regular.spritefont
-
 #begin LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
 /copy:LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
 
@@ -1186,4 +1074,52 @@
 
 #begin LoadData/Data.xml
 /copy:LoadData/Data.xml
+
+#begin Fonts/LucidaConsole10Bold.spritefont
+/copy:Fonts/LucidaConsole10Bold.spritefont
+
+#begin Fonts/LucidaConsole10Regular.spritefont
+/copy:Fonts/LucidaConsole10Regular.spritefont
+
+#begin Fonts/LucidaConsole12Bold.spritefont
+/copy:Fonts/LucidaConsole12Bold.spritefont
+
+#begin Fonts/LucidaConsole12Regular.spritefont
+/copy:Fonts/LucidaConsole12Regular.spritefont
+
+#begin Fonts/LucidaConsole14Bold.spritefont
+/copy:Fonts/LucidaConsole14Bold.spritefont
+
+#begin Fonts/LucidaConsole14Regular.spritefont
+/copy:Fonts/LucidaConsole14Regular.spritefont
+
+#begin Fonts/LucidaConsole16Bold.spritefont
+/copy:Fonts/LucidaConsole16Bold.spritefont
+
+#begin Fonts/LucidaConsole16Regular.spritefont
+/copy:Fonts/LucidaConsole16Regular.spritefont
+
+#begin Fonts/LucidaConsole18Bold.spritefont
+/copy:Fonts/LucidaConsole18Bold.spritefont
+
+#begin Fonts/LucidaConsole18Regular.spritefont
+/copy:Fonts/LucidaConsole18Regular.spritefont
+
+#begin Fonts/LucidaConsole20Bold.spritefont
+/copy:Fonts/LucidaConsole20Bold.spritefont
+
+#begin Fonts/LucidaConsole20Regular.spritefont
+/copy:Fonts/LucidaConsole20Regular.spritefont
+
+#begin Fonts/LucidaConsole22Bold.spritefont
+/copy:Fonts/LucidaConsole22Bold.spritefont
+
+#begin Fonts/LucidaConsole22Regular.spritefont
+/copy:Fonts/LucidaConsole22Regular.spritefont
+
+#begin Fonts/LucidaConsole24Bold.spritefont
+/copy:Fonts/LucidaConsole24Bold.spritefont
+
+#begin Fonts/LucidaConsole24Regular.spritefont
+/copy:Fonts/LucidaConsole24Regular.spritefont
 

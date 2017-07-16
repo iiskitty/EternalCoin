@@ -322,29 +322,12 @@ C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal C
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.pdb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\AvailableStories.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\GameFiles\ignorethis.txt
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\CreateItems.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\CreateLocationNodes.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\ItemData.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadAttacks.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadDisplayPictures.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadProjectiles.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadSounds.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\LoadTextures.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\SetSounds.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\SetTextures.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\MainBunbury\MainBunburyInfo.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury1\subBunbury1Info.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury2\subBunbury2Info.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\SubBunbury\subBunburyInfo.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\MainEaton\MainEatonInfo.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton1\subEaton1Info.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton2\subEaton2Info.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\SubEaton\subEatonInfo.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location template.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\location with npc template.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Options.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\SavedGames\ignorethis.txt
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\xnafx40_redist (1).msi
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Bold.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Regular.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Bold.xnb
@@ -359,7 +342,6 @@ C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Conte
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Regular.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Bold.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Regular.xnb
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Bunbury\BunburyMap.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\EatonMap.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\ButtonClick.xnb
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sounds\CoinClick.xnb
@@ -455,7 +437,6 @@ C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Sharp
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.DXGI.dll
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct2D1.dll
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.dll
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.dll
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.dll
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\MonoGame.Framework.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.MediaFoundation.xml
@@ -465,7 +446,6 @@ C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Sharp
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.DXGI.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct2D1.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.XInput.xml
-C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.csprojResolveAssemblyReference.cache
 C:\Users\insainmonkey69\JSKDropBox\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\Data.xml
@@ -607,3 +587,26 @@ C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Conte
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NPCQuestListUI.xnb
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\QuestsButton.xnb
 C:\Users\JSKGa\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\PadLock.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\Data.xml
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\location template.xml
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole22Bold.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole22Regular.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Buttons\QuestsButton.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\NPCQuestListUI.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\UI\PadLock.xnb
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole10Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole12Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole14Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole16Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole18Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole20Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole22Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole22Regular.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Bold.spritefont
+C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Fonts\LucidaConsole24Regular.spritefont
