@@ -68,8 +68,8 @@ namespace Eternal_Coin
         public static void LoadTextures(ContentManager Content)
         {
             XmlDocument texDoc = new XmlDocument();
-            texDoc.Load("./Content/LoadData/Data.xml");
-            XmlNodeList texList = texDoc.SelectNodes("/data/textures/load/texture");
+            texDoc.Load("./Content/LoadData/Textures.xml");
+            XmlNodeList texList = texDoc.SelectNodes("/textures/load/texture");
 
             foreach (XmlNode tex in texList)
             {
@@ -77,8 +77,8 @@ namespace Eternal_Coin
             }
 
             XmlDocument setTexDoc = new XmlDocument();
-            setTexDoc.Load("./Content/LoadData/Data.xml");
-            XmlNode texID = setTexDoc.SelectSingleNode("/data/textures/set");
+            setTexDoc.Load("./Content/LoadData/Textures.xml");
+            XmlNode texID = setTexDoc.SelectSingleNode("/textures/set");
 
             UI.itemInfoUI = Dictionaries.textures[texID["UIiteminfo"].InnerText];
             UI.newGameUIBorder = Dictionaries.textures[texID["UInewgameborder"].InnerText];

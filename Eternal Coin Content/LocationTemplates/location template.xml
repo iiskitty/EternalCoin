@@ -1,100 +1,79 @@
-<?xml version="1.0"?>
+<?xml version="1.0"?> <!-- * Document type declaration. -->
 
-<!-- * = REQUIRED -->
+<!-- * REQUIRED -->
 
-<location>
-  <name></name> <!-- * The name of the Location this is displayed to the screen -->
-  <description></description> <!-- * The description of the Location that is displayed to the screen -->
-  <searched>false</searched> <!-- * If the location has been searched or not -->
-  <hasnpc>true</hasnpc> <!-- * If the location has an npc or not. If a location doesnt have a npc, delete the entire <npc> tag -->
-  <hasshop>true</hasshop> <!-- * If the location has a shop or not. If a location doesnt have a shop, delete the entire <shop> tag -->
-  <hasenemy>false</hasenemy> <!-- * If the location has an enemy or not. If a location doesn't have an enemy, delete the entire <enemy> tag -->
+<!-- Reference this template with an existing location xml file, might make it easier to understand. -->
 
-  <npc> <!-- Delete this entire tag if a location doesn't have a npc -->
-    <hasquest>true</hasquest> <!-- If the npc has a quest or not -->
-    <questaccepted>false</questaccepted> <!-- If the quest has been accepted or not -->
-    <questfinished>false</questfinished> <!-- If the quest is finished ot not -->
-    <questcompleted>false</questcompleted> <!-- If the quest has been handed in or not -->
-    <name></name> <!-- the Name of the npc -->
+<location> <!-- * root tag -->
+	<name></name> <!-- * Name of the location. This is used in code to help find the right file, this name should match the SubName when creating location nodes for your story. -->
+	<description></description> <!-- * Short description of the location. -->
+	<searched>false</searched> <!-- * If the location has been searched or not, usually set to false, this will be changed by the code of the game. -->
+	<hasnpc>true</hasnpc> <!-- * If the location has a NPC or not. -->
+  <hasshop>true</hasshop> <!-- * If the location has a shop or not. -->
+  <hasenemy>false</hasenemy> <!-- * If the location has an enemy or not. -->
+  
+	<npc> <!-- Root tag of the NPC. Delete this and all its contents if this location does not have a NPC. -->
+	  <hasquest></hasquest> <!-- not used anymore, please stand by -->
+      
+    <currentquest>QUESTID</currentquest> <!-- This is managed by the code of the game. Make sure the value is set to QUESTID when creating a new location. -->
+      
+	  <name></name> <!-- Name of the NPC. -->
+      
+	  <greeting> <!-- Greetings the NPC will say to the player. -->
+      <normalgreeting></normalgreeting> <!-- What the NPC will say when first talking to it. -->
+      <questid> <!-- Inside here are quest ID's and the different things the NPC will say based on the status of the quest being clicked. -->
+        <QUESTID> <!-- This tag should match the questid of a quest down below. -->
+          <questunaccepted></questunaccepted> <!-- Clicking on a quest the player has not accepted. -->
+          <questaccepted></questaccepted> <!-- Clicking on a quest the player has accepted. -->
+	  	    <acceptquest></acceptquest> <!-- Just after the player has accepted a quest. -->
+	  	    <questfinished></questfinished> <!-- Clicking on a quest the player has finished. -->
+	  	    <handinquest></handinquest> <!-- Clicking the hand in button on a quest the player has finished. -->
+        </QUESTID>
+      </questid>
+	  </greeting>
 
-    <greeting>
-      <questunaccepted></questunaccepted> <!-- What the npc will say if you have not taken the quest -->
-      <questaccepted></questaccepted> <!-- What the npc will say if you have taken the quest -->
-      <acceptquest></acceptquest> <!-- What the npc will say the moment you accept the quest -->
-      <questfinished></questfinished> <!-- What the npc will say when you have finished but not handed in the quest -->
-      <handinquest></handinquest> <!-- What the npc will say -->
-      <questcompleted></questcompleted> <!-- What the npc will say if the quest is completed -->
-    </greeting>
-
-    <quest>
-      <description></description> <!-- The desciption of the quest that will be displayed from the quest list -->
-      <shortdescription></shortdescription> <!-- The short description of the quest that will be displayed in the quest list -->
-      <completingaction></completingaction> <!-- Completing Action is an action that is done at a specific location to complete the quest (reference <actions> to see the actions available) -->
-      <completinglocation></completinglocation> <!-- The location the quest is to be completed in -->
-      <reward> <!-- Rewards for completing the quest -->
-        <item> <!-- Can have as many reward item as you want, though I would keep it to 1-5 -->
-          <itemname></itemname> <!-- Name of the Item -->
+    <questrewards> <!-- Item rewards the player will receive for completing quests. -->
+      <QUESTID> <!-- This tag should match the questid of a quest down below. -->
+        <item> <!-- Item tag to contain the name of the item to be rewarded. -->
+          <itemname></itemname> <!-- Name of the item to be rewarded. -->
         </item>
-      </reward>
-    </quest>
-  </npc> <!-- Delete this entire tag if a location doesn't have a npc -->
+      </QUESTID>
+    </questrewards>
+      
+	  <quest> <!-- Start tag for a quest. -->
+      <questid>QUESTID</questid> <!-- Replace QUESTID with something unique eg. explTOWNNAME(explore a town) -->
+          
+      <unlocked>true</unlocked> <!-- If this quest is unlocked or not. -->
+      <unlockrequirement>QUESTID</unlockrequirement> <!-- If this quest requires another quest to be completed to be unlocked, replace QUESTID with that quests ID.. -->
+      
+      <!-- The following three tags are handled in the code of the game. Leave them as false. -->
+      <accepted>false</accepted> <!-- If the quest has been accepted or not. -->
+      <completed>false</completed> <!-- If the quest has been completed or not. -->
+      <handedin>false</handedin> <!-- If the quest has been handed in or not. -->
+          
+	    <description></description> <!-- A full description of the quest. -->
+	  	<shortdescription></shortdescription> <!-- A short description of the quest. -->
+	  	<completingaction></completingaction> <!-- The value of this tag should match an action from a location, see the actions tags down below. -->
+	  	<completinglocation></completinglocation> <!-- The location the quest is to be completed in. -->
+	  </quest>
 
-  <!-- Items templates
-  ITEM CLASSES:
-    Weapon
-    Armor
-    Jewelry
- 
-  ITEM TYPES:
-    Reference ItemData.xml for types
- 
-  ITEM MATERIALS:
-    Reference ItemData.xml for materials
- 
-  INVENTORY SLOT NAMES:
-    Helmet
-    Chestplate
-    Leggings
-    RightBoot
-    LeftBoot
-    RightGauntlet
-    LeftGauntlet
-    Weapon
-    Ring
--->
+	</npc>
 
-  <shop> <!-- Delete this entire tag if a location doesn't have a shop -->
-    <name></name> <!-- Name of the shop keep -->
-    <greeting></greeting> <!-- Greeting of the shop keep -->
-    <inventory> <!-- Items that will be put into the shops intentory for the player to buy -->
-      <item>
-        <itemname></itemname>
+  <shop> <!-- Start tag for the shop. -->
+    <name></name> <!-- Name of the shop keeper. -->
+    <greeting></greeting> <!-- What the shop keeper will say to the player. -->
+    <inventory> <!-- Inventory of the shop. -->
+      <item> <!-- Item tag to contain the name of the item being sold. -->
+        <itemname></itemname> <!-- Name of the item being sold. -->
       </item>
     </inventory>
-  </shop> <!-- Delete this entire tag if a location doesn't have an shop -->
-
-  <enemy> <!-- Delete this entire tag if a location doesn't have an enemy -->
-    <name></name> <!-- Name of the enemy -->
-    <dpid></dpid> <!-- Display Picture of the enemy. This will also define which set of animtions the enemy will use -->
-    <inventory> <!-- Items that the enemy has equipped, enemies do not have an entire inventory -->
-      <item>
-        <itemname></itemname>
-      </item>
-    </inventory>
-    <loot> <!-- This is the reward for killing the enemy -->
-      <silver> <!-- Silver is the in game currency used to buy things from shops -->
-        <amount></amount>
-      </silver>
-      <item>
-        <itemname></itemname>
-      </item>
-    </loot>
-  </enemy> <!-- Delete this entire tag if a location doesn't have an enemy -->
-
-  <actions>
-    <enter>Entering *locationname*</enter> <!-- * Entering a location (only happens if location has been previously explored -->
-    <explore>Exploring *locationname*</explore> <!-- * Exploing a location -->
-    <talknpc>Talking To *npcname*</talknpc> <!-- * Talking to an npc -->
-  </actions>
+  </shop>
+  
+	<actions> <!-- Actions for the location. -->
+	  <enter>Entering NAME</enter> <!-- Action for entering the location. (only happens if the location has been explored. -->
+	  <explore>Exploring NAME</explore> <!-- Action for exploring the location. -->
+	  <talknpc>Talking To NPCNAME</talknpc> <!-- Action for talking to the NPC of the location. -->
+	</actions>
 </location>
 
+  

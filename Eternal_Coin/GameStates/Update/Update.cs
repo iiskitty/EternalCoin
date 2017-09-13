@@ -43,8 +43,8 @@ namespace Eternal_Coin
                 Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
 
                 XmlDocument doc = new XmlDocument();
-                doc.Load("Content/LoadData/Data.xml");
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/data/createlocationnodes/locationnode/" + GVar.storyName + "/startinglocation");
+                doc.Load("Content/LoadData/StoryNodes/" + GVar.storyName + ".xml");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/locationnode/startinglocation");
 
                 player.CurrentLocation = Load.SetStartingLocation(node.InnerText);
                 GVar.player = player;

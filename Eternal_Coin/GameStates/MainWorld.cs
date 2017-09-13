@@ -117,9 +117,7 @@ namespace Eternal_Coin
             GVar.worldMap.Update(gameTime);
             GVar.worldMap.Draw(spriteBatch, GVar.worldMap.SpriteID, GVar.worldMap.Bounds, 0.1f, 0f, Vector2.Zero);
 
-            //update and draw player, as well as current.
-            //for (int i = 0; i < Lists.entity.Count; i++)
-            //{
+            
             //Update and Draw the Player.
             GVar.player.Update(gameTime);
             GVar.player.Draw(spriteBatch, GVar.player.SpriteID, GVar.player.Bounds, 0.172f, 0f, Vector2.Zero);
@@ -155,7 +153,6 @@ namespace Eternal_Coin
                 GVar.player.CurrentLocation.LocNodeConnections[i].Update(gameTime);
                 GVar.player.CurrentLocation.LocNodeConnections[i].Draw(spriteBatch, GVar.player.CurrentLocation.LocNodeConnections[i].SpriteID, GVar.player.CurrentLocation.LocNodeConnections[i].Bounds, 0.17f, 0f, Vector2.Zero);
             }
-            //}
         }
 
         /// <summary>

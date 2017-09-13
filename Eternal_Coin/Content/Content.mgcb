@@ -1006,15 +1006,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/AttackButtons/Punch.png
 
-#begin AvailableStories.xml
-/copy:AvailableStories.xml
-
-#begin LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
-/copy:LocationTemplates/MainStory/Eaton/MainEaton/MainEatonInfo.xml
-
-#begin LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton2/subEaton2Info.xml
-
 #begin LocationTemplates/MainStory/Eaton/EatonMap.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1030,9 +1021,6 @@
 #begin LocationTemplates/location template.xml
 /copy:LocationTemplates/location template.xml
 
-#begin LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton1/subEaton1Info.xml
-
 #begin Sprites/UI/NPCQuestListUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1044,9 +1032,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/UI/NPCQuestListUI.png
-
-#begin LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
-/copy:LocationTemplates/MainStory/Eaton/SubEaton/subEatonInfo.xml
 
 #begin Sprites/Buttons/QuestsButton.png
 /importer:TextureImporter
@@ -1071,9 +1056,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/UI/PadLock.png
-
-#begin LoadData/Data.xml
-/copy:LoadData/Data.xml
 
 #begin Fonts/LucidaConsole10Bold.spritefont
 /copy:Fonts/LucidaConsole10Bold.spritefont
@@ -1122,4 +1104,34 @@
 
 #begin Fonts/LucidaConsole24Regular.spritefont
 /copy:Fonts/LucidaConsole24Regular.spritefont
+
+#begin LoadData/ItemData.xml
+/copy:LoadData/ItemData.xml
+
+#begin LoadData/Textures.xml
+/copy:LoadData/Textures.xml
+
+#begin LoadData/Sounds.xml
+/copy:LoadData/Sounds.xml
+
+#begin LoadData/StoryNodes/MainStory.xml
+/copy:LoadData/StoryNodes/MainStory.xml
+
+#begin LoadData/DPandAttacks.xml
+/copy:LoadData/DPandAttacks.xml
+
+#begin LocationTemplates/MainStory/Eaton/MainEatonInfo.xml
+/copy:LocationTemplates/MainStory/Eaton/MainEatonInfo.xml
+
+#begin LocationTemplates/MainStory/Eaton/subEaton1Info.xml
+/copy:LocationTemplates/MainStory/Eaton/subEaton1Info.xml
+
+#begin LocationTemplates/MainStory/Eaton/subEaton2Info.xml
+/copy:LocationTemplates/MainStory/Eaton/subEaton2Info.xml
+
+#begin LocationTemplates/MainStory/Eaton/subEatonInfo.xml
+/copy:LocationTemplates/MainStory/Eaton/subEatonInfo.xml
+
+#begin AvailableStories.xml
+/copy:AvailableStories.xml
 

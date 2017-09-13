@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<locationnode>
+    <startinglocation>MainVentti</startinglocation>
+    <!-- main nodes -->
+    <node>
+        <name>Ventti</name>
+        <mainname>Ventti</mainname>
+        <subname>MainVentti</subname>
+        <state>Main</state>
+        <positionx>1997</positionx>
+        <positiony>1891</positiony>
+        <sublocnode>SubVentti</sublocnode>
+        <mainlocnode>null</mainlocnode>
+        <MainEatonconnection>null</MainEatonconnection>
+    </node>
+
+    <!-- sub nodes -->
+</locationnode>

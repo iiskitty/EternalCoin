@@ -11,7 +11,7 @@ namespace Eternal_Coin
         public static void LoadDisplayPictures(ContentManager Content)
         {
             XmlDocument displayPicDoc = new XmlDocument();
-            displayPicDoc.Load("./Content/LoadData/Data.xml");
+            displayPicDoc.Load("./Content/LoadData/DPandAttacks.xml");
             XmlNodeList displayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/picture");
             XmlNodeList eDisplayPics = displayPicDoc.SelectNodes("/data/loaddisplaypictures/pictures/epicture");
             
@@ -199,8 +199,8 @@ namespace Eternal_Coin
         public static void LoadProjectiles(ContentManager Content)
         {
             XmlDocument projectileDoc = new XmlDocument();
-            projectileDoc.Load("./Content/LoadData/Data.xml");
-            XmlNodeList projectiles = projectileDoc.SelectNodes("data/createprojectiles/projectiles/projectile");
+            projectileDoc.Load("./Content/LoadData/ItemData.xml");
+            XmlNodeList projectiles = projectileDoc.SelectNodes("items/createprojectiles/projectiles/projectile");
             
             foreach (XmlNode proj in projectiles)
             {
@@ -212,9 +212,9 @@ namespace Eternal_Coin
         public static void LoadItemData(ContentManager Content)
         {
             XmlDocument itemData = new XmlDocument();
-            itemData.Load("./Content/LoadData/Data.xml");
-            XmlNodeList itemTypes = itemData.SelectNodes("/data/itemdata/type");
-            XmlNodeList materials = itemData.SelectNodes("/data/itemdata/material");
+            itemData.Load("./Content/LoadData/ItemData.xml");
+            XmlNodeList itemTypes = itemData.SelectNodes("/items/itemdata/type");
+            XmlNodeList materials = itemData.SelectNodes("/items/itemdata/material");
 
             foreach (XmlNode it in itemTypes)
             {
@@ -317,8 +317,8 @@ namespace Eternal_Coin
             
 
             XmlDocument createLocationNodes = new XmlDocument();
-            createLocationNodes.Load("./Content/LoadData/Data.xml");
-            XmlNodeList nodes = createLocationNodes.SelectNodes("/data/createlocationnodes/locationnode/" + storyName + "/node");
+            createLocationNodes.Load("./Content/LoadData/StoryNodes/" + storyName + ".xml");
+            XmlNodeList nodes = createLocationNodes.SelectNodes("/locationnode/node");
 
             foreach (XmlNode n in nodes)
             {
@@ -328,7 +328,7 @@ namespace Eternal_Coin
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;
-                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/data/createlocationnodes/locationnode/" + storyName + "/node/" + n["subname"].InnerText + "connection");
+                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/locationnode/node/" + n["subname"].InnerText + "connection");
                     foreach (XmlNode nc in nodeCon)
                     {
                         locNode.LocNodeConName.Add(nc.InnerText);
@@ -342,7 +342,7 @@ namespace Eternal_Coin
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;
-                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/data/createlocationnodes/locationnode/" + storyName + "/node/" + n["subname"].InnerText + "connection");
+                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/locationnode/node/" + n["subname"].InnerText + "connection");
                     foreach (XmlNode nc in nodeCon)
                     {
                         locNode.LocNodeConName.Add(nc.InnerText);
@@ -356,7 +356,7 @@ namespace Eternal_Coin
                     GVar.LogDebugInfo("LocationCreated: " + locNode.Name, 2);
                     locNode.MainLocNodeName = n["mainlocnode"].InnerText;
                     locNode.SubLocNodeName = n["sublocnode"].InnerText;
-                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/data/createlocationnodes/locationnode/" + storyName + "/node/" + n["subname"].InnerText + "connection");
+                    XmlNodeList nodeCon = createLocationNodes.SelectNodes("/locationnode/node/" + n["subname"].InnerText + "connection");
                     foreach (XmlNode nc in nodeCon)
                     {
                         locNode.LocNodeConName.Add(nc.InnerText);

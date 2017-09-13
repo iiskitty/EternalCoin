@@ -1,13 +1,8 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using System;
-using Microsoft.Xna.Framework.Audio;
 using System.Xml;
-using System.Text;
 
 namespace Eternal_Coin
 {
@@ -187,7 +182,7 @@ namespace Eternal_Coin
         public static void LoadEnemyAttacks(ContentManager Content, string edpid)
         {
             XmlDocument attacksDoc = new XmlDocument();
-            attacksDoc.Load("./Content/LoadData/Data.xml");
+            attacksDoc.Load("./Content/LoadData/DPandAttacks.xml");
             XmlNodeList attacks = attacksDoc.SelectNodes("/data/loadattacks/attacks/enemyattacks/attack");
             foreach (XmlNode attack in attacks)
             {
@@ -260,7 +255,7 @@ namespace Eternal_Coin
         public static void LoadAttacks(ContentManager Content, string dpid)
         {
             XmlDocument attacksDoc = new XmlDocument();
-            attacksDoc.Load("./Content/LoadData/Data.xml");
+            attacksDoc.Load("./Content/LoadData/DPandAttacks.xml");
             XmlNodeList attacks = attacksDoc.SelectNodes("/data/loadattacks/attacks/attack");
             
             foreach (XmlNode attack in attacks)

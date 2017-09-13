@@ -40,7 +40,7 @@ namespace Eternal_Coin
             this.mainName = mainName;
             this.subName = subName;
             this.state = state;
-            locationFilePath = mainName + "/" + subName + "/" + subName + "Info.xml";
+            locationFilePath = mainName + "/" + subName + "Info.xml";
         }
 
         public Node(string name, string mainName, string subName, string state, Vector2 position, Color colour)

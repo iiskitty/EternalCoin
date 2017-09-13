@@ -9,8 +9,8 @@ namespace Eternal_Coin
         public static void LoadSounds(ContentManager Content)
         {
             XmlDocument loadSoundDoc = new XmlDocument();
-            loadSoundDoc.Load("./Content/LoadData/Data.xml");
-            XmlNodeList soundList = loadSoundDoc.SelectNodes("/data/sounds/load/sound");
+            loadSoundDoc.Load("./Content/LoadData/Sounds.xml");
+            XmlNodeList soundList = loadSoundDoc.SelectNodes("/sounds/load/sound");
 
             foreach (XmlNode sound in soundList)
             {
@@ -19,8 +19,8 @@ namespace Eternal_Coin
             }
 
             XmlDocument setSoundDoc = new XmlDocument();
-            setSoundDoc.Load("./Content/LoadData/Data.xml");
-            XmlNode setSound = setSoundDoc.SelectSingleNode("/data/sounds/set");
+            setSoundDoc.Load("./Content/LoadData/Sounds.xml");
+            XmlNode setSound = setSoundDoc.SelectSingleNode("/sounds/set");
             SetSounds(setSound);
         }
 

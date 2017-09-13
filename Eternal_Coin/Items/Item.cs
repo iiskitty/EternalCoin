@@ -173,8 +173,8 @@ namespace Eternal_Coin
         public static void CreateItems()
         {
             XmlDocument itemsDoc = new XmlDocument();
-            itemsDoc.Load("./Content/LoadData/Data.xml");
-            XmlNodeList weaponItems = itemsDoc.SelectNodes("/data/createitems/weapons/item");
+            itemsDoc.Load("./Content/LoadData/ItemData.xml");
+            XmlNodeList weaponItems = itemsDoc.SelectNodes("/items/createitems/weapons/item");
 
             foreach (XmlNode weapon in weaponItems)
             {
@@ -182,7 +182,7 @@ namespace Eternal_Coin
                 {
                     Item item = ItemBuilder.BuildItem(weapon[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, weapon[GVar.XmlTags.ItemTags.inventoryslot].InnerText, weapon[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[weapon[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[weapon[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
 
-                    XmlNodeList attacks = itemsDoc.SelectNodes("/data/createitems/weapons/item/" + item.Type.name + "attack");
+                    XmlNodeList attacks = itemsDoc.SelectNodes("/items/createitems/weapons/item/" + item.Type.name + "attack");
                     foreach (XmlNode attack in attacks)
                     {
                         item.Attacks.Add(attack.InnerText);
@@ -196,7 +196,7 @@ namespace Eternal_Coin
                 }
             }
 
-            XmlNodeList armorItems = itemsDoc.SelectNodes("/data/createitems/armor/item");
+            XmlNodeList armorItems = itemsDoc.SelectNodes("/items/createitems/armor/item");
 
             foreach (XmlNode armor in armorItems)
             {
@@ -212,7 +212,7 @@ namespace Eternal_Coin
                 }
             }
 
-            XmlNodeList jewellryItems = itemsDoc.SelectNodes("/data/createitems/jewellry/item");
+            XmlNodeList jewellryItems = itemsDoc.SelectNodes("/items/createitems/jewellry/item");
 
             foreach (XmlNode jewellry in jewellryItems)
             {
@@ -228,7 +228,7 @@ namespace Eternal_Coin
                 }
             }
 
-            XmlNodeList eternalCoinItems = itemsDoc.SelectNodes("/data/createitems/eternalcoins/item");
+            XmlNodeList eternalCoinItems = itemsDoc.SelectNodes("/items/createitems/eternalcoins/item");
 
             foreach (XmlNode eternalCoin in eternalCoinItems)
             {
@@ -236,7 +236,7 @@ namespace Eternal_Coin
                 {
                     Item item = ItemBuilder.BuildItem(eternalCoin[GVar.XmlTags.ItemTags.itemclass].InnerText, 0, eternalCoin[GVar.XmlTags.ItemTags.inventoryslot].InnerText, eternalCoin[GVar.XmlTags.ItemTags.itemname].InnerText, Dictionaries.itemTypes[eternalCoin[GVar.XmlTags.ItemTags.itemtype].InnerText], Dictionaries.materials[eternalCoin[GVar.XmlTags.ItemTags.itemmaterial].InnerText]);
 
-                    XmlNodeList attacks = itemsDoc.SelectNodes("/data/createitems/eternalcoins/item/" + item.Type.name + "Attack");
+                    XmlNodeList attacks = itemsDoc.SelectNodes("/items/createitems/eternalcoins/item/" + item.Type.name + "Attack");
                     foreach (XmlNode attack in attacks)
                     {
                         item.Attacks.Add(attack.InnerText);
