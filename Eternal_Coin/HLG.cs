@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Eternal_Coin
 {
@@ -462,6 +463,17 @@ namespace Eternal_Coin
         /// </summary>
         public static List<SoundEffectInstance> sounds = new List<SoundEffectInstance>();
 
+
+        public static Song music;
+
+        public static void PlaySong(Song song)
+        {
+            music = song;
+            MediaPlayer.Volume = GVar.Volume.Music.volume;
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(music);
+        }
+
         /// <summary>
         /// if SoundEffect is not null, create a new SoundEffectInstance with SoundEffect, set volume, pitch and pan, add instance to List.
         /// if List contains more than 12 SoundEffectInstance, sound will not play.
@@ -856,11 +868,20 @@ namespace Eternal_Coin
     /// </summary>
     public class MouseManager
     {
-        static MouseState mouseState;
-        public static Rectangle mouseBounds;
+        public static MouseManager mouse = new MouseManager();
 
+        MouseState mouseState;
+        public Rectangle mouseBounds;
 
-        public static void Update(bool isFullScreen)
+        public delegate void InventoryItemClick(ItemSlot item);
+        public event InventoryItemClick InventoryItemClicked;
+
+        protected virtual void OnInventoryItemClicked()
+        {
+            InventoryItemClicked?.Invoke(GVar.mouseHoveredItem);
+        }
+
+        public void Update(bool isFullScreen)
         {
             mouseState = Mouse.GetState(); //keep mouseState up to date
             mouseBounds = new Rectangle(mouseState.Position.X, mouseState.Position.Y, 2, 2); //keep mouseBounds up to date
@@ -872,14 +893,19 @@ namespace Eternal_Coin
                 if (mouseState.Position.Y > GVar.gameScreenY)
                     Mouse.SetPosition(mouseState.Position.X, (int)GVar.gameScreenY);
             }
-            
+
+            if (InputManager.IsLMPressed())
+            {
+                OnInventoryItemClicked();
+            }
+                
         }
 
         /// <summary>
         /// Gets and returns the position of the mouse
         /// </summary>
         /// <returns>Vector2 mousePos(mouse position)</returns>
-        public static Vector2 GetMousePosition()
+        public Vector2 GetMousePosition()
         {
             MouseState mouse = Mouse.GetState();
             Vector2 mousePos = new Vector2(mouse.Position.X, mouse.Position.Y);

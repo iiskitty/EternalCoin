@@ -67,6 +67,15 @@ namespace Eternal_Coin
 
         public static void LoadTextures(ContentManager Content)
         {
+            XmlDocument worldMaps = new XmlDocument();
+            worldMaps.Load("./Content/AvailableStories.xml");
+            XmlNodeList storyList = worldMaps.SelectNodes("/stories/story");
+
+            foreach (XmlNode story in storyList)
+            {
+                Dictionaries.worldMaps.Add(story["name"].InnerText + "Map", Content.Load<Texture2D>("LocationTemplates/" + story["name"].InnerText + "/WorldMap"));
+            }
+
             XmlDocument texDoc = new XmlDocument();
             texDoc.Load("./Content/LoadData/Textures.xml");
             XmlNodeList texList = texDoc.SelectNodes("/textures/load/texture");
@@ -104,7 +113,6 @@ namespace Eternal_Coin
             Misc.cursor = Dictionaries.textures[texID["cursor"].InnerText];
             Misc.pixel = Dictionaries.textures[texID["pixel"].InnerText];
             Misc.clearPixel = Dictionaries.textures[texID["cpixel"].InnerText];
-            Misc.worldMap = Dictionaries.textures[texID["worldmap"].InnerText];
             
             Button.locationNode = Dictionaries.textures[texID["locnode"].InnerText];
             Button.continueButton = Dictionaries.textures[texID["continuebut"].InnerText];

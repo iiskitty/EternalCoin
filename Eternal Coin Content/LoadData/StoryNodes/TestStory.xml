@@ -8,12 +8,28 @@
         <mainname>Ventti</mainname>
         <subname>MainVentti</subname>
         <state>Main</state>
-        <positionx>1997</positionx>
-        <positiony>1891</positiony>
+        <positionx>405</positionx>
+        <positiony>236</positiony>
         <sublocnode>SubVentti</sublocnode>
         <mainlocnode>null</mainlocnode>
-        <MainEatonconnection>null</MainEatonconnection>
+        <MainVentticonnection>null</MainVentticonnection>
+    </node>
+    <node>
+        <name>Ventti</name>
+        <mainname>Ventti</mainname>
+        <subname>SubVentti</subname>
+        <state>Sub</state>
+        <positionx>405</positionx>
+        <positiony>236</positiony>
+        <sublocnode>null</sublocnode>
+        <mainlocnode>MainVentti</mainlocnode>
+        <SubVentticonnection>null</SubVentticonnection>
     </node>
 
+
+
     <!-- sub nodes -->
+    <!-- VENTTI -->
+    
+    <!-- END VENTTI -->
 </locationnode>

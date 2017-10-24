@@ -113,22 +113,20 @@ namespace Eternal_Coin
         /// Adds an available attack from equipped weapon or magic item
         /// </summary>
         /// <param name="ids">List of attack id's from weapon or magic item</param>
-        public static void AddAvailableAttacks(List<string> ids)
+        public static void AddAvailableAttacks(Item item)
         {
-            try
+            if (item.InventorySlot.Contains("Weapon"))
             {
+                List<string> ids = item.Attacks;
+
                 for (int i = 0; i < ids.Count; i++)
                 {
                     string id = GVar.displayPicID + ids[i];
-                    if (Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
+                    if (!Dictionaries.availableAttacks.ContainsKey(id) && Dictionaries.availableAttacks.Count != Dictionaries.availableAttacks.Count + ids.Count)
                         Dictionaries.availableAttacks.Add(id, Dictionaries.attacks[id]);
-                    if (Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
+                    if (!Lists.availableAttacksIDs.Contains(id) && Lists.availableAttacksIDs.Count != Lists.availableAttacksIDs.Count + ids.Count)
                         Lists.availableAttacksIDs.Add(id);
                 }
-            }
-            catch(Exception e)
-            {
-                GVar.LogDebugInfo("!error![" + e + "]", 1);
             }
         }
 
@@ -136,12 +134,17 @@ namespace Eternal_Coin
         /// Takes available attacks from weapon or magic item being unequiped
         /// </summary>
         /// <param name="ids">List of attacks id's from weapon or magic item</param>
-        public static void TakeAvailableAttacks(List<string> ids)
+        public static void TakeAvailableAttacks(Item item)
         {
-            for (int i = 0; i < ids.Count; i++)
+            Lists.availableAttacksIDs.Clear();
+            Dictionaries.availableAttacks.Clear();
+
+            for (int i = 0; i < Lists.inventorySlots.Count; i++)
             {
-                Lists.availableAttacksIDs.Remove(GVar.displayPicID + ids[i]);
-                Dictionaries.availableAttacks.Remove(GVar.displayPicID + ids[i]);
+                if (Lists.inventorySlots[i].Contains("Weapon") && InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item != null)
+                {
+                    AddAvailableAttacks(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item);
+                }
             }
         }
 

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<location> <!-- * root tag -->
+	<name>Ventti</name> <!-- * Name of the location. This is used in code to help find the right file, this name should match the SubName when creating location nodes for your story. -->
+	<description>This is Ventti. A small farming town that is your home.</description> <!-- * Short description of the location. -->
+	<searched>false</searched> <!-- * If the location has been searched or not, usually set to false, this will be changed by the code of the game. -->
+	<hasnpc>true</hasnpc> <!-- * If the location has a NPC or not. -->
+    <hasshop>true</hasshop> <!-- * If the location has a shop or not. -->
+    <hasenemy>false</hasenemy> <!-- * If the location has an enemy or not. -->
+  
+	<npc> <!-- Root tag of the NPC. Delete this and all its contents if this location does not have a NPC. -->
+	    <hasquest>false</hasquest> <!-- not used anymore, please stand by -->
+      
+        <currentquest>QUESTID</currentquest> <!-- This is managed by the code of the game. Make sure the value is set to QUESTID when creating a new location. -->
+      
+	    <name>Tim</name> <!-- Name of the NPC. -->
+      
+	    <greeting> <!-- Greetings the NPC will say to the player. -->
+            <normalgreeting>Good Day Sir. What can I do for you?</normalgreeting> <!-- What the NPC will say when first talking to it. -->
+	    </greeting>
+
+	</npc>
+
+    <shop> <!-- Start tag for the shop. -->
+        <name>Steve</name> <!-- Name of the shop keeper. -->
+        <greeting>Hello PLAYERNAME, welcome to my store, please look around.</greeting> <!-- What the shop keeper will say to the player. -->
+        <inventory> <!-- Inventory of the shop. -->
+            <item> <!-- Item tag to contain the name of the item being sold. -->
+                <itemname>Iron Sword</itemname> <!-- Name of the item being sold. -->
+            </item>
+        </inventory>
+    </shop>
+  
+	<actions> <!-- Actions for the location. -->
+	    <enter>Entering Ventti</enter> <!-- Action for entering the location. (only happens if the location has been explored. -->
+	    <explore>Exploring Ventti</explore> <!-- Action for exploring the location. -->
+	    <talknpc>Talking To Tim</talknpc> <!-- Action for talking to the NPC of the location. -->
+	</actions>
+</location>

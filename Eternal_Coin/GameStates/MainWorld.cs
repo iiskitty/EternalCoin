@@ -61,7 +61,7 @@ namespace Eternal_Coin
                 Lists.viewQuestInfoButtons[i].Update(gameTime);
                 Lists.viewQuestInfoButtons[i].Draw(spriteBatch, Lists.viewQuestInfoButtons[i].SpriteID, Lists.viewQuestInfoButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
 
-                if (MouseManager.mouseBounds.Intersects(Lists.viewQuestInfoButtons[i].Bounds))//check if mouse hovers over Quests UI Buttons.
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.viewQuestInfoButtons[i].Bounds))//check if mouse hovers over Quests UI Buttons.
                 {
                     GVar.DrawBoundingBox(Lists.viewQuestInfoButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);//draw a box around quest info when moused over.
                 }
@@ -74,11 +74,11 @@ namespace Eternal_Coin
                 Lists.mainWorldButtons[i].Update(gameTime);
                 Lists.mainWorldButtons[i].Draw(spriteBatch, Lists.mainWorldButtons[i].SpriteID, Lists.mainWorldButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
 
-                if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse hovers over MainWorldButtons.
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse hovers over MainWorldButtons.
                 {
                     Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover when mouse in hovering over button.
                 }
-                if (Lists.mainWorldButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse is not hovering over MainWorldButtons
+                if (Lists.mainWorldButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse is not hovering over MainWorldButtons
                 {
                     Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change animation state to default when mouse is not hovering over.
                 }
@@ -132,11 +132,11 @@ namespace Eternal_Coin
                     Lists.locationButtons[i].Update(gameTime);
                     Lists.locationButtons[i].Draw(spriteBatch, Lists.locationButtons[i].SpriteID, Lists.locationButtons[i].Bounds, 0.17f, 0f, Vector2.Zero);
 
-                    if (MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
+                    if (MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
                     {
                         Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover if the mouse is hovering over a button.
                     }
-                    if (Lists.locationButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
+                    if (Lists.locationButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
                     {
                         Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change the animation state to default if the mouse is not hovering over a button.
                     }
@@ -313,7 +313,7 @@ namespace Eternal_Coin
                 if (GVar.player.CurrentLocation.LocNodeConnections.Count > 0)
                 {
                     //if the mouse intersects and connting location nodes and left mouse is pressed and the game is not paused.
-                    if (MouseManager.mouseBounds.Intersects(GVar.player.CurrentLocation.LocNodeConnections[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
+                    if (MouseManager.mouse.mouseBounds.Intersects(GVar.player.CurrentLocation.LocNodeConnections[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                     {
                         UI.CloseNPCUI();//deactivate NPC UI.
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clicklocnode]);

@@ -109,7 +109,7 @@ namespace Eternal_Coin
                 Battle.battleWon = false;
                 Battle.loot.Clear();
                 Battle.silverReward = 0;
-                InventoryManager.enemyInventory = new EquipInventory();
+                InventoryManager.enemyInventory = new EquipInventory(GVar.InventoryParentNames.enemy);
                 Lists.optionsButtons.Clear();
                 GVar.currentGameState = GVar.GameState.game;
                 GVar.previousGameState = GVar.GameState.options;
@@ -163,7 +163,7 @@ namespace Eternal_Coin
             for (int i = 0; i < Lists.NPCQuestButtons.Count; i++)
             {
                 
-                if (MouseManager.mouseBounds.Intersects(Lists.NPCQuestButtons[i].Bounds) && InputManager.IsLMPressed())
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.NPCQuestButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
                     for (int j = 0; j < Lists.NPCQuests.Count; j++)
                     {

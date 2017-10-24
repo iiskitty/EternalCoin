@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Eternal_Coin
 {
@@ -8,6 +9,7 @@ namespace Eternal_Coin
     {
         public static Dictionary<string, Projectile> projectiles;
         public static Dictionary<string, Texture2D> maps;
+        public static Dictionary<string, Texture2D> worldMaps;
         public static Dictionary<string, Texture2D> textures;
         public static Dictionary<string, DisplayPicture> displayPictures;
         public static Dictionary<string, DisplayPicture> eDisplayPictures;
@@ -16,6 +18,7 @@ namespace Eternal_Coin
         public static Dictionary<string, Texture2D> itemTextures;
         public static Dictionary<string, LocationNode> locNodes;
         public static Dictionary<string, SoundEffect> sounds;
+        public static Dictionary<string, Song> music;
         public static Dictionary<string, Attack> attacks;
         public static Dictionary<string, Attack> enemyAttacks;
         public static Dictionary<string, Attack> availableAttacks;
@@ -27,10 +30,12 @@ namespace Eternal_Coin
             materials = new Dictionary<string, Material>();
             itemTypes = new Dictionary<string, ItemType>();
             maps = new Dictionary<string, Texture2D>();
+            worldMaps = new Dictionary<string, Texture2D>();
             textures = new Dictionary<string, Texture2D>();
             itemTextures = new Dictionary<string, Texture2D>();
             locNodes = new Dictionary<string, LocationNode>();
             sounds = new Dictionary<string, SoundEffect>();
+            music = new Dictionary<string, Song>();
             attacks = new Dictionary<string, Attack>();
             availableAttacks = new Dictionary<string, Attack>();
             enemyAttacks = new Dictionary<string, Attack>();

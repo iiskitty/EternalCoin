@@ -61,7 +61,7 @@ namespace Eternal_Coin
             {
                 Lists.chooseCharacterButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                if (MouseManager.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds) && InputManager.IsLMPressed())
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.chooseCharacterButtons[i].Name, 2);
@@ -124,7 +124,7 @@ namespace Eternal_Coin
                 {
                     Lists.savedGames[i].buttons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                    if (MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds) && InputManager.IsLMPressed())
+                    if (MouseManager.mouse.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds) && InputManager.IsLMPressed())
                     {
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         if (Lists.savedGames[i].buttons[j].Name == "LoadGame")
@@ -168,11 +168,13 @@ namespace Eternal_Coin
                 {
                     Lists.availableStoriesButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                    if (MouseManager.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds) && InputManager.IsLMPressed())
+                    if (MouseManager.mouse.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds) && InputManager.IsLMPressed())
                     {
                         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                         GVar.LogDebugInfo("GameCreated: " + GVar.playerName, 2);
                         GVar.storyName = Lists.availableStoriesButtons[i].Name;
+                        Textures.Misc.worldMap = Dictionaries.worldMaps[GVar.storyName + "Map"];
+                        Vector.SetWorldMapVectors();
                         Load.LoadLocationNodes(GVar.storyName);
                         GVar.chooseStory = false;
                         GVar.startGame = true;
@@ -191,7 +193,7 @@ namespace Eternal_Coin
                     {
                         Lists.displayPictureButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                        if (MouseManager.mouseBounds.Intersects(Lists.displayPictureButtons[i].Bounds) && InputManager.IsLMPressed() && GVar.preventclick == 0)
+                        if (MouseManager.mouse.mouseBounds.Intersects(Lists.displayPictureButtons[i].Bounds) && InputManager.IsLMPressed() && GVar.preventclick == 0)
                         {
                             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                             GVar.displayPicID = Lists.displayPictureButtons[i].State;
@@ -217,7 +219,7 @@ namespace Eternal_Coin
                 Lists.chooseCharacterButtons[i].Update(gameTime);
                 Lists.chooseCharacterButtons[i].Draw(spriteBatch, Lists.chooseCharacterButtons[i].SpriteID, Lists.chooseCharacterButtons[i].Bounds, 0.18f, 0f, Vector2.Zero);
                 
-                if (MouseManager.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds))
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds))
                 {
                     if (Lists.chooseCharacterButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover && !GVar.chooseStory)
                     {
@@ -225,7 +227,7 @@ namespace Eternal_Coin
                     }
                     Lists.chooseCharacterButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
                 }
-                if (Lists.chooseCharacterButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds))
+                if (Lists.chooseCharacterButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.chooseCharacterButtons[i].Bounds))
                 {
                     Lists.chooseCharacterButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
                 }
@@ -236,7 +238,7 @@ namespace Eternal_Coin
                 for (int i = 0; i < Lists.availableStoriesButtons.Count; i++)
                 {
                     Lists.availableStoriesButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                    if (MouseManager.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds))
+                    if (MouseManager.mouse.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds))
                     {
                         if (!Lists.availableStoriesButtons[i].mouseOver)
                         {
@@ -245,7 +247,7 @@ namespace Eternal_Coin
                         Lists.availableStoriesButtons[i].mouseOver = true;
                         Lists.availableStoriesButtons[i].DrawDarkButton(spriteBatch);
                     }
-                    else if (!MouseManager.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds))
+                    else if (!MouseManager.mouse.mouseBounds.Intersects(Lists.availableStoriesButtons[i].Bounds))
                     {
                         Lists.availableStoriesButtons[i].mouseOver = false;
                         Lists.availableStoriesButtons[i].DrawLightButton(spriteBatch);
@@ -279,7 +281,7 @@ namespace Eternal_Coin
                         Lists.savedGames[i].buttons[j].Update(gameTime);
                         Lists.savedGames[i].buttons[j].Draw(spriteBatch, Lists.savedGames[i].buttons[j].SpriteID, Lists.savedGames[i].buttons[j].Bounds, 0.18f, 0f, Vector2.Zero);
 
-                        if (MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
+                        if (MouseManager.mouse.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
                         {
                             if (Lists.savedGames[i].buttons[j].CurrentAnimation != GVar.AnimStates.Button.mouseover)
                             {
@@ -287,7 +289,7 @@ namespace Eternal_Coin
                             }
                             Lists.savedGames[i].buttons[j].PlayAnimation(GVar.AnimStates.Button.mouseover);
                         }
-                        if (Lists.savedGames[i].buttons[j].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
+                        if (Lists.savedGames[i].buttons[j].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.savedGames[i].buttons[j].Bounds))
                         {
                             Lists.savedGames[i].buttons[j].PlayAnimation(GVar.AnimStates.Button.def);
                         }

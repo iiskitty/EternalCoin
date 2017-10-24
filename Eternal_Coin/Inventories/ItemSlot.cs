@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eternal_Coin
 {
@@ -16,14 +11,16 @@ namespace Eternal_Coin
         public Vector2 miniSize;
         public Item item;
         public string inventorySlot;
+        public string parentInventory;
 
-        public ItemSlot(Vector2 position, Vector2 miniPosition, Vector2 size, Vector2 miniSize, string inventorySlot)
+        public ItemSlot(Vector2 position, Vector2 miniPosition, Vector2 size, Vector2 miniSize, string inventorySlot, string parentInventory)
         {
             this.position = position;
             this.miniPosition = miniPosition;
             this.size = size;
             this.miniSize = miniSize;
             this.inventorySlot = inventorySlot;
+            this.parentInventory = parentInventory;
         }
 
         public void Update(GameTime gameTime)

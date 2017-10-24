@@ -11,7 +11,7 @@ namespace Eternal_Coin
             {
                 Lists.mainMenuButtons[i].Update(gameTime);
 
-                if (MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
                 {
                     if (Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover)
                     {
@@ -46,7 +46,7 @@ namespace Eternal_Coin
                         }
                     }
                 }
-                if (!MouseManager.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
+                if (!MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
                 {
                     Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
                 }

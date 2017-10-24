@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+
+<location> <!-- * root tag -->
+	<name>Ventti</name> <!-- * Name of the location. This is used in code to help find the right file, this name should match the SubName when creating location nodes for your story. -->
+	<description>This is Ventti. A small farming town that is your home.</description> <!-- * Short description of the location. -->
+    <searched>false</searched> <!-- * If the location has been searched or not, usually set to false, this will be changed by the code of the game. -->
+    <hasnpc>false</hasnpc> <!-- * If the location has a NPC or not. -->
+    <hasshop>false</hasshop> <!-- * If the location has a shop or not. -->
+    <hasenemy>false</hasenemy> <!-- * If the location has an enemy or not. -->
+  
+	<actions> <!-- Actions for the location. -->
+	    <enter>Entering Ventti</enter> <!-- Action for entering the location. (only happens if the location has been explored. -->
+	    <explore>Exploring Ventti</explore> <!-- Action for exploring the location. -->
+	</actions>
+</location>

@@ -79,18 +79,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/EnterLocationButtonTex.png
 
-#begin Sprites/Maps/WorldMap.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Maps/WorldMap.png
-
 #begin Sprites/UI/QuestListUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1108,9 +1096,6 @@
 #begin LoadData/ItemData.xml
 /copy:LoadData/ItemData.xml
 
-#begin LoadData/Textures.xml
-/copy:LoadData/Textures.xml
-
 #begin LoadData/Sounds.xml
 /copy:LoadData/Sounds.xml
 
@@ -1134,4 +1119,61 @@
 
 #begin AvailableStories.xml
 /copy:AvailableStories.xml
+
+#begin LocationTemplates/TestStory/Ventti/MainVenttiInfo.xml
+/copy:LocationTemplates/TestStory/Ventti/MainVenttiInfo.xml
+
+#begin LocationTemplates/TestStory/Ventti/VenttiMap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LocationTemplates/TestStory/Ventti/VenttiMap.png
+
+#begin LocationTemplates/TestStory/Ventti/SubVenttiInfo.xml
+/copy:LocationTemplates/TestStory/Ventti/SubVenttiInfo.xml
+
+#begin LoadData/StoryNodes/TestStory.xml
+/copy:LoadData/StoryNodes/TestStory.xml
+
+#begin LocationTemplates/MainStory/WorldMap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LocationTemplates/MainStory/WorldMap.png
+
+#begin LocationTemplates/TestStory/WorldMap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LocationTemplates/TestStory/WorldMap.png
+
+#begin LoadData/Textures.xml
+/copy:LoadData/Textures.xml
+
+#begin Music/Fantasy-Forest-Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Fantasy-Forest-Battle.mp3
+
+#begin LoadData/Music.xml
+/copy:LoadData/Music.xml
 

@@ -92,6 +92,7 @@
     <Compile Include="LoadContent\Initialize\Dictionaries.cs" />
     <Compile Include="LoadContent\Initialize\Lists.cs" />
     <Compile Include="LoadContent\Initialize\Vector.cs" />
+    <Compile Include="LoadContent\Music.cs" />
     <Compile Include="LocationNode.cs" />
     <Compile Include="Items\Material.cs" />
     <Compile Include="NPC.cs" />

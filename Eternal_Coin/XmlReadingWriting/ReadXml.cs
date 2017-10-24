@@ -19,6 +19,7 @@ namespace Eternal_Coin
                 XmlNode locNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location");//grab the location tag from the loaded xml file.
 
                 GVar.location = new Location(locNode[GVar.XmlTags.LocationTags.name].InnerText, locNode[GVar.XmlTags.LocationTags.description].InnerText, Convert.ToBoolean(locNode[GVar.XmlTags.LocationTags.searched].InnerText), Convert.ToBoolean(locNode[GVar.XmlTags.LocationTags.hasnpc].InnerText), Convert.ToBoolean(locNode[GVar.XmlTags.LocationTags.hasshop].InnerText), Convert.ToBoolean(locNode[GVar.XmlTags.LocationTags.hasenemy].InnerText));//create a location with the data from the xml file.
+                GVar.location.Description = Text.WrapText(Fonts.lucidaConsole16Regular, GVar.location.Description, 600);
                 locationNode.Searched = Convert.ToBoolean(locNode[GVar.XmlTags.LocationTags.searched].InnerText);
 
             }

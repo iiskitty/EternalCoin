@@ -14,7 +14,7 @@ namespace Eternal_Coin
             : base(spriteID, position, size, colour, itemClass, itemName, cost, inventorySlot, material, type)
         {
             this.spriteID = SpriteID;
-            eternalCoinSlot = new ItemSlot(new Vector2(position.X - 10, position.Y - 2), Vector2.Zero, new Vector2(15, 15), Vector2.Zero, "EternalCoin");
+            eternalCoinSlot = new ItemSlot(new Vector2(position.X - 10, position.Y - 2), Vector2.Zero, new Vector2(15, 15), Vector2.Zero, "EternalCoin", itemName);
         }
 
         public Jewellry(Item item)

@@ -231,7 +231,7 @@ namespace Eternal_Coin
             {
                 Updates.UpdateGameButtons(Lists.mainWorldButtons[j], GVar.player, gameTime);
                 //check for mouse intersecting MainWorldButton and left mouse click and game not paused.
-                if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.mainWorldButtons[j].Name, 2);
@@ -304,7 +304,7 @@ namespace Eternal_Coin
                     }
                 }
                 //check for mouse intersecting MainWorldButtons and left mouse click and game is paused.
-                else if (MouseManager.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && GVar.gamePaused)
+                else if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[j].Bounds) && InputManager.IsLMPressed() && GVar.gamePaused)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
 
@@ -341,7 +341,7 @@ namespace Eternal_Coin
             {
                 Lists.viewQuestInfoButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update View Quest Info Buttons.
 
-                if (MouseManager.mouseBounds.Intersects(Lists.viewQuestInfoButtons[j].Bounds) && InputManager.IsLMPressed())//check if mouse intersects View Quest Info Buttons and left mouse click.
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.viewQuestInfoButtons[j].Bounds) && InputManager.IsLMPressed())//check if mouse intersects View Quest Info Buttons and left mouse click.
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
 
@@ -374,7 +374,7 @@ namespace Eternal_Coin
         public static void CheckLocationButtonClick(int i)
         {
             //check if mouse intersects location button and left mouse click and game not paused.
-            if (MouseManager.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
+            if (MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && InputManager.IsLMPressed() && !GVar.gamePaused)
             {
                 SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                 GVar.LogDebugInfo("ButtonClicked: " + Lists.locationButtons[i].Name, 2);

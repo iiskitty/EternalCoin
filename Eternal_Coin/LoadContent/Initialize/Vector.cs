@@ -17,8 +17,7 @@ namespace Eternal_Coin
 
         public static void InitilizeVectors()
         {
-            worldMapPosition = new Vector2((0 - Textures.Misc.worldMap.Width / 2 + GVar.gameScreenX / 2), (0 - Textures.Misc.worldMap.Height / 2 + GVar.gameScreenY / 2));
-            worldMapSize = new Vector2(Textures.Misc.worldMap.Width, Textures.Misc.worldMap.Height);
+            
             lookEyeSize = new Vector2(50, 25);
             locationButtonSize = new Vector2(30, 30);
             mainLocationSize = new Vector2(30, 30);
@@ -26,6 +25,12 @@ namespace Eternal_Coin
             buttonSize = new Vector2(75, 75);
             itemNormalSize = new Vector2(71, 71);
             newGameDPSize = new Vector2(329, 232);
+        }
+
+        public static void SetWorldMapVectors()
+        {
+            worldMapPosition = new Vector2((0 - Textures.Misc.worldMap.Width / 2 + GVar.gameScreenX / 2), (0 - Textures.Misc.worldMap.Height / 2 + GVar.gameScreenY / 2));
+            worldMapSize = new Vector2(Textures.Misc.worldMap.Width, Textures.Misc.worldMap.Height);
         }
     }
 }

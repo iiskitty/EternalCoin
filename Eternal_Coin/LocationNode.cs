@@ -181,7 +181,7 @@ namespace Eternal_Coin
                     if (GVar.location.Searched)
                     {
                         spriteBatch.DrawString(Fonts.lucidaConsole20Bold, location.Name, new Vector2((ui.Position.X + ui.Size.X / 2 - location.Name.Length / 2), (ui.Position.Y)), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-                        spriteBatch.DrawString(Fonts.lucidaConsole16Regular, location.Description, new Vector2((ui.Position.X + ui.Size.X / 6), (ui.Position.Y + 30)), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+                        spriteBatch.DrawString(Fonts.lucidaConsole16Regular, location.Description, new Vector2((ui.Position.X + 20), (ui.Position.Y + 30)), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
                     }
                 }
             }

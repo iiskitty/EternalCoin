@@ -65,7 +65,10 @@ namespace Eternal_Coin
 
         public static void SelectNewMap(Node location)
         {
-            GVar.worldMap.SpriteID = Dictionaries.maps[location.MainName + "Map"];
+            if (location.SubName.Contains("Main"))
+                GVar.worldMap.SpriteID = Textures.Misc.worldMap;
+            else
+                GVar.worldMap.SpriteID = Dictionaries.maps[location.MainName + "Map"];
         }
 
         public static void ResetMap()

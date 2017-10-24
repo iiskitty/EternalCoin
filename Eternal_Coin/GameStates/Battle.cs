@@ -271,7 +271,7 @@ namespace Eternal_Coin
             {
                 Lists.attackButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                 
-                if (MouseManager.mouseBounds.Intersects(Lists.attackButtons[i].Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle && !battleWon)
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.attackButtons[i].Bounds) && InputManager.IsLMPressed() && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.idle && !battleWon)
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     try
@@ -301,7 +301,7 @@ namespace Eternal_Coin
                 {
                     Lists.battleSceneButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                    if (MouseManager.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds))
+                    if (MouseManager.mouse.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds))
                     {
                         Lists.battleSceneButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
 
@@ -344,7 +344,7 @@ namespace Eternal_Coin
                             }
                         }
                     }
-                    if (!MouseManager.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds) && Lists.battleSceneButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
+                    if (!MouseManager.mouse.mouseBounds.Intersects(Lists.battleSceneButtons[i].Bounds) && Lists.battleSceneButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
                     {
                         Lists.battleSceneButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
                     }
@@ -417,9 +417,9 @@ namespace Eternal_Coin
                     loot[i].Update(gameTime);
                     loot[i].Draw(spriteBatch, loot[i].SpriteID, loot[i].Bounds, 0.183f, 0f, Vector2.Zero);
 
-                    if (MouseManager.mouseBounds.Intersects(loot[i].Bounds))
+                    if (MouseManager.mouse.mouseBounds.Intersects(loot[i].Bounds))
                     {
-                        Vector2 position = new Vector2(MouseManager.GetMousePosition().X, MouseManager.GetMousePosition().Y - Textures.UI.itemInfoUI.Height);
+                        Vector2 position = new Vector2(MouseManager.mouse.GetMousePosition().X, MouseManager.mouse.GetMousePosition().Y - Textures.UI.itemInfoUI.Height);
                         spriteBatch.Draw(Textures.UI.itemInfoUI, new Rectangle((int)position.X, (int)position.Y, Textures.UI.itemInfoUI.Width, Textures.UI.itemInfoUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.184f);
                         spriteBatch.Draw(loot[i].SpriteID, new Rectangle((int)position.X + 3, (int)position.Y + 3, 87, 87), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.185f);
                         spriteBatch.DrawString(Fonts.lucidaConsole14Regular, loot[i].ItemName, new Vector2(position.X + 99, position.Y + 7), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.185f);

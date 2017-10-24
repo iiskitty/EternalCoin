@@ -702,7 +702,6 @@ C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\C
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\Altered.xnb
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\Default.xnb
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\DP\enemy\EDefault.xnb
-C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Maps\WorldMap.xnb
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\Projectile\Magic\FireBall.xnb
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\axe.xnb
 C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Sprites\tempIcon\boot.xnb
@@ -780,3 +779,13 @@ C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Conte
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\subEaton1Info.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\subEaton2Info.xml
 C:\Users\kitty\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\Eaton\subEatonInfo.xml
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\StoryNodes\TestStory.xml
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\TestStory\Ventti\MainVenttiInfo.xml
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\TestStory\Ventti\SubVenttiInfo.xml
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\TestStory\Ventti\VenttiMap.xnb
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\MainStory\WorldMap.xnb
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LocationTemplates\TestStory\WorldMap.xnb
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\LoadData\Music.xml
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Music\Fantasy-Forest-Battle.wma
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\bin\Windows\Debug\Content\Music\Fantasy-Forest-Battle.xnb
+C:\Users\gayretard\Dropbox\projects\EternalCoin\Eternal_Coin\obj\x86\Debug\Eternal Coin.csproj.CoreCompileInputs.cache

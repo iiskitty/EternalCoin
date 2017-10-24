@@ -120,14 +120,14 @@ namespace Eternal_Coin
                         {
                             InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item = item;
                             GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item);
-                            Attack.AddAvailableAttacks(item.Attacks);
+                            Attack.AddAvailableAttacks(item);
                             GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item), 2);
                         }
                         else if (InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.leftHandWeapon].item != null && InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item == null)
                         {
                             InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item = item;
                             GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item);
-                            Attack.AddAvailableAttacks(item.Attacks);
+                            Attack.AddAvailableAttacks(item);
                             GVar.LogDebugInfo("Weapon Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[GVar.InventorySlot.rightHandWeapon].item), 2);
                         }
                     }
@@ -167,7 +167,7 @@ namespace Eternal_Coin
                                 jewl.eternalCoinSlot.item = ItemBuilder.BuildItem(Dictionaries.items[I["eternalcoin"].InnerText]);
                                 jewl.Attacks = jewl.eternalCoinSlot.item.Attacks;
                                 InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item = jewl;
-                                Attack.AddAvailableAttacks(jewl.Attacks);
+                                Attack.AddAvailableAttacks(jewl);
                                 GVar.player.AddItemStats(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item);
                                 GVar.LogDebugInfo("Jewelry Loaded To Character Inventory: " + ItemBuilder.GetItemInfo(InventoryManager.characterInventory.ItemSlots[Lists.inventorySlots[i]].item), 2);
                                 break;
@@ -274,7 +274,10 @@ namespace Eternal_Coin
                     ln.MainLocNode = Dictionaries.locNodes[ln.MainLocNodeName];
                     foreach (string locName in ln.LocNodeConName)
                     {
-                        ln.AddConnection(Dictionaries.locNodes[locName]);
+                        if (locName != "null")
+                        {
+                            ln.AddConnection(Dictionaries.locNodes[locName]);
+                        }
                     }
 
                     try
@@ -307,6 +310,19 @@ namespace Eternal_Coin
 
                     locNode.Searched = Convert.ToBoolean(node.InnerText);
                 }
+
+                //try
+                //{
+                //    string mapDir = "LocationTemplates/" + GVar.storyName + "/" + "WorldMap";
+                //    Texture2D tempTex = Content.Load<Texture2D>(mapDir);
+                //    Dictionaries.worldMaps.Add(GVar.storyName + "Map", tempTex);
+                //    GVar.LogDebugInfo("Map Created: " + GVar.storyName + "Map", 2);
+                //    Textures.Misc.worldMap = tempTex;
+                //}
+                //catch (Exception e)
+                //{
+                //    GVar.LogDebugInfo("!!!ERROR!!!" + e, 1);
+                //}
             }
         }
 

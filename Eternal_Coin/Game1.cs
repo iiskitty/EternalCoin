@@ -39,6 +39,8 @@ namespace Eternal_Coin
         /// </summary>
         protected override void Initialize()
         {
+            MouseManager.mouse.InventoryItemClicked += InventoryManager.OnMouseClicked;
+
             IsMouseVisible = true;
             //Loads Options.xml to 
             XmlDocument options = new XmlDocument();
@@ -88,6 +90,11 @@ namespace Eternal_Coin
             GVar.Volume.Audio.volume = 0.3f;
             GVar.Volume.Audio.pan = 0f;
             GVar.Volume.Audio.pitch = 0f;
+
+            //setting volume for music
+            GVar.Volume.Music.volume = 0.3f;
+            GVar.Volume.Music.pan = 0f;
+            GVar.Volume.Music.pitch = 0f;
 
             //setting gamestate to start game on mainmenu
             GVar.currentGameState = GVar.GameState.mainMenu;
@@ -154,6 +161,8 @@ namespace Eternal_Coin
             Fonts.LoadFonts(Content);
             //loading sounds for game
             Sounds.LoadSounds(Content);
+            //loading music for game
+            Music.LoadMusic(Content);
             //loading display pictures(for choosing characters)
             Load.LoadDisplayPictures(Content);
             //loading all attacks for all display pictures(characters)
@@ -166,6 +175,8 @@ namespace Eternal_Coin
             {
                 Attack.LoadEnemyAttacks(Content, Lists.eDisplayPictureIDs[i]);
             }
+
+            SoundManager.PlaySong(Music.menuMusic);
         }
 
         /// <summary>
@@ -189,12 +200,13 @@ namespace Eternal_Coin
             if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
             {
                 Item item;
-                item = ItemBuilder.BuildItem(Dictionaries.items["Fire Ball"]);
+                item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
                 Lists.playerItems.Add(item);
                 InventoryManager.playerInventory.ItemSlots[38].item = item;
-                item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
+                item = ItemBuilder.BuildItem(Dictionaries.items["Bronze Helmet"]);
                 Lists.playerItems.Add(item);
                 InventoryManager.playerInventory.ItemSlots[37].item = item;
+
             }
             if (InputManager.IsKeyPressed(Keys.M) && GVar.currentGameState == GVar.GameState.game)
             {
@@ -206,6 +218,8 @@ namespace Eternal_Coin
             if (GVar.loadData)
             {
                 Load.LoadWorldMaps(Content);
+
+                
 
                 //setting map based on players current location
                 WorldMap.SelectNewMap(GVar.player.CurrentLocation);
@@ -252,7 +266,7 @@ namespace Eternal_Coin
             //updates the InputManager that checks for inputs from user
             InputManager.Update();
             //updates the MouseManager keeping the mouse position and giving it a rectangle for clicking on things
-            MouseManager.Update(graphics.IsFullScreen);
+            MouseManager.mouse.Update(graphics.IsFullScreen);
             //checks for sounds that are no longer being used and...sends them off to live on a farm
             SoundManager.CheckSounds();
 

@@ -69,56 +69,21 @@ namespace Eternal_Coin
         /// <param name="shopInventory">Shop Inventory.</param>
         public static void UpdateShopInventories(GameTime gameTime, Inventory playerInventory, MouseInventory mouseInventory, Inventory shopInventory)
         {
-            shopInventory.UpdateInventoryBounds(gameTime);//Update bounds of each Item Slot in shops inventory.
-            //cycle through Shops Inventory's ItemSlots.
-            for (int i = 0; i < 40; i++)
-            {
-                //if shops inventory item slot's item is not null and mouse bounds intersects item in item slot and left mouse pressed.
-                if (shopInventory.ItemSlots[i].item != null && MouseManager.mouseBounds.Intersects(shopInventory.ItemSlots[i].bounds) && InputManager.IsLMPressed())
-                {
-                    //if mouse inventory item is null and players money is greater than or equal to cost of item in shops inventory.
-                    if (mouseInventory.heldItem == null && GVar.silverMoney >= shopInventory.ItemSlots[i].item.Cost)
-                    {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-                        mouseInventory.heldItem = shopInventory.ItemSlots[i].item;//set mouse held item to clicked item in shops inventory.
-                        GVar.silverMoney -= shopInventory.ItemSlots[i].item.Cost;//take cost of item from players money.
-                        Item.FromShop(shopInventory.ItemSlots[i].item, i);//delete the item from shops inventory.
-                    }
-                    //if mouse held item is not null and players money + half the cost of the held item is greater than or equal to cost of item in shops inventory.
-                    else if (mouseInventory.heldItem != null && GVar.silverMoney + (mouseInventory.heldItem.Cost / 2) >= shopInventory.ItemSlots[i].item.Cost)
-                    {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-                        Item item = mouseInventory.heldItem;//create temporary item from mouse held item.
-                        mouseInventory.heldItem = shopInventory.ItemSlots[i].item;//set held item to clicked item in shops inventory,
-                        GVar.silverMoney += mouseInventory.heldItem.Cost / 2;//add half of cost of held item to players money.
-                        GVar.silverMoney -= shopInventory.ItemSlots[i].item.Cost;//take cost of clicked item in shops inventory from players money.
-                        Item.ToShop(item, i);//add item to shops inventory.
-                    }
-                }
-                //if shops inventory item slot's item is null and mouse bounds intersects item slot bounds and left mouse is pressed.
-                else if (shopInventory.ItemSlots[i].item == null && MouseManager.mouseBounds.Intersects(shopInventory.ItemSlots[i].bounds) && InputManager.IsLMPressed())
-                {
-                    //if mouse held item is not null.
-                    if (mouseInventory.heldItem != null)
-                    {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-                        Item.ToShop(mouseInventory.heldItem, i);//add held item to shop inventory.
-                        GVar.silverMoney += mouseInventory.heldItem.Cost / 2;//add half the cost of the held item to players money.
-                        mouseInventory.heldItem = null;//set held item to null;
-                    }
-                }
-            }
-            //cycle through list of players items(inventory and equip inventory)
-            for (int i = 0; i < Lists.playerItems.Count; i++)
-            {
-                Lists.playerItems[i].Update(gameTime);//update items sprite.
-                Lists.playerItems[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update item.
-            }
             //cycle through shops items.
             for (int i = 0; i < Lists.shopItems.Count; i++)
             {
                 Lists.shopItems[i].Update(gameTime);//update items sprite.
                 Lists.shopItems[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update item.
+            }
+
+            shopInventory.UpdateInventoryBounds(gameTime);//Update bounds of each Item Slot in shops inventory.
+            //cycle through Shops Inventory's ItemSlots.
+            for (int i = 0; i < 40; i++)
+            {
+                if (MouseManager.mouse.mouseBounds.Intersects(shopInventory.ItemSlots[i].bounds))
+                {
+                    GVar.mouseHoveredItem = shopInventory.ItemSlots[i];
+                }
             }
 
             InventoryManager.UpdatePlayerInventory(gameTime);
@@ -129,7 +94,7 @@ namespace Eternal_Coin
             {
                 Updates.UpdateInventoryButtons(Lists.inventoryButtons[i], gameTime);//update buttons.
                 //if mouse bounds intersects button bounds and left mouse is pressed.
-                if (MouseManager.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds) && InputManager.IsLMPressed())
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
                     //if button name is CloseInventory.
                     if (Lists.inventoryButtons[i].Name == "CloseInventory")
@@ -145,7 +110,7 @@ namespace Eternal_Coin
                                 shopInventory.ItemSlots[j].item = null;//delete the item.
                         }
 
-                        shopInventory = new Inventory(new Vector2(862, 51));//create new shop inventory(deleting current one)
+                        shopInventory = new Inventory(new Vector2(862, 51), GVar.InventoryParentNames.shop);//create new shop inventory(deleting current one)
                         Lists.shopItems.Clear();//clear shops items.
                         GVar.currentGameState = GVar.GameState.game;//set current GameState to game.
                         GVar.previousGameState = GVar.GameState.inventory;
@@ -165,53 +130,35 @@ namespace Eternal_Coin
         public static void DrawShopInventories(SpriteBatch spriteBatch, GameTime gameTime, Inventory playerInventory, MouseInventory mouseInventory, Inventory shopInventory)
         {
             //cycle through shops inventory itemslots.
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < Lists.shopItems.Count; i++)
             {
+                InventoryManager.DrawInventoryItem(spriteBatch, Lists.shopItems[i]);
                 //if mouse bounds intersects shops inventory itemslots bounds and item is not null.
-                if (MouseManager.mouseBounds.Intersects(shopInventory.ItemSlots[i].bounds) && shopInventory.ItemSlots[i].item != null)
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.shopItems[i].Bounds))
                 {
-                    spriteBatch.Draw(Textures.Misc.clearPixel, shopInventory.ItemSlots[i].bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);//draw a mouse over sprite in the item slot.
+                    spriteBatch.Draw(Textures.Misc.clearPixel, Lists.shopItems[i].Bounds, null, Color.Gold, 0f, Vector2.Zero, SpriteEffects.None, 0.191f);//draw a mouse over sprite in the item slot.
                     //if mouse held item is null.
                     if (mouseInventory.heldItem == null)
                     {
                         //draw item information of item under mouse.
-                        if (shopInventory.ItemSlots[i].item.ItemClass == GVar.ItemClassName.weapon)
+                        if (Lists.shopItems[i].ItemClass == GVar.ItemClassName.weapon)
                         {
-                            Item.DrawItemInfo(spriteBatch, (Weapon)shopInventory.ItemSlots[i].item);
+                            Item.DrawItemInfo(spriteBatch, (Weapon)Lists.shopItems[i]);
                         }
-                        else if (shopInventory.ItemSlots[i].item.ItemClass == GVar.ItemClassName.armor)
+                        else if (Lists.shopItems[i].ItemClass == GVar.ItemClassName.armor)
                         {
-                            Item.DrawItemInfo(spriteBatch, (Armor)shopInventory.ItemSlots[i].item);
+                            Item.DrawItemInfo(spriteBatch, (Armor)Lists.shopItems[i]);
                         }
-                        else if (shopInventory.ItemSlots[i].item.ItemClass == GVar.ItemClassName.jewellry)
+                        else if (Lists.shopItems[i].ItemClass == GVar.ItemClassName.jewellry)
                         {
-                            Item.DrawItemInfo(spriteBatch, (Jewellry)shopInventory.ItemSlots[i].item);
+                            Item.DrawItemInfo(spriteBatch, (Jewellry)Lists.shopItems[i]);
                         }
-                        else if (shopInventory.ItemSlots[i].item.ItemClass == GVar.ItemClassName.eternalcoin)
+                        else if (Lists.shopItems[i].ItemClass == GVar.ItemClassName.eternalcoin)
                         {
-                            Item.DrawItemInfo(spriteBatch, (EternalCoin)shopInventory.ItemSlots[i].item);
+                            Item.DrawItemInfo(spriteBatch, (EternalCoin)Lists.shopItems[i]);
                         }
                     }
                 }
-            }
-
-            //cycle through and draw players items.
-            for (int i = 0; i < Lists.playerItems.Count; i++)
-            {
-                Lists.playerItems[i].Draw(spriteBatch, Lists.playerItems[i].SpriteID, Lists.playerItems[i].Bounds, 0.19f, 0f, Vector2.Zero);
-
-                //if item is of class jewellry, cast to jewellry and draw eternal coin slot bounds(will be removed when proper art is done)
-                if (Lists.playerItems[i].ItemClass == GVar.ItemClassName.jewellry)
-                {
-                    Jewellry ring = (Jewellry)Lists.playerItems[i];
-                    GVar.DrawBoundingBox(ring.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
-                }
-            }
-
-            //cycle through and draw shops items.
-            for (int i = 0; i < Lists.shopItems.Count; i++)
-            {
-                Lists.shopItems[i].Draw(spriteBatch, Lists.shopItems[i].SpriteID, Lists.shopItems[i].Bounds, 0.19f, 0f, Vector2.Zero);
             }
             
             InventoryManager.DrawPlayerInventory(spriteBatch);
@@ -224,7 +171,7 @@ namespace Eternal_Coin
             {
                 Lists.inventoryButtons[i].Update(gameTime);
                 Lists.inventoryButtons[i].Draw(spriteBatch, Lists.inventoryButtons[i].SpriteID, Lists.inventoryButtons[i].Bounds, 0.19f, 0f, Vector2.Zero);
-                if (MouseManager.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
                 {
                     GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.19f, Color.Green);
                 }

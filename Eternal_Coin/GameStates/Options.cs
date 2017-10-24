@@ -12,7 +12,7 @@ namespace Eternal_Coin
             for (int i = 0; i < Lists.optionsButtons.Count; i++)
             {
                 Lists.optionsButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                if (MouseManager.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds) && InputManager.IsLMPressed())
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds) && InputManager.IsLMPressed())
                 {
                     SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
                     GVar.LogDebugInfo("ButtonClicked: " + Lists.optionsButtons[i].Name, 2);
@@ -68,7 +68,7 @@ namespace Eternal_Coin
                     spriteBatch.DrawString(Fonts.lucidaConsole18Regular, "Back", new Vector2(Lists.optionsButtons[i].Position.X + Lists.optionsButtons[i].Size.X / 4, Lists.optionsButtons[i].Position.Y + Lists.optionsButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
                 }
 
-                if (MouseManager.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds))
+                if (MouseManager.mouse.mouseBounds.Intersects(Lists.optionsButtons[i].Bounds))
                 {
                     GVar.DrawBoundingBox(Lists.optionsButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 2, 0.2f, Color.Green);
                 }

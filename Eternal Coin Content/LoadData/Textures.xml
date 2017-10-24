@@ -15,10 +15,6 @@
         <filepath>Sprites/clearpixel</filepath>
       </texture>
       <texture>
-        <id>WorldMap</id>
-        <filepath>Sprites/Maps/WorldMap</filepath>
-      </texture>
-      <texture>
         <id>LocationNode</id>
         <filepath>Sprites/Buttons/LocationNodeTex</filepath>
       </texture>
@@ -202,7 +198,6 @@
       <cursor>Cursor</cursor>
       <pixel>Pixel</pixel>
       <cpixel>ClearPixel</cpixel>
-      <worldmap>WorldMap</worldmap>
       <locnode>LocationNode</locnode>
       <tick>Tick</tick>
       <cross>Cross</cross>

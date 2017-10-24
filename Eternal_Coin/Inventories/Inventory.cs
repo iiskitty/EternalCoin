@@ -9,7 +9,7 @@ namespace Eternal_Coin
         bool fullInventory;
         Vector2 position;
 
-        public Inventory(Vector2 position)
+        public Inventory(Vector2 position, string parentInventory)
         {
             this.position = position;
             itemSlots = new Dictionary<int, ItemSlot>();
@@ -20,7 +20,7 @@ namespace Eternal_Coin
             {
                 itemCount++;
 
-                itemSlots.Add(i, new ItemSlot(position, Vector2.Zero, size, Vector2.Zero, i.ToString()));
+                itemSlots.Add(i, new ItemSlot(position, Vector2.Zero, size, Vector2.Zero, i.ToString(), parentInventory));
 
                 if (itemCount == 5)
                 {

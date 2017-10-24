@@ -124,40 +124,98 @@ namespace Eternal_Coin
             spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), new Vector2(45, 460), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
         }
 
-        public static void ToPlayer(Item item, int i)
+        /// <summary>
+        /// Puts an item into an inventory based on the ItemSlot that was clicked on.
+        /// </summary>
+        /// <param name="itemSlot">The ItemSlot that was clicked on.</param>
+        /// <param name="item">The Item that is being going into an inventory.</param>
+        /// <returns></returns>
+        public static bool ToInventory(ItemSlot itemSlot, Item item)
+        {
+            if (itemSlot.inventorySlot.Length > 2 && itemSlot.inventorySlot.Contains(item.inventorySlot)) //if the inventoryslot length is greater than 2, it is going to the characters inventory.
+            {
+                ToCharacter(itemSlot, item);
+                return true;
+            }
+            else if (itemSlot.inventorySlot.Length <= 2) // to inventory or shop
+            {
+                switch(itemSlot.parentInventory)
+                {
+                    case GVar.InventoryParentNames.inventory:
+                        ToPlayer(itemSlot, item);
+                        return true;
+                    case GVar.InventoryParentNames.shop:
+                        ToShop(itemSlot, item);
+                        return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Takes an item from an inventory based on the ItemSlot that was clicked on.
+        /// </summary>
+        /// <param name="itemSlot">The ItemSlot that was clicked on.</param>
+        /// <param name="item">The Item that is being taken from an inventory.</param>
+        public static void FromInventory(ItemSlot itemSlot, Item item)
+        {
+            if (itemSlot.inventorySlot.Length > 2) // from character
+            {
+                FromCharacter(itemSlot, item);
+            }
+            else // from inventory or shop
+            {
+                switch(itemSlot.parentInventory)
+                {
+                    case GVar.InventoryParentNames.inventory:
+                        FromPlayer(itemSlot, item);
+                        break;
+                    case GVar.InventoryParentNames.shop:
+                        FromShop(itemSlot, item);
+                        break;
+                }
+            }
+        }
+
+        private static void ToPlayer(ItemSlot itemSlot, Item item)
         {
             Lists.playerItems.Add(item);
-            InventoryManager.playerInventory.ItemSlots[i].item = item;
+            itemSlot.item = item;
         }
 
-        public static void FromPlayer(Item item, int i)
+        private static void FromPlayer(ItemSlot itemSlot, Item item)
         {
             Lists.playerItems.Remove(item);
-            InventoryManager.playerInventory.ItemSlots[i].item = null;
+            itemSlot.item = null;
         }
 
-        public static void ToCharacter(Item item, string invSlot)
+        private static void ToCharacter(ItemSlot itemSlot, Item item)
         {
             Lists.characterItems.Add(item);
-            InventoryManager.characterInventory.ItemSlots[invSlot].item = item;
+            itemSlot.item = item;
+            Attack.AddAvailableAttacks(item);
+            GVar.player.AddItemStats(item);
         }
 
-        public static void FromCharacter(Item item, string invSlot)
+        private static void FromCharacter(ItemSlot itemSlot, Item item)
         {
             Lists.characterItems.Remove(item);
-            InventoryManager.characterInventory.ItemSlots[invSlot].item = null;
+            itemSlot.item = null;
+            Attack.TakeAvailableAttacks(item);
+            GVar.player.TakeItemStats(item);
         }
 
-        public static void ToShop(Item item, int i)
+        private static void ToShop(ItemSlot itemSlot, Item item)
         {
             Lists.shopItems.Add(item);
-            InventoryManager.shopInventory.ItemSlots[i].item = item;
+            itemSlot.item = item;
+            GVar.silverMoney += item.cost / 2;
         }
 
-        public static void FromShop(Item item, int i)
+        private static void FromShop(ItemSlot itemSlot, Item item)
         {
             Lists.shopItems.Remove(item);
-            InventoryManager.shopInventory.ItemSlots[i].item = null;
+            itemSlot.item = null;
+            GVar.silverMoney -= item.cost;
         }
 
         public abstract void Update(float gameTime);

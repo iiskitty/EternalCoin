@@ -8,6 +8,7 @@ namespace Eternal_Coin
 {
     public class GVar
     {
+        public static ItemSlot mouseHoveredItem = null;
 
         public static Player player = null;
 
@@ -140,6 +141,14 @@ namespace Eternal_Coin
         /// information for an npc the player may be talking to is kept here
         /// </summary>
         public static NPC npc;
+
+        public struct InventoryParentNames
+        {
+            public const string character = "character";
+            public const string inventory = "inventory";
+            public const string shop = "shop";
+            public const string enemy = "enemy";
+        };
 
         /// <summary>
         /// sound ID's for all sounds that are loaded into the game
