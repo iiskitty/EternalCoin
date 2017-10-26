@@ -474,8 +474,8 @@ namespace Eternal_Coin
                 Lists.attackButtons[i].Draw(spriteBatch, Lists.attackButtons[i].SpriteID, Lists.attackButtons[i].Bounds, 0.1801f, 0f, Vector2.Zero);
             }
 
-            InventoryManager.DrawMiniInventory(spriteBatch, InventoryManager.characterInventory);
-            InventoryManager.DrawEnemyMiniInventory(spriteBatch, InventoryManager.enemyInventory);
+            InventoryManager.DrawMiniInventory(spriteBatch, GVar.InventoryParentNames.character);
+            InventoryManager.DrawMiniInventory(spriteBatch, GVar.InventoryParentNames.enemy);
         }
     }
 }
