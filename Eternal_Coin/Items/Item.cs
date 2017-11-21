@@ -112,6 +112,27 @@ namespace Eternal_Coin
       }
     }
 
+    public static bool ToEternalCoinSlot(Jewellry jewl, Item item)
+    {
+      if (jewl.eternalCoinSlot.item == null)
+      {
+        jewl.eternalCoinSlot.item = item;
+        return true;
+      }
+      return false;
+    }
+
+    public static Item FromEternalCoinSlot(Jewellry jewl)
+    {
+      Item item = null;
+      if (jewl.eternalCoinSlot.item != null)
+      {
+        item = jewl.eternalCoinSlot.item;
+        jewl.eternalCoinSlot.item = null;
+      }
+      return item;
+    }
+
     /// <summary>
     /// Puts an item into an inventory based on the ItemSlot that was clicked on.
     /// </summary>

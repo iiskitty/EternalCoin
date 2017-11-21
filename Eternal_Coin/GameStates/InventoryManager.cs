@@ -12,7 +12,6 @@ namespace Eternal_Coin
     public static Inventory shopInventory;
     public static EquipInventory characterInventory;
     public static EquipInventory enemyInventory;
-    
 
     /// <summary>
     /// Creates all inventories ready for use.
@@ -93,43 +92,60 @@ namespace Eternal_Coin
         }
         else if (itemSlot.item != null && mouseInventory.heldItem != null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.bounds))
         {
-          Item tItem = mouseInventory.heldItem;
-          mouseInventory.heldItem = itemSlot.item;
-          Item.FromInventory(itemSlot, itemSlot.item);
-          Item.ToInventory(itemSlot, tItem);
+          if (itemSlot.item.ItemClass == GVar.ItemClassName.jewellry && mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin)
+          {
+            if (Item.ToEternalCoinSlot((Jewellry)itemSlot.item, mouseInventory.heldItem))
+              mouseInventory.heldItem = null;
+          }
+          else
+          {
+            Item tItem = mouseInventory.heldItem;
+            mouseInventory.heldItem = itemSlot.item;
+            Item.FromInventory(itemSlot, itemSlot.item);
+            Item.ToInventory(itemSlot, tItem);
+          }
         }
         else if (itemSlot.item != null && mouseInventory.heldItem == null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.item.Bounds))
         {
-          mouseInventory.heldItem = itemSlot.item;
-          Item.FromInventory(itemSlot, itemSlot.item);
+          if (itemSlot.item.ItemClass == GVar.ItemClassName.jewellry)
+          {
+            Jewellry jewl = (Jewellry)itemSlot.item;
+
+            if (MouseManager.mouse.mouseBounds.Intersects(jewl.eternalCoinSlot.bounds) && jewl.eternalCoinSlot.item != null)
+              mouseInventory.heldItem = Item.FromEternalCoinSlot(jewl);
+            else
+            {
+              mouseInventory.heldItem = itemSlot.item;
+              Item.FromInventory(itemSlot, itemSlot.item);
+            }
+          }
+          else
+          {
+            mouseInventory.heldItem = itemSlot.item;
+            Item.FromInventory(itemSlot, itemSlot.item);
+          }
         }
       }
-    }
-
-    /// <summary>
-    /// Draws inventory items and item info on mouse over.
-    /// </summary>
-    /// <param name="spriteBatch"></param>
-    /// <param name="inventoryName"></param>
-    public static void DrawInventory(SpriteBatch spriteBatch, string inventoryName)
-    {
-      DrawInventoryItems(spriteBatch, GetItems(inventoryName), 0.19f);
     }
 
     /// <summary>
     /// Updates inventory items and itemslots.
     /// </summary>
     /// <param name="gameTime"></param>
-    /// <param name="inventoryName"></param>
+    /// <param name="inventoryName">name of inventory to update.</param>
     public static void UpdateInventory(GameTime gameTime, string inventoryName)
     {
       UpdateInventoryItems(gameTime, GetItems(inventoryName));
       UpdateItemSlots(gameTime, GetItemSlots(inventoryName));
     }
 
-    private static List<Item> GetItems(string inventoryName)
+    /// <summary>
+    /// Returns a list of items from an inventory.
+    /// </summary>
+    /// <param name="inventoryName">name of inventory to get items from</param>
+    /// <returns></returns>
+    public static List<Item> GetItems(string inventoryName)
     {
-      List<Item> items = new List<Item>();
       switch(inventoryName)
       {
         case GVar.InventoryParentNames.character:
@@ -139,13 +155,20 @@ namespace Eternal_Coin
         case GVar.InventoryParentNames.shop:
           return Lists.shopItems;
         case GVar.InventoryParentNames.mouse:
-          items.Add(mouseInventory.heldItem);
-          return items;
+          return new List<Item>
+          {
+            mouseInventory.heldItem
+          };
       }
       return null;
     }
 
-    private static List<ItemSlot> GetItemSlots(string inventoryName)
+    /// <summary>
+    /// Returns a list of ItemSlots from an inventory.
+    /// </summary>
+    /// <param name="inventoryName">name of inventory to get itemslots from.</param>
+    /// <returns></returns>
+    public static List<ItemSlot> GetItemSlots(string inventoryName)
     {
       List<ItemSlot> itemSlots = new List<ItemSlot>();
       Inventory inv = null;
@@ -167,6 +190,47 @@ namespace Eternal_Coin
         itemSlots.Add(inv.ItemSlots[key]);
 
       return itemSlots;
+    }
+
+    /// <summary>
+    /// Cycles through an inventories itemslots and returns the first empty slot, or the specified slot if empty.
+    /// </summary>
+    /// <param name="inventorySlot">inventory slot to find</param>
+    /// <param name="inventoryName">name of inventory to find empty slot in</param>
+    /// <returns></returns>
+    public static ItemSlot GetEmptyItemSlot(string inventorySlot, string inventoryName)
+    {
+      Inventory inv = null;
+      ItemSlot itemSlot = null;
+
+      switch (inventoryName)
+      {
+        case GVar.InventoryParentNames.character:
+          foreach (string key in Lists.inventorySlots)
+          {
+            if (key.Contains(inventorySlot) && characterInventory.ItemSlots[key].item == null)
+            {
+              itemSlot = characterInventory.ItemSlots[key];
+            }
+          }
+          return itemSlot;
+        case GVar.InventoryParentNames.inventory:
+          inv = playerInventory;
+          break;
+        case GVar.InventoryParentNames.shop:
+          inv = shopInventory;
+          break;
+      }
+
+      foreach (int key in inv.ItemSlots.Keys)
+      {
+        if (inv.ItemSlots[key].item == null)
+        {
+          itemSlot = inv.ItemSlots[key];
+          break;
+        }
+      }
+      return itemSlot;
     }
 
     public static void UpdateMouseInventory(GameTime gameTime)
@@ -255,7 +319,7 @@ namespace Eternal_Coin
     }
 
     /// <summary>
-    /// Draws a single Item.
+    /// Draws a list of items
     /// </summary>
     /// <param name="spriteBatch"></param>
     /// <param name="item"></param>
@@ -292,17 +356,9 @@ namespace Eternal_Coin
       spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + GVar.player.Damage.ToString(), new Vector2(879, 572), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
       spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + GVar.player.Armour.ToString(), new Vector2(879, 590), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
 
-      for (int i = 0; i < Lists.inventoryButtons.Count; i++)
-      {
-        Lists.inventoryButtons[i].Update(gameTime);
-        Lists.inventoryButtons[i].Draw(spriteBatch, Lists.inventoryButtons[i].SpriteID, Lists.inventoryButtons[i].Bounds, 0.19f, 0f, Vector2.Zero);
-        if (MouseManager.mouse.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
-          GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.19f, Color.Green);
-      }
-
       DrawMouseInventory(spriteBatch, gameTime);
-      DrawInventory(spriteBatch, GVar.InventoryParentNames.inventory);
-      DrawInventory(spriteBatch, GVar.InventoryParentNames.character);
+      DrawInventoryItems(spriteBatch, GetItems(GVar.InventoryParentNames.inventory), 0.19f);
+      DrawInventoryItems(spriteBatch, GetItems(GVar.InventoryParentNames.character), 0.19f);
 
     }
 
@@ -312,20 +368,6 @@ namespace Eternal_Coin
     /// <param name="gameTime"></param>
     public static void UpdateInventories(GameTime gameTime)
     {
-      for (int i = 0; i < Lists.inventoryButtons.Count; i++)
-      {
-        Updates.UpdateInventoryButtons(Lists.inventoryButtons[i], gameTime);
-        //if (MouseManager.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds) && InputManager.IsLMPressed())
-        //{
-        //    if (Lists.inventoryButtons[i].Name == "CloseInventory")
-        //    {
-        //        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-        //        Lists.inventoryButtons.Clear();
-        //        GVar.currentGameState = GVar.GameState.game;
-        //        GVar.previousGameState = GVar.GameState.inventory;
-        //    }
-        //}
-      }
       UpdateInventory(gameTime, GVar.InventoryParentNames.inventory);
       UpdateInventory(gameTime, GVar.InventoryParentNames.character);
       UpdateMouseInventory(gameTime);

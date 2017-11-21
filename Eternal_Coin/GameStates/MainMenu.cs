@@ -7,50 +7,50 @@ namespace Eternal_Coin
     {
         public static void UpdateMainMenu(GameTime gameTime)
         {
-            for (int i = 0; i < Lists.mainMenuButtons.Count; i++)
-            {
-                Lists.mainMenuButtons[i].Update(gameTime);
+            //for (int i = 0; i < Lists.mainMenuButtons.Count; i++)
+            //{
+            //    Lists.mainMenuButtons[i].Update(gameTime);
 
-                if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
-                {
-                    if (Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover)
-                    {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
-                    }
-                    Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
+            //    if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds))
+            //    {
+            //        if (Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.mouseover)
+            //        {
+            //            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.buttonmouseover]);
+            //        }
+            //        Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);
 
-                    if (InputManager.IsLMPressed())
-                    {
-                        SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-                        GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
-                        if (Lists.mainMenuButtons[i].Name == "PlayButton")
-                        {
-                            GVar.changeToCreateCharacter = true;
-                            Colours.drawBlackFade = true;
-                            Colours.fadeIn = true;
-                        }
-                        if (Lists.mainMenuButtons[i].Name == "ExitButton")
-                        {
-                            GVar.exitAfterFade = true;
-                            Colours.drawBlackFade = true;
-                            Colours.fadeIn = true;
+            //        if (InputManager.IsLMPressed())
+            //        {
+            //            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
+            //            GVar.LogDebugInfo("ButtonClicked: " + Lists.mainMenuButtons[i].Name, 2);
+            //            if (Lists.mainMenuButtons[i].Name == "PlayButton")
+            //            {
+            //                GVar.changeToCreateCharacter = true;
+            //                Colours.drawBlackFade = true;
+            //                Colours.fadeIn = true;
+            //            }
+            //            if (Lists.mainMenuButtons[i].Name == "ExitButton")
+            //            {
+            //                GVar.exitAfterFade = true;
+            //                Colours.drawBlackFade = true;
+            //                Colours.fadeIn = true;
 
-                        }
-                        if (Lists.mainMenuButtons[i].Name == "OptionsButton")
-                        {
-                            Button mainMenu = new Button(Textures.Misc.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "MainMenu", "Alive", 0f);
-                            Lists.optionsButtons.Add(mainMenu);
-                            GVar.changeToOptions = true;
-                            Colours.drawBlackFade = true;
-                            Colours.fadeIn = true;
-                        }
-                    }
-                }
-                if (!MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
-                {
-                    Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
-                }
-            }
+            //            }
+            //            if (Lists.mainMenuButtons[i].Name == "OptionsButton")
+            //            {
+            //                Button mainMenu = new Button(Textures.Misc.pixel, new Vector2(1130, 50), new Vector2(100, 50), Color.Yellow, "MainMenu", "Alive", 0f);
+            //                Lists.optionsButtons.Add(mainMenu);
+            //                GVar.changeToOptions = true;
+            //                Colours.drawBlackFade = true;
+            //                Colours.fadeIn = true;
+            //            }
+            //        }
+            //    }
+            //    if (!MouseManager.mouse.mouseBounds.Intersects(Lists.mainMenuButtons[i].Bounds) && Lists.mainMenuButtons[i].CurrentAnimation != GVar.AnimStates.Button.def)
+            //    {
+            //        Lists.mainMenuButtons[i].PlayAnimation(GVar.AnimStates.Button.def);
+            //    }
+            //}
         }
 
         public static void DrawMainMenu(SpriteBatch spriteBatch, GameTime gameTime)
@@ -61,11 +61,11 @@ namespace Eternal_Coin
             spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
             spriteBatch.Draw(Textures.Misc.title, new Rectangle(50, 10, 1180, Textures.Misc.title.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
 
-            for (int i = 0; i < Lists.mainMenuButtons.Count; i++)
-            {
-                Lists.mainMenuButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                Lists.mainMenuButtons[i].Draw(spriteBatch, Lists.mainMenuButtons[i].SpriteID, Lists.mainMenuButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
-            }
+            //for (int i = 0; i < Lists.mainMenuButtons.Count; i++)
+            //{
+            //    Lists.mainMenuButtons[i].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            //    Lists.mainMenuButtons[i].Draw(spriteBatch, Lists.mainMenuButtons[i].SpriteID, Lists.mainMenuButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
+            //}
         }
 
         public static void LoadMainMenu()

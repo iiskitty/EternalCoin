@@ -5,14 +5,12 @@ using System;
 using System.IO;
 using System.Xml;
 
-/*TODO
- * 1: make a way for quests to require other quests to be completed. (possibly done, need more testing.)
- * 2: make a way to play sound clips for voice acting from location xml files.
- * 3: fix the map jittering, maybe change the way it moves all together.
- * 4: add all buttons to a single List<> for easy click detection, make functions in Button.cs for updating and drawing for all buttons, instead of all over the place.(maybe)
- * 
- * /*read through all the code, comment the code, fix and tweak the code where necessary*\
- */
+
+//TODO make a way for quests to require other quests to be completed. (possibly done, need more testing.)
+//TODO make a way to play sound clips for voice acting from location xml files.
+//TODO fix the map jittering, maybe change the way it moves all together.
+//TODO read through all the code, comment the code, fix and tweak the code where necessary
+
 
 namespace Eternal_Coin
 {
@@ -40,6 +38,7 @@ namespace Eternal_Coin
     protected override void Initialize()
     {
       MouseManager.mouse.InventoryItemClicked += InventoryManager.OnMouseClicked;
+      MouseManager.mouse.ButtonClicked += Button.OnButtonClicked;
 
       IsMouseVisible = true;
       //Loads Options.xml to 
@@ -200,10 +199,10 @@ namespace Eternal_Coin
       if (InputManager.IsKeyPressed(Keys.R) && GVar.currentGameState == GVar.GameState.game)
       {
         Item item;
-        item = ItemBuilder.BuildItem(Dictionaries.items["Iron Sword"]);
+        item = ItemBuilder.BuildItem(Dictionaries.items["Iron Ring"]);
         Lists.playerItems.Add(item);
         InventoryManager.playerInventory.ItemSlots[38].item = item;
-        item = ItemBuilder.BuildItem(Dictionaries.items["Bronze Helmet"]);
+        item = ItemBuilder.BuildItem(Dictionaries.items["Fire Ball"]);
         Lists.playerItems.Add(item);
         InventoryManager.playerInventory.ItemSlots[37].item = item;
 
@@ -259,6 +258,7 @@ namespace Eternal_Coin
         options.Save("./Content/Options.xml"); //saving the document
         GVar.toggleFullScreen = false;
       }
+      Button.UpdateButtons(gameTime);
       //checks for GameState changes(main menu to choose charater, game to inventory etc.)
       Updates.CheckForStateChange();
       //updates colours for game objects that use fading and the black fade between state changes
@@ -334,6 +334,8 @@ namespace Eternal_Coin
       {
         Colours.DrawBlackFadeInOut(spriteBatch);
       }
+
+      Button.DrawButtons(spriteBatch);
 
       //when changing main locations this fades the map to the new one
       if (Colours.drawFadeMap)

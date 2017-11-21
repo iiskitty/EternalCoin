@@ -43,20 +43,14 @@ namespace Eternal_Coin
     {
       if (invSlot <= 40)
       {
-        InventoryManager.shopInventory.ItemSlots[invSlot].item = ItemBuilder.BuildItem(item);
+        InventoryManager.shopInventory.ItemSlots[invSlot].item = item;
         Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[invSlot].item);
       }
       else
       {
-        for (int j = 0; j < 40; j++)
-        {
-          if (InventoryManager.shopInventory.ItemSlots[j].item == null)
-          {
-            InventoryManager.shopInventory.ItemSlots[j].item = item;
-            Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[j].item);
-            break;
-          }
-        }
+        item.PlayerInventorySlot = Convert.ToInt32(InventoryManager.GetEmptyItemSlot("NULL", GVar.InventoryParentNames.shop).inventorySlot);
+        InventoryManager.GetEmptyItemSlot("NULL", GVar.InventoryParentNames.shop).item = item;
+        Lists.shopItems.Add(item);
       }
     }
 
@@ -72,35 +66,7 @@ namespace Eternal_Coin
       InventoryManager.UpdateInventory(gameTime, GVar.InventoryParentNames.shop);
       InventoryManager.UpdateInventory(gameTime, GVar.InventoryParentNames.inventory);
       InventoryManager.UpdateMouseInventory(gameTime);
-
-      //cycle through InventoryButtons.
-      for (int i = 0; i < Lists.inventoryButtons.Count; i++)
-      {
-        Updates.UpdateInventoryButtons(Lists.inventoryButtons[i], gameTime);//update buttons.
-                                                                            //if mouse bounds intersects button bounds and left mouse is pressed.
-        if (MouseManager.mouse.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds) && InputManager.IsLMPressed())
-        {
-          //if button name is CloseInventory.
-          if (Lists.inventoryButtons[i].Name == "CloseInventory")
-          {
-            SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);
-            Lists.inventoryButtons.Clear();//clear InventoryButtons.
-            SaveShopInventory(GVar.curLocNode, GVar.player.CurrentLocation);//save shops inventory.
-
-            //cycle through inventory itemslots.
-            for (int j = 0; j < 40; j++)
-            {
-              if (shopInventory.ItemSlots[j].item != null)//if item is not null.
-                shopInventory.ItemSlots[j].item = null;//delete the item.
-            }
-
-            shopInventory = new Inventory(new Vector2(862, 51), GVar.InventoryParentNames.shop);//create new shop inventory(deleting current one)
-            Lists.shopItems.Clear();//clear shops items.
-            GVar.currentGameState = GVar.GameState.game;//set current GameState to game.
-            GVar.previousGameState = GVar.GameState.inventory;
-          }
-        }
-      }
+      
     }
 
     /// <summary>
@@ -113,22 +79,12 @@ namespace Eternal_Coin
     /// <param name="shopInventory">shops inventory.</param>
     public static void DrawShopInventories(SpriteBatch spriteBatch, GameTime gameTime)
     {
-      InventoryManager.DrawInventory(spriteBatch, GVar.InventoryParentNames.shop);
-      InventoryManager.DrawInventory(spriteBatch, GVar.InventoryParentNames.inventory);
+      InventoryManager.DrawInventoryItems(spriteBatch, InventoryManager.GetItems(GVar.InventoryParentNames.shop), 0.19f);
+      InventoryManager.DrawInventoryItems(spriteBatch, InventoryManager.GetItems(GVar.InventoryParentNames.inventory), 0.19f);
       InventoryManager.DrawMouseInventory(spriteBatch, gameTime);
 
       spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.silverMoney.ToString(), new Vector2(50, 670), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-
-      //cycle through and update and draw InventoryButtons.
-      for (int i = 0; i < Lists.inventoryButtons.Count; i++)
-      {
-        Lists.inventoryButtons[i].Update(gameTime);
-        Lists.inventoryButtons[i].Draw(spriteBatch, Lists.inventoryButtons[i].SpriteID, Lists.inventoryButtons[i].Bounds, 0.19f, 0f, Vector2.Zero);
-        if (MouseManager.mouse.mouseBounds.Intersects(Lists.inventoryButtons[i].Bounds))
-        {
-          GVar.DrawBoundingBox(Lists.inventoryButtons[i].Bounds, spriteBatch, Textures.Misc.pixel, 1, 0.19f, Color.Green);
-        }
-      }
+      
     }
 
     /// <summary>
@@ -147,7 +103,7 @@ namespace Eternal_Coin
       {
         if (InventoryManager.shopInventory.ItemSlots[i].item != null)
         {
-          item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));
+          item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));//TODO item aren't saving with invetory slot, causing item to fuck up
         }
       }
       string fileDir = GVar.gameFilesLocation + GVar.player.Name + "/" + locationNode.LocatoinFilePath;

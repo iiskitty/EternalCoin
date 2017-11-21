@@ -9,6 +9,7 @@ namespace Eternal_Coin
   public class GVar
   {
     public static ItemSlot mouseHoveredItem = null;
+    public static Button mouseHoveredButton = null;
 
     public static Player player = null;
 

@@ -881,6 +881,14 @@ namespace Eternal_Coin
       InventoryItemClicked?.Invoke(GVar.mouseHoveredItem);
     }
 
+    public delegate void ButtonClick(Button button);
+    public event ButtonClick ButtonClicked;
+
+    protected virtual void OnButtonClicked()
+    {
+      ButtonClicked?.Invoke(GVar.mouseHoveredButton);
+    }
+
     public void Update(bool isFullScreen)
     {
       mouseState = Mouse.GetState(); //keep mouseState up to date
@@ -897,6 +905,7 @@ namespace Eternal_Coin
       if (InputManager.IsLMPressed())
       {
         OnInventoryItemClicked();
+        OnButtonClicked();
       }
 
     }

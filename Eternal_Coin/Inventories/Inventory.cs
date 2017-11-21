@@ -37,18 +37,6 @@ namespace Eternal_Coin
       fullInventory = false;
     }
 
-    //public void UpdateInventoryBounds(GameTime gameTime)
-    //{
-    //  for (int i = 0; i < 40; i++)
-    //  {
-    //    itemSlots[i].Update(gameTime);
-    //    if (itemSlots[i].item != null)
-    //    {
-    //      itemSlots[i].item.PlayerInventorySlot = i;
-    //    }
-    //  }
-    //}
-
     public Dictionary<int, ItemSlot> ItemSlots { get { return itemSlots; } set { itemSlots = value; } }
     public bool FullInventory { get { return fullInventory; } set { fullInventory = value; } }
     public Vector2 Position { get { return position; } set { position = value; } }

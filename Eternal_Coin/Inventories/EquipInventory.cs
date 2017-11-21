@@ -35,14 +35,6 @@ namespace Eternal_Coin
       }
     }
 
-    //public void UpdateInventoryBounds(GameTime gameTime)
-    //{
-    //  for (int i = 0; i < Lists.inventorySlots.Count; i++)
-    //  {
-    //    itemSlots[Lists.inventorySlots[i]].Update(gameTime);
-    //  }
-    //}
-
     public Dictionary<string, ItemSlot> ItemSlots { get { return itemSlots; } set { itemSlots = value; } }
   }
 }
