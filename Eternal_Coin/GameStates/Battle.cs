@@ -315,7 +315,7 @@ namespace Eternal_Coin
                 XmlNode hasEnemy = battleDoc.SelectSingleNode("/location");
                 hasEnemy["hasenemy"].InnerText = "False";
                 battleDoc.Save(GVar.gameFilesLocation + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath);
-                GVar.location.HasEnemy = false;
+                GVar.player.CurrentLocation.HasEnemy = false;
                 battleWon = false;
                 for (int j = 0; j < Lists.uiElements.Count; j++)
                 {

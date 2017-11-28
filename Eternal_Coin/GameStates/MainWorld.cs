@@ -16,8 +16,8 @@ namespace Eternal_Coin
     public static void DrawMainWorld(SpriteBatch spriteBatch, GameTime gameTime)
     {
       //Draw location names.
-      if (GVar.location != null)
-        Location.DrawLocationInfo(spriteBatch, GVar.location);
+      if (GVar.player.CurrentLocation != null)
+        Location.DrawLocationInfo(spriteBatch, GVar.player.CurrentLocation);
 
       //draw npc info.
       NPC.DrawNPCInfo(spriteBatch, GVar.npc.Name, GVar.npc.Greeting);
@@ -68,48 +68,46 @@ namespace Eternal_Coin
       }
 
       //Draw main world buttons.
-      for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
-      {
-        //Update and Draw MainWorldButtons.
-        Lists.mainWorldButtons[i].Update(gameTime);
-        Lists.mainWorldButtons[i].Draw(spriteBatch, Lists.mainWorldButtons[i].SpriteID, Lists.mainWorldButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
+      //for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
+      //{
+      //  //Update and Draw MainWorldButtons.
+      //  Lists.mainWorldButtons[i].Update(gameTime);
+      //  Lists.mainWorldButtons[i].Draw(spriteBatch, Lists.mainWorldButtons[i].SpriteID, Lists.mainWorldButtons[i].Bounds, 0.2f, 0f, Vector2.Zero);
 
-        if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse hovers over MainWorldButtons.
-        {
-          Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover when mouse in hovering over button.
-        }
-        if (Lists.mainWorldButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse is not hovering over MainWorldButtons
-        {
-          Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change animation state to default when mouse is not hovering over.
-        }
-        if (Lists.mainWorldButtons[i].Name == "MainMenu")///*TEMPORARY
-        {
-          spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Main Menu", new Vector2(Lists.mainWorldButtons[i].Position.X + Lists.mainWorldButtons[i].Size.X / 4, Lists.mainWorldButtons[i].Position.Y + Lists.mainWorldButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.21f);//draw Main Menu on main menu button.
-        }
-        if (Lists.mainWorldButtons[i].Name == "Options")///*TEMPORARY
-        {
-          spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Options", new Vector2(Lists.mainWorldButtons[i].Position.X + Lists.mainWorldButtons[i].Size.X / 4, Lists.mainWorldButtons[i].Position.Y + Lists.mainWorldButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.21f);//draw Options on options button.
-        }
-      }
+      //  if (MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse hovers over MainWorldButtons.
+      //  {
+      //    Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover when mouse in hovering over button.
+      //  }
+      //  if (Lists.mainWorldButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.mainWorldButtons[i].Bounds))//check if mouse is not hovering over MainWorldButtons
+      //  {
+      //    Lists.mainWorldButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change animation state to default when mouse is not hovering over.
+      //  }
+      //  if (Lists.mainWorldButtons[i].Name == "MainMenu")///*TEMPORARY
+      //  {
+      //    spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Main Menu", new Vector2(Lists.mainWorldButtons[i].Position.X + Lists.mainWorldButtons[i].Size.X / 4, Lists.mainWorldButtons[i].Position.Y + Lists.mainWorldButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.21f);//draw Main Menu on main menu button.
+      //  }
+      //  if (Lists.mainWorldButtons[i].Name == "Options")///*TEMPORARY
+      //  {
+      //    spriteBatch.DrawString(Fonts.lucidaConsole18Bold, "Options", new Vector2(Lists.mainWorldButtons[i].Position.X + Lists.mainWorldButtons[i].Size.X / 4, Lists.mainWorldButtons[i].Position.Y + Lists.mainWorldButtons[i].Size.Y / 4), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.21f);//draw Options on options button.
+      //  }
+      //}
 
-      for (int i = 0; i < Lists.uiElements.Count; i++)
+
+      if (UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
       {
-        if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+        for (int j = 0; j < Lists.NPCQuestButtons.Count; j++)
         {
-          for (int j = 0; j < Lists.NPCQuestButtons.Count; j++)
+          Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+          Lists.NPCQuestButtons[j].DrawLightButton(spriteBatch);
+        }
+        if (GVar.drawNPCQuestInfo)
+        {
+          if (!GVar.NPCQuestUnlocked)
           {
-            Lists.NPCQuestButtons[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-            Lists.NPCQuestButtons[j].DrawLightButton(spriteBatch);
+            spriteBatch.Draw(Textures.UI.padLock, new Rectangle((int)UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.X + (int)UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Size.X - 30, (int)UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.Y + 5, 25, 25), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.9f);
           }
-          if (GVar.drawNPCQuestInfo)
-          {
-            if (!GVar.NPCQuestUnlocked)
-            {
-              spriteBatch.Draw(Textures.UI.padLock, new Rectangle((int)Lists.uiElements[i].Position.X + (int)Lists.uiElements[i].Size.X - 30, (int)Lists.uiElements[i].Position.Y + 5, 25, 25), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.9f);
-            }
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestName, new Vector2(Lists.uiElements[i].Position.X + 10, Lists.uiElements[i].Position.Y + 2), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestDescription, new Vector2(Lists.uiElements[i].Position.X + 146, Lists.uiElements[i].Position.Y + 44), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
-          }
+          spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestName, new Vector2(UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.X + 10, UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.Y + 2), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
+          spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.NPCQuestDescription, new Vector2(UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.X + 146, UIElement.GetUIElement(Textures.UI.NPCQuestListUI).Position.Y + 44), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.9f);
         }
       }
 
@@ -124,24 +122,24 @@ namespace Eternal_Coin
 
       //if the player is inside the current locations 'Port' or 'Dock' a small bounding box on top of each location node, 
       //only active for current location, to detect when the player arrives at the location.
-      if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
-      {
-        //Update and Draw the location buttons(The eye, NPC and shop button, exit and enter button)
-        for (int i = 0; i < Lists.locationButtons.Count; i++)
-        {
-          Lists.locationButtons[i].Update(gameTime);
-          Lists.locationButtons[i].Draw(spriteBatch, Lists.locationButtons[i].SpriteID, Lists.locationButtons[i].Bounds, 0.17f, 0f, Vector2.Zero);
+      //if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
+      //{
+      //  //Update and Draw the location buttons(The eye, NPC and shop button, exit and enter button)
+      //  for (int i = 0; i < Lists.locationButtons.Count; i++)
+      //  {
+      //    Lists.locationButtons[i].Update(gameTime);
+      //    Lists.locationButtons[i].Draw(spriteBatch, Lists.locationButtons[i].SpriteID, Lists.locationButtons[i].Bounds, 0.17f, 0f, Vector2.Zero);
 
-          if (MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
-          {
-            Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover if the mouse is hovering over a button.
-          }
-          if (Lists.locationButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
-          {
-            Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change the animation state to default if the mouse is not hovering over a button.
-          }
-        }
-      }
+      //    if (MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds) && !GVar.gamePaused)//check if mouse hovers over any buttons.
+      //    {
+      //      Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.mouseover);//change animation state to mouseover if the mouse is hovering over a button.
+      //    }
+      //    if (Lists.locationButtons[i].CurrentAnimation == GVar.AnimStates.Button.mouseover && !MouseManager.mouse.mouseBounds.Intersects(Lists.locationButtons[i].Bounds))//check if mouse doesn't hover over any buttons, and if buttons animation state is in mouseover.
+      //    {
+      //      Lists.locationButtons[i].PlayAnimation(GVar.AnimStates.Button.def);//change the animation state to default if the mouse is not hovering over a button.
+      //    }
+      //  }
+      //}
 
       //update and draw the current locatio node.
       GVar.player.CurrentLocation.Update(gameTime);
@@ -168,29 +166,22 @@ namespace Eternal_Coin
       if (InputManager.IsKeyPressed(Keys.Q))
       {
         SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clickbutton]);//play button click sound.
-
-        //cycle through UIElements to find the Quests UI.
-        for (int i = 0; i < Lists.uiElements.Count; i++)
+        
+        if (UIElement.IsUIElementActive(Textures.UI.questListUI))
         {
-          if (Lists.uiElements[i].SpriteID == Textures.UI.questListUI)//if the Sprite is the quests UI.
-          {
-            if (!Lists.uiElements[i].Draw)//if the Quests UI is not active.
-            {
-              UI.DisplayQuests();//activate Quests UI.
-            }
-            else if (Lists.uiElements[i].Draw)//if the Quests UI is active.
-            {
-              UI.CloseQuestListUI();//deactivate Quests UI.
+          UI.DisplayQuests();
+        }
+        else if (!UIElement.IsUIElementActive(Textures.UI.questListUI))
+        {
+          UI.CloseQuestListUI();//deactivate Quests UI.
 
-              //cycle through MainWorldButtons.
-              for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
-              {
-                if (Lists.mainWorldButtons[j].Name == "CloseQuestListUI")//if button is Close Quests UI.
-                {
-                  Lists.mainWorldButtons.RemoveAt(j);//delete the button.
-                  Lists.viewQuestInfoButtons.Clear();//clear Quests UI buttons.
-                }
-              }
+          //cycle through MainWorldButtons.
+          for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
+          {
+            if (Lists.mainWorldButtons[j].Name == "CloseQuestListUI")//if button is Close Quests UI.
+            {
+              Lists.mainWorldButtons.RemoveAt(j);//delete the button.
+              Lists.viewQuestInfoButtons.Clear();//clear Quests UI buttons.
             }
           }
         }
@@ -206,29 +197,25 @@ namespace Eternal_Coin
         GVar.previousGameState = GVar.GameState.game;//set previouse GameState to game(even though I don't use this)
       }
 
-      //cycle through UIElements.
-      for (int i = 0; i < Lists.uiElements.Count; i++)
+      if (InputManager.IsKeyPressed(Keys.Escape) && !UIElement.IsUIElementActive(Textures.UI.pauseUI))//if escape key is pressed and Sprite is Pause UI and Pause UI is not active.
       {
-        if (InputManager.IsKeyPressed(Keys.Escape) && Lists.uiElements[i].SpriteID == Textures.UI.pauseUI && !Lists.uiElements[i].Draw)//if escape key is pressed and Sprite is Pause UI and Pause UI is not active.
+        GVar.gamePaused = true;//set Pause Game Bool to true.
+        UIElement.ActivateUIElement(Textures.UI.pauseUI);//activate Pause UI
+        Button mainMenu = new Button(Textures.Misc.pixel, new Vector2(UIElement.GetUIElement(Textures.UI.pauseUI).Position.X + 53, UIElement.GetUIElement(Textures.UI.pauseUI).Position.Y + 43), new Vector2(322, 40), Color.Yellow, "MainMenu", "Alive", 0f);//create Main Menu Button.
+        Button options = new Button(Textures.Misc.pixel, new Vector2(UIElement.GetUIElement(Textures.UI.pauseUI).Position.X + 53, UIElement.GetUIElement(Textures.UI.pauseUI).Position.Y + 108), new Vector2(322, 40), Color.Yellow, "Options", "Alive", 0f);//create Options Button.
+        Lists.mainWorldButtons.Add(options);//add options button to MainWorldButtons.
+        Lists.mainWorldButtons.Add(mainMenu);//add menu button to MainWorldButtons.
+      }
+      else if (InputManager.IsKeyPressed(Keys.Escape) && UIElement.IsUIElementActive(Textures.UI.pauseUI))//if escape key is pressed and Sprite is Pause UI and Pause UI is active.
+      {
+        GVar.gamePaused = false;//set Pause Game Bool to false.
+        UIElement.DeActivateUIElement(Textures.UI.pauseUI);//deactivate Pause UI.
+                                         //cycle through MainWorldButtons.
+        for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
         {
-          GVar.gamePaused = true;//set Pause Game Bool to true.
-          Lists.uiElements[i].Draw = true;//activate Pause UI
-          Button mainMenu = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[i].Position.X + 93, Lists.uiElements[i].Position.Y + 93), new Vector2(322, 40), Color.Yellow, "MainMenu", "Alive", 0f);//create Main Menu Button.
-          Button options = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[i].Position.X + 93, Lists.uiElements[i].Position.Y + 158), new Vector2(322, 40), Color.Yellow, "Options", "Alive", 0f);//create Options Button.
-          Lists.mainWorldButtons.Add(options);//add options button to MainWorldButtons.
-          Lists.mainWorldButtons.Add(mainMenu);//add menu button to MainWorldButtons.
-        }
-        else if (InputManager.IsKeyPressed(Keys.Escape) && Lists.uiElements[i].SpriteID == Textures.UI.pauseUI && Lists.uiElements[i].Draw)//if escape key is pressed and Sprite is Pause UI and Pause UI is active.
-        {
-          GVar.gamePaused = false;//set Pause Game Bool to false.
-          Lists.uiElements[i].Draw = false;//deactivate Pause UI.
-                                           //cycle through MainWorldButtons.
-          for (int j = 0; j < Lists.mainWorldButtons.Count; j++)
+          if (Lists.mainWorldButtons[j].Name == "MainMenu" || Lists.mainWorldButtons[j].Name == "Options")//if button is Main Menu Button or Options Button.
           {
-            if (Lists.mainWorldButtons[j].Name == "MainMenu" || Lists.mainWorldButtons[j].Name == "Options")//if button is Main Menu Button or Options Button.
-            {
-              Lists.mainWorldButtons[j].State = "delete";//delete the button.
-            }
+            Lists.mainWorldButtons[j].State = "delete";//delete the button.
           }
         }
       }
@@ -246,19 +233,14 @@ namespace Eternal_Coin
       Button.UpdateQuestListButtons(gameTime);
 
       Updates.UpdateNPCQuestButtons(gameTime);
-
-      //another temp save key combo, cant remember where the other one is.
-      if (InputManager.IsKeyDown(Keys.LeftShift) && InputManager.IsKeyPressed(Keys.S))
-        Save.SaveGame(GVar.savedGameLocation, GVar.player, Lists.quests);
-
-
+      
       GVar.player.Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update the player.
 
       //if the player intersects the "dock" or "port" of the current location.
       if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
       {
         //if the location has an enemy and black fade in is disabled and change to battle is disabled and location has been searched...the fuck.
-        if (GVar.location.HasEnemy && !Colours.fadeIn && !GVar.changeToBattle && GVar.location.Searched)
+        if (GVar.player.CurrentLocation.HasEnemy && !Colours.fadeIn && !GVar.changeToBattle && GVar.player.CurrentLocation.Searched)
         {
           Colours.fadeIn = true;
           Colours.drawBlackFade = true;
@@ -270,9 +252,9 @@ namespace Eternal_Coin
         //cycle through LocationButtons.
         for (int j = 0; j < Lists.locationButtons.Count; j++)
         {
-          Updates.UpdateGameButtons(Lists.locationButtons[j], GVar.player, gameTime);//upate the LocationButtons.
+          //Updates.UpdateGameButtons(Lists.locationButtons[j], GVar.player, gameTime);//upate the LocationButtons.
 
-          Button.CheckLocationButtonClick(j);//Check for click on LocationButtons.
+          //Button.CheckLocationButtonClick(j);//Check for click on LocationButtons.
         }
       }
       //if the player does not intersect the "dock" or "port" of the current location.
@@ -314,7 +296,7 @@ namespace Eternal_Coin
           {
             UI.CloseNPCUI();//deactivate NPC UI.
             SoundManager.PlaySound(Dictionaries.sounds[GVar.SoundIDs.clicklocnode]);
-            ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);//read the current locations connceting locations xml file.
+            //ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);//read the current locations connceting locations xml file.
             GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[j]);//set the movement speed of the map.
 
             //cycle through the current location nodes connected locations connected location nodes.
@@ -328,15 +310,16 @@ namespace Eternal_Coin
             }
             GVar.LogDebugInfo("LocationChange: " + GVar.player.CurrentLocation.LocNodeConnections[j].Name, 2);
 
-
-            GVar.npc = new NPC();//set NPC to nothing.
-            Lists.locationButtons.Clear();//clear the location buttons ready for next location.
-            Button.CreateLocationButtons(GVar.player.CurrentLocation.LocNodeConnections[j]);//create location buttons for new location.
-
             XmlNode tempNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/actions");//grab the actions tag of the next locations xml file.
             Quest.CheckAction(tempNode[GVar.XmlTags.Actions.enter].InnerText, GVar.player.CurrentLocation.LocNodeConnections[j]);//check the action against any active quests.
 
             GVar.player.CurrentLocation = GVar.player.CurrentLocation.LocNodeConnections[j];//set the current location to the current locations connected location.
+            ReadXml.ReadCurrentLocation();
+            GVar.npc = new NPC();//set NPC to nothing.
+            Lists.locationButtons.Clear();//clear the location buttons ready for next location.
+            Button.CreateLocationButtons(GVar.player.CurrentLocation);//create location buttons for new location.
+            
+            
             break;
           }
           GVar.player.CurrentLocation.LocNodeConnections[j].Update((float)gameTime.ElapsedGameTime.TotalSeconds);//update connecting location nodes of the current location.
@@ -364,13 +347,7 @@ namespace Eternal_Coin
       }
 
       UIElement locationUI = null;
-      foreach (UIElement ui in Lists.uiElements)
-      {
-        if (ui.SpriteID == Textures.UI.locationInfoUI)
-        {
-          locationUI = ui;
-        }
-      }
+      locationUI = UIElement.GetUIElement(Textures.UI.locationInfoUI);
 
       Button quests = new Button(Textures.Misc.pixel, new Vector2(locationUI.Position.X + locationUI.Size.X - 50, locationUI.Position.Y + 22), new Vector2(50, 50), Color.Violet, "DisplayQuests", "Alive", 0f);//create button for quests.
       Button inventory = new Button(Textures.Button.inventoryButton, new Vector2(locationUI.Position.X + locationUI.Size.X - (50 * 2.2f), locationUI.Position.Y + 22), new Vector2(50, 50), Color.White, "DisplayInventory", "Alive", 0f);//create button for inventory.
@@ -380,9 +357,9 @@ namespace Eternal_Coin
       //cycle through the current locations connecting locations.
       for (int k = 0; k < GVar.player.CurrentLocation.LocNodeConnections.Count; k++)
       {
-        ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation.LocNodeConnections[k]);//read the current locations connecting locations xml file.
+        ReadXml.ReadLocationXmlFile(GVar.player.CurrentLocation.LocNodeConnections[k]);//read the current locations connecting locations xml file.
       }
-      ReadXml.ReadLocationXmlFile(GVar.player, GVar.player.CurrentLocation);//read the current locations xml file.
+      ReadXml.ReadLocationXmlFile(GVar.player.CurrentLocation);//read the current locations xml file.
       GameTime gameTime = new GameTime();//gameTime???
       GVar.player.CurrentLocation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);//Update the current location once, sets positions and such.
       GVar.worldMap.SetMapPosition(GVar.player.CurrentLocation);//set the map position on the current locations position.

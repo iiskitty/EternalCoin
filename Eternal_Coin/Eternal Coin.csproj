@@ -72,6 +72,13 @@
     <Compile Include="GameStates\MainWorld.cs" />
     <Compile Include="GameStates\Options.cs" />
     <Compile Include="GameStates\Shop.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\InventoryButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\LocationButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\MainMenuButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\MainWorldButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\NewCharButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\OptionsButtons.cs" />
+    <Compile Include="GameStates\Update\ButtonClicks\UniversalButtons.cs" />
     <Compile Include="GameStates\Update\Update.cs" />
     <Compile Include="GVar.cs" />
     <Compile Include="Inventories\EquipInventory.cs" />

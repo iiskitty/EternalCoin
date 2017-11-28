@@ -471,7 +471,7 @@ namespace Eternal_Coin
       music = song;
       MediaPlayer.Volume = GVar.Volume.Music.volume;
       MediaPlayer.IsRepeating = true;
-      MediaPlayer.Play(music);
+      //MediaPlayer.Play(music);
     }
 
     /// <summary>

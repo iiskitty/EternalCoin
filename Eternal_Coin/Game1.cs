@@ -37,8 +37,8 @@ namespace Eternal_Coin
     /// </summary>
     protected override void Initialize()
     {
-      MouseManager.mouse.InventoryItemClicked += InventoryManager.OnMouseClicked;
-      MouseManager.mouse.ButtonClicked += Button.OnButtonClicked;
+      MouseManager.mouse.InventoryItemClicked += InventoryManager.OnMouseClicked; //Add OnMouseClicked Function in InventoryManager to InventoryItemClicked Delegate.
+      MouseManager.mouse.ButtonClicked += Button.OnButtonClicked; //Add OnButtonClicked function in Button to ButtonClicked delegate.
 
       IsMouseVisible = true;
       //Loads Options.xml to 

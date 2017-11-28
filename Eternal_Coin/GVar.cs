@@ -136,7 +136,7 @@ namespace Eternal_Coin
     /// <summary>
     /// information for players current location is kept here
     /// </summary>
-    public static Location location;
+    //public static Location location;
 
     /// <summary>
     /// information for an npc the player may be talking to is kept here

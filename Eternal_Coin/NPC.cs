@@ -39,7 +39,7 @@ namespace Eternal_Coin
             {
                 if (ui.SpriteID == Textures.UI.NPCInfoUI && ui.Draw)
                 {
-                    if (GVar.location != null && GVar.location.Searched)
+                    if (GVar.player.CurrentLocation != null && GVar.player.CurrentLocation.Searched)
                     {
                         if (name != null)
                             spriteBatch.DrawString(Fonts.lucidaConsole18Bold, name, new Vector2(ui.Position.X + 10, ui.Position.Y + 8), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
