@@ -100,11 +100,7 @@ namespace Eternal_Coin
       locNodeConName = new List<string>();
     }
 
-    public LocationNode(string name, string mainName, string subName, string state, Vector2 position, Color colour)
-        : base(name, mainName, subName, state, position, colour)
-    {
-
-    }
+    public LocationNode(string name, string mainName, string subName, string state, Vector2 position, Color colour) : base(name, mainName, subName, state, position, colour) { }
 
     public override void Update(float gameTime)
     {
@@ -114,20 +110,11 @@ namespace Eternal_Coin
       playerPort = new Rectangle((int)playerPortPosition.X, (int)playerPortPosition.Y, (int)size.X / 2, (int)size.Y / 2);
     }
 
-    public override void AnimationDone(string animation)
-    {
+    public override void AnimationDone(string animation) { }
 
-    }
+    public override void HandleMovement(Vector2 wPos) => position = new Vector2((wPos.X + truePosition.X), (wPos.Y + truePosition.Y));
 
-    public override void HandleMovement(Vector2 wPos)
-    {
-      position = new Vector2((wPos.X + truePosition.X), (wPos.Y + truePosition.Y));
-    }
-
-    public override void AddConnection(LocationNode locationNode)
-    {
-      locNodeConnections.Add(locationNode);
-    }
+    public override void AddConnection(LocationNode locationNode) => locNodeConnections.Add(locationNode);
   }
 
   public class Location

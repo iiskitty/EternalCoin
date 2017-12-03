@@ -73,10 +73,7 @@ namespace Eternal_Coin
 
     }
 
-    public void Update(float gameTime)
-    {
-      bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X + Textures.Button.leftLightSide.Width * 2, (int)size.Y);//sets rectangle(bounding box) based on position and size.
-    }
+    public void Update(float gameTime) => bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X + Textures.Button.leftLightSide.Width * 2, (int)size.Y);//sets rectangle(bounding box) based on position and size.
 
     /// <summary>
     /// Draws light shaded button peices.
@@ -113,6 +110,19 @@ namespace Eternal_Coin
 
   public class Button : Object
   {
+    public enum ButtonPosition
+    {
+      topleft,
+      topcenter,
+      topright,
+      middleleft,
+      middlecenter,
+      middleright,
+      bottomleft,
+      bottomcenter,
+      bottomright
+    }
+
     public string extraInfo;
     /// <summary>
     /// Normal button.
@@ -136,14 +146,55 @@ namespace Eternal_Coin
       }
     }
 
-    public override void Update(float gameTime)
-    {
-      bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);//sets rectangle(bounding box) based on position and size.
-    }
+    public override void Update(float gameTime) => bounds = new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y);//sets rectangle(bounding box) based on position and size.
 
     public override void HandleMovement(Vector2 pos, float gameTime) { }
 
     public override void AnimationDone(string animation) { }
+
+    public static Button CreateButton(Texture2D sprite, UIElement uiElement, Vector2 size, Vector2 padding, string name, string state, ButtonPosition position)
+    {
+      Button button = new Button(sprite, SetButtonPosition(uiElement, size, padding, position), size, Color.White, name, state, 0f);
+      button.PlayAnimation(GVar.AnimStates.Button.def);
+
+      return button;
+    }
+
+    public static Vector2 SetButtonPosition(UIElement uiElement, Vector2 buttonSize, Vector2 padding, ButtonPosition buttonPosition)
+    {
+      Vector2 pos = new Vector2();
+      switch (buttonPosition)
+      {
+        case ButtonPosition.topleft:
+          pos = new Vector2(uiElement.Position.X + padding.X, uiElement.Position.Y + padding.Y);
+          break;
+        case ButtonPosition.topcenter:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X / 2 - buttonSize.X / 2) + padding.X, uiElement.Position.Y + padding.Y);
+          break;
+        case ButtonPosition.topright:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X - buttonSize.X) + padding.X, uiElement.Position.Y + padding.Y);
+          break;
+        case ButtonPosition.middleleft:
+          pos = new Vector2(uiElement.Position.X + padding.X, uiElement.Position.Y + (uiElement.Size.Y / 2 - buttonSize.Y) + padding.Y);
+          break;
+        case ButtonPosition.middlecenter:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X / 2 - buttonSize.X / 2) + padding.X, uiElement.Position.Y + (uiElement.Size.Y / 2 - buttonSize.Y / 2) + padding.Y);
+          break;
+        case ButtonPosition.middleright:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X - buttonSize.X) + padding.X, uiElement.Position.Y + (uiElement.Size.Y / 2 - buttonSize.Y / 2) + padding.Y);
+          break;
+        case ButtonPosition.bottomleft:
+          pos = new Vector2(uiElement.Position.X + padding.X, uiElement.Position.Y + (uiElement.Size.Y - buttonSize.Y) + padding.Y);
+          break;
+        case ButtonPosition.bottomcenter:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X / 2 - buttonSize.X / 2) + padding.X, uiElement.Position.Y + (uiElement.Size.Y - buttonSize.Y) + padding.Y);
+          break;
+        case ButtonPosition.bottomright:
+          pos = new Vector2(uiElement.Position.X + (uiElement.Size.X - buttonSize.X) + padding.X, uiElement.Position.Y + (uiElement.Size.Y - buttonSize.Y) + padding.Y);
+          break;
+      }
+      return pos;
+    }
     
     /// <summary>
     /// Function will be called on left mouse click, only does stuff when a button is colliding with the mouse.
@@ -301,13 +352,7 @@ namespace Eternal_Coin
     /// </summary>
     /// <param name="spriteBatch"></param>
     /// <param name="buttons">List of buttons.</param>
-    private static void DrawButtons(SpriteBatch spriteBatch, List<Object> buttons)
-    {
-      for (int i = 0; i < buttons.Count; i++)
-      {
-        buttons[i].Draw(spriteBatch, buttons[i].SpriteID, buttons[i].Bounds, 0.19f, 0f, Vector2.Zero);
-      }
-    }
+    private static void DrawButtons(SpriteBatch spriteBatch, List<Object> buttons) => buttons.ForEach(button => button.Draw(spriteBatch, button.SpriteID, button.Bounds, 0.19f, 0f, Vector2.Zero));
 
     private static void TempDrawOptionButtons(SpriteBatch spriteBatch, List<Object> buttons) //TODO Make sprites and UI for options button and get rid of this function
     {
@@ -325,7 +370,7 @@ namespace Eternal_Coin
         if (MouseManager.mouse.mouseBounds.Intersects(buttons[i].Bounds))
           GVar.DrawBoundingBox(buttons[i].Bounds, spriteBatch, Textures.Misc.pixel, 2, 0.2f, Color.Green);
       }
-      spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+      spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.currentScreenX, (int)GVar.currentScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
     }
 
     /// <summary>
@@ -341,7 +386,8 @@ namespace Eternal_Coin
           break;
         case GVar.GameState.chooseCharacter:
           DrawButtons(spriteBatch, Lists.chooseCharacterButtons);
-          Lists.savedGames.ForEach(savedGame => DrawButtons(spriteBatch, savedGame.buttons));
+          if (!GVar.creatingCharacter && !GVar.chooseStory)
+            Lists.savedGames.ForEach(savedGame => DrawButtons(spriteBatch, savedGame.buttons));
           if (GVar.choosingDP)
             DrawButtons(spriteBatch, Lists.displayPictureButtons);
           break;
@@ -448,21 +494,17 @@ namespace Eternal_Coin
 
           GVar.LogDebugInfo("ButtonClicked: " + Lists.viewQuestInfoButtons[j].Name, 2);
 
-          //cycle through UIElements.
-          for (int ui = 0; ui < Lists.uiElements.Count; ui++)
+          if (!UIElement.IsUIElementActive(Textures.UI.questInfoUI))
           {
-            if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && !Lists.uiElements[ui].Draw)//if Sprite is Quest Info UI and is not active.
-            {
-              Lists.mainWorldButtons.Add(new Button(Textures.Misc.pixel, new Vector2(), new Vector2(20, 20), Color.Red, "CloseQuestInfoUI", "Alive", 0f));//create Close Quest Info UI Button.
-              Lists.uiElements[ui].Draw = true;//activate View Quest Info UI.
-              GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
-              GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
-            }
-            else if (Lists.uiElements[ui].SpriteID == Textures.UI.questInfoUI && Lists.uiElements[ui].Draw)//if Sprite is Quest Info UI and is active.
-            {
-              GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
-              GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
-            }
+            Lists.mainWorldButtons.Add(CreateButton(Textures.Misc.pixel, UIElement.GetUIElement(Textures.UI.questInfoUI), new Vector2(20, 20), Vector2.Zero, "CloseQuestInfoUI", "Alive", ButtonPosition.topleft));
+            UIElement.ActivateUIElement(Textures.UI.questInfoUI);
+            GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
+            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
+          }
+          else if (UIElement.IsUIElementActive(Textures.UI.questInfoUI))
+          {
+            GVar.questInfo = Lists.quests[j].Description;//set quest info to clicked active quest.
+            GVar.questInfo = Text.WrapText(Fonts.lucidaConsole10Regular, GVar.questInfo, 200);//wrap quest info text to fit Quest Info UI.
           }
         }
       }

@@ -46,13 +46,9 @@ namespace Eternal_Coin
 
       if (!UIElement.IsUIElementActive(Textures.UI.NPCInfoUI))
       {
-        Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.X + UIElement.GetUIElement(Textures.UI.NPCInfoUI).Size.X - Textures.Button.closeButton.Width, UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);//create close NPC UI Button.
-        closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);//set animation state of button to default.
-        Button viewQuests = new Button(Textures.Button.questsButton, new Vector2(UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.X + UIElement.GetUIElement(Textures.UI.NPCInfoUI).Size.X - 50, UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.Y + UIElement.GetUIElement(Textures.UI.NPCInfoUI).Size.Y - 20), new Vector2(80, 30), Color.LightBlue, "ViewQuests", "Alive", 0f);
-        viewQuests.PlayAnimation(GVar.AnimStates.Button.def);
-        Lists.mainWorldButtons.Add(closeNPCUI);//add close NPC UI button to MainWorldButton.
-        Lists.mainWorldButtons.Add(viewQuests);
-        UIElement.GetUIElement(Textures.UI.NPCInfoUI).Draw = true;//activate NPC Info UI.
+        Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Button.closeButton, UIElement.GetUIElement(Textures.UI.NPCInfoUI), new Vector2(35, 35), new Vector2(-5, 5), "CloseNPCUIButton", "Alive", Button.ButtonPosition.topright));
+        Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Button.questsButton, UIElement.GetUIElement(Textures.UI.NPCInfoUI), new Vector2(80, 30), new Vector2(-5, -5), "ViewQuests", "Alive", Button.ButtonPosition.bottomright));
+        UIElement.ActivateUIElement(Textures.UI.NPCInfoUI);//activate NPC Info UI.
       }
     }
 
@@ -64,15 +60,11 @@ namespace Eternal_Coin
 
       GVar.npc = new NPC(shopKeep["name"].InnerText, greeting, false, "QUESTID");//create NPC(ShopKeep) with name and greeting.
 
-      Button openShop = new Button(Textures.Misc.pixel, Vector2.Zero, new Vector2(25, 15), Color.Yellow, "OpenShop", "Alive", 0f);//create OpenShop Button.
-
-      Lists.mainWorldButtons.Add(openShop);//add Button to MainWorldButtons.
+      Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Misc.pixel, UIElement.GetUIElement(Textures.UI.NPCInfoUI), new Vector2(80, 30), new Vector2(-5, -5), "OpenShop", "Alive", Button.ButtonPosition.bottomright));
 
       if (!UIElement.IsUIElementActive(Textures.UI.NPCInfoUI))
       {
-        Button closeNPCUI = new Button(Textures.Button.closeButton, new Vector2(UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.X + UIElement.GetUIElement(Textures.UI.NPCInfoUI).Size.X - Textures.Button.closeButton.Width, UIElement.GetUIElement(Textures.UI.NPCInfoUI).Position.Y), new Vector2(35, 35), Color.White, "CloseNPCUIButton", "Alive", 0f);//create close NPC Info UI Button.
-        closeNPCUI.PlayAnimation(GVar.AnimStates.Button.def);//set animation state for button to default.
-        Lists.mainWorldButtons.Add(closeNPCUI);//add button to MainWorldButton.
+        Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Button.closeButton, UIElement.GetUIElement(Textures.UI.NPCInfoUI), new Vector2(35, 35), new Vector2(-5, 5), "CloseNPCUIButton", "Alive", Button.ButtonPosition.topright));
         UIElement.ActivateUIElement(Textures.UI.NPCInfoUI);//activate NPC Info UI.
       }
     }

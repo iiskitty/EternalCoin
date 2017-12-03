@@ -188,8 +188,7 @@ namespace Eternal_Coin
       {
         if (lc.SubName == location)
         {
-
-
+          
           return lc;
         }
       }
@@ -310,19 +309,6 @@ namespace Eternal_Coin
 
           locNode.Searched = Convert.ToBoolean(node.InnerText);
         }
-
-        //try
-        //{
-        //    string mapDir = "LocationTemplates/" + GVar.storyName + "/" + "WorldMap";
-        //    Texture2D tempTex = Content.Load<Texture2D>(mapDir);
-        //    Dictionaries.worldMaps.Add(GVar.storyName + "Map", tempTex);
-        //    GVar.LogDebugInfo("Map Created: " + GVar.storyName + "Map", 2);
-        //    Textures.Misc.worldMap = tempTex;
-        //}
-        //catch (Exception e)
-        //{
-        //    GVar.LogDebugInfo("!!!ERROR!!!" + e, 1);
-        //}
       }
     }
 

@@ -889,25 +889,22 @@ namespace Eternal_Coin
       ButtonClicked?.Invoke(GVar.mouseHoveredButton);
     }
 
-    public void Update(bool isFullScreen)
+    public void Update()
     {
       mouseState = Mouse.GetState(); //keep mouseState up to date
       mouseBounds = new Rectangle(mouseState.Position.X, mouseState.Position.Y, 2, 2); //keep mouseBounds up to date
-                                                                                       //if fullscreen, keep mouse inside the game window
-      if (isFullScreen)
-      {
-        if (mouseState.Position.X > GVar.gameScreenX)
-          Mouse.SetPosition((int)GVar.gameScreenX, mouseState.Position.Y);
-        if (mouseState.Position.Y > GVar.gameScreenY)
-          Mouse.SetPosition(mouseState.Position.X, (int)GVar.gameScreenY);
-      }
+
 
       if (InputManager.IsLMPressed())
       {
         OnInventoryItemClicked();
         OnButtonClicked();
       }
+    }
 
+    public void Draw(SpriteBatch spriteBatch)
+    {
+      spriteBatch.Draw(Textures.Misc.cursor, new Rectangle((int)GetMousePosition().X, (int)GetMousePosition().Y, 20, 20), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 1f);
     }
 
     /// <summary>

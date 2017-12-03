@@ -91,7 +91,7 @@ namespace Eternal_Coin
 
     public static void DrawCreateCharacter(SpriteBatch spriteBatch, GameTime gameTime)
     {
-      spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+      spriteBatch.Draw(Textures.Misc.background, new Rectangle(0, 0, (int)GVar.currentScreenX, (int)GVar.currentScreenY), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
 
       if (GVar.chooseStory)
       {

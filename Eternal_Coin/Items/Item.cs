@@ -230,10 +230,7 @@ namespace Eternal_Coin
 
     public abstract void Update(float gameTime);
 
-    public override void AnimationDone(string animation)
-    {
-
-    }
+    public override void AnimationDone(string animation) { }
 
     /// <summary>
     /// Create all items from Data.xml
@@ -252,9 +249,7 @@ namespace Eternal_Coin
 
           XmlNodeList attacks = itemsDoc.SelectNodes("/items/createitems/weapons/item/" + item.Type.name + "attack");
           foreach (XmlNode attack in attacks)
-          {
             item.Attacks.Add(attack.InnerText);
-          }
 
           Dictionaries.items.Add(item.itemName, item);
         }
@@ -306,9 +301,7 @@ namespace Eternal_Coin
 
           XmlNodeList attacks = itemsDoc.SelectNodes("/items/createitems/eternalcoins/item/" + item.Type.name + "Attack");
           foreach (XmlNode attack in attacks)
-          {
             item.Attacks.Add(attack.InnerText);
-          }
 
           Dictionaries.items.Add(item.itemName, item);
         }

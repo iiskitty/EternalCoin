@@ -23,6 +23,11 @@ namespace Eternal_Coin
       this.parentInventory = parentInventory;
     }
 
+    public static Vector2 SetItemSlotPosition(Vector2 position, Vector2 padding)
+    {
+      return new Vector2(position.X + padding.X, position.Y + padding.Y);
+    }
+
     public void Update(GameTime gameTime)
     {
       if (item != null)

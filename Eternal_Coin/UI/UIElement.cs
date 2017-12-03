@@ -40,22 +40,30 @@ namespace Eternal_Coin
       return uiElements;
     }
 
-    public static bool IsUIElementActive(Texture2D sprite)
+    public static Vector2 GetUIPosition(Texture2D sprite) => GetUIElement(sprite).Position;
+
+    public static Vector2 GetUISize(Texture2D sprite) => GetUIElement(sprite).Size;
+
+    public static void SetUIPositions(Vector2 screenSize)
     {
-      return GetUIElement(sprite).Draw;
+      GetUIElement(Textures.UI.locationInfoUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.locationInfoUI).X / 2, 0 + (screenSize.Y - GetUISize(Textures.UI.locationInfoUI).Y));
+      GetUIElement(Textures.UI.NPCInfoUI).Position = new Vector2(0 + (screenSize.X / 2 - GetUISize(Textures.UI.NPCInfoUI).X / 2), screenSize.Y / 2 - GetUISize(Textures.UI.NPCInfoUI).Y * 1.2f);
+      GetUIElement(Textures.UI.NPCQuestListUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.NPCQuestListUI).X / 2, GetUIPosition(Textures.UI.NPCInfoUI).Y + GetUISize(Textures.UI.NPCInfoUI).Y);
+      GetUIElement(Textures.UI.questListUI).Position = new Vector2(0, 0);
+      GetUIElement(Textures.UI.questInfoUI).Position = new Vector2(GetUISize(Textures.UI.questListUI).X, 0);
+      GetUIElement(Textures.UI.inventoryUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.inventoryUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.inventoryUI).Y / 2);
+      GetUIElement(Textures.UI.pauseUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.pauseUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.pauseUI).Y / 2);
+      GetUIElement(Textures.UI.shopInventoryUI).Position = new Vector2(0, 0);
+      GetUIElement(Textures.UI.battleUI).Position = new Vector2(0, screenSize.Y - GetUISize(Textures.UI.battleUI).Y);
+      GetUIElement(Textures.UI.newGameUIBorder).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.newGameUIBorder).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.newGameUIBorder).Y / 2);
+      GetUIElement(Textures.UI.endBattleUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.endBattleUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.endBattleUI).Y / 2);
     }
 
-    public static void ActivateUIElement(Texture2D sprite)
-    {
-      if (!IsUIElementActive(sprite))
-        GetUIElement(sprite).Draw = true;
-    }
+    public static bool IsUIElementActive(Texture2D sprite) => GetUIElement(sprite).Draw;
 
-    public static void DeActivateUIElement(Texture2D sprite)
-    {
-      if (IsUIElementActive(sprite))
-        GetUIElement(sprite).Draw = false;
-    }
+    public static void ActivateUIElement(Texture2D sprite) => GetUIElement(sprite).Draw = true;
+
+    public static void DeActivateUIElement(Texture2D sprite) => GetUIElement(sprite).Draw = false;
 
     public static UIElement GetUIElement(Texture2D sprite)
     {
@@ -65,40 +73,11 @@ namespace Eternal_Coin
       return null;
     }
 
-    public Texture2D SpriteID
-    {
-      get { return spriteID; }
-      set { spriteID = value; }
-    }
-
-    public Vector2 Position
-    {
-      get { return position; }
-      set { position = value; }
-    }
-
-    public Vector2 Size
-    {
-      get { return size; }
-      set { size = value; }
-    }
-
-    public GVar.GameState GameState
-    {
-      get { return gameState; }
-      set { gameState = value; }
-    }
-
-    public float Layer
-    {
-      get { return layer; }
-      set { layer = value; }
-    }
-
-    public bool Draw
-    {
-      get { return draw; }
-      set { draw = value; }
-    }
+    public Texture2D SpriteID { get { return spriteID; } set { spriteID = value; } } 
+    public Vector2 Position { get { return position; } set { position = value; } } 
+    public Vector2 Size { get { return size; } set { size = value; } } 
+    public GVar.GameState GameState { get { return gameState; } set { gameState = value; } } 
+    public float Layer { get { return layer; } set { layer = value; } } 
+    public bool Draw { get { return draw; } set { draw = value; } }
   }
 }

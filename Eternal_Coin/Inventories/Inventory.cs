@@ -37,6 +37,26 @@ namespace Eternal_Coin
       fullInventory = false;
     }
 
+    public void ResetItemSlotPositions(Vector2 position)
+    {
+      int itemCount = 0;
+      float oX = position.X;
+      foreach (int key in itemSlots.Keys)
+      {
+        itemCount++;
+        itemSlots[key].position = position;
+
+        if (itemCount == 5)
+        {
+          itemCount = 0;
+          position.X = oX;
+          position.Y += 84;
+        }
+        else
+          position.X += 84;
+      }
+    }
+
     public Dictionary<int, ItemSlot> ItemSlots { get { return itemSlots; } set { itemSlots = value; } }
     public bool FullInventory { get { return fullInventory; } set { fullInventory = value; } }
     public Vector2 Position { get { return position; } set { position = value; } }

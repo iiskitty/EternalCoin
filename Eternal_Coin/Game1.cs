@@ -8,8 +8,8 @@ using System.Xml;
 
 //TODO make a way for quests to require other quests to be completed. (possibly done, need more testing.)
 //TODO make a way to play sound clips for voice acting from location xml files.
-//TODO fix the map jittering, maybe change the way it moves all together.
 //TODO read through all the code, comment the code, fix and tweak the code where necessary
+//TODO Make different resolutions above 1280x720 possible. setting positions based on true screen size.
 
 
 namespace Eternal_Coin
@@ -22,6 +22,47 @@ namespace Eternal_Coin
 
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
+
+    private void ToggleFullScreen(bool fullScreen)
+    {
+      graphics.IsFullScreen = fullScreen;
+      GVar.isFullScreen = fullScreen;
+
+      if (!graphics.IsFullScreen)
+      {
+        graphics.PreferredBackBufferHeight = (int)GVar.gameScreenY;
+        graphics.PreferredBackBufferWidth = (int)GVar.gameScreenX;
+        GVar.currentScreenX = GVar.gameScreenX;
+        GVar.currentScreenY = GVar.gameScreenY;
+        Window.IsBorderless = false;
+        
+        Window.Position = new Point(150, 50);
+      }
+      else if (graphics.IsFullScreen)
+      {
+        graphics.PreferredBackBufferHeight = (int)GVar.trueScreenY;
+        graphics.PreferredBackBufferWidth = (int)GVar.trueScreenX;
+        GVar.currentScreenX = GVar.trueScreenX;
+        GVar.currentScreenY = GVar.trueScreenY;
+        Window.IsBorderless = true;
+        
+      }
+
+      MainWorldButtons.SetMainWorldButtonPositions();
+      InventoryManager.ResetItemSlotPositions();
+      if (GVar.player != null)
+        GVar.player.ResetLocation(new Vector2(GVar.currentScreenX, GVar.currentScreenY));
+      UIElement.SetUIPositions(new Vector2(GVar.currentScreenX, GVar.currentScreenY));
+
+      graphics.ApplyChanges();
+      //opens Options.xml and saves the new value for fullscreen
+      XmlDocument options = new XmlDocument(); //creating an xml document
+      options.Load("./Content/Options.xml"); //loading the Options.xml document with the created one
+      XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options/fullscreen"); //creating a node and setting to the fullscreen node in the loaded document
+      optionsNode.InnerText = Convert.ToString(graphics.IsFullScreen); //setting the value of the node to the fullscreen value(true or false)
+      options.Save("./Content/Options.xml"); //saving the document
+      GVar.toggleFullScreen = false;
+    }
 
     public Game1()
     {
@@ -40,7 +81,7 @@ namespace Eternal_Coin
       MouseManager.mouse.InventoryItemClicked += InventoryManager.OnMouseClicked; //Add OnMouseClicked Function in InventoryManager to InventoryItemClicked Delegate.
       MouseManager.mouse.ButtonClicked += Button.OnButtonClicked; //Add OnButtonClicked function in Button to ButtonClicked delegate.
 
-      IsMouseVisible = true;
+      IsMouseVisible = false;
       //Loads Options.xml to 
       XmlDocument options = new XmlDocument();
       options.Load("./Content/Options.xml");
@@ -59,16 +100,7 @@ namespace Eternal_Coin
         Directory.CreateDirectory(GVar.savedGameLocation);
       GVar.savedGameLocation += "GameSave";//add GameSave to the end of the path so files will be named GameSave0.xml, GameSave1.xml etc.
 
-
-      //fullscreen option check
-      if (Convert.ToBoolean(optionsNode["fullscreen"].InnerText) == true)
-      {
-        graphics.IsFullScreen = true;
-      }
-      else
-      {
-        graphics.IsFullScreen = false;
-      }
+      
 
       //debuglog option check
       if (Convert.ToBoolean(optionsNode["enabledebuglog"].InnerText) == true)
@@ -105,23 +137,15 @@ namespace Eternal_Coin
       //checking if size of game is larger than size of screen
       //if game is larger than screen X or Y set the size of the game the same as the screen
       if (GVar.trueScreenX < GVar.gameScreenX)
-      {
         GVar.gameScreenX = GVar.trueScreenX;
-      }
 
       if (GVar.trueScreenY < GVar.gameScreenY)
-      {
         GVar.gameScreenY = GVar.trueScreenY;
-      }
-
-      //setting game size to set values
-      graphics.PreferredBackBufferWidth = (int)GVar.gameScreenX;
-      graphics.PreferredBackBufferHeight = (int)GVar.gameScreenY;
 
       //logging the game size after change(if any)
       GVar.LogDebugInfo("Set Game Screen X,Y: " + GVar.gameScreenX.ToString() + " " + GVar.gameScreenY.ToString(), 1);
 
-      graphics.ApplyChanges();
+      //graphics.ApplyChanges();
 
       //setting position of game window to top left corner
       Window.Position = new Point(150, 50);
@@ -137,6 +161,7 @@ namespace Eternal_Coin
       Vector.InitilizeVectors();
       //creating all UI elements for game use
       Lists.uiElements = UIElement.AddUIElements(Lists.uiElements);
+      ToggleFullScreen(false);
       //creating inventories for game use
       InventoryManager.CreateInventories();
       //loading the main menu
@@ -166,14 +191,10 @@ namespace Eternal_Coin
       Load.LoadDisplayPictures(Content);
       //loading all attacks for all display pictures(characters)
       for (int i = 0; i < Lists.displayPictureIDs.Count; i++)
-      {
         Attack.LoadAttacks(Content, Lists.displayPictureIDs[i]);
-      }
       //loading all attacks for all ememies
       for (int i = 0; i < Lists.eDisplayPictureIDs.Count; i++)
-      {
         Attack.LoadEnemyAttacks(Content, Lists.eDisplayPictureIDs[i]);
-      }
 
       SoundManager.PlaySong(Music.menuMusic);
     }
@@ -182,10 +203,7 @@ namespace Eternal_Coin
     /// UnloadContent will be called once per game and is the place to unload
     /// game-specific content.
     /// </summary>
-    protected override void UnloadContent()
-    {
-
-    }
+    protected override void UnloadContent() { }
 
     /// <summary>
     /// Allows the game to run logic such as updating the world,
@@ -217,12 +235,9 @@ namespace Eternal_Coin
       if (GVar.loadData)
       {
         Load.LoadWorldMaps(Content);
-
-
-
         //setting map based on players current location
         WorldMap.SelectNewMap(GVar.player.CurrentLocation);
-
+        
         GVar.loadData = false;
       }
 
@@ -233,31 +248,14 @@ namespace Eternal_Coin
       if (GVar.exitGame)
       {
         if (graphics.IsFullScreen)
-        {
-          //toggles full screen if is fullscreen
-          graphics.ToggleFullScreen();
-        }
-        //exit game
-        Exit();
+          ToggleFullScreen(false);//toggles full screen if is fullscreen
+        Exit();//exit game
       }
 
       //sets fullscreen value to the opposite 
       if (GVar.toggleFullScreen)
-      {
-        graphics.IsFullScreen = !graphics.IsFullScreen;
-        graphics.ApplyChanges();
-        if (!graphics.IsFullScreen)
-        {
-          Window.Position = new Point(150, 50);
-        }
-        //opens Options.xml and saves the new value for fullscreen
-        XmlDocument options = new XmlDocument(); //creating an xml document
-        options.Load("./Content/Options.xml"); //loading the Options.xml document with the created one
-        XmlNode optionsNode = options.DocumentElement.SelectSingleNode("/options/fullscreen"); //creating a node and setting to the fullscreen node in the loaded document
-        optionsNode.InnerText = Convert.ToString(graphics.IsFullScreen); //setting the value of the node to the fullscreen value(true or false)
-        options.Save("./Content/Options.xml"); //saving the document
-        GVar.toggleFullScreen = false;
-      }
+        ToggleFullScreen(!graphics.IsFullScreen);
+
       Button.UpdateButtons(gameTime);
       //checks for GameState changes(main menu to choose charater, game to inventory etc.)
       Updates.CheckForStateChange();
@@ -266,7 +264,7 @@ namespace Eternal_Coin
       //updates the InputManager that checks for inputs from user
       InputManager.Update();
       //updates the MouseManager keeping the mouse position and giving it a rectangle for clicking on things
-      MouseManager.mouse.Update(graphics.IsFullScreen);
+      MouseManager.mouse.Update();
       //checks for sounds that are no longer being used and...sends them off to live on a farm
       SoundManager.CheckSounds();
 
@@ -276,27 +274,21 @@ namespace Eternal_Coin
         case GVar.GameState.mainMenu:
           MainMenu.UpdateMainMenu(gameTime);
           break;
-
         case GVar.GameState.options:
           Options.UpdateOptions(gameTime);
           break;
-
         case GVar.GameState.game:
           MainWorld.UpdateMainWorld(gameTime);
           break;
-
         case GVar.GameState.chooseCharacter:
           CreateCharacter.UpdateCreateCharacter(gameTime);
           break;
-
         case GVar.GameState.inventory:
           InventoryManager.UpdateInventories(gameTime);
           break;
-
         case GVar.GameState.shop:
           Shop.UpdateShopInventories(gameTime, InventoryManager.playerInventory, InventoryManager.mouseInventory, InventoryManager.shopInventory);
           break;
-
         case GVar.GameState.battle:
           Battle.UpdateBattle(gameTime);
           break;
@@ -317,23 +309,16 @@ namespace Eternal_Coin
       //spritebatch begin with sorting front to back(layering)
       spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
-      //draw cursor image
-      //spriteBatch.Draw(Textures.Misc.cursor, new Rectangle(MouseManager.mouseBounds.X, MouseManager.mouseBounds.Y, 48, 48), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
+      MouseManager.mouse.Draw(spriteBatch);
 
       //if the gamestate is the same as the one a UIElement has and its draw boolean is true, it will be drawn
       for (int i = 0; i < Lists.uiElements.Count; i++)
-      {
         if (Lists.uiElements[i].GameState == GVar.currentGameState && Lists.uiElements[i].Draw)
-        {
           UI.DrawUIElement(spriteBatch, Lists.uiElements[i].SpriteID, Lists.uiElements[i].Position, Lists.uiElements[i].Size, Lists.uiElements[i].Layer);
-        }
-      }
 
       //if true draws the black fade in and out between gamestats
       if (Colours.drawBlackFade)
-      {
         Colours.DrawBlackFadeInOut(spriteBatch);
-      }
 
       Button.DrawButtons(spriteBatch);
 
@@ -350,26 +335,23 @@ namespace Eternal_Coin
         case GVar.GameState.mainMenu:
           MainMenu.DrawMainMenu(spriteBatch, gameTime);
           break;
-
         case GVar.GameState.options:
           Options.DrawOptions(spriteBatch, gameTime);
           break;
-
         case GVar.GameState.game:
           MainWorld.DrawMainWorld(spriteBatch, gameTime);
           break;
-
         case GVar.GameState.chooseCharacter:
           CreateCharacter.DrawCreateCharacter(spriteBatch, gameTime);
           break;
         case GVar.GameState.inventory:
           InventoryManager.DrawPlayerInventories(spriteBatch, gameTime);
+          if (graphics.IsFullScreen)
+            MainWorld.DrawMainWorld(spriteBatch, gameTime);
           break;
-
         case GVar.GameState.shop:
           Shop.DrawShopInventories(spriteBatch, gameTime);
           break;
-
         case GVar.GameState.battle:
           Battle.DrawBattle(spriteBatch, gameTime);
           break;

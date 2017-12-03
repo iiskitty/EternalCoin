@@ -41,7 +41,11 @@ namespace Eternal_Coin
       if (GVar.startGame && !Colours.fadeIn)
       {
         Lists.chooseCharacterButtons.Clear();
-        Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
+        Player player = null;
+        if (GVar.isFullScreen)
+          player = new Player(Textures.Misc.pixel, new Vector2(GVar.trueScreenX / 2, GVar.trueScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
+        else if (!GVar.isFullScreen)
+          player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), GVar.playerName, "Alive", Vector2.Zero, Color.Green, 100, 2, 2);
 
         XmlDocument doc = new XmlDocument();
         doc.Load("Content/LoadData/StoryNodes/" + GVar.storyName + ".xml");

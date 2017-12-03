@@ -8,8 +8,7 @@ namespace Eternal_Coin
     public static void OpenShop(Button button)
     {
       Shop.LoadShopInventory(GVar.curLocNode);//load shop inventory of current location.
-      Button closeInv = new Button(Textures.Misc.pixel, new Vector2(GVar.gameScreenX - button.Size.X, 0), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);//create button to close inventory.
-      Lists.inventoryButtons.Add(closeInv);//add close button to InventoryButtons.
+      Lists.inventoryButtons.Add(Button.CreateButton(Textures.Button.closeButton, UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(35, 35), new Vector2(-5, 5), "CloseInventory", "Alive", Button.ButtonPosition.topright));
       Lists.mainWorldButtons.Remove(button);//remove Open Shop Button.
       GVar.currentGameState = GVar.GameState.shop;//set current GameState to shop.
       GVar.previousGameState = GVar.GameState.game;//set previous GameState to game.
@@ -20,17 +19,37 @@ namespace Eternal_Coin
     {
       for (int i = 0; i < Lists.uiElements.Count; i++)
       {
-        if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && !Lists.uiElements[i].Draw)
+        if (!UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
           UI.DisplayNPCQuestList();
-        else if (Lists.uiElements[i].SpriteID == Textures.UI.NPCQuestListUI && Lists.uiElements[i].Draw)
+        else if (UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
           UI.CloseNPCQuestListUI();
+      }
+    }
+
+    public static void CreateMainWorldButtons()
+    {
+      Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Misc.pixel, UIElement.GetUIElement(Textures.UI.locationInfoUI), new Vector2(50, 50), new Vector2(-5, 40), "DisplayQuests", "Alive", Button.ButtonPosition.topright));
+      Lists.mainWorldButtons.Add(Button.CreateButton(Textures.Button.inventoryButton, UIElement.GetUIElement(Textures.UI.locationInfoUI), new Vector2(50, 50), new Vector2(-60, 40), "DisplayInventory", "Alive", Button.ButtonPosition.topright));
+    }
+
+    public static void SetMainWorldButtonPositions()
+    {
+      for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
+      {
+        if (Lists.mainWorldButtons[i].Name == "DisplayQuests")
+          Lists.mainWorldButtons[i].Position = Button.SetButtonPosition(UIElement.GetUIElement(Textures.UI.locationInfoUI), Lists.mainWorldButtons[i].Size, new Vector2(-5, 40), Button.ButtonPosition.topright);
+        else if (Lists.mainWorldButtons[i].Name == "DisplayInventory")
+          Lists.mainWorldButtons[i].Position = Button.SetButtonPosition(UIElement.GetUIElement(Textures.UI.locationInfoUI), Lists.mainWorldButtons[i].Size, new Vector2(-60, 40), Button.ButtonPosition.topright);
+        else if (Lists.mainWorldButtons[i].Name == "MainMenu")
+          Lists.mainWorldButtons[i].Position = Button.SetButtonPosition(UIElement.GetUIElement(Textures.UI.pauseUI), Lists.mainWorldButtons[i].Size, new Vector2(0, 30), Button.ButtonPosition.topcenter);
+        else if (Lists.mainWorldButtons[i].Name == "Options")
+          Lists.mainWorldButtons[i].Position = Button.SetButtonPosition(UIElement.GetUIElement(Textures.UI.pauseUI), Lists.mainWorldButtons[i].Size, new Vector2(0, -30), Button.ButtonPosition.bottomcenter);
       }
     }
 
     public static void DisplayInventory()
     {
-      Button closeInv = new Button(Textures.Misc.pixel, new Vector2(GVar.gameScreenX - 25, 0), new Vector2(25, 25), Color.Red, "CloseInventory", "Alive", 0f);//create button to close inventory.
-      Lists.inventoryButtons.Add(closeInv);//add close button to InventoryButtons.
+      Lists.inventoryButtons.Add(Button.CreateButton(Textures.Button.closeButton, UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(35, 35), new Vector2(-5, 5), "CloseInventory", "Alive", Button.ButtonPosition.topright));
       GVar.currentGameState = GVar.GameState.inventory;//set current GameState to inventory.
       GVar.previousGameState = GVar.GameState.game;//set previous GameState to game.
     }
@@ -67,6 +86,13 @@ namespace Eternal_Coin
       Colours.drawBlackFade = true;//draw black fade in bool to true.
       Colours.fadeIn = true;//fade in bool to true.
       GVar.playerName = string.Empty;//reset players name.
+    }
+
+    public static void DeleteButton(string name)
+    {
+      for (int i = 0; i < Lists.mainWorldButtons.Count; i++)
+        if (Lists.mainWorldButtons[i].Name == name)
+          Lists.mainWorldButtons.RemoveAt(i);
     }
   }
 }

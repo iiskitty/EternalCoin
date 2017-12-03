@@ -100,12 +100,9 @@ namespace Eternal_Coin
 
       //cycle through shops inventory item slots, if item slots item is not null, create item xml element and append it to item xml node.
       for (int i = 0; i < 40; i++)
-      {
         if (InventoryManager.shopInventory.ItemSlots[i].item != null)
-        {
           item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));//TODO item aren't saving with invetory slot, causing item to fuck up
-        }
-      }
+
       string fileDir = GVar.gameFilesLocation + GVar.player.Name + "/" + locationNode.LocatoinFilePath;
       shopDoc.Save(fileDir);
     }

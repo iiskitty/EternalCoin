@@ -499,11 +499,6 @@ namespace Eternal_Coin
 
     public static GameState currentGameState, previousGameState;
 
-    //public static string npcQuestDescription = string.Empty;
-    //public static string npcQuestShortDescription = string.Empty;
-    //public static bool npcQuestCompleted = false;
-    //public static bool npcQuestAccepted = false;
-
     /// <summary>
     /// Global variable to exit game
     /// </summary>
@@ -516,6 +511,11 @@ namespace Eternal_Coin
     public static bool NPCQuestUnlocked = false;
     public static bool drawNPCQuestInfo = false;
 
+    public static bool isFullScreen = false;
+
+    public static float currentScreenX;
+    public static float currentScreenY;
+
     /// <summary>
     /// X size of the game
     /// </summary>
@@ -525,6 +525,8 @@ namespace Eternal_Coin
     /// Y size of the game
     /// </summary>
     public static float gameScreenY = 720;
+
+    public static Matrix scale;
 
     /// <summary>
     /// X size of the users screen resolution

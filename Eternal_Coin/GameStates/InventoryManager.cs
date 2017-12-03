@@ -19,10 +19,21 @@ namespace Eternal_Coin
     public static void CreateInventories()
     {
       mouseInventory = new MouseInventory();
-      playerInventory = new Inventory(new Vector2(437, 51), GVar.InventoryParentNames.inventory);
+      playerInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 51)), GVar.InventoryParentNames.inventory);
       enemyInventory = new EquipInventory(GVar.InventoryParentNames.enemy);
-      shopInventory = new Inventory(new Vector2(862, 51), GVar.InventoryParentNames.shop);
+      shopInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 51)), GVar.InventoryParentNames.shop);
       characterInventory = new EquipInventory(GVar.InventoryParentNames.character);
+    }
+
+    public static void ResetItemSlotPositions()
+    {
+      try
+      {
+        playerInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 51)));
+        shopInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 51)));
+        characterInventory.ResetItemSlotPositions();
+      }
+      catch { }
     }
 
     /// <summary>
@@ -85,12 +96,12 @@ namespace Eternal_Coin
     {
       if (GVar.currentGameState == GVar.GameState.inventory || GVar.currentGameState == GVar.GameState.shop)
       {
-        if (itemSlot.item == null && mouseInventory.heldItem != null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.bounds))
+        if (itemSlot != null && itemSlot.item == null && mouseInventory.heldItem != null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.bounds))
         {
           if (Item.ToInventory(itemSlot, mouseInventory.heldItem))
             mouseInventory.heldItem = null;
         }
-        else if (itemSlot.item != null && mouseInventory.heldItem != null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.bounds))
+        else if (itemSlot != null && itemSlot.item != null && mouseInventory.heldItem != null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.bounds))
         {
           if (itemSlot.item.ItemClass == GVar.ItemClassName.jewellry && mouseInventory.heldItem.ItemClass == GVar.ItemClassName.eternalcoin)
           {
@@ -105,7 +116,7 @@ namespace Eternal_Coin
             Item.ToInventory(itemSlot, tItem);
           }
         }
-        else if (itemSlot.item != null && mouseInventory.heldItem == null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.item.Bounds))
+        else if (itemSlot != null && itemSlot.item != null && mouseInventory.heldItem == null && MouseManager.mouse.mouseBounds.Intersects(itemSlot.item.Bounds))
         {
           if (itemSlot.item.ItemClass == GVar.ItemClassName.jewellry)
           {
@@ -119,7 +130,7 @@ namespace Eternal_Coin
               Item.FromInventory(itemSlot, itemSlot.item);
             }
           }
-          else
+          else if (itemSlot != null)
           {
             mouseInventory.heldItem = itemSlot.item;
             Item.FromInventory(itemSlot, itemSlot.item);

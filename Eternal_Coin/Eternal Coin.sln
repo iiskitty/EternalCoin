@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eternal Coin", "Eternal Coin.csproj", "{52042FBF-6E4F-4EEF-81DC-58DE273CD865}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ECInstaller", "..\ECInstaller\ECInstaller.vdproj", "{46419C90-A9B6-400A-8C90-11E5FC55DE02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,13 @@ Global
 		{52042FBF-6E4F-4EEF-81DC-58DE273CD865}.Debug|x86.Build.0 = Debug|x86
 		{52042FBF-6E4F-4EEF-81DC-58DE273CD865}.Release|x86.ActiveCfg = Release|x86
 		{52042FBF-6E4F-4EEF-81DC-58DE273CD865}.Release|x86.Build.0 = Release|x86
+		{46419C90-A9B6-400A-8C90-11E5FC55DE02}.Debug|x86.ActiveCfg = Debug
+		{46419C90-A9B6-400A-8C90-11E5FC55DE02}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7647A581-CE8F-4F98-A41D-7ADFEB36E807}
 	EndGlobalSection
 EndGlobal
