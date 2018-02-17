@@ -22,13 +22,14 @@ namespace Eternal_Coin
 
   public class SavedGame
   {
+
     public string displayPicID;
 
     public string name;
     public string story;
     public string location;
 
-    public Vector2 startPosition;
+    public Vector2 position;
 
     public Button loadGame;
     public Button deleteGame;
@@ -41,15 +42,27 @@ namespace Eternal_Coin
       this.name = name;
       this.story = story;
       this.location = location;
-      this.startPosition = startPosition;
+      this.position = new Vector2(GVar.currentScreenX / 2 - Textures.UI.saveGameUI.Width / 2, startPosition.Y);
 
       buttons = new List<Object>();
 
-      loadGame = new Button(Textures.Button.loadButton, new Vector2(startPosition.X + 953, startPosition.Y + 12), new Vector2(Textures.Button.loadButton.Width / 2, Textures.Button.loadButton.Height), Color.White, "LoadGame", name, 0f);
+      loadGame = new Button(Textures.Button.loadButton, new Vector2(position.X + 953, position.Y + 12), new Vector2(Textures.Button.loadButton.Width / 2, Textures.Button.loadButton.Height), Color.White, "LoadGame", name, 0f);
       loadGame.extraInfo = story;
-      deleteGame = new Button(Textures.Button.deleteButton, new Vector2(startPosition.X + 1087, startPosition.Y + 12), new Vector2(Textures.Button.deleteButton.Width / 2, Textures.Button.deleteButton.Height), Color.White, "DeleteGame", name, 0f);
+      deleteGame = new Button(Textures.Button.deleteButton, new Vector2(position.X + 1087, position.Y + 12), new Vector2(Textures.Button.deleteButton.Width / 2, Textures.Button.deleteButton.Height), Color.White, "DeleteGame", name, 0f);
       buttons.Add(loadGame);
       buttons.Add(deleteGame);
+    }
+
+    public static void DrawSavedGame(SpriteBatch spriteBatch)
+    {
+      for (int i = 0; i < Lists.savedGames.Count; i++)
+      {
+        spriteBatch.Draw(Dictionaries.displayPictures[Lists.savedGames[i].displayPicID].displayPic, new Rectangle((int)Lists.savedGames[i].position.X + 4, (int)Lists.savedGames[i].position.Y + 4, 54, 56), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
+        spriteBatch.Draw(Textures.UI.saveGameUI, new Rectangle((int)Lists.savedGames[i].position.X, (int)Lists.savedGames[i].position.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
+        spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].name, new Vector2(Lists.savedGames[i].position.X + 80, Lists.savedGames[i].position.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+        spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].story, new Vector2(Lists.savedGames[i].position.X + 350, Lists.savedGames[i].position.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+        spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].location, new Vector2(Lists.savedGames[i].position.X + 660, Lists.savedGames[i].position.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+      }
     }
   }
 
@@ -119,46 +132,25 @@ namespace Eternal_Coin
 
       if (!GVar.creatingCharacter && !GVar.chooseStory)
       {
-        for (int i = 0; i < Lists.uiElements.Count; i++)
-        {
-          if (Lists.uiElements[i].SpriteID == Textures.UI.newGameUIBorder && Lists.uiElements[i].Draw)
-          {
-            Lists.uiElements[i].Draw = false;
-          }
-        }
+        if (UIElement.IsUIElementActive(Textures.UI.newGameUIBorder))
+          UIElement.DeActivateUIElement(Textures.UI.newGameUIBorder);
 
-        for (int i = 0; i < Lists.savedGames.Count; i++)
-        {
-          spriteBatch.Draw(Dictionaries.displayPictures[Lists.savedGames[i].displayPicID].displayPic, new Rectangle((int)Lists.savedGames[i].startPosition.X + 4, (int)Lists.savedGames[i].startPosition.Y + 4, 54, 56), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
-          spriteBatch.Draw(Textures.UI.savedGameUIBorder, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
-          spriteBatch.Draw(Textures.UI.savedGameUIInner, new Rectangle((int)Lists.savedGames[i].startPosition.X, (int)Lists.savedGames[i].startPosition.Y, 1240, 62), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
-          spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].name, new Vector2(Lists.savedGames[i].startPosition.X + 80, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-          spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].story, new Vector2(Lists.savedGames[i].startPosition.X + 350, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-          spriteBatch.DrawString(Fonts.lucidaConsole24Regular, Lists.savedGames[i].location, new Vector2(Lists.savedGames[i].startPosition.X + 660, Lists.savedGames[i].startPosition.Y + 20), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-        }
+        SavedGame.DrawSavedGame(spriteBatch);
       }
 
       if (GVar.creatingCharacter)
       {
-        for (int i = 0; i < Lists.uiElements.Count; i++)
-        {
-          if (Lists.uiElements[i].SpriteID == Textures.UI.newGameUIBorder && !Lists.uiElements[i].Draw)
-          {
-            Lists.uiElements[i].Draw = true;
-          }
-          if (Lists.uiElements[i].SpriteID == Textures.UI.newGameUIBorder)
-          {
-            spriteBatch.Draw(Dictionaries.displayPictures[GVar.displayPicID].displayPic, new Rectangle((int)Lists.uiElements[i].Position.X + 3, (int)Lists.uiElements[i].Position.Y + 3, (int)Vector.newGameDPSize.X, (int)Vector.newGameDPSize.Y), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.18f);
-            spriteBatch.DrawString(Fonts.lucidaConsole24Regular, GVar.playerName, new Vector2((int)Lists.uiElements[i].Position.X + 71, (int)Lists.uiElements[i].Position.Y + 276), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
-          }
-        }
-        spriteBatch.Draw(Textures.UI.newGameUIInner, new Rectangle((int)GVar.gameScreenX / 2 - Textures.UI.newGameUIInner.Width / 2, (int)GVar.gameScreenY / 2 - Textures.UI.newGameUIInner.Height / 2, Textures.UI.newGameUIInner.Width, Textures.UI.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+        if (!UIElement.IsUIElementActive(Textures.UI.newGameUIBorder))
+          UIElement.ActivateUIElement(Textures.UI.newGameUIBorder);
 
+        UIElement.DrawSpriteAtUI(spriteBatch, Dictionaries.displayPictures[GVar.displayPicID].displayPic, Vector.newGameDPSize, UIElement.GetUIElement(Textures.UI.newGameUIBorder), new Vector2(3, 3), Color.White, 0.18f);
+        UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole24Regular, GVar.playerName, UIElement.GetUIElement(Textures.UI.newGameUIBorder), new Vector2(71, 276), Color.Black, 0.2f);
 
-
+        spriteBatch.Draw(Textures.UI.newGameUIInner, new Rectangle((int)GVar.currentScreenX / 2 - Textures.UI.newGameUIInner.Width / 2, (int)GVar.currentScreenY / 2 - Textures.UI.newGameUIInner.Height / 2, Textures.UI.newGameUIInner.Width, Textures.UI.newGameUIInner.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+        
         if (GVar.choosingDP)
         {
-          spriteBatch.Draw(Textures.Misc.pixel, new Rectangle(0, 0, (int)GVar.gameScreenX, (int)GVar.gameScreenY), null, Color.FromNonPremultiplied(0, 0, 0, 125), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
+          spriteBatch.Draw(Textures.Misc.pixel, new Rectangle(0, 0, (int)GVar.currentScreenX, (int)GVar.currentScreenY), null, Color.FromNonPremultiplied(0, 0, 0, 125), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
 
           for (int i = 0; i < Lists.displayPictureIDs.Count; i++)
           {

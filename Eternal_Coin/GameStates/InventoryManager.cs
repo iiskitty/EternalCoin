@@ -19,19 +19,22 @@ namespace Eternal_Coin
     public static void CreateInventories()
     {
       mouseInventory = new MouseInventory();
-      playerInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 51)), GVar.InventoryParentNames.inventory);
+      playerInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 48)), GVar.InventoryParentNames.inventory);
       enemyInventory = new EquipInventory(GVar.InventoryParentNames.enemy);
-      shopInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 51)), GVar.InventoryParentNames.shop);
+      shopInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 48)), GVar.InventoryParentNames.shop);
       characterInventory = new EquipInventory(GVar.InventoryParentNames.character);
     }
 
     public static void ResetItemSlotPositions()
     {
+      if (enemyInventory != null)
+        enemyInventory.ResetItemSlotPositions();
       try
       {
-        playerInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 51)));
-        shopInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 51)));
+        playerInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.inventoryUI), new Vector2(437, 48)));
+        shopInventory.ResetItemSlotPositions(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 48)));
         characterInventory.ResetItemSlotPositions();
+        
       }
       catch { }
     }
@@ -344,7 +347,7 @@ namespace Eternal_Coin
         {
           Jewellry jewl = (Jewellry)items[i];
           if (jewl.eternalCoinSlot.item != null)
-            jewl.eternalCoinSlot.item.Draw(spriteBatch, jewl.eternalCoinSlot.item.SpriteID, jewl.eternalCoinSlot.item.Bounds, 0.2f, 0f, Vector2.Zero);
+            jewl.eternalCoinSlot.item.Draw(spriteBatch, jewl.eternalCoinSlot.item.SpriteID, jewl.eternalCoinSlot.item.Bounds, 0.21f, 0f, Vector2.Zero);
           GVar.DrawBoundingBox(jewl.eternalCoinSlot.bounds, spriteBatch, Textures.Misc.pixel, 1, 0.2f, Color.Green);
         }
 
@@ -364,13 +367,15 @@ namespace Eternal_Coin
     /// <param name="gameTime"></param>
     public static void DrawPlayerInventories(SpriteBatch spriteBatch, GameTime gameTime)
     {
-      spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + GVar.player.Damage.ToString(), new Vector2(879, 572), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-      spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + GVar.player.Armour.ToString(), new Vector2(879, 590), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+      UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Damage: " + GVar.player.Damage.ToString(), UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(879, 572), Color.Black, 0.19f);
+      UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Armor: " + GVar.player.Armour.ToString(), UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(879, 590), Color.Black, 0.19f);
+
+      if (GVar.isFullScreen)
+        spriteBatch.Draw(Textures.UI.inventoryBackDropUI, new Rectangle((int)UIElement.GetUIPosition(Textures.UI.inventoryUI).X + (int)UIElement.GetUISize(Textures.UI.inventoryUI).X / 2 - Textures.UI.inventoryBackDropUI.Width / 2, (int)UIElement.GetUIPosition(Textures.UI.inventoryUI).Y + (int)UIElement.GetUISize(Textures.UI.inventoryUI).Y / 2 - Textures.UI.inventoryBackDropUI.Height / 2, Textures.UI.inventoryBackDropUI.Width, Textures.UI.inventoryBackDropUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
 
       DrawMouseInventory(spriteBatch, gameTime);
       DrawInventoryItems(spriteBatch, GetItems(GVar.InventoryParentNames.inventory), 0.19f);
       DrawInventoryItems(spriteBatch, GetItems(GVar.InventoryParentNames.character), 0.19f);
-
     }
 
     /// <summary>

@@ -16,7 +16,7 @@ namespace Eternal_Coin
           if (InventoryManager.shopInventory.ItemSlots[j].item != null)//if item is not null.
             InventoryManager.shopInventory.ItemSlots[j].item = null;//delete the item.
 
-        InventoryManager.shopInventory = new Inventory(new Vector2(862, 51), GVar.InventoryParentNames.shop);//create new shop inventory(deleting current one)
+        InventoryManager.shopInventory = new Inventory(ItemSlot.SetItemSlotPosition(UIElement.GetUIPosition(Textures.UI.shopInventoryUI), new Vector2(862, 51)), GVar.InventoryParentNames.shop);//create new shop inventory(deleting current one)
         Lists.shopItems.Clear();//clear shops items.
       }
 

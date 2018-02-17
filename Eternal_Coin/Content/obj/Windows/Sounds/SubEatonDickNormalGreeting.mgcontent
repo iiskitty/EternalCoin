@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/SubEatonDickNormalGreeting.wav</SourceFile>
+  <SourceTime>2017-12-10T15:29:31+08:00</SourceTime>
+  <DestFile>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sounds/SubEatonDickNormalGreeting.xnb</DestFile>
+  <DestTime>2018-01-19T16:05:11.5743923+08:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2017-03-01T23:05:36+08:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2017-03-01T23:05:36+08:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

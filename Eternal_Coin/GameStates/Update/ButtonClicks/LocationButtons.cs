@@ -18,7 +18,7 @@ namespace Eternal_Coin
         mainLocNode[GVar.XmlTags.LocationTags.searched].InnerText = GVar.player.CurrentLocation.Searched.ToString();//set the searched tag to true.
         SaveXml.SaveLocationXmlFile(GVar.player, GVar.player.CurrentLocation.MainLocNode);//save the xml file.
       }
-      ReadXml.ReadCurrentLocation();//read current locations xml file.
+      ReadXml.ReadCurrentLocation(GVar.player);//read current locations xml file.
       GVar.player.CurrentLocation.Searched = true;
 
       XmlNode locNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location");//grab location tag from current locations xml file.
@@ -43,6 +43,7 @@ namespace Eternal_Coin
       XmlNode locNPCGreeting = GVar.curLocNode.DocumentElement.SelectSingleNode("/location/npc/greeting");
       GVar.npc = new NPC(locNPC[GVar.XmlTags.NPCTags.name].InnerText, string.Empty, Convert.ToBoolean(locNPC[GVar.XmlTags.NPCTags.hasquest].InnerText), locNPC[GVar.XmlTags.NPCTags.currentquest].InnerText);//create new NPC with data from the current locations xml file.
       GVar.npc.Greeting = Text.WrapText(Fonts.lucidaConsole14Regular, locNPCGreeting[GVar.XmlTags.NPCTags.Greetings.normalgreeting].InnerText, 500);
+      SoundManager.PlayNPCDialogue(GVar.player.CurrentLocation.SubName, GVar.npc.Name, String.Empty, GVar.XmlTags.NPCTags.Greetings.normalgreeting);
 
       if (!UIElement.IsUIElementActive(Textures.UI.NPCInfoUI))
       {
@@ -111,7 +112,7 @@ namespace Eternal_Coin
 
       GVar.player.CurrentLocation = GVar.player.CurrentLocation.MainLocNode;//set current location to current locations connected main location.
 
-      ReadXml.ReadCurrentLocation();
+      ReadXml.ReadCurrentLocation(GVar.player);
 
       GVar.worldMap.SpriteID = Textures.Misc.worldMap;//set current map to world map.
       GVar.player.CurrentLocation.ColourA = 5;//set the alpha colour value of the current locations connected main location ready for fade in.

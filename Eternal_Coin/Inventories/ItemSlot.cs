@@ -28,6 +28,12 @@ namespace Eternal_Coin
       return new Vector2(position.X + padding.X, position.Y + padding.Y);
     }
 
+    public void ResetPositions(Vector2 position, Vector2 miniPosition)
+    {
+      this.position = position;
+      this.miniPosition = miniPosition;
+    }
+
     public void Update(GameTime gameTime)
     {
       if (item != null)

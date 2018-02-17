@@ -142,7 +142,7 @@ namespace Eternal_Coin
       mapFadePos = GVar.worldMap.Position;
     }
 
-    public static void DrawMapFadeOut(SpriteBatch spriteBatch) => spriteBatch.Draw(mapFadeTex, new Rectangle((int)mapFadePos.X, (int)mapFadePos.Y, (int)GVar.currentScreenX, (int)GVar.currentScreenY), null, mapFadeColour, 0f, Vector2.Zero, SpriteEffects.None, 0.171f);
+    public static void DrawMapFadeOut(SpriteBatch spriteBatch) => spriteBatch.Draw(mapFadeTex, new Rectangle((int)mapFadePos.X, (int)mapFadePos.Y, mapFadeTex.Width, mapFadeTex.Height), null, mapFadeColour, 0f, Vector2.Zero, SpriteEffects.None, 0.11f);
 
     public static void DrawBlackFadeInOut(SpriteBatch spriteBatch) => spriteBatch.Draw(Textures.Misc.pixel, new Rectangle(0, 0, (int)GVar.currentScreenX, (int)GVar.currentScreenY), null, blackFadeColour, 0f, Vector2.Zero, SpriteEffects.None, 0.21f);
   }

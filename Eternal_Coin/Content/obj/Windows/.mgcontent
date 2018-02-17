@@ -52,8 +52,6 @@
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/InventoryButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/DeleteButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/LoadButton.png</File>
-    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SavedGameUIBorder.png</File>
-    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SavedGameUIInner.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/SaveGameUI.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/BackButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/NewButton.png</File>
@@ -66,8 +64,6 @@
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/MiddleLightGenButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/RightDarkGenButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/RightLightGenButton.png</File>
-    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/InventoryUI.png</File>
-    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/ShopInventoryUI.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/MouseOverButton.wav</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/ButtonClick.wav</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NPCInfoUI.png</File>
@@ -91,9 +87,32 @@
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/NPCQuestListUI.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/QuestsButton.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/PadLock.png</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole10Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole10Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole12Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole12Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole14Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole14Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole16Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole16Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole18Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole18Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole20Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole20Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole22Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole22Regular.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Bold.spritefont</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Fonts/LucidaConsole24Regular.spritefont</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/TestStory/Ventti/VenttiMap.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/MainStory/WorldMap.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/LocationTemplates/TestStory/WorldMap.png</File>
     <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Music/Fantasy-Forest-Battle.mp3</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/SubEatonDickexplsubeaton1QuestUnaccepted.wav</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/SubEatonDickexplsubeaton2QuestUnaccepted.wav</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sounds/SubEatonDickNormalGreeting.wav</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/InventoryUIBackDrop.png</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/ShopInventoryUI.png</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/Buttons/BackArrow.png</File>
+    <File>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/InventoryUI.png</File>
   </SourceFiles>
 </SourceFileCollection>

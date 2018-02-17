@@ -12,6 +12,7 @@ namespace Eternal_Coin
       public static Texture2D startButton;
       public static Texture2D questsButton;
       public static Texture2D backButton;
+      public static Texture2D backArrow;
       public static Texture2D closeButton;
       public static Texture2D continueButton;
       public static Texture2D newButton;
@@ -41,6 +42,7 @@ namespace Eternal_Coin
       public static Texture2D questListUI;
       public static Texture2D questInfoUI;
       public static Texture2D inventoryUI;
+      public static Texture2D inventoryBackDropUI;
       public static Texture2D shopInventoryUI;
       public static Texture2D battleUI;
       public static Texture2D endBattleUI;
@@ -48,8 +50,7 @@ namespace Eternal_Coin
       public static Texture2D itemInfoUI;
       public static Texture2D newGameUIBorder;
       public static Texture2D newGameUIInner;
-      public static Texture2D savedGameUIBorder;
-      public static Texture2D savedGameUIInner;
+      public static Texture2D saveGameUI;
       public static Texture2D tick;
       public static Texture2D cross;
       public static Texture2D padLock;
@@ -88,14 +89,14 @@ namespace Eternal_Coin
       UI.itemInfoUI = Dictionaries.textures[texID["UIiteminfo"].InnerText];
       UI.newGameUIBorder = Dictionaries.textures[texID["UInewgameborder"].InnerText];
       UI.newGameUIInner = Dictionaries.textures[texID["UInewgameinner"].InnerText];
-      UI.savedGameUIBorder = Dictionaries.textures[texID["UIsavedgameborder"].InnerText];
-      UI.savedGameUIInner = Dictionaries.textures[texID["UIsavedgameinner"].InnerText];
+      UI.saveGameUI = Dictionaries.textures[texID["UIsavegame"].InnerText];
       UI.locationInfoUI = Dictionaries.textures[texID["UIlocinfo"].InnerText];
       UI.NPCInfoUI = Dictionaries.textures[texID["UInpcinfo"].InnerText];
       UI.NPCQuestListUI = Dictionaries.textures[texID["UInpcquestlist"].InnerText];
       UI.questListUI = Dictionaries.textures[texID["UIquestlist"].InnerText];
       UI.questInfoUI = Dictionaries.textures[texID["UIquestinfo"].InnerText];
       UI.inventoryUI = Dictionaries.textures[texID["UIinv"].InnerText];
+      UI.inventoryBackDropUI = Dictionaries.textures[texID["UIinvback"].InnerText];
       UI.shopInventoryUI = Dictionaries.textures[texID["UIshopinv"].InnerText];
       UI.pauseUI = Dictionaries.textures[texID["UIpause"].InnerText];
       UI.battleUI = Dictionaries.textures[texID["UIBattle"].InnerText];
@@ -114,6 +115,7 @@ namespace Eternal_Coin
       Button.continueButton = Dictionaries.textures[texID["continuebut"].InnerText];
       Button.startButton = Dictionaries.textures[texID["startbut"].InnerText];
       Button.backButton = Dictionaries.textures[texID["backbut"].InnerText];
+      Button.backArrow = Dictionaries.textures[texID["backarw"].InnerText];
       Button.newButton = Dictionaries.textures[texID["newbut"].InnerText];
       Button.loadButton = Dictionaries.textures[texID["loadbut"].InnerText];
       Button.deleteButton = Dictionaries.textures[texID["delbut"].InnerText];

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/Sprites/UI/InventoryUI.png</SourceFile>
-  <SourceTime>2016-01-12T14:33:39+08:00</SourceTime>
+  <SourceTime>2017-12-16T16:35:29+08:00</SourceTime>
   <DestFile>C:/Users/gayretard/Dropbox/projects/EternalCoin/Eternal_Coin/Content/bin/Windows/Sprites/UI/InventoryUI.xnb</DestFile>
-  <DestTime>2017-09-29T16:04:35.1174482+08:00</DestTime>
+  <DestTime>2018-01-19T16:05:12.0641896+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T23:05:36+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

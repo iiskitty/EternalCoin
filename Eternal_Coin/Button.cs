@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Xml;
 using System.Collections.Generic;
 
 namespace Eternal_Coin
@@ -249,16 +247,19 @@ namespace Eternal_Coin
               MainWorldButtons.QuitGame();
             else if (button.name.Contains("Options") && GVar.gamePaused)
               UniversalButtons.ChangeToOptions();
-            else if (button.name.Contains("LookEyeButton") && !GVar.gamePaused)
-              LocationButtons.SearchLocation();
-            else if (button.name.Contains("EnterLocation") && !GVar.gamePaused)
-              LocationButtons.EnterLocation();
-            else if (button.name.Contains("ExitLocation") && !GVar.gamePaused)
-              LocationButtons.ExitLocation();
-            else if (button.name.Contains("NPCButton") && !GVar.gamePaused)
-              LocationButtons.OpenNPCUI();
-            else if (button.name.Contains("ShopButton") && !GVar.gamePaused)
-              LocationButtons.OpenShopUI();
+            if (!UIElement.IsUIElementActive(Textures.UI.NPCInfoUI))
+            {
+              if (button.name.Contains("LookEyeButton") && !GVar.gamePaused)
+                LocationButtons.SearchLocation();
+              else if (button.name.Contains("EnterLocation") && !GVar.gamePaused)
+                LocationButtons.EnterLocation();
+              else if (button.name.Contains("ExitLocation") && !GVar.gamePaused)
+                LocationButtons.ExitLocation();
+              else if (button.name.Contains("NPCButton") && !GVar.gamePaused)
+                LocationButtons.OpenNPCUI();
+              else if (button.name.Contains("ShopButton") && !GVar.gamePaused)
+                LocationButtons.OpenShopUI();
+            }
             break;
           case GVar.GameState.shop:
           case GVar.GameState.inventory:
@@ -311,7 +312,7 @@ namespace Eternal_Coin
         }
       }
     }
-
+    
     /// <summary>
     /// Updates all button based on current GameState.
     /// </summary>
@@ -352,7 +353,7 @@ namespace Eternal_Coin
     /// </summary>
     /// <param name="spriteBatch"></param>
     /// <param name="buttons">List of buttons.</param>
-    private static void DrawButtons(SpriteBatch spriteBatch, List<Object> buttons) => buttons.ForEach(button => button.Draw(spriteBatch, button.SpriteID, button.Bounds, 0.19f, 0f, Vector2.Zero));
+    private static void DrawButtons(SpriteBatch spriteBatch, List<Object> buttons, float layer) => buttons.ForEach(button => button.Draw(spriteBatch, button.SpriteID, button.Bounds, layer, 0f, Vector2.Zero));
 
     private static void TempDrawOptionButtons(SpriteBatch spriteBatch, List<Object> buttons) //TODO Make sprites and UI for options button and get rid of this function
     {
@@ -382,23 +383,23 @@ namespace Eternal_Coin
       switch (GVar.currentGameState)
       {
         case GVar.GameState.mainMenu:
-          DrawButtons(spriteBatch, Lists.mainMenuButtons);
+          DrawButtons(spriteBatch, Lists.mainMenuButtons, 0.19f);
           break;
         case GVar.GameState.chooseCharacter:
-          DrawButtons(spriteBatch, Lists.chooseCharacterButtons);
+          DrawButtons(spriteBatch, Lists.chooseCharacterButtons, 0.19f);
           if (!GVar.creatingCharacter && !GVar.chooseStory)
-            Lists.savedGames.ForEach(savedGame => DrawButtons(spriteBatch, savedGame.buttons));
+            Lists.savedGames.ForEach(savedGame => DrawButtons(spriteBatch, savedGame.buttons, 0.19f));
           if (GVar.choosingDP)
-            DrawButtons(spriteBatch, Lists.displayPictureButtons);
+            DrawButtons(spriteBatch, Lists.displayPictureButtons, 0.19f);
           break;
         case GVar.GameState.game:
-          DrawButtons(spriteBatch, Lists.mainWorldButtons);
+          DrawButtons(spriteBatch, Lists.mainWorldButtons, 0.19f);
           if (GVar.player.Bounds.Intersects(GVar.player.CurrentLocation.PlayerPort))
-            DrawButtons(spriteBatch, Lists.locationButtons);
+            DrawButtons(spriteBatch, Lists.locationButtons, 0.17f);
           break;
         case GVar.GameState.shop:
         case GVar.GameState.inventory:
-          DrawButtons(spriteBatch, Lists.inventoryButtons);
+          DrawButtons(spriteBatch, Lists.inventoryButtons, 0.19f);
           break;
         case GVar.GameState.battle:
 

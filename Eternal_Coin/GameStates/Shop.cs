@@ -43,6 +43,7 @@ namespace Eternal_Coin
     {
       if (invSlot <= 40)
       {
+        item.PlayerInventorySlot = invSlot;
         InventoryManager.shopInventory.ItemSlots[invSlot].item = item;
         Lists.shopItems.Add(InventoryManager.shopInventory.ItemSlots[invSlot].item);
       }
@@ -83,6 +84,9 @@ namespace Eternal_Coin
       InventoryManager.DrawInventoryItems(spriteBatch, InventoryManager.GetItems(GVar.InventoryParentNames.inventory), 0.19f);
       InventoryManager.DrawMouseInventory(spriteBatch, gameTime);
 
+      if (GVar.isFullScreen)
+        spriteBatch.Draw(Textures.UI.inventoryBackDropUI, new Rectangle((int)UIElement.GetUIPosition(Textures.UI.inventoryUI).X + (int)UIElement.GetUISize(Textures.UI.inventoryUI).X / 2 - Textures.UI.inventoryBackDropUI.Width / 2, (int)UIElement.GetUIPosition(Textures.UI.inventoryUI).Y + (int)UIElement.GetUISize(Textures.UI.inventoryUI).Y / 2 - Textures.UI.inventoryBackDropUI.Height / 2, Textures.UI.inventoryBackDropUI.Width, Textures.UI.inventoryBackDropUI.Height), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.15f);
+
       spriteBatch.DrawString(Fonts.lucidaConsole14Regular, GVar.silverMoney.ToString(), new Vector2(50, 670), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
       
     }
@@ -101,7 +105,7 @@ namespace Eternal_Coin
       //cycle through shops inventory item slots, if item slots item is not null, create item xml element and append it to item xml node.
       for (int i = 0; i < 40; i++)
         if (InventoryManager.shopInventory.ItemSlots[i].item != null)
-          item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));//TODO item aren't saving with invetory slot, causing item to fuck up
+          item.AppendChild(SaveXml.CreateItemXmlElement(InventoryManager.shopInventory.ItemSlots[i].item, shopDoc));
 
       string fileDir = GVar.gameFilesLocation + GVar.player.Name + "/" + locationNode.LocatoinFilePath;
       shopDoc.Save(fileDir);

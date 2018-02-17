@@ -53,8 +53,8 @@ namespace Eternal_Coin
       GetUIElement(Textures.UI.questInfoUI).Position = new Vector2(GetUISize(Textures.UI.questListUI).X, 0);
       GetUIElement(Textures.UI.inventoryUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.inventoryUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.inventoryUI).Y / 2);
       GetUIElement(Textures.UI.pauseUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.pauseUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.pauseUI).Y / 2);
-      GetUIElement(Textures.UI.shopInventoryUI).Position = new Vector2(0, 0);
-      GetUIElement(Textures.UI.battleUI).Position = new Vector2(0, screenSize.Y - GetUISize(Textures.UI.battleUI).Y);
+      GetUIElement(Textures.UI.shopInventoryUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.shopInventoryUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.shopInventoryUI).Y / 2);
+      GetUIElement(Textures.UI.battleUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.battleUI).X / 2, screenSize.Y - GetUISize(Textures.UI.battleUI).Y);
       GetUIElement(Textures.UI.newGameUIBorder).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.newGameUIBorder).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.newGameUIBorder).Y / 2);
       GetUIElement(Textures.UI.endBattleUI).Position = new Vector2(screenSize.X / 2 - GetUISize(Textures.UI.endBattleUI).X / 2, screenSize.Y / 2 - GetUISize(Textures.UI.endBattleUI).Y / 2);
     }
@@ -71,6 +71,20 @@ namespace Eternal_Coin
         if (Lists.uiElements[i].SpriteID == sprite)
           return Lists.uiElements[i];
       return null;
+    }
+
+    public static void DrawSpriteAtUI(SpriteBatch spriteBatch, Texture2D sprite, Vector2 size, UIElement uiElement, Vector2 padding, Color color, float layer)
+    {
+      Vector2 position = new Vector2(uiElement.Position.X + padding.X, uiElement.Position.Y + padding.Y);
+
+      spriteBatch.Draw(sprite, new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y), null, color, 0f, Vector2.Zero, SpriteEffects.None, layer);
+    }
+
+    public static void DrawStringAtUI(SpriteBatch spriteBatch, SpriteFont font, string text, UIElement uiElement, Vector2 padding, Color color, float layer)
+    {
+      Vector2 position = new Vector2(uiElement.Position.X + padding.X, uiElement.Position.Y + padding.Y);
+
+      spriteBatch.DrawString(font, text, position, color, 0f, Vector2.Zero, 1f, SpriteEffects.None, layer);
     }
 
     public Texture2D SpriteID { get { return spriteID; } set { spriteID = value; } } 

@@ -15,7 +15,7 @@ namespace Eternal_Coin
         if (Lists.uiElements[j].SpriteID == Textures.UI.newGameUIBorder)
         {
           Button chooseDP = new Button(Textures.Misc.pixel, new Vector2(Lists.uiElements[j].Position.X + 3, Lists.uiElements[j].Position.Y + 3), Vector.newGameDPSize, Color.FromNonPremultiplied(0, 0, 0, 0), "ChooseDP", "Alive", 0f);
-          Button startGame = new Button(Textures.Button.startButton, new Vector2(GVar.gameScreenX / 2 - (Textures.Button.startButton.Width / 2) / 2, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y + 10), new Vector2(Textures.Button.startButton.Width / 2, Textures.Button.startButton.Height), Color.Yellow, "StartGame", "Alive", 0f);
+          Button startGame = new Button(Textures.Button.startButton, new Vector2(GVar.currentScreenX / 2 - (Textures.Button.startButton.Width / 2) / 2, Lists.uiElements[j].Position.Y + Lists.uiElements[j].Size.Y + 10), new Vector2(Textures.Button.startButton.Width / 2, Textures.Button.startButton.Height), Color.Yellow, "StartGame", "Alive", 0f);
           Lists.chooseCharacterButtons.Add(chooseDP);
           Lists.chooseCharacterButtons.Add(startGame);
         }
@@ -25,9 +25,9 @@ namespace Eternal_Coin
     public static void StartGame(Button button)
     {
       Lists.chooseCharacterButtons.Remove(button);
-      for (int j = 0; j < Lists.uiElements.Count; j++)
-        if (Lists.uiElements[j].SpriteID == Textures.UI.newGameUIBorder && Lists.uiElements[j].Draw)
-          Lists.uiElements[j].Draw = false;
+
+      if (UIElement.IsUIElementActive(Textures.UI.newGameUIBorder))
+        UIElement.DeActivateUIElement(Textures.UI.newGameUIBorder);
 
       GVar.creatingCharacter = false;
       GVar.chooseStory = true;

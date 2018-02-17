@@ -82,31 +82,36 @@ namespace Eternal_Coin
 
     public static void DrawItemInfo(SpriteBatch spriteBatch, Item item)
     {
-      spriteBatch.Draw(item.SpriteID, new Rectangle(114, 92, 200, 200), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.19f);
-      spriteBatch.DrawString(Fonts.lucidaConsole14Regular, item.ItemName, new Vector2(45, 386), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-      spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchase Price: " + item.Cost.ToString(), new Vector2(45, 436), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+      UIElement uiElement = null;
+      if (GVar.currentGameState == GVar.GameState.inventory)
+        uiElement = UIElement.GetUIElement(Textures.UI.inventoryUI);
+      else if (GVar.currentGameState == GVar.GameState.shop)
+        uiElement = UIElement.GetUIElement(Textures.UI.shopInventoryUI);
+      UIElement.DrawSpriteAtUI(spriteBatch, item.SpriteID, new Vector2(200, 200), uiElement, new Vector2(114, 92), Color.White, 0.19f);
+      UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, item.ItemName, uiElement, new Vector2(45, 386), Color.Black, 0.19f);
+      UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Purchase Price: " + item.Cost.ToString(), uiElement, new Vector2(45, 436), Color.Black, 0.19f);
       int cost = item.Cost / 2;
-      spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), new Vector2(45, 460), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+      UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Selling Price: " + cost.ToString(), uiElement, new Vector2(45, 460), Color.Black, 0.19f);
 
       switch (item.ItemClass)
       {
         case GVar.ItemClassName.weapon:
           Weapon W = (Weapon)item;
-          spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Damage: " + W.Damage.ToString(), new Vector2(45, 410), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+          UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Damage: " + W.Damage.ToString(), uiElement, new Vector2(45, 410), Color.Black, 0.19f);
           break;
         case GVar.ItemClassName.armor:
           Armor A = (Armor)item;
-          spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Armor: " + A.ArmorValue.ToString(), new Vector2(45, 410), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+          UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Armor: " + A.ArmorValue.ToString(), uiElement, new Vector2(45, 410), Color.Black, 0.19f);
           break;
         case GVar.ItemClassName.jewellry:
           Jewellry J = (Jewellry)item;
           if (J.eternalCoinSlot.item != null)
           {
-            spriteBatch.Draw(J.eternalCoinSlot.item.SpriteID, new Rectangle(200, 98, 60, 60), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, J.eternalCoinSlot.item.ItemName, new Vector2(45, 484), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Purchasing Price: " + J.eternalCoinSlot.item.Cost.ToString(), new Vector2(45, 508), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            UIElement.DrawSpriteAtUI(spriteBatch, J.eternalCoinSlot.item.SpriteID, new Vector2(60, 60), uiElement, new Vector2(200, 98), Color.White, 0.19f);
+            UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, J.eternalCoinSlot.item.ItemName, uiElement, new Vector2(45, 484), Color.White, 0.19f);
+            UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Purchase Price: " + J.eternalCoinSlot.item.Cost.ToString(), uiElement, new Vector2(45, 508), Color.Black, 0.19f);
             int ECcost = J.eternalCoinSlot.item.Cost / 2;
-            spriteBatch.DrawString(Fonts.lucidaConsole14Regular, "Selling Price: " + ECcost.ToString(), new Vector2(45, 532), Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.19f);
+            UIElement.DrawStringAtUI(spriteBatch, Fonts.lucidaConsole14Regular, "Selling Price: " + ECcost.ToString(), uiElement, new Vector2(45, 532), Color.Black, 0.19f);
           }
           break;
       }
@@ -216,6 +221,7 @@ namespace Eternal_Coin
 
     private static void ToShop(ItemSlot itemSlot, Item item)
     {
+      item.PlayerInventorySlot = Convert.ToInt32(itemSlot.inventorySlot);
       Lists.shopItems.Add(item);
       itemSlot.item = item;
       GVar.silverMoney += item.cost / 2;

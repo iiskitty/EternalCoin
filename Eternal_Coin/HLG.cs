@@ -497,6 +497,28 @@ namespace Eternal_Coin
       }
     }
 
+    private static void StopSounds()
+    {
+      for (int i = 0; i < sounds.Count; i++)
+      {
+        sounds[i].Stop();
+      }
+    }
+
+    public static void PlayNPCDialogue(string locationName, string NPCName, string questid, string dialogueTag)
+    {
+      StopSounds();
+      string key = locationName + NPCName + questid + dialogueTag;
+      try
+      {
+        PlaySound(Dictionaries.sounds[key]);
+      }
+      catch (Exception e)
+      {
+        GVar.LogDebugInfo("!!!No sound for NPC dialogue: " + key + "!!!" + e.ToString(), 1);
+      }
+    }
+
     /// <summary>
     /// checks the list of sounds, if a sound is inactive dispose and delete from the list
     /// this caused me problems in the past with sounds not being disposed of properly when finished playing

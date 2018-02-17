@@ -198,14 +198,7 @@ namespace Eternal_Coin
         }
 
         Colours.UpdateMainAlphas(GVar.player.CurrentLocation);//update alpha colours of locations buttons and location nodes.
-
-        //cycle through LocationButtons.
-        for (int j = 0; j < Lists.locationButtons.Count; j++)
-        {
-          //Updates.UpdateGameButtons(Lists.locationButtons[j], GVar.player, gameTime);//upate the LocationButtons.
-
-          //Button.CheckLocationButtonClick(j);//Check for click on LocationButtons.
-        }
+        
       }
 
       GVar.worldMap.SetMapSpeed(GVar.player, GVar.player.CurrentLocation);//set the maps movement speed(the whole map moves around the player, the player does not move at all)
@@ -256,7 +249,7 @@ namespace Eternal_Coin
             Quest.CheckAction(tempNode[GVar.XmlTags.Actions.enter].InnerText, GVar.player.CurrentLocation.LocNodeConnections[j]);//check the action against any active quests.
 
             GVar.player.CurrentLocation = GVar.player.CurrentLocation.LocNodeConnections[j];//set the current location to the current locations connected location.
-            ReadXml.ReadCurrentLocation();
+            ReadXml.ReadCurrentLocation(GVar.player);
             GVar.npc = new NPC();//set NPC to nothing.
             Lists.locationButtons.Clear();//clear the location buttons ready for next location.
             Button.CreateLocationButtons(GVar.player.CurrentLocation);//create location buttons for new location.

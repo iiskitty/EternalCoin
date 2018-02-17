@@ -586,30 +586,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/LoadButton.png
 
-#begin Sprites/UI/SavedGameUIBorder.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/SavedGameUIBorder.png
-
-#begin Sprites/UI/SavedGameUIInner.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/SavedGameUIInner.png
-
 #begin Sprites/UI/SaveGameUI.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -753,30 +729,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Buttons/RightLightGenButton.png
-
-#begin Sprites/UI/InventoryUI.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/InventoryUI.png
-
-#begin Sprites/UI/ShopInventoryUI.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/UI/ShopInventoryUI.png
 
 #begin Sounds/MouseOverButton.wav
 /importer:WavImporter
@@ -1046,58 +998,87 @@
 /build:Sprites/UI/PadLock.png
 
 #begin Fonts/LucidaConsole10Bold.spritefont
-/copy:Fonts/LucidaConsole10Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole10Bold.spritefont
 
 #begin Fonts/LucidaConsole10Regular.spritefont
-/copy:Fonts/LucidaConsole10Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole10Regular.spritefont
 
 #begin Fonts/LucidaConsole12Bold.spritefont
-/copy:Fonts/LucidaConsole12Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole12Bold.spritefont
 
 #begin Fonts/LucidaConsole12Regular.spritefont
-/copy:Fonts/LucidaConsole12Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole12Regular.spritefont
 
 #begin Fonts/LucidaConsole14Bold.spritefont
-/copy:Fonts/LucidaConsole14Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole14Bold.spritefont
 
 #begin Fonts/LucidaConsole14Regular.spritefont
-/copy:Fonts/LucidaConsole14Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole14Regular.spritefont
 
 #begin Fonts/LucidaConsole16Bold.spritefont
-/copy:Fonts/LucidaConsole16Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole16Bold.spritefont
 
 #begin Fonts/LucidaConsole16Regular.spritefont
-/copy:Fonts/LucidaConsole16Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole16Regular.spritefont
 
 #begin Fonts/LucidaConsole18Bold.spritefont
-/copy:Fonts/LucidaConsole18Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole18Bold.spritefont
 
 #begin Fonts/LucidaConsole18Regular.spritefont
-/copy:Fonts/LucidaConsole18Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole18Regular.spritefont
 
 #begin Fonts/LucidaConsole20Bold.spritefont
-/copy:Fonts/LucidaConsole20Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole20Bold.spritefont
 
 #begin Fonts/LucidaConsole20Regular.spritefont
-/copy:Fonts/LucidaConsole20Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole20Regular.spritefont
 
 #begin Fonts/LucidaConsole22Bold.spritefont
-/copy:Fonts/LucidaConsole22Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole22Bold.spritefont
 
 #begin Fonts/LucidaConsole22Regular.spritefont
-/copy:Fonts/LucidaConsole22Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole22Regular.spritefont
 
 #begin Fonts/LucidaConsole24Bold.spritefont
-/copy:Fonts/LucidaConsole24Bold.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole24Bold.spritefont
 
 #begin Fonts/LucidaConsole24Regular.spritefont
-/copy:Fonts/LucidaConsole24Regular.spritefont
+/importer:
+/processor:
+/build:Fonts/LucidaConsole24Regular.spritefont
 
 #begin LoadData/ItemData.xml
 /copy:LoadData/ItemData.xml
-
-#begin LoadData/Sounds.xml
-/copy:LoadData/Sounds.xml
 
 #begin LoadData/StoryNodes/MainStory.xml
 /copy:LoadData/StoryNodes/MainStory.xml
@@ -1165,9 +1146,6 @@
 /processorParam:TextureFormat=Color
 /build:LocationTemplates/TestStory/WorldMap.png
 
-#begin LoadData/Textures.xml
-/copy:LoadData/Textures.xml
-
 #begin Music/Fantasy-Forest-Battle.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -1176,4 +1154,76 @@
 
 #begin LoadData/Music.xml
 /copy:LoadData/Music.xml
+
+#begin Sounds/SubEatonDickexplsubeaton1QuestUnaccepted.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/SubEatonDickexplsubeaton1QuestUnaccepted.wav
+
+#begin Sounds/SubEatonDickexplsubeaton2QuestUnaccepted.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/SubEatonDickexplsubeaton2QuestUnaccepted.wav
+
+#begin Sounds/SubEatonDickNormalGreeting.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/SubEatonDickNormalGreeting.wav
+
+#begin LoadData/Sounds.xml
+/copy:LoadData/Sounds.xml
+
+#begin Sprites/UI/InventoryUIBackDrop.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/InventoryUIBackDrop.png
+
+#begin Sprites/UI/ShopInventoryUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/ShopInventoryUI.png
+
+#begin Sprites/Buttons/BackArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Buttons/BackArrow.png
+
+#begin Sprites/UI/InventoryUI.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/UI/InventoryUI.png
+
+#begin LoadData/Textures.xml
+/copy:LoadData/Textures.xml
 

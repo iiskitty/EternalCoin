@@ -50,17 +50,16 @@ namespace Eternal_Coin
           break;
         }
       }
-      Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.gameScreenX / 2, GVar.gameScreenY / 2), new Vector2(20, 20), name, "Alive", Vector2.Zero, Color.Green, 100, 0, 0);
+      Player player = new Player(Textures.Misc.pixel, new Vector2(GVar.currentScreenX / 2, GVar.currentScreenY / 2), new Vector2(20, 20), name, "Alive", Vector2.Zero, Color.Green, 100, 0, 0);
       saveNode = saveDoc.DocumentElement.SelectSingleNode("/savedgame");
       GVar.storyName = saveNode["storyname"].InnerText;
       GVar.displayPicID = saveNode["dpid"].InnerText;
-      LocationNode locNode = SetStartingLocation(saveNode[GVar.XmlTags.Player.currentlocation].InnerText);
+      player.CurrentLocation = SetStartingLocation(saveNode[GVar.XmlTags.Player.currentlocation].InnerText);
 
-      player.CurrentLocation = locNode;
-
-
-
+      ReadXml.ReadCurrentLocation(player);
       GVar.player = player;
+
+      
       XmlNodeList quests = saveDoc.SelectNodes("/savedgame/quest");
       foreach (XmlNode q in quests)
       {

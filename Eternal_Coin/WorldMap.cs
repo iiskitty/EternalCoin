@@ -8,7 +8,7 @@ namespace Eternal_Coin
     Texture2D spriteID;
     Vector2 position;
     Vector2 playerPosition;
-    Vector2 nodePosition;
+    Vector2 nodePosition; 
     Vector2 size;
     Rectangle bounds;
 

@@ -17,13 +17,10 @@ namespace Eternal_Coin
 
     public static void ViewQuests()
     {
-      for (int i = 0; i < Lists.uiElements.Count; i++)
-      {
-        if (!UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
-          UI.DisplayNPCQuestList();
-        else if (UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
-          UI.CloseNPCQuestListUI();
-      }
+      if (!UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
+        UI.DisplayNPCQuestList();
+      else if (UIElement.IsUIElementActive(Textures.UI.NPCQuestListUI))
+        UI.CloseNPCQuestListUI();
     }
 
     public static void CreateMainWorldButtons()
@@ -49,7 +46,7 @@ namespace Eternal_Coin
 
     public static void DisplayInventory()
     {
-      Lists.inventoryButtons.Add(Button.CreateButton(Textures.Button.closeButton, UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(35, 35), new Vector2(-5, 5), "CloseInventory", "Alive", Button.ButtonPosition.topright));
+      Lists.inventoryButtons.Add(Button.CreateButton(Textures.Button.backArrow, UIElement.GetUIElement(Textures.UI.inventoryUI), new Vector2(32, 28), new Vector2(-10, 6), "CloseInventory", "Alive", Button.ButtonPosition.topright));
       GVar.currentGameState = GVar.GameState.inventory;//set current GameState to inventory.
       GVar.previousGameState = GVar.GameState.game;//set previous GameState to game.
     }

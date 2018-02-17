@@ -23,12 +23,8 @@
         <filepath>Sprites/UI/EndBattleUI</filepath>
       </texture>
       <texture>
-        <id>SavedGameUIBorder</id>
-        <filepath>Sprites/UI/SavedGameUIBorder</filepath>
-      </texture>
-      <texture>
-        <id>SavedGameUIInner</id>
-        <filepath>Sprites/UI/SavedGameUIInner</filepath>
+        <id>SaveGameUI</id>
+        <filepath>Sprites/UI/SaveGameUI</filepath>
       </texture>
       <texture>
         <id>NewGameUIBorder</id>
@@ -171,6 +167,10 @@
         <filepath>Sprites/UI/InventoryUI</filepath>
       </texture>
       <texture>
+        <id>InventoryBackDrop</id>
+        <filepath>Sprites/UI/InventoryUIBackDrop</filepath>
+      </texture>
+      <texture>
         <id>ShopInventory</id>
         <filepath>Sprites/UI/ShopInventoryUI</filepath>
       </texture>
@@ -190,6 +190,10 @@
         <id>Background</id>
         <filepath>Sprites/Background</filepath>
       </texture>
+      <texture>
+        <id>BackArrow</id>
+        <filepath>Sprites/Buttons/BackArrow</filepath>
+      </texture>
     </load>
 
     <set>
@@ -205,6 +209,7 @@
       <questsbut>QuestsButton</questsbut>
       <startbut>StartButton</startbut>
       <backbut>BackButton</backbut>
+      <backarw>BackArrow</backarw>
       <newbut>NewButton</newbut>
       <loadbut>LoadButton</loadbut>
       <delbut>DeleteButton</delbut>
@@ -228,14 +233,14 @@
       <UIiteminfo>ItemInfoUI</UIiteminfo>
       <UInewgameborder>NewGameUIBorder</UInewgameborder>
       <UInewgameinner>NewGameUIInner</UInewgameinner>
-      <UIsavedgameborder>SavedGameUIBorder</UIsavedgameborder>
-      <UIsavedgameinner>SavedGameUIInner</UIsavedgameinner>
+      <UIsavegame>SaveGameUI</UIsavegame>
       <UIlocinfo>LocationInfo</UIlocinfo>
       <UInpcinfo>NPCInfo</UInpcinfo>
       <UInpcquestlist>NPCQuestList</UInpcquestlist>
       <UIquestlist>QuestList</UIquestlist>
       <UIquestinfo>QuestInfo</UIquestinfo>
       <UIinv>Inventory</UIinv>
+      <UIinvback>InventoryBackDrop</UIinvback>
       <UIshopinv>ShopInventory</UIshopinv>
       <UIpause>Pause</UIpause>
       <UIBattle>Battle</UIBattle>

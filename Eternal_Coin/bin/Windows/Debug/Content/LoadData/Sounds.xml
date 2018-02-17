@@ -18,6 +18,25 @@
         <id>ButtonMouseOver</id>
         <filepath>Sounds/MouseOverButton</filepath>
       </sound>
+      
+      <!-- voice acting sounds. -->
+      <!-- id's should be locationname+NPCname+dialoguetag -->
+      <!-- eg. SubEatonDicknormalgreeting -->
+      <!-- or for quest dialogue: SubEatonDick*questid*questaccepted -->
+
+      <sound>
+        <id>SubEatonDicknormalgreeting</id>
+        <filepath>Sounds/SubEatonDickNormalGreeting</filepath>
+      </sound>
+      <sound>
+        <id>SubEatonDickexplsubeaton1questunaccepted</id>
+        <filepath>Sounds/SubEatonDickexplsubeaton1QuestUnaccepted</filepath>
+      </sound>
+      <sound>
+        <id>SubEatonDickexplsubeaton2questunaccepted</id>
+        <filepath>Sounds/SubEatonDickexplsubeaton2QuestUnaccepted</filepath>
+      </sound>
+
     </load>
 
     <set>
@@ -25,5 +44,8 @@
       <clicklocnode>LocNodeClick</clicklocnode>
       <clickbutton>ButtonClick</clickbutton>
       <buttonmouseover>ButtonMouseOver</buttonmouseover>
+
+      <!-- voice acting -->
+      <subeatondicknormalgreeting>SubEatonDicknormalgreeting</subeatondicknormalgreeting>
     </set>
   </sounds>

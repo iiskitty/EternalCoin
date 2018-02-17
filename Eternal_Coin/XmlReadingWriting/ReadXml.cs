@@ -25,9 +25,9 @@ namespace Eternal_Coin
       }
     }
 
-    public static void ReadCurrentLocation()
+    public static void ReadCurrentLocation(Player player)
     {
-      string fileDir = GVar.gameFilesLocation + GVar.player.Name + "/" + GVar.player.CurrentLocation.LocatoinFilePath;//set string to xml file's directory location.
+      string fileDir = GVar.gameFilesLocation + player.Name + "/" + player.CurrentLocation.LocatoinFilePath;//set string to xml file's directory location.
 
       try
       {
@@ -35,11 +35,11 @@ namespace Eternal_Coin
 
         XmlNode currLocNode = GVar.curLocNode.DocumentElement.SelectSingleNode("/location");
         
-        GVar.player.CurrentLocation.Description = Text.WrapText(Fonts.lucidaConsole16Regular, currLocNode["description"].InnerText, 600);
-        GVar.player.CurrentLocation.HasNPC = Convert.ToBoolean(currLocNode["hasnpc"].InnerText);
-        GVar.player.CurrentLocation.HasShop = Convert.ToBoolean(currLocNode["hasshop"].InnerText);
-        GVar.player.CurrentLocation.HasEnemy = Convert.ToBoolean(currLocNode["hasenemy"].InnerText);
-        
+        player.CurrentLocation.Description = Text.WrapText(Fonts.lucidaConsole16Regular, currLocNode["description"].InnerText, 600);
+        player.CurrentLocation.HasNPC = Convert.ToBoolean(currLocNode["hasnpc"].InnerText);
+        player.CurrentLocation.HasShop = Convert.ToBoolean(currLocNode["hasshop"].InnerText);
+        player.CurrentLocation.HasEnemy = Convert.ToBoolean(currLocNode["hasenemy"].InnerText);
+        player.CurrentLocation.Searched = Convert.ToBoolean(currLocNode["searched"].InnerText);
       }
       catch
       {

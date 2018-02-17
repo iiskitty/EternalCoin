@@ -5,10 +5,10 @@ using System;
 using System.IO;
 using System.Xml;
 
+//TODO ONGOING read through all the code, comment the code, fix and tweak the code where necessary
 
 //TODO make a way for quests to require other quests to be completed. (possibly done, need more testing.)
-//TODO make a way to play sound clips for voice acting from location xml files.
-//TODO read through all the code, comment the code, fix and tweak the code where necessary
+
 //TODO Make different resolutions above 1280x720 possible. setting positions based on true screen size.
 
 
@@ -19,7 +19,6 @@ namespace Eternal_Coin
   /// </summary>
   public class Game1 : Game
   {
-
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
 
@@ -47,12 +46,11 @@ namespace Eternal_Coin
         Window.IsBorderless = true;
         
       }
-
-      MainWorldButtons.SetMainWorldButtonPositions();
-      InventoryManager.ResetItemSlotPositions();
       if (GVar.player != null)
         GVar.player.ResetLocation(new Vector2(GVar.currentScreenX, GVar.currentScreenY));
       UIElement.SetUIPositions(new Vector2(GVar.currentScreenX, GVar.currentScreenY));
+      MainWorldButtons.SetMainWorldButtonPositions();
+      InventoryManager.ResetItemSlotPositions();
 
       graphics.ApplyChanges();
       //opens Options.xml and saves the new value for fullscreen
@@ -95,6 +93,8 @@ namespace Eternal_Coin
 
       string debugFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);//sets the directory for debug logs.
       GVar.debugFilesLocation = Path.Combine(debugFolder, "EternalCoin\\DebugFiles\\");
+
+      
 
       if (!Directory.Exists(GVar.savedGameLocation))//if the GameSave directory doesn't exist, create it.
         Directory.CreateDirectory(GVar.savedGameLocation);
@@ -161,7 +161,7 @@ namespace Eternal_Coin
       Vector.InitilizeVectors();
       //creating all UI elements for game use
       Lists.uiElements = UIElement.AddUIElements(Lists.uiElements);
-      ToggleFullScreen(false);
+      ToggleFullScreen(Convert.ToBoolean(optionsNode["fullscreen"].InnerText));
       //creating inventories for game use
       InventoryManager.CreateInventories();
       //loading the main menu
@@ -247,8 +247,8 @@ namespace Eternal_Coin
       //checks if should exit game or not
       if (GVar.exitGame)
       {
-        if (graphics.IsFullScreen)
-          ToggleFullScreen(false);//toggles full screen if is fullscreen
+        //if (graphics.IsFullScreen)
+          //ToggleFullScreen(false);//toggles full screen if is fullscreen
         Exit();//exit game
       }
 
@@ -310,7 +310,7 @@ namespace Eternal_Coin
       spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
       MouseManager.mouse.Draw(spriteBatch);
-
+      
       //if the gamestate is the same as the one a UIElement has and its draw boolean is true, it will be drawn
       for (int i = 0; i < Lists.uiElements.Count; i++)
         if (Lists.uiElements[i].GameState == GVar.currentGameState && Lists.uiElements[i].Draw)
@@ -351,6 +351,8 @@ namespace Eternal_Coin
           break;
         case GVar.GameState.shop:
           Shop.DrawShopInventories(spriteBatch, gameTime);
+          if (graphics.IsFullScreen)
+            MainWorld.DrawMainWorld(spriteBatch, gameTime);
           break;
         case GVar.GameState.battle:
           Battle.DrawBattle(spriteBatch, gameTime);

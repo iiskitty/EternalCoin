@@ -31,11 +31,13 @@ namespace Eternal_Coin
     /// <param name="battleDoc">current location</param>
     public static void LoadBattle(XmlDocument battleDoc)
     {
+      playerPort = new Rectangle((int)UIElement.GetUIPosition(Textures.UI.battleUI).X + 95, (int)UIElement.GetUIPosition(Textures.UI.battleUI).Y / 2 - 150, 10, 300);
+      enemyPort = new Rectangle((int)UIElement.GetUIPosition(Textures.UI.battleUI).X + 1158, (int)UIElement.GetUIPosition(Textures.UI.battleUI).Y / 2 - 150, 10, 300);
       enemyAttackTimer = 100;
       Attack.LoadDefaultAttack();
       try
       {
-        battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], new Vector2(100, 50), new Vector2(128, 128), GVar.player.Name, "Alive", new Vector2(), Color.White, GVar.player.Health, GVar.player.Armour, GVar.player.Damage);
+        battlePlayer = new BattlePlayer(Dictionaries.availableAttacks[Lists.availableAttacksIDs[0]], Vector2.Zero, new Vector2(128, 128), GVar.player.Name, "Alive", new Vector2(), Color.White, GVar.player.Health, GVar.player.Armour, GVar.player.Damage);
         try
         {
           for (int i = 0; i < Lists.availableAttacksIDs.Count; i++)
@@ -64,7 +66,7 @@ namespace Eternal_Coin
               Attack.AddEnemyAttack(item.Attacks);
               if (battleEnemy == null)
               {
-                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
+                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], Vector2.Zero, new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                 enemyNextAttack = Lists.enemyAttackIDs[0];
               }
               battleEnemy.AddItemStats(item);
@@ -76,7 +78,7 @@ namespace Eternal_Coin
               Attack.AddEnemyAttack(item.Attacks);
               if (battleEnemy == null)
               {
-                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
+                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], Vector2.Zero, new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                 enemyNextAttack = Lists.enemyAttackIDs[0];
               }
               battleEnemy.AddItemStats(item);
@@ -89,13 +91,15 @@ namespace Eternal_Coin
             {
               if (battleEnemy == null)
               {
-                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], new Vector2(1000, 50), new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
+                battleEnemy = new BattleEnemy(Dictionaries.enemyAttacks[Lists.enemyAttackIDs[0]], Vector2.Zero, new Vector2(128, 128), eNode["name"].InnerText, "Alive", Vector2.Zero, Color.White, 40f, 0f, 0f, 0);
                 enemyNextAttack = Lists.enemyAttackIDs[0];
               }
               battleEnemy.AddItemStats(item);
               InventoryManager.enemyInventory.ItemSlots[item.InventorySlot].item = item;
             }
           }
+          battlePlayer.Position = new Vector2(playerPort.X + 5, playerPort.Y + (battlePlayer.Size.Y / 2));
+          battleEnemy.Position = new Vector2(enemyPort.X - (battleEnemy.Size.X - 5), enemyPort.Y + (battleEnemy.Size.Y / 2));
         }
         try
         {
@@ -229,7 +233,6 @@ namespace Eternal_Coin
       if (battlePlayer.Bounds.Intersects(playerAttackRec) && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.buildUp)
       {
         battlePlayer.PlayAnimation(GVar.AttackAnimStates.attack);
-
       }
       else if (battlePlayer.Bounds.Intersects(playerPort) && battlePlayer.CurrentAnimation == GVar.AttackAnimStates.retreat)
       {
@@ -252,8 +255,8 @@ namespace Eternal_Coin
       playerAttackRec = new Rectangle((int)battleEnemy.Position.X - 7, (int)battleEnemy.Position.Y, 10, (int)battleEnemy.Size.Y);
       enemyAttackRec = new Rectangle((int)battlePlayer.Position.X + (int)battlePlayer.Size.X - 3, (int)battlePlayer.Position.Y, 10, (int)battlePlayer.Size.Y);
 
-      playerPort = new Rectangle(95, 0, 10, 300);
-      enemyPort = new Rectangle(1123, 0, 10, 300);
+      playerPort = new Rectangle((int)UIElement.GetUIPosition(Textures.UI.battleUI).X + 95, (int)UIElement.GetUIPosition(Textures.UI.battleUI).Y / 2 - 150, 10, 300);
+      enemyPort = new Rectangle((int)UIElement.GetUIPosition(Textures.UI.battleUI).X + 1158, (int)UIElement.GetUIPosition(Textures.UI.battleUI).Y / 2 - 150, 10, 300);
 
       if (enemyAttackTimer > 0 && battleEnemy.Bounds.Intersects(enemyPort) && battleEnemy.CurrentAnimation == GVar.AttackAnimStates.idle && battleEnemy.Health > 0)
       {
